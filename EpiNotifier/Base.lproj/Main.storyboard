@@ -12,13 +12,13 @@
         <!--EpiNotifier-->
         <scene sceneID="Ibc-aP-Kjj">
             <objects>
-                <tableViewController id="KCt-an-Yvc" sceneMemberID="viewController">
+                <tableViewController id="KCt-an-Yvc" customClass="MainTVC" customModule="EpiNotifier" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="JXX-Fd-KXw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="70" id="kaW-3k-AIL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="70" id="kaW-3k-AIL" customClass="GroupCell" customModule="EpiNotifier" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kaW-3k-AIL" id="qbT-Sp-Syd">
@@ -62,6 +62,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92146831750869751" green="0.92162626981735229" blue="0.92145836353302002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="groupNameLabel" destination="Lpm-t5-Ajc" id="7zi-lY-rb2"/>
+                                    <outlet property="groupView" destination="whf-UL-Zc5" id="Cv2-jU-kT7"/>
+                                    <outlet property="nbNewsLabel" destination="msy-RT-xXy" id="uoZ-ae-Vob"/>
                                     <segue destination="Aja-OK-gqX" kind="show" id="kUo-vp-QnZ"/>
                                 </connections>
                             </tableViewCell>

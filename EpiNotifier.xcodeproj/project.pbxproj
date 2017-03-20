@@ -17,6 +17,9 @@
 		DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F4D1E7FFAEE00BA7FB1 /* DateUtils.swift */; };
 		DA8D2F531E7FFBB200BA7FB1 /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F521E7FFBB200BA7FB1 /* MainTVC.swift */; };
 		DA8D2F551E7FFBEF00BA7FB1 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F541E7FFBEF00BA7FB1 /* GroupCell.swift */; };
+		DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F561E7FFD2C00BA7FB1 /* Group.swift */; };
+		DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F581E7FFDDA00BA7FB1 /* News.swift */; };
+		DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		DA8D2F4D1E7FFAEE00BA7FB1 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		DA8D2F521E7FFBB200BA7FB1 /* MainTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
 		DA8D2F541E7FFBEF00BA7FB1 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		DA8D2F561E7FFD2C00BA7FB1 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		DA8D2F581E7FFDDA00BA7FB1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 		DA8D2F451E7FE06C00BA7FB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA8D2F561E7FFD2C00BA7FB1 /* Group.swift */,
+				DA8D2F581E7FFDDA00BA7FB1 /* News.swift */,
+				DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -226,8 +235,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8D2F551E7FFBEF00BA7FB1 /* GroupCell.swift in Sources */,
+				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */,
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
+				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,
+				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,
 				DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */,
 				DA8D2F4A1E7FF07700BA7FB1 /* Constants.swift in Sources */,
 				DA8D2F531E7FFBB200BA7FB1 /* MainTVC.swift in Sources */,
