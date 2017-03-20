@@ -13,6 +13,7 @@ class AddGroupTVC: UITableViewController {
   
   var groups = [Group]()
   var favorites = [Favorite]()
+  var favGroupName = [String]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,6 +22,12 @@ class AddGroupTVC: UITableViewController {
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+  }
+  
+  func fillGroupNames() {
+    for fav in favorites {
+      favGroupName.append(fav.group_name!)
+    }
   }
   
   private func saveFavorites() {
@@ -44,6 +51,7 @@ class AddGroupTVC: UITableViewController {
         if error == nil {
           self.groups = response!
           self.tableView.reloadData()
+          self.fillGroupNames()
           SVProgressHUD.dismiss()
         }
       }
@@ -65,14 +73,30 @@ class AddGroupTVC: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroupCell", for: indexPath) as! AddGroupCell
     let index = groups[indexPath.row]
     cell.groupNameLabel.text = index.group_name
+    if favGroupName.contains(index.group_name!) {
+      cell.isFavoriteSwitch.isOn = true
+    }
     cell.isFavoriteSwitch.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
     cell.isFavoriteSwitch.tag = indexPath.row
+    
     return cell
   }
   
   func addToFav(sender: UISwitch) {
+    var i = 0
     let obj = groups[sender.tag]
+    if !sender.isOn {
+      for fav in favGroupName {
+        if fav == obj.group_name {
+          favorites.remove(at: i)
+          break
+        }
+        i += 1
+      }
+    }
+    else {
     favorites.append(Favorite(id: obj.id!, group_name: obj.group_name!, topic_nb: obj.topic_nb!, available: obj.available!))
+    }
     saveFavorites()
   }
 }

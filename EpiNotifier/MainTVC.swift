@@ -14,6 +14,10 @@ class MainTVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     if let fav = loadFavorites() {
       favorites += fav
     }
@@ -52,7 +56,7 @@ class MainTVC: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
     let index = favorites[indexPath.row]
     cell.groupNameLabel.text = index.group_name
-    cell.nbNewsLabel.text = String(describing: index.topic_nb)
+    cell.nbNewsLabel.text = String(describing: index.topic_nb!)
     
     cell.groupView.layer.masksToBounds = true
     cell.groupView.layer.cornerRadius = cell.groupView.bounds.height / 2
