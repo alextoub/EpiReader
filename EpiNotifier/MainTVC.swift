@@ -11,6 +11,7 @@ import UIKit
 class MainTVC: UITableViewController {
   
   var favorites = [Favorite]()
+  var selected = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,6 +52,10 @@ class MainTVC: UITableViewController {
     return favorites.count
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.selected = favorites[indexPath.row].group_name!
+  }
+  
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
@@ -68,6 +73,10 @@ class MainTVC: UITableViewController {
     if segue.identifier == "toAdd" {
       let destination = segue.destination as! AddGroupTVC
       destination.favorites = favorites
+    }
+    if segue.identifier == "toNews" {
+      let destination = segue.destination as! NewsTVC
+      destination.currentGroup = selected
     }
   }
   
