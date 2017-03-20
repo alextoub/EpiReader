@@ -66,10 +66,10 @@ class MainData {
     }
   }
   
-  static func getTopics(id: Int, completed: @escaping ((_ response:[Topic]?, _ error:Error?) -> Void)) -> Void {
+  static func getTopics(id: Int, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
     Alamofire.request(Router.getTopics(id))
       .validate()
-      .responseArray { (alamoResponse: DataResponse<[Topic]>) in
+      .responseObject { (alamoResponse: DataResponse<Topic>) in
         completed(alamoResponse.result.value!, alamoResponse.result.error)
     }
   }

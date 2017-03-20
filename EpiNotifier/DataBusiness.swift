@@ -17,7 +17,7 @@ class MainBusiness {
     }
   }
   
-  static func getTopics(id: Int, completed: @escaping ((_ response:[Topic]?, _ error:Error?) -> Void)) -> Void {
+  static func getTopics(id: Int, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
     MainData.getTopics(id: id) { (response, error) in
       completed(response, error)
     }
