@@ -17,6 +17,7 @@ class NewsTVC: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNews()
+    self.title = currentGroup
   }
   
   
@@ -56,7 +57,8 @@ class NewsTVC: UITableViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
     let index = news[indexPath.row]
     cell.authorLabel.text = index.author
-    
+    cell.readIndicator.layer.masksToBounds = true
+    cell.readIndicator.layer.cornerRadius = cell.readIndicator.bounds.height / 2
     cell.dateLabel.text = index.creation_date
     cell.subjectLabel.text = index.subject
     
