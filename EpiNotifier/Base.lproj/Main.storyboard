@@ -9,6 +9,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add Group-->
+        <scene sceneID="12B-bE-kcm">
+            <objects>
+                <tableViewController id="EWO-k0-sk8" customClass="AddGroupTVC" customModule="EpiNotifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vbD-Gz-wRN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddGroupCell" id="PJR-hI-V6Q" customClass="AddGroupCell" customModule="EpiNotifier" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PJR-hI-V6Q" id="v3X-IB-1SD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOj-O9-pJC">
+                                            <rect key="frame" x="65" y="11" width="302" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JWd-rW-O2H">
+                                            <rect key="frame" x="8" y="6" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </switch>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupNameLabel" destination="wOj-O9-pJC" id="LvC-q1-E5k"/>
+                                    <outlet property="isFavoriteSwitch" destination="JWd-rW-O2H" id="NXa-ig-17E"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EWO-k0-sk8" id="bL7-gr-YSh"/>
+                            <outlet property="delegate" destination="EWO-k0-sk8" id="H9K-tG-rWg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Group" id="IOv-ei-4MR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksd-aM-JoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1544.8" y="-483.50824587706148"/>
+        </scene>
         <!--EpiNotifier-->
         <scene sceneID="Ibc-aP-Kjj">
             <objects>
@@ -76,7 +122,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="EpiNotifier" id="zdw-8P-4F7">
                         <barButtonItem key="leftBarButtonItem" title="Param" id="DRy-tF-226"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aol-H9-98h"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aol-H9-98h">
+                            <connections>
+                                <segue destination="EWO-k0-sk8" kind="show" id="aQv-1D-qAI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frd-sp-hoG" userLabel="First Responder" sceneMemberID="firstResponder"/>

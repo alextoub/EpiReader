@@ -22,6 +22,8 @@
 		DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230C1E80075F00899F3F /* RouterProtocol.swift */; };
 		DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230E1E8008AD00899F3F /* Favorite.swift */; };
 		DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723101E800B0600899F3F /* DataBusiness.swift */; };
+		DA6723131E80107200899F3F /* AddGroupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723121E80107200899F3F /* AddGroupTVC.swift */; };
+		DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723141E80108200899F3F /* AddGroupCell.swift */; };
 		DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */; };
 		DA8D2F341E7FDFDC00BA7FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F321E7FDFDC00BA7FB1 /* Main.storyboard */; };
 		DA8D2F361E7FDFDC00BA7FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F351E7FDFDC00BA7FB1 /* Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		DA67230C1E80075F00899F3F /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		DA67230E1E8008AD00899F3F /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		DA6723101E800B0600899F3F /* DataBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBusiness.swift; sourceTree = "<group>"; };
+		DA6723121E80107200899F3F /* AddGroupTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupTVC.swift; sourceTree = "<group>"; };
+		DA6723141E80108200899F3F /* AddGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupCell.swift; sourceTree = "<group>"; };
 		DA8D2F2B1E7FDFDC00BA7FB1 /* EpiNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA8D2F331E7FDFDC00BA7FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			children = (
 				DA8D2F511E7FFB9900BA7FB1 /* Cells */,
 				DA8D2F521E7FFBB200BA7FB1 /* MainTVC.swift */,
+				DA6723121E80107200899F3F /* AddGroupTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				DA8D2F541E7FFBEF00BA7FB1 /* GroupCell.swift */,
+				DA6723141E80108200899F3F /* AddGroupCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				DA8D2F551E7FFBEF00BA7FB1 /* GroupCell.swift in Sources */,
 				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
+				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
+				DA6723131E80107200899F3F /* AddGroupTVC.swift in Sources */,
 				DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */,
 				DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */,
 				DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */,
