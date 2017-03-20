@@ -19,8 +19,10 @@ class MainTVC: UITableViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    favorites.removeAll()
     if let fav = loadFavorites() {
       favorites += fav
+      tableView.reloadData()
     }
   }
   
