@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" ~> 4.3.0
+github "Alamofire/AlamofireImage" ~> 3.1
+github "Hearst-DD/ObjectMapper" ~> 2.2
+github "tristanhimmelman/AlamofireObjectMapper" ~> 4.0
+github "SVProgressHUD/SVProgressHUD"
+github "eggswift/pull-to-refresh"
