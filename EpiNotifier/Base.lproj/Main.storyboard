@@ -59,7 +59,7 @@
         <scene sceneID="Ibc-aP-Kjj">
             <objects>
                 <tableViewController id="KCt-an-Yvc" customClass="MainTVC" customModule="EpiNotifier" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="JXX-Fd-KXw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="JXX-Fd-KXw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,16 +68,16 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kaW-3k-AIL" id="qbT-Sp-Syd">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2Z-5g-hly" customClass="CustomView" customModule="EpiNotifier" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="4" width="355" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="10" y="4" width="355" height="61"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="assistants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpm-t5-Ajc">
                                                     <rect key="frame" x="60" y="8" width="266" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msy-RT-xXy">
                                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Param" id="DRy-tF-226"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aol-H9-98h">
                             <connections>
-                                <segue destination="EWO-k0-sk8" kind="show" id="aQv-1D-qAI"/>
+                                <segue destination="EWO-k0-sk8" kind="show" identifier="toAdd" id="aQv-1D-qAI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

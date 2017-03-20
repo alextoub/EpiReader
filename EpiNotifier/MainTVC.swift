@@ -59,4 +59,12 @@ class MainTVC: UITableViewController {
     
     return cell
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "toAdd" {
+      let destination = segue.destination as! AddGroupTVC
+      destination.favorites = favorites
+    }
+  }
+  
 }
