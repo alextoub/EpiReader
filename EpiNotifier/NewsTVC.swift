@@ -59,8 +59,14 @@ class NewsTVC: UITableViewController {
     cell.authorLabel.text = index.author
     cell.readIndicator.layer.masksToBounds = true
     cell.readIndicator.layer.cornerRadius = cell.readIndicator.bounds.height / 2
-    cell.dateLabel.text = index.creation_date
+    cell.dateLabel.text = StrToAbrev(dateStr: index.creation_date!)
     cell.subjectLabel.text = index.subject
+    if index.msg_nb! > 1 {
+      cell.msgNbIndicator.image = #imageLiteral(resourceName: "DoubleArrow")
+    }
+    else {
+      cell.msgNbIndicator.image = #imageLiteral(resourceName: "SingleArrow")
+    }
     
     return cell
   }

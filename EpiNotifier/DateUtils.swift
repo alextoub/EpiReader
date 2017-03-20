@@ -15,8 +15,8 @@ import Foundation
  */
 public func StrToDate(dateStr: String) -> Date {
   let dateFormatter  = DateFormatter()
-  dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-  dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+  dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+  dateFormatter.timeZone = TimeZone(abbreviation: "BST")
   return dateFormatter.date(from: dateStr)!
 }
 
@@ -57,6 +57,14 @@ public func StrToHour(dateBeginStr: String, dateEndStr: String) -> String {
   let dateFormatter  = DateFormatter()
   dateFormatter.dateFormat = "HH':'mm"
   let dateStr = "\(dateFormatter.string(from: dateBegin))\n\(dateFormatter.string(from: dateEnd))"
+  return dateStr
+}
+
+public func StrToAbrev(dateStr: String) -> String {
+  let date = StrToDate(dateStr: dateStr)
+  let dateFormatter  = DateFormatter()
+  dateFormatter.dateFormat = "dd MMM"
+  let dateStr = "\(dateFormatter.string(from: date))"
   return dateStr
 }
 
