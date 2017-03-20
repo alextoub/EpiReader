@@ -10,33 +10,55 @@ import UIKit
 
 class MainTVC: UITableViewController {
   
+  var favorites = [Favorite]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    if let fav = loadFavorites() {
+      favorites += fav
+    }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
+  private func saveFavorites() {
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
+    if isSuccessfulSave {
+      print("Favorites successfully saved.")
+    } else {
+      print("Failed to save favorites...")
+    }
+  }
+  
+  private func loadFavorites() -> [Favorite]?  {
+    print(Favorite.ArchiveURL.path)
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return 0
+    return 1
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return favorites.count
   }
   
-  /*
-   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-   
-   // Configure the cell...
-   
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
+    let index = favorites[indexPath.row]
+    cell.groupNameLabel.text = index.group_name
+    cell.nbNewsLabel.text = String(describing: index.topic_nb)
+    
+    cell.groupView.layer.masksToBounds = true
+    cell.groupView.layer.cornerRadius = cell.groupView.bounds.height / 2
+    
    return cell
    }
-   */
   
   /*
    // Override to support conditional editing of the table view.
