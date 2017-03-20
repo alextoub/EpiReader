@@ -40,6 +40,8 @@
 		DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F581E7FFDDA00BA7FB1 /* News.swift */; };
 		DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */; };
 		DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */; };
+		DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808B1E8035D100A8F423 /* TopicCell.swift */; };
+		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +93,8 @@
 		DA8D2F581E7FFDDA00BA7FB1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		DADA808B1E8035D100A8F423 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				DA8D2F521E7FFBB200BA7FB1 /* MainTVC.swift */,
 				DA6723161E80229800899F3F /* NewsTVC.swift */,
 				DA6723121E80107200899F3F /* AddGroupTVC.swift */,
+				DADA808D1E8035E500A8F423 /* TopicTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				DA8D2F541E7FFBEF00BA7FB1 /* GroupCell.swift */,
 				DA6723141E80108200899F3F /* AddGroupCell.swift */,
 				DA6723181E8022AE00899F3F /* NewsCell.swift */,
+				DADA808B1E8035D100A8F423 /* TopicCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8D2F551E7FFBEF00BA7FB1 /* GroupCell.swift in Sources */,
+				DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */,
 				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
 				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
@@ -319,6 +326,7 @@
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
 				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
+				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,

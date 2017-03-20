@@ -68,7 +68,6 @@ class AddGroupTVC: UITableViewController {
     return groups.count
   }
   
-  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroupCell", for: indexPath) as! AddGroupCell
     let index = groups[indexPath.row]
