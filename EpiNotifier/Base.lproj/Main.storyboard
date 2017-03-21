@@ -165,10 +165,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Responsable des assistants" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-HG-KS0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Responsable des assistants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-HG-KS0">
                                                     <rect key="frame" x="26" y="32" width="248" height="14"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -190,6 +190,13 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="chefs@yaka.epita.fr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-jK-3yk">
+                                                    <rect key="frame" x="26" y="48" width="248" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.5836373730964467" green="0.5836373730964467" blue="0.5836373730964467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
@@ -210,6 +217,7 @@
                                 <connections>
                                     <outlet property="authorLabel" destination="O1i-HG-KS0" id="4C8-Wk-T47"/>
                                     <outlet property="dateLabel" destination="RpZ-6D-an2" id="36e-Ht-9aM"/>
+                                    <outlet property="mailLabel" destination="D3B-jK-3yk" id="fnQ-le-p0F"/>
                                     <outlet property="msgNbIndicator" destination="4nq-42-vLL" id="jym-EM-1AT"/>
                                     <outlet property="readIndicator" destination="kFY-lV-YSO" id="8VR-VR-6b9"/>
                                     <outlet property="subjectLabel" destination="S18-bY-U3C" id="Ucw-sE-usa"/>
@@ -231,7 +239,7 @@
         <scene sceneID="c4i-yW-8vy">
             <objects>
                 <tableViewController id="ZSz-cW-tiH" customClass="TopicTVC" customModule="EpiNotifier" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="195" sectionHeaderHeight="28" sectionFooterHeight="28" id="mTK-IX-zvT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="195" sectionHeaderHeight="28" sectionFooterHeight="28" id="mTK-IX-zvT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,17 +248,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="195"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wNy-H5-lAH" id="mb1-aV-iRN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-VV-kef" customClass="CustomView" customModule="EpiNotifier" customModuleProvider="target">
                                             <rect key="frame" x="8" y="5" width="357" height="185"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l96-FN-TMe">
-                                                    <rect key="frame" x="8" y="59" width="341" height="114"/>
+                                                    <rect key="frame" x="8" y="59" width="341" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="114" id="3Ee-0j-VeR"/>
+                                                        <constraint firstAttribute="width" constant="341" id="Q1C-ap-qDy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -259,28 +267,31 @@
                                                     <rect key="frame" x="8" y="8" width="341" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Responsable des assistants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHL-JN-dhz">
-                                                            <rect key="frame" x="8" y="0.0" width="243" height="21"/>
+                                                            <rect key="frame" x="8" y="0.0" width="225" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[EPIDODO][INFOS]Journée d’ouverture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwN-h9-n0P">
                                                             <rect key="frame" x="8" y="22" width="333" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 sept." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-Nl-nIW">
-                                                            <rect key="frame" x="269" y="0.0" width="72" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 sept." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-Nl-nIW">
+                                                            <rect key="frame" x="241" y="0.0" width="100" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="zUy-5X-ujF"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,11 +300,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="l96-FN-TMe" secondAttribute="trailing" constant="8" id="CDK-cq-tUK"/>
                                                 <constraint firstItem="l96-FN-TMe" firstAttribute="top" secondItem="FLH-AS-RYc" secondAttribute="bottom" constant="8" id="PtI-JH-HYx"/>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="centerX" secondItem="b5U-VV-kef" secondAttribute="centerX" id="WgV-rN-dmQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="l96-FN-TMe" secondAttribute="bottom" constant="12" id="dal-Mc-Uyh"/>
+                                                <constraint firstAttribute="bottom" secondItem="l96-FN-TMe" secondAttribute="bottom" constant="8" id="dal-Mc-Uyh"/>
                                                 <constraint firstAttribute="trailing" secondItem="FLH-AS-RYc" secondAttribute="trailing" constant="8" id="emL-KF-07R"/>
+                                                <constraint firstItem="l96-FN-TMe" firstAttribute="centerX" secondItem="b5U-VV-kef" secondAttribute="centerX" id="fyg-W1-PlA"/>
                                                 <constraint firstItem="l96-FN-TMe" firstAttribute="leading" secondItem="b5U-VV-kef" secondAttribute="leading" constant="8" id="mcn-vC-UOH"/>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="top" secondItem="b5U-VV-kef" secondAttribute="top" constant="8" id="pAs-nu-9qV"/>
-                                                <constraint firstItem="l96-FN-TMe" firstAttribute="centerX" secondItem="b5U-VV-kef" secondAttribute="centerX" id="vfa-D2-ZLn"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
