@@ -20,7 +20,7 @@ $ carthage bootstrap --platform iOS
 3. Click on EpiNotifier.xcodeproj file
 4. Sign using your developper account and build the project using XCode
 
-![EpiNotifier](https://github.com/alextoub/EpiNotifier/EpiNotifier.png)
+![EpiNotifier](https://github.com/alextoub/EpiNotifier/blob/master/EpiNotifier.png)
 
 ## TODO
 
