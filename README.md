@@ -1,6 +1,6 @@
-# EpiNotifier
+![Banner](https://github.com/alextoub/EpiNotifier/blob/master/Banner.png)
 
-iOS App to read EPITA news using ng-notifier 
+EpiNotifier is an iOS App that allows you to read EPITA news
 
 ## Requirements
 
