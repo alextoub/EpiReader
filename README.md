@@ -12,5 +12,5 @@ iOS App to read EPITA news using ng-notifier
 - [ ] Better display hours
 - [ ] Indicate if a news is read (persistancy)
 - [ ] Redesign switchs
-- [ ] Infinite scrolling
+- [ ] Infinite scrolling
 - [ ] Add search
