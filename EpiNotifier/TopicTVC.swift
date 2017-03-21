@@ -78,7 +78,7 @@ class TopicTVC: UITableViewController {
     cell.dateLabel.text = StrToAbrevWithHour(dateStr: (current?.creation_date)!)
     sizeCells[indexPath.row] = cell.contentText.contentSize.height
     cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
-    //cell.newsView.bounds.height = UITableViewAutomaticDimension - 10
+    cell.contentText.isScrollEnabled = false
     if nb_msg > 1 && index < nb_msg - 1 {
       current = current?.children?[index]
       index += 1
