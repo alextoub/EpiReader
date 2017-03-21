@@ -15,6 +15,7 @@ class NewsCell: UITableViewCell {
   @IBOutlet weak var subjectLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var msgNbIndicator: UIImageView!
+  @IBOutlet weak var mailLabel: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()

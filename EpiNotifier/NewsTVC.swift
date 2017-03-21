@@ -56,7 +56,9 @@ class NewsTVC: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
     let index = news[indexPath.row]
-    cell.authorLabel.text = index.author
+    let authorArr = parseAuthor(index.author!)
+    cell.authorLabel.text = authorArr[0]
+    cell.mailLabel.text = authorArr[1]
     cell.readIndicator.layer.masksToBounds = true
     cell.readIndicator.layer.cornerRadius = cell.readIndicator.bounds.height / 2
     cell.dateLabel.text = StrToAbrev(dateStr: index.creation_date!)
