@@ -75,6 +75,9 @@ class AddGroupTVC: UITableViewController {
     if favGroupName.contains(index.group_name!) {
       cell.isFavoriteSwitch.isOn = true
     }
+    else {
+      cell.isFavoriteSwitch.isOn = false
+    }
     cell.isFavoriteSwitch.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
     cell.isFavoriteSwitch.tag = indexPath.row
     
