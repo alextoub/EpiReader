@@ -14,7 +14,7 @@ import Foundation
  - returns: Date Object
  */
 public func StrToDate(dateStr: String) -> Date {
-  let dateFormatter  = DateFormatter()
+  let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
   dateFormatter.timeZone = TimeZone(abbreviation: "BST")
   return dateFormatter.date(from: dateStr)!
@@ -27,7 +27,7 @@ public func StrToDate(dateStr: String) -> Date {
  */
 public func StrToDay(dateStr: String) -> String {
   let date = StrToDate(dateStr: dateStr)
-  let dateFormatter  = DateFormatter()
+  let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "EEEE d MMMM"
   return dateFormatter.string(from: date).capitalizingFirstLetter()
 }
@@ -39,7 +39,7 @@ public func StrToDay(dateStr: String) -> String {
  */
 public func StrToEE(dateStr: String) -> String {
   let date = StrToDate(dateStr: dateStr)
-  let dateFormatter  = DateFormatter()
+  let dateFormatter = DateFormatter()
   dateFormatter.locale = Locale(identifier: "en_US_POSIX")
   dateFormatter.dateFormat = "EE"
   return dateFormatter.string(from: date)
@@ -54,7 +54,7 @@ public func StrToEE(dateStr: String) -> String {
 public func StrToHour(dateBeginStr: String, dateEndStr: String) -> String {
   let dateBegin = StrToDate(dateStr: dateBeginStr)
   let dateEnd = StrToDate(dateStr: dateEndStr)
-  let dateFormatter  = DateFormatter()
+  let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "HH':'mm"
   let dateStr = "\(dateFormatter.string(from: dateBegin))\n\(dateFormatter.string(from: dateEnd))"
   return dateStr
@@ -62,9 +62,19 @@ public func StrToHour(dateBeginStr: String, dateEndStr: String) -> String {
 
 public func StrToAbrev(dateStr: String) -> String {
   let date = StrToDate(dateStr: dateStr)
-  let dateFormatter  = DateFormatter()
+  let dateFormatter = DateFormatter()
   dateFormatter.dateFormat = "dd MMM"
   let dateStr = "\(dateFormatter.string(from: date))"
+  return dateStr
+}
+
+public func StrToAbrevWithHour(dateStr: String) -> String {
+  let date = StrToDate(dateStr: dateStr)
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "dd MMM"
+  let hourFormatter = DateFormatter()
+  hourFormatter.dateFormat = "HH'h'mm"
+  let dateStr = "\(dateFormatter.string(from: date)) à \(hourFormatter.string(from: date))"
   return dateStr
 }
 
