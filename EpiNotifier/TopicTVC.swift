@@ -25,6 +25,9 @@ class TopicTVC: UITableViewController {
   
   func setupSizeCells() {
     var i = 0
+    if nb_msg == 0 {
+      sizeCells.append(195.0)
+    }
     while i < nb_msg {
       sizeCells.append(195.0)
       i += 1
@@ -63,7 +66,13 @@ class TopicTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return nb_msg
+    if nb_msg == 0 {
+      return 1
+    }
+    else
+    {
+      return nb_msg
+    }
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,9 +88,8 @@ class TopicTVC: UITableViewController {
     sizeCells[indexPath.row] = cell.contentText.contentSize.height
     cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
     cell.contentText.isScrollEnabled = false
-    if nb_msg > 1 && index < nb_msg - 1 {
-      current = current?.children?[index]
-      index += 1
+    if nb_msg > 1 && (current?.children?.count)! > 0 {
+      current = current?.children?[0]
     }
     return cell
   }
