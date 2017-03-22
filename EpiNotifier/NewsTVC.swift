@@ -23,12 +23,23 @@ class NewsTVC: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupNews()
-    loadReadNews()
     self.title = currentGroup
     self.tableView.es_addPullToRefresh {
       self.setupNews()
-      self.loadReadNews()
       self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    getNews()
+    getReadNews()
+    tableView.reloadData()
+  }
+  
+  func getReadNews() {
+    readNews.removeAll()
+    if let readNew = loadReadNews() {
+      readNews += readNew
     }
   }
   
@@ -71,17 +82,19 @@ class NewsTVC: UITableViewController {
   
   func setupNews() {
     getNews()
+    getReadNews()
+    tableView.reloadData()
     SVProgressHUD.setDefaultMaskType(.black)
     SVProgressHUD.show(withStatus: "Chargement en cours")
   }
   
   func checkIfRead() {
     for new in news {
-      if readNews.contains(ReadNews(id: new.id!)) {
-        new.isRead = true
-      }
-      else {
-        new.isRead = false
+      new.isRead = false
+      for read in readNews {
+        if read.id == new.id! {
+          new.isRead = true
+        }
       }
     }
   }
@@ -119,7 +132,7 @@ class NewsTVC: UITableViewController {
       cell.msgNbIndicator.image = #imageLiteral(resourceName: "SingleArrow")
     }
     if index.isRead != nil && index.isRead! {
-      cell.readIndicator.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+      cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     else {
       cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
