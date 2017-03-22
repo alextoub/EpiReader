@@ -26,6 +26,7 @@
 		DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723141E80108200899F3F /* AddGroupCell.swift */; };
 		DA6723171E80229800899F3F /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723161E80229800899F3F /* NewsTVC.swift */; };
 		DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723181E8022AE00899F3F /* NewsCell.swift */; };
+		DA7C34C71E829B2B00A1DA99 /* ReadNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */; };
 		DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */; };
 		DA8D2F341E7FDFDC00BA7FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F321E7FDFDC00BA7FB1 /* Main.storyboard */; };
 		DA8D2F361E7FDFDC00BA7FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F351E7FDFDC00BA7FB1 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		DA6723141E80108200899F3F /* AddGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupCell.swift; sourceTree = "<group>"; };
 		DA6723161E80229800899F3F /* NewsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTVC.swift; sourceTree = "<group>"; };
 		DA6723181E8022AE00899F3F /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadNews.swift; sourceTree = "<group>"; };
 		DA8D2F2B1E7FDFDC00BA7FB1 /* EpiNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA8D2F331E7FDFDC00BA7FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				DA8D2F581E7FFDDA00BA7FB1 /* News.swift */,
 				DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */,
 				DA67230E1E8008AD00899F3F /* Favorite.swift */,
+				DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
 				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
 				DA6723131E80107200899F3F /* AddGroupTVC.swift in Sources */,
+				DA7C34C71E829B2B00A1DA99 /* ReadNews.swift in Sources */,
 				DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */,
 				DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */,
 				DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */,

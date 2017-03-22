@@ -20,6 +20,7 @@ class News: Mappable {
   var creation_date: String?
   var msg_nb: Int?
   var groups: [String]?
+  var isRead: Bool?
   
   // MARK: - ObjectMapper functions
   
