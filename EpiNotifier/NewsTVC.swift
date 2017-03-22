@@ -126,13 +126,16 @@ class NewsTVC: UITableViewController {
     cell.dateLabel.text = StrToAbrev(dateStr: index.creation_date!)
     cell.subjectLabel.text = index.subject
     if index.msg_nb! > 1 {
-      cell.msgNbIndicator.image = #imageLiteral(resourceName: "DoubleArrow")
+      cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
     }
     else {
-      cell.msgNbIndicator.image = #imageLiteral(resourceName: "SingleArrow")
+      cell.msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
     }
     if index.isRead != nil && index.isRead! {
       cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      if cell.msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green"){
+        cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
+      }
     }
     else {
       cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)

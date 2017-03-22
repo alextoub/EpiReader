@@ -184,7 +184,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DoubleArrow" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-42-vLL">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="double_arrow_green" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-42-vLL">
                                                             <rect key="frame" x="55" y="0.0" width="14" height="14"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </imageView>
@@ -359,7 +359,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DoubleArrow" width="200" height="200"/>
+        <image name="double_arrow_green" width="200" height="200"/>
         <image name="switch_off" width="200" height="200"/>
     </resources>
 </document>
