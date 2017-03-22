@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class TopicTVC: UITableViewController {
   
+  // MARK: - Global variables
+  
   var nb_msg = 1
   var idNews: Int?
   var topic: Topic?
@@ -18,32 +20,18 @@ class TopicTVC: UITableViewController {
   var index = 0
   var sizeCells = [CGFloat]()
   
+  // MARK: - View LifeCycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTopic()
-  }
-  
-  func setupSizeCells() {
-    var i = 0
-    sizeCells.removeAll()
-    if nb_msg == 0 {
-      sizeCells.append(195.0)
-    }
-    while i < nb_msg {
-      sizeCells.append(195.0)
-      i += 1
-    }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
-  func setupTopic() {
-    getTopic()
-    SVProgressHUD.setDefaultMaskType(.black)
-    SVProgressHUD.show(withStatus: "Chargement en cours")
-  }
+  // MARK: - Call functions
   
   func getTopic(){
     MainBusiness.getTopics(id: idNews!) { (response, error) in
@@ -60,6 +48,26 @@ class TopicTVC: UITableViewController {
     }
   }
   
+  // MARK: - Custom functions
+  
+  func setupSizeCells() {
+    var i = 0
+    sizeCells.removeAll()
+    if nb_msg == 0 {
+      sizeCells.append(195.0)
+    }
+    while i < nb_msg {
+      sizeCells.append(195.0)
+      i += 1
+    }
+  }
+  
+  func setupTopic() {
+    getTopic()
+    SVProgressHUD.setDefaultMaskType(.black)
+    SVProgressHUD.show(withStatus: "Chargement en cours")
+  }
+  
   // MARK: - Table view data source
   
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,8 +78,7 @@ class TopicTVC: UITableViewController {
     if nb_msg == 0 {
       return 1
     }
-    else
-    {
+    else {
       return nb_msg
     }
   }

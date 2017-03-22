@@ -11,8 +11,12 @@ import ESPullToRefresh
 
 class MainTVC: UITableViewController {
   
+  // MARK: - Global variables
+  
   var favorites = [Favorite]()
   var selected = ""
+  
+  // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +30,12 @@ class MainTVC: UITableViewController {
     getFav()
   }
   
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  // MARK: - Custom functions
+  
   func getFav() {
     favorites.removeAll()
     if let fav = loadFavorites() {
@@ -34,9 +44,7 @@ class MainTVC: UITableViewController {
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
+  // MARK: - NSCoding functions
   
   private func saveFavorites() {
     let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
@@ -73,6 +81,8 @@ class MainTVC: UITableViewController {
     
     return cell
   }
+  
+  // MARK: - Navigation
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toAdd" {

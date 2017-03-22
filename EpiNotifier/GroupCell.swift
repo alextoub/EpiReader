@@ -10,9 +10,13 @@ import UIKit
 
 class GroupCell: UITableViewCell {
   
+  // MARK: - Outlets
+  
   @IBOutlet weak var groupNameLabel: UILabel!
   @IBOutlet weak var groupView: UIView!
   @IBOutlet weak var nbNewsLabel: UILabel!
+  
+  // MARK: - Cell delegates
   
   override func awakeFromNib() {
     super.awakeFromNib()

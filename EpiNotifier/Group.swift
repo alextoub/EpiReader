@@ -12,12 +12,14 @@ import ObjectMapper
 class Group: Mappable {
   
   // MARK: - Attributes
+  
   var id: Int?
   var group_name: String?
   var topic_nb: Int?
   var available: Bool?
   
   // MARK: - ObjectMapper functions
+  
   required init?(map: Map) {
   }
   

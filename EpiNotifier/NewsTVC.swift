@@ -12,8 +12,12 @@ import ESPullToRefresh
 
 class NewsTVC: UITableViewController {
   
+  // MARK: - Global variables
+  
   var news = [News]()
   var currentGroup = ""
+  
+  // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,16 +29,11 @@ class NewsTVC: UITableViewController {
     }
   }
   
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
-  func setupNews() {
-    getNews()
-    SVProgressHUD.setDefaultMaskType(.black)
-    SVProgressHUD.show(withStatus: "Chargement en cours")
-  }
+  // MARK: - Call functions
   
   func getNews(){
     MainBusiness.getNews(group: currentGroup, nb: 25) { (response, error) in
@@ -46,6 +45,14 @@ class NewsTVC: UITableViewController {
         }
       }
     }
+  }
+  
+  // MARK: - Custom functions
+  
+  func setupNews() {
+    getNews()
+    SVProgressHUD.setDefaultMaskType(.black)
+    SVProgressHUD.show(withStatus: "Chargement en cours")
   }
   
   // MARK: - Table view data source
@@ -77,17 +84,16 @@ class NewsTVC: UITableViewController {
     
     return cell
   }
-
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toTopic" {
       let destination = segue.destination as! TopicTVC
       let indexPath = tableView.indexPathForSelectedRow
       destination.idNews = news[(indexPath?.row)!].id!
       destination.nb_msg = news[(indexPath?.row)!].msg_nb!
     }
-   }
+  }
   
 }

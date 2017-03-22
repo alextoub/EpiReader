@@ -11,9 +11,13 @@ import SVProgressHUD
 
 class AddGroupTVC: UITableViewController {
   
+  // MARK: - Global variables
+  
   var groups = [Group]()
   var favorites = [Favorite]()
   var favGroupName = [String]()
+  
+  // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,26 +28,7 @@ class AddGroupTVC: UITableViewController {
     super.didReceiveMemoryWarning()
   }
   
-  func fillGroupNames() {
-    for fav in favorites {
-      favGroupName.append(fav.group_name!)
-    }
-  }
-  
-  private func saveFavorites() {
-    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-    if isSuccessfulSave {
-      print("Favorites successfully saved.")
-    } else {
-      print("Failed to save favorites...")
-    }
-  }
-  
-  func setupGroup() {
-    getGroups()
-    SVProgressHUD.setDefaultMaskType(.black)
-    SVProgressHUD.show(withStatus: "Chargement en cours")
-  }
+  // MARK: - Call functions
   
   func getGroups(){
     MainBusiness.getGroups { (response, error) in
@@ -56,6 +41,31 @@ class AddGroupTVC: UITableViewController {
         }
       }
     }
+  }
+  
+  // MARK: - NSCoding functions
+  
+  private func saveFavorites() {
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
+    if isSuccessfulSave {
+      print("Favorites successfully saved.")
+    } else {
+      print("Failed to save favorites...")
+    }
+  }
+  
+  // MARK: - Custom functions
+  
+  func fillGroupNames() {
+    for fav in favorites {
+      favGroupName.append(fav.group_name!)
+    }
+  }
+  
+  func setupGroup() {
+    getGroups()
+    SVProgressHUD.setDefaultMaskType(.black)
+    SVProgressHUD.show(withStatus: "Chargement en cours")
   }
   
   // MARK: - Table view data source

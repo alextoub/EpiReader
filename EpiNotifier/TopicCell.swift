@@ -10,12 +10,16 @@ import UIKit
 
 class TopicCell: UITableViewCell {
   
+  // MARK: - Outlets
+
   @IBOutlet weak var contentText: UITextView!
   @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var subjectLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var newsView: CustomView!
   
+  // MARK: - Cell delegates
+
   override func awakeFromNib() {
     super.awakeFromNib()
   }

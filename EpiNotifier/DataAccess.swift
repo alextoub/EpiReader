@@ -12,6 +12,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 
 // MARK: - Router
+
 private enum Router {
   case getGroups()
   case getTopics(Int)
@@ -54,10 +55,9 @@ extension Router: URLRequestConvertible {
   }
 }
 
-// MARK: - Class Group Data
+// MARK: - Class Main Data
 
 class MainData {
-  
   static func getGroups(completed: @escaping ((_ response:[Group]?, _ error:Error?) -> Void)) -> Void {
     Alamofire.request(Router.getGroups())
       .validate()

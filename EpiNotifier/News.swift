@@ -12,6 +12,7 @@ import ObjectMapper
 class News: Mappable {
   
   // MARK: - Attributes
+  
   var id: Int?
   var uid: String?
   var author: String?
@@ -21,6 +22,7 @@ class News: Mappable {
   var groups: [String]?
   
   // MARK: - ObjectMapper functions
+  
   required init?(map: Map) {
   }
   

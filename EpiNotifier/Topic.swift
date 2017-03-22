@@ -12,6 +12,7 @@ import ObjectMapper
 class Topic: Mappable {
   
   // MARK: - Attributes
+  
   var id: Int?
   var uid: String?
   var author: String?
@@ -22,6 +23,7 @@ class Topic: Mappable {
   var children: [Topic]?
 
   // MARK: - ObjectMapper functions
+  
   required init?(map: Map) {
   }
   

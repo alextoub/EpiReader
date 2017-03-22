@@ -18,9 +18,9 @@ class Favorite: NSObject, NSCoding {
   var available: Bool?
   
   //MARK: Archiving Paths
+  
   static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
   static let ArchiveURL = DocumentsDirectory.appendingPathComponent("favorites")
-  
   
   //MARK: Types
   
@@ -34,8 +34,6 @@ class Favorite: NSObject, NSCoding {
   //MARK: Initialization
   
   init(id: Int, group_name: String, topic_nb: Int, available: Bool) {
-    
-    // Initialize stored properties.
     self.id = id
     self.group_name = group_name
     self.topic_nb = topic_nb

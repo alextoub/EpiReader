@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+// MARK: - Class Main Business
+
 class MainBusiness {
   
   static func getGroups(completed: @escaping ((_ response:[Group]?, _ error:Error?) -> Void)) -> Void {
