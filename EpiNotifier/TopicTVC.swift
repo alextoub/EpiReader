@@ -25,6 +25,7 @@ class TopicTVC: UITableViewController {
   
   func setupSizeCells() {
     var i = 0
+    sizeCells.removeAll()
     if nb_msg == 0 {
       sizeCells.append(195.0)
     }

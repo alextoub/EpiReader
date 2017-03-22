@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class MainTVC: UITableViewController {
   
@@ -15,10 +16,17 @@ class MainTVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.tableView.es_addPullToRefresh {
+      self.getFav()
+      self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    getFav()
+  }
+  
+  func getFav() {
     favorites.removeAll()
     if let fav = loadFavorites() {
       favorites += fav

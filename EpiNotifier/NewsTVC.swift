@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import ESPullToRefresh
 
 class NewsTVC: UITableViewController {
   
@@ -18,6 +19,10 @@ class NewsTVC: UITableViewController {
     super.viewDidLoad()
     setupNews()
     self.title = currentGroup
+    self.tableView.es_addPullToRefresh {
+      self.setupNews()
+      self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+    }
   }
   
   
