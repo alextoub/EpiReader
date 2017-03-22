@@ -31,7 +31,7 @@ $ carthage bootstrap --platform iOS
 - [x] Show topics
 - [x] Increase size of cell depending of the amount of text in it
 - [x] Better display hours
-- [ ] Indicate if a news is read (persistancy)
-- [ ] Redesign switchs
+- [x] Indicate if a news is read (persistancy)
+- [x] Redesign switchs
 - [ ] Infinite scrolling
 - [ ] Add search
