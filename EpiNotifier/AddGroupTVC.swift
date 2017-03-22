@@ -73,31 +73,39 @@ class AddGroupTVC: UITableViewController {
     let index = groups[indexPath.row]
     cell.groupNameLabel.text = index.group_name
     if favGroupName.contains(index.group_name!) {
-      cell.isFavoriteSwitch.isOn = true
+      cell.isFavoriteButton.isSelected = true
+      cell.isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
     }
     else {
-      cell.isFavoriteSwitch.isOn = false
+      cell.isFavoriteButton.isSelected = false
+      cell.isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_off"), for: .normal)
     }
-    cell.isFavoriteSwitch.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
-    cell.isFavoriteSwitch.tag = indexPath.row
+    cell.isFavoriteButton.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
+    cell.isFavoriteButton.tag = indexPath.row
     
     return cell
   }
   
-  func addToFav(sender: UISwitch) {
+  func addToFav(sender: UIButton) {
     var i = 0
     let obj = groups[sender.tag]
-    if !sender.isOn {
+    if sender.isSelected {
       for fav in favGroupName {
         if fav == obj.group_name {
           favorites.remove(at: i)
+          favGroupName.remove(at: i)
           break
         }
         i += 1
       }
+      sender.isSelected = false
+      sender.setImage(#imageLiteral(resourceName: "switch_off"), for: .normal)
     }
     else {
-    favorites.append(Favorite(id: obj.id!, group_name: obj.group_name!, topic_nb: obj.topic_nb!, available: obj.available!))
+      favorites.append(Favorite(id: obj.id!, group_name: obj.group_name!, topic_nb: obj.topic_nb!, available: obj.available!))
+      favGroupName.append(obj.group_name!)
+      sender.isSelected = true
+      sender.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
     }
     saveFavorites()
   }

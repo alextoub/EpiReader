@@ -11,7 +11,7 @@ import UIKit
 class AddGroupCell: UITableViewCell {
   
   @IBOutlet weak var groupNameLabel: UILabel!
-  @IBOutlet weak var isFavoriteSwitch: UISwitch!
+  @IBOutlet weak var isFavoriteButton: UIButton!
   
   override func awakeFromNib() {
     super.awakeFromNib()
