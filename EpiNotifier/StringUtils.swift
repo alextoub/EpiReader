@@ -32,3 +32,32 @@ public func parseAuthor(_ authorStr: String) -> [String] {
   }
   return [author, mail]
 }
+
+public func parseSubject(_ subjectStr: String) -> [String] {
+  var subs = [String]()
+  var j = 0
+  var tmp = ""
+  var isInCroch = false
+  for i in subjectStr.characters {
+    if isInCroch == false {
+      if i == "[" {
+        isInCroch = true
+      }
+      else {
+        tmp.append(i)
+      }
+    }
+    else {
+      if i == "]" {
+        subs.append(tmp)
+        tmp = ""
+        isInCroch = false
+      }
+      else {
+        tmp.append(i)
+      }
+    }
+  }
+  subs.append(tmp)
+  return subs
+}
