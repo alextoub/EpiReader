@@ -44,6 +44,7 @@
 		DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808B1E8035D100A8F423 /* TopicCell.swift */; };
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 		DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808F1E8097A700A8F423 /* StringUtils.swift */; };
+		DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA04CB1E83E7CD008AC100 /* Tag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,6 +100,7 @@
 		DADA808B1E8035D100A8F423 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTVC.swift; sourceTree = "<group>"; };
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */,
 				DA67230E1E8008AD00899F3F /* Favorite.swift */,
 				DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */,
+				DAFA04CB1E83E7CD008AC100 /* Tag.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
 				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
+				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
