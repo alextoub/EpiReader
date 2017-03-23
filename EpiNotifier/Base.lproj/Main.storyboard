@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PJR-hI-V6Q" id="v3X-IB-1SD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOj-O9-pJC">
@@ -123,7 +123,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="EpiNotifier" id="zdw-8P-4F7">
-                        <barButtonItem key="leftBarButtonItem" title="Param" id="DRy-tF-226"/>
+                        <barButtonItem key="leftBarButtonItem" image="parameters" id="DRy-tF-226"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aol-H9-98h">
                             <connections>
                                 <segue destination="EWO-k0-sk8" kind="show" identifier="toAdd" id="aQv-1D-qAI"/>
@@ -360,6 +360,7 @@
     </scenes>
     <resources>
         <image name="double_arrow_green" width="200" height="200"/>
+        <image name="parameters" width="25" height="25"/>
         <image name="switch_off" width="200" height="200"/>
     </resources>
 </document>

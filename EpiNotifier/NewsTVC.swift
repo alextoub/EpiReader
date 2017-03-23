@@ -18,6 +18,7 @@ class NewsTVC: UITableViewController {
   var currentGroup = ""
   var readNews = [ReadNews]()
   var tags = [Tag]()
+  var favorites = [Favorite]()
   
   // MARK: - View LifeCycle
   
@@ -35,20 +36,6 @@ class NewsTVC: UITableViewController {
     getNews()
     getReadNews()
     tableView.reloadData()
-  }
-  
-  func getReadNews() {
-    readNews.removeAll()
-    if let readNew = loadReadNews() {
-      readNews += readNew
-    }
-  }
-  
-  func getTags() {
-    tags.removeAll()
-    if let tag = loadTag() {
-      tags += tag
-    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -100,6 +87,20 @@ class NewsTVC: UITableViewController {
     return NSKeyedUnarchiver.unarchiveObject(withFile: Tag.ArchiveURL.path) as? [Tag]
   }
   
+  private func saveFavorites() {
+    let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
+    if isSuccessfulSave {
+      print("Favorites successfully saved.")
+    } else {
+      print("Failed to save favorites...")
+    }
+  }
+  
+  private func loadFavorites() -> [Favorite]?  {
+    print(Favorite.ArchiveURL.path)
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
+  }
+  
   // MARK: - Custom functions
   
   func setupNews() {
@@ -110,6 +111,7 @@ class NewsTVC: UITableViewController {
     SVProgressHUD.setDefaultMaskType(.black)
     SVProgressHUD.show(withStatus: "Chargement en cours")
   }
+
   
   func checkIfRead() {
     for new in news {
@@ -122,6 +124,21 @@ class NewsTVC: UITableViewController {
     }
   }
   
+  
+  func getReadNews() {
+    readNews.removeAll()
+    if let readNew = loadReadNews() {
+      readNews += readNew
+    }
+  }
+  
+  func getTags() {
+    tags.removeAll()
+    if let tag = loadTag() {
+      tags += tag
+    }
+  }
+  
   func parseSub(_ subject: String) -> NSMutableAttributedString {
     let str = NSMutableAttributedString()
     let parsedSubject = parseSubject(subject)
@@ -131,7 +148,8 @@ class NewsTVC: UITableViewController {
       if i != cnt - 1 {
         let tag = checkTag(sub)
         var new = NSMutableAttributedString(string: sub,
-                                            attributes: [NSBackgroundColorAttributeName: tag.attributedColor!, NSForegroundColorAttributeName: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
+                                            attributes: [NSBackgroundColorAttributeName: tag.attributedColor!,
+                                                         NSForegroundColorAttributeName: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
         str.append(new)
         new = NSMutableAttributedString(string: " ")
         str.append(new)
@@ -214,9 +232,7 @@ class NewsTVC: UITableViewController {
     }
     else {
       cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
-
     }
-    
     return cell
   }
   

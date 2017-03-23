@@ -35,7 +35,6 @@ public func parseAuthor(_ authorStr: String) -> [String] {
 
 public func parseSubject(_ subjectStr: String) -> [String] {
   var subs = [String]()
-  var j = 0
   var tmp = ""
   var isInCroch = false
   for i in subjectStr.characters {
