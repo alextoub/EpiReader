@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import AlamofireImage
 
 class TopicTVC: UITableViewController {
   
@@ -89,10 +90,22 @@ class TopicTVC: UITableViewController {
       return cell
     }
     print(cell.bounds.height)
+    
     cell.authorLabel.text = parseAuthor((current?.author)!)[0]
     cell.contentText.text = current?.content
     cell.subjectLabel.text = current?.subject
     cell.dateLabel.text = StrToAbrevWithHour(dateStr: (current?.creation_date)!)
+    let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((current?.author)!)[1]) + "-thumb")
+    
+    cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+
+    if cell.photoImageView.image == nil {
+      print("oui c nil")
+    }
+    cell.photoImageView.layer.masksToBounds = true
+    cell.photoImageView.layer.cornerRadius = cell.photoImageView.bounds.height / 2
+    cell.photoImageView.layer.borderWidth = 1
+    cell.photoImageView.layer.borderColor = #colorLiteral(red: 0.9215686275, green: 0.9215686275, blue: 0.9215686275, alpha: 1).cgColor
     sizeCells[indexPath.row] = cell.contentText.contentSize.height
     cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
     cell.contentText.isScrollEnabled = false
@@ -100,6 +113,20 @@ class TopicTVC: UITableViewController {
       current = current?.children?[0]
     }
     return cell
+  }
+  
+  
+  func parseLogin(_ mailStr: String) -> String {
+    var login = ""
+    for i in mailStr.characters {
+      if i == "@" {
+        return login
+      }
+      else {
+        login.append(i)
+      }
+    }
+    return login
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

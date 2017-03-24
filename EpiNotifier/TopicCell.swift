@@ -17,6 +17,7 @@ class TopicCell: UITableViewCell {
   @IBOutlet weak var subjectLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var newsView: CustomView!
+  @IBOutlet weak var photoImageView: UIImageView!
   
   // MARK: - Cell delegates
 
