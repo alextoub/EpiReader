@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
 		DA6722FF1E80064800899F3F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; };
 		DA6723001E80064800899F3F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA6723011E80064800899F3F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FA1E80064800899F3F /* ObjectMapper.framework */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		DA6722F91E80064800899F3F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		DA6722FA1E80064800899F3F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESPullToRefresh.framework; path = Carthage/Build/iOS/ESPullToRefresh.framework; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				DA6723141E80108200899F3F /* AddGroupCell.swift */,
 				DA6723181E8022AE00899F3F /* NewsCell.swift */,
 				DADA808B1E8035D100A8F423 /* TopicCell.swift */,
+				DA51D9211EE57CD2003E795B /* LoadingCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
+				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,
 				DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */,
 				DA8D2F4A1E7FF07700BA7FB1 /* Constants.swift in Sources */,

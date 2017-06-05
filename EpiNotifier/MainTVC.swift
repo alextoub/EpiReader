@@ -56,7 +56,6 @@ class MainTVC: UITableViewController {
   }
   
   private func loadFavorites() -> [Favorite]?  {
-    print(Favorite.ArchiveURL.path)
     return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
   }
   

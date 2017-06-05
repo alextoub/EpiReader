@@ -45,7 +45,7 @@ class NewsTVC: UITableViewController {
   // MARK: - Call functions
   
   func getNews(){
-    MainBusiness.getNews(group: currentGroup, nb: 75) { (response, error) in
+    MainBusiness.getNews(group: currentGroup, nb: 25) { (response, error) in
       DispatchQueue.main.async {
         if error == nil {
           self.news = response!
@@ -56,6 +56,20 @@ class NewsTVC: UITableViewController {
       }
     }
   }
+  
+  func getNewsWithDate(date: String){
+    MainBusiness.getNewsWithDate(group: currentGroup, nb: 25, date: date) { (response, error) in
+      DispatchQueue.main.async {
+        if error == nil {
+          self.news += response!
+          self.checkIfRead()
+          self.tableView.reloadData()
+          SVProgressHUD.dismiss()
+        }
+      }
+    }
+  }
+  
   
   // MARK: - NSCoding functions
   
@@ -69,7 +83,6 @@ class NewsTVC: UITableViewController {
   }
   
   private func loadReadNews() -> [ReadNews]?  {
-    print(ReadNews.ArchiveURL.path)
     return NSKeyedUnarchiver.unarchiveObject(withFile: ReadNews.ArchiveURL.path) as? [ReadNews]
   }
 
@@ -97,7 +110,6 @@ class NewsTVC: UITableViewController {
   }
   
   private func loadFavorites() -> [Favorite]?  {
-    print(Favorite.ArchiveURL.path)
     return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
   }
   
@@ -198,16 +210,30 @@ class NewsTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return news.count
+    if news.count == 0 {
+      return news.count
+    }
+    else {
+      return news.count + 1
+    }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if indexPath.row >= self.news.count {
+      return
+    }
     let index = news[indexPath.row]
     readNews.append(ReadNews(id : index.id!))
     saveReadNews()
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if indexPath.row >= self.news.count && !self.news.isEmpty {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
+      cell.activityIndicator.startAnimating()
+      getNewsWithDate(date: news[self.news.count - 1].creation_date!)
+      return cell
+    }
     let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
     
     let index = news[indexPath.row]
