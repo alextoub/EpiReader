@@ -17,6 +17,7 @@ private enum Router {
   case getGroups()
   case getTopics(Int)
   case getNews(String, Int)
+  case getNewsWithDate(String, Int, String)
 }
 
 extension Router : RouterProtocol {
@@ -30,6 +31,8 @@ extension Router : RouterProtocol {
       return .get
     case .getNews:
       return .get
+    case .getNewsWithDate:
+      return .get
     }
   }
   // MARK: - API Path
@@ -41,6 +44,8 @@ extension Router : RouterProtocol {
       return Constants.Url.ENTRY_API_URL + Constants.Url.TOPICS + "/" + String(id)
     case .getNews(let group, let nb):
       return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb)
+    case .getNewsWithDate(let group, let nb, let date):
+      return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb) + "&start_date=" + date + "%2B0000"
     }
   }
 }
@@ -81,4 +86,13 @@ class MainData {
         completed(alamoResponse.result.value!, alamoResponse.result.error)
     }
   }
+  
+  static func getNewsWithDate(group: String, nb: Int, date: String, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+    Alamofire.request(Router.getNewsWithDate(group, nb, date))
+      .validate()
+      .responseArray { (alamoResponse: DataResponse<[News]>) in
+        completed(alamoResponse.result.value!, alamoResponse.result.error)
+    }
+  }
+  
 }

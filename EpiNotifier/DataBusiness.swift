@@ -31,4 +31,9 @@ class MainBusiness {
     }
   }
   
+  static func getNewsWithDate(group: String, nb: Int, date: String, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+    MainData.getNewsWithDate(group: group, nb: nb, date: date) { (response, error) in
+      completed(response, error)
+    }
+  }
 }
