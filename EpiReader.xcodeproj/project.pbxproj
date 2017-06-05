@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
+		DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */; };
 		DA6722FF1E80064800899F3F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; };
 		DA6723001E80064800899F3F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA6723011E80064800899F3F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FA1E80064800899F3F /* ObjectMapper.framework */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCell.swift; path = ../EpiReader/LoadingCell.swift; sourceTree = "<group>"; };
+		DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTVC.swift; sourceTree = "<group>"; };
 		DA6722F91E80064800899F3F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		DA6722FA1E80064800899F3F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESPullToRefresh.framework; path = Carthage/Build/iOS/ESPullToRefresh.framework; sourceTree = "<group>"; };
@@ -150,7 +152,6 @@
 			children = (
 				DA8D2F3A1E7FDFDC00BA7FB1 /* Info.plist */,
 			);
-			name = EpiReader;
 			path = EpiReader;
 			sourceTree = "<group>";
 		};
@@ -187,6 +188,7 @@
 				DA6723161E80229800899F3F /* NewsTVC.swift */,
 				DA6723121E80107200899F3F /* AddGroupTVC.swift */,
 				DADA808D1E8035E500A8F423 /* TopicTVC.swift */,
+				DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,6 +345,7 @@
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
+				DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
 				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
@@ -418,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -462,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
