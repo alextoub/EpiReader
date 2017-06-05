@@ -33,6 +33,19 @@ public func parseAuthor(_ authorStr: String) -> [String] {
   return [author, mail]
 }
 
+public func parseLogin(_ mailStr: String) -> String {
+  var login = ""
+  for i in mailStr.characters {
+    if i == "@" {
+      return login
+    }
+    else {
+      login.append(i)
+    }
+  }
+  return login
+}
+
 public func parseSubject(_ subjectStr: String) -> [String] {
   var subs = [String]()
   var tmp = ""

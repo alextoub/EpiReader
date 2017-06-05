@@ -18,6 +18,7 @@ class NewsCell: UITableViewCell {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var msgNbIndicator: UIImageView!
   @IBOutlet weak var mailLabel: UILabel!
+  @IBOutlet weak var contentCellView: CustomView!
   
   // MARK: - Cell delegates
 

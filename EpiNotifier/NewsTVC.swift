@@ -45,7 +45,7 @@ class NewsTVC: UITableViewController {
   // MARK: - Call functions
   
   func getNews(){
-    MainBusiness.getNews(group: currentGroup, nb: 25) { (response, error) in
+    MainBusiness.getNews(group: currentGroup, nb: 75) { (response, error) in
       DispatchQueue.main.async {
         if error == nil {
           self.news = response!
@@ -124,7 +124,6 @@ class NewsTVC: UITableViewController {
     }
   }
   
-  
   func getReadNews() {
     readNews.removeAll()
     if let readNew = loadReadNews() {
@@ -137,6 +136,25 @@ class NewsTVC: UITableViewController {
     if let tag = loadTag() {
       tags += tag
     }
+  }
+  
+  func checkTag(_ tag: String) -> Tag {
+    var b = false
+    var tagged: Tag?
+    for i in tags {
+      if i.tagName == tag {
+        b = true
+        tagged = i
+      }
+    }
+    if b == false {
+      let color = getRandomColor()
+      let new = Tag(tagName: tag, attributedColor: color)
+      tags.append(new)
+      saveTag()
+      tagged = new
+    }
+    return tagged!
   }
   
   func parseSub(_ subject: String) -> NSMutableAttributedString {
@@ -162,26 +180,7 @@ class NewsTVC: UITableViewController {
     }
     return str
   }
-  
-  func checkTag(_ tag: String) -> Tag {
-    var b = false
-    var tagged: Tag?
-    for i in tags {
-      if i.tagName == tag {
-        b = true
-        tagged = i
-      }
-    }
-    if b == false {
-      let color = getRandomColor()
-      let new = Tag(tagName: tag, attributedColor: color)
-      tags.append(new)
-      saveTag()
-      tagged = new
-    }
-    return tagged!
-  }
-  
+    
   func getRandomColor() -> UIColor {
     let randomRed = Int(arc4random_uniform(UInt32(255)))
     let randomGreen = Int(arc4random_uniform(UInt32(255)))
@@ -210,6 +209,7 @@ class NewsTVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+    
     let index = news[indexPath.row]
     let authorArr = parseAuthor(index.author!)
     cell.authorLabel.text = authorArr[0]
@@ -233,6 +233,7 @@ class NewsTVC: UITableViewController {
     else {
       cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
     }
+    
     return cell
   }
   
@@ -246,5 +247,4 @@ class NewsTVC: UITableViewController {
       destination.nb_msg = news[(indexPath?.row)!].msg_nb!
     }
   }
-  
 }
