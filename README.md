@@ -5,8 +5,8 @@ EpiNotifier is an iOS App that allows you to read EPITA news
 ## Requirements
 
 - iOS 10.0+
-- Xcode 8.1+
-- Swift 3.0+
+- Xcode 8.3+
+- Swift 3.1
 
 ## Installation
 
@@ -35,3 +35,5 @@ $ carthage bootstrap --platform iOS
 - [x] Redesign switchs
 - [x] Infinite scrolling
 - [ ] Add search
+- [ ] Add mark all as read
+- [ ] Change number of news read in view group
