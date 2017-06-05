@@ -33,5 +33,5 @@ $ carthage bootstrap --platform iOS
 - [x] Better display hours
 - [x] Indicate if a news is read (persistancy)
 - [x] Redesign switchs
-- [ ] Infinite scrolling
+- [x] Infinite scrolling
 - [ ] Add search
