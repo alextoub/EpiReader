@@ -1,6 +1,6 @@
-![Banner](https://github.com/alextoub/EpiNotifier/blob/master/Banner.png)
+![Banner](https://github.com/alextoub/EpiReader/blob/master/Banner.png)
 
-EpiNotifier is an iOS App that allows you to read EPITA news
+EpiReader is an iOS App that allows you to read EPITA news
 
 ## Requirements
 
@@ -17,10 +17,10 @@ EpiNotifier is an iOS App that allows you to read EPITA news
 $ carthage bootstrap --platform iOS
 ```
 
-3. Click on EpiNotifier.xcodeproj file
+3. Click on EpiReader.xcodeproj file
 4. Sign using your developper account and build the project using XCode
 
-![EpiNotifier](https://github.com/alextoub/EpiNotifier/blob/master/EpiNotifier.png)
+![EpiReader](https://github.com/alextoub/EpiReader/blob/master/EpiReader.png)
 
 ## TODO
 
