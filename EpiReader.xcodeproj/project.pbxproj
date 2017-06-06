@@ -289,7 +289,7 @@
 				TargetAttributes = {
 					DA8D2F2A1E7FDFDC00BA7FB1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JA92XV498P;
+						DevelopmentTeam = E5L7NC8M9T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -502,7 +502,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JA92XV498P;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -510,7 +510,7 @@
 				INFOPLIST_FILE = EpiReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alextoub.EpiReader;
+				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.EpiReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -521,7 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JA92XV498P;
+				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -529,7 +529,7 @@
 				INFOPLIST_FILE = EpiReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alextoub.EpiReader;
+				PRODUCT_BUNDLE_IDENTIFIER = org.epimac.EpiReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

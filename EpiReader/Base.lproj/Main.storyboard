@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -185,7 +186,7 @@ le bouton '+' en haut a droite</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDG-8v-7GA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDG-8v-7GA">
                                                     <rect key="frame" x="20" y="36" width="343" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -195,11 +196,11 @@ le bouton '+' en haut a droite</string>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-fM-RjP">
                                                     <rect key="frame" x="8" y="62" width="359" height="118"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">EpiReader est une application permettant les news d'EPITA.
-Cette application a été fait par Alexandre Toubiana (toubia_b)
+                                                    <string key="text">EpiReader est une application permettant de lire les news d'EPITA.
+Cette application a été faite par Alexandre Toubiana (toubia_b)
 &lt;alex.toubiana@epimac.org&gt;
 EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -354,7 +355,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <outlet property="msgNbIndicator" destination="4nq-42-vLL" id="jym-EM-1AT"/>
                                     <outlet property="readIndicator" destination="kFY-lV-YSO" id="8VR-VR-6b9"/>
                                     <outlet property="subjectLabel" destination="S18-bY-U3C" id="Ucw-sE-usa"/>
-                                    <segue destination="ZSz-cW-tiH" kind="show" identifier="toTopic" id="7K7-Zu-iOM"/>
+                                    <segue destination="ZSz-cW-tiH" kind="show" identifier="toTopic" id="7K7-Zu-iOM">
+                                        <segue key="commit" inheritsFrom="parent" id="uEh-Tp-3mr"/>
+                                        <segue key="preview" inheritsFrom="commit" id="iFn-Ce-Ibp"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="47" id="CHc-OC-y6w" customClass="LoadingCell" customModule="EpiReader" customModuleProvider="target">
@@ -519,4 +523,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <image name="parameters" width="25" height="25"/>
         <image name="switch_off" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7K7-Zu-iOM"/>
+    </inferredMetricsTieBreakers>
 </document>

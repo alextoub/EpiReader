@@ -267,10 +267,11 @@ class NewsTVC: UITableViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "toTopic" {
+      let cell = sender as! UITableViewCell
+      let indexPath = tableView.indexPath(for: cell)!
       let destination = segue.destination as! TopicTVC
-      let indexPath = tableView.indexPathForSelectedRow
-      destination.idNews = news[(indexPath?.row)!].id!
-      destination.nb_msg = news[(indexPath?.row)!].msg_nb!
+      destination.idNews = news[(indexPath.row)].id!
+      destination.nb_msg = news[(indexPath.row)].msg_nb!
     }
   }
 }
