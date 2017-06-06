@@ -66,10 +66,16 @@ class MainTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if favorites.count == 0 {
+      return 1
+    }
     return favorites.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if favorites.count == 0 {
+      return tableView.dequeueReusableCell(withIdentifier: "NoGroupCell")!
+    }
     let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
     let index = favorites[indexPath.row]
     cell.groupNameLabel.text = index.group_name
@@ -79,6 +85,13 @@ class MainTVC: UITableViewController {
     cell.groupView.layer.cornerRadius = cell.groupView.bounds.height / 2
     
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if favorites.count == 0 {
+      return 140.0
+    }
+    return 71.0
   }
   
   // MARK: - Navigation

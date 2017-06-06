@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Group-->
+        <!--Ajouter des groupes-->
         <scene sceneID="12B-bE-kcm">
             <objects>
                 <tableViewController id="EWO-k0-sk8" customClass="AddGroupTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="EWO-k0-sk8" id="H9K-tG-rWg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Group" id="IOv-ei-4MR"/>
+                    <navigationItem key="navigationItem" title="Ajouter des groupes" id="IOv-ei-4MR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksd-aM-JoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,6 +116,27 @@
                                     <segue destination="Aja-OK-gqX" kind="show" identifier="toNews" id="kUo-vp-QnZ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoGroupCell" rowHeight="140" id="mVa-TE-pY5">
+                                <rect key="frame" x="0.0" y="98" width="375" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mVa-TE-pY5" id="3Xz-xm-j7c">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPP-1A-JLz" userLabel="Vous n'avez pas encore de groupe de news, ajoutez en en cliquant sur le bouton '+'">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="140"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <string key="text">Vous n'avez pas encore de groupe
+de news, pour en ajouter cliquez sur
+le bouton '+' en haut a droite</string>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="KCt-an-Yvc" id="8o7-gu-qQG"/>
@@ -139,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="788" y="181.25937031484258"/>
         </scene>
-        <!--Settings-->
+        <!--À propos-->
         <scene sceneID="w4k-rA-mkL">
             <objects>
                 <tableViewController id="6ft-WB-Aae" customClass="SettingTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,10 +193,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-fM-RjP">
-                                                    <rect key="frame" x="16" y="62" width="343" height="118"/>
+                                                    <rect key="frame" x="8" y="62" width="359" height="118"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">EpiReader is an application that has been made to read the EPITA news.
-This application has been made by Alexandre Toubiana (toubia_b)
+                                                    <string key="text">EpiReader est une application permettant les news d'EPITA.
+Cette application a été fait par Alexandre Toubiana (toubia_b)
 &lt;alex.toubiana@epimac.org&gt;
 EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -235,7 +256,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="6ft-WB-Aae" id="awi-cu-r6x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="6lX-mP-lrO"/>
+                    <navigationItem key="navigationItem" title="À propos" id="6lX-mP-lrO"/>
                     <connections>
                         <outlet property="mapKitView" destination="9jZ-Mw-t5V" id="9e1-PH-gv1"/>
                         <outlet property="mapView" destination="qcs-ib-6sg" id="z8k-De-EVw"/>
