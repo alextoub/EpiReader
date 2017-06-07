@@ -29,6 +29,7 @@
 		DA6723171E80229800899F3F /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723161E80229800899F3F /* NewsTVC.swift */; };
 		DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723181E8022AE00899F3F /* NewsCell.swift */; };
 		DA7C34C71E829B2B00A1DA99 /* ReadNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */; };
+		DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */; };
 		DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */; };
 		DA8D2F341E7FDFDC00BA7FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F321E7FDFDC00BA7FB1 /* Main.storyboard */; };
 		DA8D2F361E7FDFDC00BA7FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D2F351E7FDFDC00BA7FB1 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		DA6723161E80229800899F3F /* NewsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTVC.swift; path = ../EpiReader/NewsTVC.swift; sourceTree = "<group>"; };
 		DA6723181E8022AE00899F3F /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCell.swift; path = ../EpiReader/NewsCell.swift; sourceTree = "<group>"; };
 		DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadNews.swift; path = ../EpiReader/ReadNews.swift; sourceTree = "<group>"; };
+		DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		DA8D2F2B1E7FDFDC00BA7FB1 /* EpiReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../EpiReader/AppDelegate.swift; sourceTree = "<group>"; };
 		DA8D2F331E7FDFDC00BA7FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				DA6723121E80107200899F3F /* AddGroupTVC.swift */,
 				DADA808D1E8035E500A8F423 /* TopicTVC.swift */,
 				DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */,
+				DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
+				DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */,
 				DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,

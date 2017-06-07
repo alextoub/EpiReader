@@ -200,7 +200,7 @@ le bouton '+' en haut a droite</string>
 Cette application a été faite par Alexandre Toubiana (toubia_b)
 &lt;alex.toubiana@epimac.org&gt;
 EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -439,6 +439,13 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                             <rect key="frame" x="301" y="1" width="40" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-tK-2u8">
+                                                            <rect key="frame" x="301" y="1" width="40" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                            <connections>
+                                                                <segue destination="khd-Nf-les" kind="presentation" identifier="showImage" modalTransitionStyle="crossDissolve" id="zTV-0X-zFg"/>
+                                                            </connections>
+                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-Nl-nIW">
                                                             <rect key="frame" x="206" y="0.0" width="87" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -499,6 +506,40 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXL-yI-f4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2293.5999999999999" y="179.46026986506749"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="hSY-QS-BY7">
+            <objects>
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overFullScreen" id="khd-Nf-les" customClass="ImageVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0En-qs-Lbu"/>
+                        <viewControllerLayoutGuide type="bottom" id="RuU-45-98i"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Kou-BX-PLi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHH-kc-43I">
+                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="nd4-9V-bgL"/>
+                                    <constraint firstAttribute="height" constant="200" id="ue0-D9-Bpb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.4372859589041096" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eHH-kc-43I" firstAttribute="centerX" secondItem="Kou-BX-PLi" secondAttribute="centerX" id="VTU-SR-DUM"/>
+                            <constraint firstItem="eHH-kc-43I" firstAttribute="centerY" secondItem="Kou-BX-PLi" secondAttribute="centerY" id="ff1-yN-Mp8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="eHH-kc-43I" id="Bzj-rj-65A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwg-24-GxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3194.4000000000001" y="181.25937031484258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C5m-TS-vDn">

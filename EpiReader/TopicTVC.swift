@@ -129,4 +129,14 @@ class TopicTVC: UITableViewController {
     return 195 - 128 + sizeCells[indexPath.row]
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showImage" {
+      let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
+      let indexPath = self.tableView.indexPathForRow(at: viewPos)
+      let vc = segue.destination as! ImageVC
+      let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
+      vc.image = cell.photoImageView.image!
+    }
+  }
+  
 }
