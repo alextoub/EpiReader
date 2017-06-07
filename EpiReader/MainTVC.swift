@@ -72,6 +72,23 @@ class MainTVC: UITableViewController {
     return favorites.count
   }
   
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      favorites.remove(at: indexPath.row)
+      if favorites.count != 0 {
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+      }
+      else {
+        tableView.reloadData()
+      }
+      saveFavorites()
+    }
+  }
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if favorites.count == 0 {
       return tableView.dequeueReusableCell(withIdentifier: "NoGroupCell")!
