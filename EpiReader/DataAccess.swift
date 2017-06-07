@@ -67,7 +67,7 @@ class MainData {
     Alamofire.request(Router.getGroups())
       .validate()
       .responseArray { (alamoResponse: DataResponse<[Group]>) in
-        completed(alamoResponse.result.value!, alamoResponse.result.error)
+        completed(alamoResponse.result.value, alamoResponse.result.error)
     }
   }
   
@@ -75,7 +75,7 @@ class MainData {
     Alamofire.request(Router.getTopics(id))
       .validate()
       .responseObject { (alamoResponse: DataResponse<Topic>) in
-        completed(alamoResponse.result.value!, alamoResponse.result.error)
+        completed(alamoResponse.result.value, alamoResponse.result.error)
     }
   }
   
@@ -83,7 +83,7 @@ class MainData {
     Alamofire.request(Router.getNews(group, nb))
       .validate()
       .responseArray { (alamoResponse: DataResponse<[News]>) in
-        completed(alamoResponse.result.value!, alamoResponse.result.error)
+        completed(alamoResponse.result.value, alamoResponse.result.error)
     }
   }
   
@@ -91,7 +91,7 @@ class MainData {
     Alamofire.request(Router.getNewsWithDate(group, nb, date))
       .validate()
       .responseArray { (alamoResponse: DataResponse<[News]>) in
-        completed(alamoResponse.result.value!, alamoResponse.result.error)
+        completed(alamoResponse.result.value, alamoResponse.result.error)
     }
   }
   

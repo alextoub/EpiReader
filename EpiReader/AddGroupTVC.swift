@@ -39,6 +39,10 @@ class AddGroupTVC: UITableViewController {
           self.fillGroupNames()
           SVProgressHUD.dismiss()
         }
+        else
+        {
+          SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
+        }
       }
     }
   }

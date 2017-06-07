@@ -45,6 +45,10 @@ class TopicTVC: UITableViewController {
           self.tableView.reloadData()
           SVProgressHUD.dismiss()
         }
+        else
+        {
+          SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
+        }
       }
     }
   }
