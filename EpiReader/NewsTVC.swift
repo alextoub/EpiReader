@@ -219,7 +219,7 @@ class NewsTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if news.count == 0 {
+    if news.count == 0 || news.count % 25 != 0 {
       return news.count
     }
     else {
@@ -237,7 +237,7 @@ class NewsTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row >= self.news.count && !self.news.isEmpty {
+    if indexPath.row >= self.news.count && !self.news.isEmpty && self.news.count % 25 == 0 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
       cell.activityIndicator.startAnimating()
       getNewsWithDate(date: news[self.news.count - 1].creation_date!)
