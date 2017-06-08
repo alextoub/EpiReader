@@ -502,6 +502,13 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="ZSz-cW-tiH" id="Y7S-oz-XaE"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="KgB-BP-JKj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="6M4-pT-DOO">
+                            <connections>
+                                <action selector="shareButtonAction:" destination="ZSz-cW-tiH" id="mJq-zM-PZR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXL-yI-f4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

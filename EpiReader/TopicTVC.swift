@@ -88,6 +88,11 @@ class TopicTVC: UITableViewController {
     }
   }
   
+  @IBAction func shareButtonAction(_ sender: Any) {
+    let vc = UIActivityViewController(activityItems: [current?.subject, current?.author, current?.content], applicationActivities: nil)
+    self.present(vc, animated: true, completion: nil)
+  }
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TopicCell
     guard (current != nil) else {
