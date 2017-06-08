@@ -100,6 +100,12 @@ class AddGroupTVC: UITableViewController {
     return cell
   }
   
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = self.tableView.cellForRow(at: indexPath) as! AddGroupCell
+    addToFav(sender: cell.isFavoriteButton)
+
+  }
+  
   func addToFav(sender: UIButton) {
     var i = 0
     let obj = groups[sender.tag]
