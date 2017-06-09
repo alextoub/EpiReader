@@ -20,12 +20,14 @@ class TopicTVC: UITableViewController {
   var current: Topic?
   var index = 0
   var sizeCells = [CGFloat]()
+  var topics = [Topic]()
   
   // MARK: - View LifeCycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTopic()
+    tableView.rowHeight = UITableViewAutomaticDimension
   }
   
   override func didReceiveMemoryWarning() {
@@ -34,12 +36,25 @@ class TopicTVC: UITableViewController {
   
   // MARK: - Call functions
   
+  func createArrayOfTopics()
+  {
+    var curr = topic
+    for _ in 0..<nb_msg {
+      let topicTmp = Topic(id: curr?.id, uid: curr?.uid, author: curr?.author, subject: curr?.subject, content: curr?.content, creation_date: curr?.creation_date, groups: curr?.groups)
+      topics.append(topicTmp)
+      if (curr?.children?.count)! > 0 {
+        curr = curr?.children?[0]
+      }
+    }
+  }
+  
   func getTopic(){
     MainBusiness.getTopics(id: idNews!) { (response, error) in
       DispatchQueue.main.async {
         if error == nil {
           self.topic = response
           self.current = self.topic
+          self.createArrayOfTopics()
           self.index = 0
           self.setupSizeCells()
           self.tableView.reloadData()
@@ -95,19 +110,20 @@ class TopicTVC: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TopicCell
-    guard (current != nil) else {
+    guard (topics.count > 0) else {
       return cell
     }
+    let index = topics[indexPath.row]
     print(cell.bounds.height)
     
-    cell.authorLabel.text = parseAuthor((current?.author)!)[0]
-    cell.contentText.text = current?.content
-    cell.subjectLabel.text = current?.subject
-    cell.dateLabel.text = StrToAbrevWithHour(dateStr: (current?.creation_date)!)
-    let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((current?.author)!)[1]) + "-thumb")
+    cell.authorLabel.text = parseAuthor((index.author)!)[0]
+    cell.contentText.text = index.content
+    cell.subjectLabel.text = index.subject
+    cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
+    let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((index.author)!)[1]) + "-thumb")
     cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
 
-    if (parseAuthor((current?.author)!)[1] == "chefs@yaka.epita.fr") {
+    if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
       cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
     }
     
@@ -116,14 +132,11 @@ class TopicTVC: UITableViewController {
     }
     
     cell.displayCell()
-    
-    sizeCells[indexPath.row] = cell.contentText.contentSize.height
+    if sizeCells[indexPath.row] == 195.0 {
+      sizeCells[indexPath.row] = cell.contentText.contentSize.height
+    }
     cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
     cell.contentText.isScrollEnabled = false
-    if (current?.children?.count)! > 0 {
-      current = current?.children?[0]
-      nb_msg += 1
-    }
     return cell
   }
   
@@ -132,6 +145,8 @@ class TopicTVC: UITableViewController {
       return 195
     }
     return 195 - 128 + sizeCells[indexPath.row]
+    print(sizeCells[indexPath.row])
+    //return 3000
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

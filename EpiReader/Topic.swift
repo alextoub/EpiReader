@@ -37,4 +37,16 @@ class Topic: Mappable {
     self.groups        <- map["groups"]
     self.children      <- map["children"]
   }
+  
+  init(id: Int?, uid: String?, author: String?, subject: String?, content: String?, creation_date: String?, groups: [String]?) {
+    self.id = id
+    self.uid = uid
+    self.author = author
+    self.subject = subject
+    self.content = content
+    self.creation_date = creation_date
+    self.groups = groups
+    self.children = nil
+
+  }
 }

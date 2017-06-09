@@ -412,9 +412,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l96-FN-TMe">
                                                     <rect key="frame" x="8" y="59" width="341" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="341" id="Q1C-ap-qDy"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -463,13 +460,12 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="leading" secondItem="b5U-VV-kef" secondAttribute="leading" constant="8" id="0Xq-iA-3BP"/>
-                                                <constraint firstAttribute="trailing" secondItem="l96-FN-TMe" secondAttribute="trailing" constant="8" id="CDK-cq-tUK"/>
-                                                <constraint firstItem="l96-FN-TMe" firstAttribute="top" secondItem="FLH-AS-RYc" secondAttribute="bottom" constant="8" id="PtI-JH-HYx"/>
+                                                <constraint firstItem="l96-FN-TMe" firstAttribute="trailing" secondItem="FLH-AS-RYc" secondAttribute="trailing" id="A1u-Fp-Dc3"/>
+                                                <constraint firstItem="l96-FN-TMe" firstAttribute="top" secondItem="FLH-AS-RYc" secondAttribute="bottom" constant="8" symbolic="YES" id="H4k-49-Wnq"/>
+                                                <constraint firstItem="l96-FN-TMe" firstAttribute="leading" secondItem="FLH-AS-RYc" secondAttribute="leading" id="Neh-rH-Ocm"/>
+                                                <constraint firstItem="l96-FN-TMe" firstAttribute="bottom" secondItem="b5U-VV-kef" secondAttribute="bottomMargin" id="PlX-DE-HsO"/>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="centerX" secondItem="b5U-VV-kef" secondAttribute="centerX" id="WgV-rN-dmQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="l96-FN-TMe" secondAttribute="bottom" constant="8" id="dal-Mc-Uyh"/>
                                                 <constraint firstAttribute="trailing" secondItem="FLH-AS-RYc" secondAttribute="trailing" constant="8" id="emL-KF-07R"/>
-                                                <constraint firstItem="l96-FN-TMe" firstAttribute="centerX" secondItem="b5U-VV-kef" secondAttribute="centerX" id="fyg-W1-PlA"/>
-                                                <constraint firstItem="l96-FN-TMe" firstAttribute="leading" secondItem="b5U-VV-kef" secondAttribute="leading" constant="8" id="mcn-vC-UOH"/>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="top" secondItem="b5U-VV-kef" secondAttribute="top" constant="8" id="pAs-nu-9qV"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
