@@ -1,6 +1,8 @@
-![Banner](https://github.com/alextoub/EpiReader/blob/master/Banner.png)
+![Banner](https://github.com/alextoub/EpiReader/blob/master/Assets/Banner.png)
 
 EpiReader is an iOS App that allows you to read EPITA news
+
+[![AppStore](https://github.com/alextoub/EpiReader/blob/master/Assets/App_Store.png)](https://itunes.apple.com/us/app/epireader/id1244757421?mt=8&ign-mpt=uo%3D4)
 
 ## Requirements
 
@@ -20,7 +22,7 @@ $ carthage bootstrap --platform iOS
 3. Click on EpiReader.xcodeproj file
 4. Sign using your developper account and build the project using XCode
 
-![EpiReader](https://github.com/alextoub/EpiReader/blob/master/EpiReader.png)
+![EpiReader](https://github.com/alextoub/EpiReader/blob/master/Assets/EpiReader.png)
 
 ## TODO
 
