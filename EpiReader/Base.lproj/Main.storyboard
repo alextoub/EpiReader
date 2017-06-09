@@ -129,7 +129,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <string key="text">Vous n'avez pas encore de groupe
 de news, pour en ajouter cliquez sur
-le bouton '+' en haut a droite</string>
+le bouton '+' en haut à droite</string>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

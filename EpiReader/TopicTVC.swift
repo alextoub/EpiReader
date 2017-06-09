@@ -144,8 +144,8 @@ class TopicTVC: UITableViewController {
     guard (sizeCells.count > 0) else {
       return 195
     }
+    print(195 - 128 + sizeCells[indexPath.row])
     return 195 - 128 + sizeCells[indexPath.row]
-    print(sizeCells[indexPath.row])
     //return 3000
   }
   
