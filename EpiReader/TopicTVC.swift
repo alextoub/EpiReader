@@ -133,6 +133,10 @@ class TopicTVC: UITableViewController {
     
     cell.displayCell()
     if sizeCells[indexPath.row] == 195.0 {
+      var newContentText = cell.contentText.frame
+      newContentText.size.width = cell.contentText.contentSize.width
+      newContentText.size.height = cell.contentText.contentSize.height
+      cell.contentText.frame = newContentText
       sizeCells[indexPath.row] = cell.contentText.contentSize.height
     }
     cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
