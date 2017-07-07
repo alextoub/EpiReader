@@ -252,7 +252,16 @@ class NewsTVC: UITableViewController {
     cell.readIndicator.layer.masksToBounds = true
     cell.readIndicator.layer.cornerRadius = cell.readIndicator.bounds.height / 2
     cell.dateLabel.text = StrToAbrev(dateStr: index.creation_date!)
-    cell.subjectLabel.attributedText = parseSub(index.subject!)
+    let subjects = parseSubject(index.subject!)
+    cell.subjectLabel.text = subjects[subjects.count - 1]
+    let tag1 = checkTag(subjects[0])
+    let tag2 = checkTag(subjects[1])
+    cell.tagButton1.setTitle(subjects[0], for: .normal)
+    cell.tagButton1.borderColor = tag1.attributedColor
+    cell.tagButton1.setTitleColor(tag1.attributedColor, for: .normal)
+    cell.tagButton2.setTitle(subjects[1], for: .normal)
+    cell.tagButton2.borderColor = tag2.attributedColor
+    cell.tagButton2.setTitleColor(tag2.attributedColor, for: .normal)
     if index.msg_nb! > 1 {
       cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
     }
