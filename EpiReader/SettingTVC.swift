@@ -35,12 +35,16 @@ class SettingTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return 4
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.row == 2 {
       let url : URL = URL(string: "http://www.epimac.org/")!
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    if indexPath.row == 3 {
+      let url : URL = URL(string: "http://www.github.com/alextoub/EpiReader")!
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
   }
