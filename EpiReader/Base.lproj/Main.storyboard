@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -165,7 +165,7 @@ le bouton '+' en haut à droite</string>
         <scene sceneID="w4k-rA-mkL">
             <objects>
                 <tableViewController id="6ft-WB-Aae" customClass="SettingTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ywA-fd-l5N">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ywA-fd-l5N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -248,49 +248,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="NqB-Jn-bGs">
-                                        <rect key="frame" x="0.0" y="500" width="375" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NqB-Jn-bGs" id="Voj-7F-Nqm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsU-oq-iq6">
-                                                    <rect key="frame" x="47" y="12" width="281" height="46"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contribuer sur GitHub" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGn-jB-fDd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="46"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_github" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-0y-xAS">
-                                                            <rect key="frame" x="235" y="0.0" width="46" height="46"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="46" id="8zJ-jE-z9V"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="OGn-jB-fDd" firstAttribute="leading" secondItem="TsU-oq-iq6" secondAttribute="leading" id="4jh-Zb-X4q"/>
-                                                        <constraint firstItem="Zwg-0y-xAS" firstAttribute="leading" secondItem="OGn-jB-fDd" secondAttribute="trailing" id="4jo-Od-oGa"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Zwg-0y-xAS" secondAttribute="bottom" id="bFj-gX-Ue7"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OGn-jB-fDd" secondAttribute="bottom" id="cqE-IO-r6r"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Zwg-0y-xAS" secondAttribute="trailing" id="gah-La-5yr"/>
-                                                        <constraint firstItem="OGn-jB-fDd" firstAttribute="top" secondItem="TsU-oq-iq6" secondAttribute="top" id="nKq-Ua-r49"/>
-                                                        <constraint firstItem="Zwg-0y-xAS" firstAttribute="top" secondItem="TsU-oq-iq6" secondAttribute="top" id="p3Y-vC-fxJ"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="TsU-oq-iq6" firstAttribute="centerY" secondItem="Voj-7F-Nqm" secondAttribute="centerY" id="Lpg-cZ-Pq7"/>
-                                                <constraint firstItem="TsU-oq-iq6" firstAttribute="centerX" secondItem="Voj-7F-Nqm" secondAttribute="centerX" id="aTC-Eh-Dwd"/>
-                                                <constraint firstItem="TsU-oq-iq6" firstAttribute="top" secondItem="Voj-7F-Nqm" secondAttribute="topMargin" constant="4" id="c0O-09-mJr"/>
-                                                <constraint firstItem="TsU-oq-iq6" firstAttribute="leading" secondItem="Voj-7F-Nqm" secondAttribute="leadingMargin" constant="39" id="iJB-uv-QgT"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -656,7 +613,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
     <resources>
         <image name="double_arrow_green" width="200" height="200"/>
         <image name="logo_epimac" width="2558" height="1904"/>
-        <image name="logo_github" width="435" height="420"/>
         <image name="parameters" width="25" height="25"/>
         <image name="switch_off" width="200" height="200"/>
     </resources>
