@@ -129,6 +129,9 @@ class TopicTVC: UITableViewController {
         if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
             cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
         }
+        if (parseAuthor((index.author)!)[1] == "chef@tickets.acu.epita.fr") {
+            cell.photoImageView.image = #imageLiteral(resourceName: "acu")
+        }
         
         if cell.photoImageView.image == nil {
             print("oui c nil")
