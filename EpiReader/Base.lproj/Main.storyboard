@@ -271,20 +271,20 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <scene sceneID="bCR-lB-EW0">
             <objects>
                 <tableViewController id="Aja-OK-gqX" customClass="NewsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="SFU-WT-vM5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="SFU-WT-vM5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="110" id="ngd-mt-ddB" customClass="NewsCell" customModule="EpiReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="90" id="ngd-mt-ddB" customClass="NewsCell" customModule="EpiReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ngd-mt-ddB" id="sJB-F4-Msd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-Wc-jlq" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="5" width="355" height="100"/>
+                                            <rect key="frame" x="10" y="5" width="355" height="80"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFY-lV-YSO">
                                                     <rect key="frame" x="8" y="11" width="10" height="10"/>
@@ -330,53 +330,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <color key="textColor" red="0.5836373730964467" green="0.5836373730964467" blue="0.5836373730964467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oqO-0J-QcP">
-                                                    <rect key="frame" x="0.0" y="72" width="355" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NlK-UP-BL6">
-                                                            <rect key="frame" x="24" y="7" width="306" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4WE-iH-axb" customClass="CustomButton" customModule="EpiReader" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="15"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="3"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="1" green="0.93725490199999995" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vue-fg-nRy" customClass="CustomButton" customModule="EpiReader" customModuleProvider="target">
-                                                                    <rect key="frame" x="88" y="0.0" width="80" height="15"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="1"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="3"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                            <color key="value" red="1" green="0.93725490199999995" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </button>
-                                                            </subviews>
-                                                        </view>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.96995954949238583" green="0.96995954949238583" blue="0.96995954949238583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
@@ -402,8 +355,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <outlet property="msgNbIndicator" destination="4nq-42-vLL" id="jym-EM-1AT"/>
                                     <outlet property="readIndicator" destination="kFY-lV-YSO" id="8VR-VR-6b9"/>
                                     <outlet property="subjectLabel" destination="S18-bY-U3C" id="Ucw-sE-usa"/>
-                                    <outlet property="tagButton1" destination="vue-fg-nRy" id="lT6-0O-MkS"/>
-                                    <outlet property="tagButton2" destination="4WE-iH-axb" id="cwG-bp-WFr"/>
                                     <segue destination="ZSz-cW-tiH" kind="show" identifier="toTopic" id="7K7-Zu-iOM">
                                         <segue key="commit" inheritsFrom="parent" id="uEh-Tp-3mr"/>
                                         <segue key="preview" inheritsFrom="commit" id="iFn-Ce-Ibp"/>
@@ -411,7 +362,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadingCell" rowHeight="47" id="CHc-OC-y6w" customClass="LoadingCell" customModule="EpiReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="138" width="375" height="47"/>
+                                <rect key="frame" x="0.0" y="118" width="375" height="47"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CHc-OC-y6w" id="MS6-mb-HcT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>

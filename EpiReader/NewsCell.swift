@@ -20,10 +20,8 @@ class NewsCell: UITableViewCell {
   @IBOutlet weak var mailLabel: UILabel!
   @IBOutlet weak var contentCellView: CustomView!
   
-  @IBOutlet weak var tagButton1: CustomButton!
-  @IBOutlet weak var tagButton2: CustomButton!
-  
   // MARK: - Cell delegates
+
   override func awakeFromNib() {
     super.awakeFromNib()
   }
