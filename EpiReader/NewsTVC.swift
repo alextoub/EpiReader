@@ -33,9 +33,6 @@ class NewsTVC: UITableViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    getNews()
-    getReadNews()
-    tableView.reloadData()
   }
   
   override func didReceiveMemoryWarning() {
@@ -233,6 +230,8 @@ class NewsTVC: UITableViewController {
     }
     let index = news[indexPath.row]
     readNews.append(ReadNews(id : index.id!))
+    let cell = tableView.cellForRow(at: indexPath) as! NewsCell
+    cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     saveReadNews()
   }
   
