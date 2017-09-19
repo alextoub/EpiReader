@@ -9,4 +9,7 @@ target 'EpiReader' do
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   pod "ESPullToRefresh"
+
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
