@@ -39,6 +39,9 @@ class TopicTVC: UITableViewController {
   func createArrayOfTopics()
   {
     var curr = topic
+    if nb_msg == 0 {
+        nb_msg = 1
+    }
     for _ in 0..<nb_msg {
       let topicTmp = Topic(id: curr?.id, uid: curr?.uid, author: curr?.author, subject: curr?.subject, content: curr?.content, creation_date: curr?.creation_date, groups: curr?.groups)
       topics.append(topicTmp)
