@@ -24,6 +24,10 @@ class NewsTVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    SVProgressHUD.setDefaultMaskType(.black)
+    SVProgressHUD.show(withStatus: "Chargement en cours")
+    
     setupNews()
     self.title = currentGroup
     self.tableView.es_addPullToRefresh {
@@ -126,8 +130,8 @@ class NewsTVC: UITableViewController {
     getReadNews()
     getTags()
     tableView.reloadData()
-    SVProgressHUD.setDefaultMaskType(.black)
-    SVProgressHUD.show(withStatus: "Chargement en cours")
+    //SVProgressHUD.setDefaultMaskType(.black)
+    //SVProgressHUD.show(withStatus: "Chargement en cours")
   }
 
   

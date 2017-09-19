@@ -410,16 +410,16 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-VV-kef" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="5" width="357" height="185"/>
+                                            <rect key="frame" x="10" y="5" width="355" height="185"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l96-FN-TMe">
-                                                    <rect key="frame" x="8" y="59" width="341" height="118"/>
+                                                    <rect key="frame" x="8" y="59" width="339" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLH-AS-RYc">
-                                                    <rect key="frame" x="8" y="8" width="341" height="43"/>
+                                                    <rect key="frame" x="8" y="8" width="339" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHL-JN-dhz">
                                                             <rect key="frame" x="8" y="0.0" width="195" height="21"/>
@@ -429,25 +429,25 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwN-h9-n0P">
-                                                            <rect key="frame" x="8" y="22" width="285" height="21"/>
+                                                            <rect key="frame" x="8" y="22" width="283" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vq7-kO-WTF">
-                                                            <rect key="frame" x="301" y="1" width="40" height="40"/>
+                                                            <rect key="frame" x="299" y="1" width="40" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBS-tK-2u8">
-                                                            <rect key="frame" x="301" y="1" width="40" height="40"/>
+                                                            <rect key="frame" x="299" y="1" width="40" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                             <connections>
                                                                 <segue destination="khd-Nf-les" kind="presentation" identifier="showImage" modalTransitionStyle="crossDissolve" id="zTV-0X-zFg"/>
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-Nl-nIW">
-                                                            <rect key="frame" x="206" y="0.0" width="87" height="21"/>
+                                                            <rect key="frame" x="204" y="0.0" width="87" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                             <nil key="textColor"/>
@@ -479,10 +479,15 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="b5U-VV-kef" firstAttribute="centerX" secondItem="mb1-aV-iRN" secondAttribute="centerX" id="6Zq-i4-RQa"/>
+                                        <constraint firstAttribute="trailing" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="10" id="BPK-go-oQX"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="topMargin" constant="-3" id="aua-Fu-6Ju"/>
-                                        <constraint firstItem="b5U-VV-kef" firstAttribute="leading" secondItem="mb1-aV-iRN" secondAttribute="leadingMargin" id="kGO-0p-0JM"/>
+                                        <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="top" constant="5" id="dAp-Mi-Oj5"/>
+                                        <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="top" constant="5" id="hfW-23-ASm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="2" id="ni7-J1-LZd"/>
+                                        <constraint firstAttribute="trailing" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="10" id="s7Y-4A-Y8d"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="centerY" secondItem="mb1-aV-iRN" secondAttribute="centerY" id="see-Ic-IFQ"/>
+                                        <constraint firstItem="b5U-VV-kef" firstAttribute="leading" secondItem="mb1-aV-iRN" secondAttribute="leading" constant="10" id="yuT-Cu-EOV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -526,7 +531,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHH-kc-43I">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="nd4-9V-bgL"/>
                                     <constraint firstAttribute="height" constant="200" id="ue0-D9-Bpb"/>
