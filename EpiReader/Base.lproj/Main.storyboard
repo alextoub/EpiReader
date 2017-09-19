@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -343,7 +343,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="bhT-Wc-jlq" secondAttribute="bottom" constant="-3" id="7d0-H3-OHk"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="leading" secondItem="sJB-F4-Msd" secondAttribute="leadingMargin" constant="2" id="abQ-vf-NRD"/>
+                                        <constraint firstAttribute="trailing" secondItem="bhT-Wc-jlq" secondAttribute="trailing" constant="10" id="abu-A7-iAX"/>
+                                        <constraint firstItem="bhT-Wc-jlq" firstAttribute="top" secondItem="sJB-F4-Msd" secondAttribute="top" constant="5" id="dsY-hg-tO8"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="top" secondItem="sJB-F4-Msd" secondAttribute="topMargin" constant="-3" id="k62-0F-rHS"/>
+                                        <constraint firstItem="bhT-Wc-jlq" firstAttribute="leading" secondItem="sJB-F4-Msd" secondAttribute="leading" constant="10" id="pww-5V-fQ5"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="centerX" secondItem="sJB-F4-Msd" secondAttribute="centerX" id="ucm-cn-g8g"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -549,7 +552,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             <objects>
                 <navigationController id="bKl-Ts-pQZ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wKu-Ca-fTw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
