@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import ESPullToRefresh
+import GoogleMobileAds
 
 class NewsTVC: UITableViewController {
     
@@ -19,6 +20,7 @@ class NewsTVC: UITableViewController {
     var readNews = [ReadNews]()
     var tags = [Tag]()
     var favorites = [Favorite]()
+    var bannerView: GADBannerView!
     
     // MARK: - View LifeCycle
     
@@ -34,6 +36,21 @@ class NewsTVC: UITableViewController {
             self.setupNews()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
+        
+        bannerView = GADBannerView()
+        bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 60))
+        bannerView.adUnitID = Constants.AdMob.unitID
+        
+        let offset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
+        
+        
+        bannerView.rootViewController = self
+        bannerView.frame = CGRect(x:0.0,
+                                  y:UIScreen.main.bounds.height - offset,
+                                  width:bannerView.frame.size.width,
+                                  height:bannerView.frame.size.height)
+        let request = GADRequest()
+        bannerView.load(request)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -226,6 +243,14 @@ class NewsTVC: UITableViewController {
         else {
             return news.count + 1
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return bannerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

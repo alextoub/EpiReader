@@ -12,4 +12,6 @@ target 'EpiReader' do
 
   pod 'Fabric'
   pod 'Crashlytics'
+
+  pod 'Google-Mobile-Ads-SDK'
 end

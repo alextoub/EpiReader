@@ -15,4 +15,8 @@ struct Constants {
         static let TOPICS        = "topic/"                                       //GET
         static let NEWS          = "news.epita.fr/"                               //GET
     }
+    
+    struct AdMob {
+        static let unitID = "ca-app-pub-8988229405805930/1930088334"
+    }
 }

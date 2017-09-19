@@ -24,6 +24,7 @@ class MainTVC: UITableViewController {
             self.getFav()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
