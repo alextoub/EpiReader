@@ -9,19 +9,19 @@
 import UIKit
 
 class AddGroupCell: UITableViewCell {
-  
-  // MARK: - Outlets
-
-  @IBOutlet weak var groupNameLabel: UILabel!
-  @IBOutlet weak var isFavoriteButton: UIButton!
-  
-  // MARK: - Cell delegates
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var isFavoriteButton: UIButton!
+    
+    // MARK: - Cell delegates
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }
