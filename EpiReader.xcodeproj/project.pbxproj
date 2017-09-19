@@ -7,20 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */; };
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
 		DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */; };
-		DA6722FF1E80064800899F3F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; };
-		DA6723001E80064800899F3F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722F91E80064800899F3F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA6723011E80064800899F3F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FA1E80064800899F3F /* ObjectMapper.framework */; };
-		DA6723021E80064800899F3F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FA1E80064800899F3F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA6723031E80064800899F3F /* ESPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */; };
-		DA6723041E80064800899F3F /* ESPullToRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA6723051E80064800899F3F /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FC1E80064800899F3F /* AlamofireObjectMapper.framework */; };
-		DA6723061E80064800899F3F /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FC1E80064800899F3F /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA6723071E80064800899F3F /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FD1E80064800899F3F /* AlamofireImage.framework */; };
-		DA6723081E80064800899F3F /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FD1E80064800899F3F /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA6723091E80064800899F3F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FE1E80064800899F3F /* Alamofire.framework */; };
-		DA67230A1E80064800899F3F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6722FE1E80064800899F3F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230C1E80075F00899F3F /* RouterProtocol.swift */; };
 		DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230E1E8008AD00899F3F /* Favorite.swift */; };
 		DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723101E800B0600899F3F /* DataBusiness.swift */; };
@@ -57,12 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DA6723021E80064800899F3F /* ObjectMapper.framework in Embed Frameworks */,
-				DA67230A1E80064800899F3F /* Alamofire.framework in Embed Frameworks */,
-				DA6723081E80064800899F3F /* AlamofireImage.framework in Embed Frameworks */,
-				DA6723001E80064800899F3F /* SVProgressHUD.framework in Embed Frameworks */,
-				DA6723041E80064800899F3F /* ESPullToRefresh.framework in Embed Frameworks */,
-				DA6723061E80064800899F3F /* AlamofireObjectMapper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,14 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.debug.xcconfig"; sourceTree = "<group>"; };
+		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCell.swift; path = ../EpiReader/LoadingCell.swift; sourceTree = "<group>"; };
 		DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTVC.swift; sourceTree = "<group>"; };
-		DA6722F91E80064800899F3F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		DA6722FA1E80064800899F3F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ESPullToRefresh.framework; path = Carthage/Build/iOS/ESPullToRefresh.framework; sourceTree = "<group>"; };
-		DA6722FC1E80064800899F3F /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
-		DA6722FD1E80064800899F3F /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		DA6722FE1E80064800899F3F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		DA67230C1E80075F00899F3F /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocol.swift; path = ../EpiReader/RouterProtocol.swift; sourceTree = "<group>"; };
 		DA67230E1E8008AD00899F3F /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Favorite.swift; path = ../EpiReader/Favorite.swift; sourceTree = "<group>"; };
 		DA6723101E800B0600899F3F /* DataBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBusiness.swift; path = ../EpiReader/DataBusiness.swift; sourceTree = "<group>"; };
@@ -107,6 +86,7 @@
 		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicTVC.swift; path = ../EpiReader/TopicTVC.swift; sourceTree = "<group>"; };
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../EpiReader/StringUtils.swift; sourceTree = "<group>"; };
 		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../EpiReader/Tag.swift; sourceTree = "<group>"; };
+		E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpiReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,30 +94,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA6723011E80064800899F3F /* ObjectMapper.framework in Frameworks */,
-				DA6723091E80064800899F3F /* Alamofire.framework in Frameworks */,
-				DA6723071E80064800899F3F /* AlamofireImage.framework in Frameworks */,
-				DA6722FF1E80064800899F3F /* SVProgressHUD.framework in Frameworks */,
-				DA6723031E80064800899F3F /* ESPullToRefresh.framework in Frameworks */,
-				DA6723051E80064800899F3F /* AlamofireObjectMapper.framework in Frameworks */,
+				2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3845C690C2E3D82FEDE1D2D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */,
+				54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69469F42AEA9A30043F1291F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA8D2F221E7FDFDC00BA7FB1 = {
 			isa = PBXGroup;
 			children = (
-				DA6722F91E80064800899F3F /* SVProgressHUD.framework */,
-				DA6722FA1E80064800899F3F /* ObjectMapper.framework */,
-				DA6722FB1E80064800899F3F /* ESPullToRefresh.framework */,
-				DA6722FC1E80064800899F3F /* AlamofireObjectMapper.framework */,
-				DA6722FD1E80064800899F3F /* AlamofireImage.framework */,
-				DA6722FE1E80064800899F3F /* Alamofire.framework */,
 				DA8D2F411E7FE03900BA7FB1 /* Core */,
 				DA8D2F2D1E7FDFDC00BA7FB1 /* EpiReader */,
 				DA8D2F2C1E7FDFDC00BA7FB1 /* Products */,
+				3845C690C2E3D82FEDE1D2D9 /* Pods */,
+				69469F42AEA9A30043F1291F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,11 +253,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA8D2F3D1E7FDFDC00BA7FB1 /* Build configuration list for PBXNativeTarget "EpiReader" */;
 			buildPhases = (
+				F6E896BAA54E46A114A5F285 /* [CP] Check Pods Manifest.lock */,
 				DA8D2F271E7FDFDC00BA7FB1 /* Sources */,
 				DA8D2F281E7FDFDC00BA7FB1 /* Frameworks */,
 				DA8D2F291E7FDFDC00BA7FB1 /* Resources */,
 				DA67230B1E80064800899F3F /* Embed Frameworks */,
 				DA7CDEEA1EE5B560006AD1B7 /* Run Script */,
+				24240E1737DD16C40A4F9915 /* [CP] Embed Pods Frameworks */,
+				D8C4812CBBDB98C44C6D7E42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,18 +320,55 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24240E1737DD16C40A4F9915 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8C4812CBBDB98C44C6D7E42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA7CDEEA1EE5B560006AD1B7 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ESPullToRefresh.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -348,6 +376,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		F6E896BAA54E46A114A5F285 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EpiReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -504,6 +550,7 @@
 		};
 		DA8D2F3E1E7FDFDC00BA7FB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
@@ -523,6 +570,7 @@
 		};
 		DA8D2F3F1E7FDFDC00BA7FB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
