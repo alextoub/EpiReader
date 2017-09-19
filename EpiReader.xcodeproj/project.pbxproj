@@ -66,6 +66,7 @@
 		DA6723181E8022AE00899F3F /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCell.swift; path = ../EpiReader/NewsCell.swift; sourceTree = "<group>"; };
 		DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadNews.swift; path = ../EpiReader/ReadNews.swift; sourceTree = "<group>"; };
 		DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		DA8284FD1F70C954007A646C /* EpiReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EpiReader.entitlements; sourceTree = "<group>"; };
 		DA8D2F2B1E7FDFDC00BA7FB1 /* EpiReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EpiReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../EpiReader/AppDelegate.swift; sourceTree = "<group>"; };
 		DA8D2F331E7FDFDC00BA7FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		DA8D2F2D1E7FDFDC00BA7FB1 /* EpiReader */ = {
 			isa = PBXGroup;
 			children = (
+				DA8284FD1F70C954007A646C /* EpiReader.entitlements */,
 				DA8D2F3A1E7FDFDC00BA7FB1 /* Info.plist */,
 			);
 			path = EpiReader;
@@ -286,6 +288,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = E5L7NC8M9T;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -567,6 +574,7 @@
 			baseConfigurationReference = 4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EpiReader/EpiReader.entitlements;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,6 +595,7 @@
 			baseConfigurationReference = 54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EpiReader/EpiReader.entitlements;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
