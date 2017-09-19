@@ -12,10 +12,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  
+  var favorites = [Favorite]()
+  
+  private func loadFavorites() -> [Favorite]?  {
+    return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
+  }
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    favorites.removeAll()
+    if let fav = loadFavorites() {
+      favorites += fav
+    }
+    
+    UIApplication.shared.shortcutItems?.removeAll()
+    
+    if favorites.count > 0 {
+      let fav1 = UIApplicationShortcutItem(type: Bundle.main.bundleIdentifier! + ".Fav1", localizedTitle: (favorites[0].group_name)!, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .favorite), userInfo: nil)
+      UIApplication.shared.shortcutItems?.append(fav1)
+      if favorites.count > 1 {
+        let fav2 = UIApplicationShortcutItem(type: Bundle.main.bundleIdentifier! + ".Fav2", localizedTitle: (favorites[1].group_name)!, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .favorite), userInfo: nil)
+        UIApplication.shared.shortcutItems?.append(fav2)
+        if favorites.count > 2 {
+          let fav3 = UIApplicationShortcutItem(type: Bundle.main.bundleIdentifier! + ".Fav3", localizedTitle: (favorites[2].group_name)!, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .favorite), userInfo: nil)
+          UIApplication.shared.shortcutItems?.append(fav3)
+        }
+      }
+    }
+    
     return true
   }
 
@@ -39,6 +63,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  }
+  
+  
+  /**
+   Called when a 3D touch shortcut is triggered
+   
+   - parameter application: the current application
+   - parameter performActionFor: the shortcut object triggered
+   - parameter completionHandler: @escaping allow the user to perform any kind of action
+   */
+  @available(iOS 9.0, *)
+  func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+    let handledShortCutItem = handleShortCutItem(shortcutItem: shortcutItem)
+    completionHandler(handledShortCutItem)
+  }
+  
+  /**
+   Handle shortcut actions
+   
+   - parameter shortcutItem: the shortcut triggered
+   
+   - returns: true if shortcut action was performed successfully
+   */
+  @available(iOS 9.0, *)
+  func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    var handled = false
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let nav = storyboard.instantiateViewController(withIdentifier: "MainNav") as! UINavigationController
+    let vc1 = storyboard.instantiateViewController(withIdentifier: "MainTVC") as! MainTVC
+    let vc = storyboard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
+    nav.pushViewController(vc1, animated: false)
+    nav.pushViewController(vc, animated: false)
+    
+    if shortcutItem.type == Bundle.main.bundleIdentifier! + ".Fav1" && favorites.count > 0 {
+      vc.currentGroup = favorites[0].group_name!
+      self.window?.rootViewController = nav
+      self.window?.makeKeyAndVisible()
+      handled = true
+    }
+    else if shortcutItem.type == Bundle.main.bundleIdentifier! + ".Fav2" && favorites.count > 1 {
+      vc.currentGroup = favorites[1].group_name!
+      self.window?.rootViewController = nav
+      self.window?.makeKeyAndVisible()
+      handled = true
+      
+    }
+    else if shortcutItem.type == Bundle.main.bundleIdentifier! + ".Fav3" && favorites.count > 2 {
+      vc.currentGroup = favorites[2].group_name!
+      self.window?.rootViewController = nav
+      self.window?.makeKeyAndVisible()
+      handled = true
+    }
+    return handled
   }
 
 
