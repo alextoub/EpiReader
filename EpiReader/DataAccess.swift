@@ -18,6 +18,8 @@ private enum Router {
     case getTopics(Int)
     case getNews(String, Int)
     case getNewsWithDate(String, Int, String)
+    case postSubscribeNotification(String, String, String, String)
+    case postUnsubscribeNotification(String, String, String, String)
 }
 
 extension Router : RouterProtocol {
@@ -33,6 +35,10 @@ extension Router : RouterProtocol {
             return .get
         case .getNewsWithDate:
             return .get
+        case .postSubscribeNotification:
+            return .post
+        case .postUnsubscribeNotification:
+            return .post
         }
     }
     // MARK: - API Path
@@ -46,6 +52,10 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb)
         case .getNewsWithDate(let group, let nb, let date):
             return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb) + "&start_date=" + date + "%2B0000"
+        case .postSubscribeNotification:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB
+        case .postUnsubscribeNotification:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB
         }
     }
 }
@@ -91,6 +101,22 @@ class MainData {
         Alamofire.request(Router.getNewsWithDate(group, nb, date))
             .validate()
             .responseArray { (alamoResponse: DataResponse<[News]>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
+    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+        Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<Topic>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
+    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+        Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<Topic>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }

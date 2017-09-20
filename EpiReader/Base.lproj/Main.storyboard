@@ -388,6 +388,9 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="Aja-OK-gqX" id="AwO-my-mOM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UU9-4m-aHx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="bGD-fG-P2h"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5q-dc-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -506,7 +509,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="ZSz-cW-tiH" id="Y7S-oz-XaE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KgB-BP-JKj">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="KgB-BP-JKj">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="6M4-pT-DOO">
                             <connections>
                                 <action selector="shareButtonAction:" destination="ZSz-cW-tiH" id="mJq-zM-PZR"/>
