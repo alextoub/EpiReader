@@ -13,6 +13,7 @@ class SettingTVC: UITableViewController {
     
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var mapKitView: MKMapView!
+    @IBOutlet weak var versionLabel: UILabel!
     
     let initialLocation = CLLocation(latitude: 48.8156, longitude: 2.3631)
     let regionRadius: CLLocationDistance = 100
@@ -20,7 +21,17 @@ class SettingTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         centerMapOnLocation(location: initialLocation)
+        versionLabel.text = appVersionValue()
     }
+    
+    func appVersionValue() -> String {
+        guard let version: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            return ""
+        }
+        let vers = "Version \(version)"
+        return vers
+    }
+    
     
     
     func centerMapOnLocation(location: CLLocation) {

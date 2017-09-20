@@ -261,6 +261,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                     <connections>
                         <outlet property="mapKitView" destination="9jZ-Mw-t5V" id="9e1-PH-gv1"/>
                         <outlet property="mapView" destination="qcs-ib-6sg" id="z8k-De-EVw"/>
+                        <outlet property="versionLabel" destination="kDG-8v-7GA" id="KNS-12-heY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyl-La-W9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
