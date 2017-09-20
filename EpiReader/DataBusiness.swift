@@ -37,13 +37,13 @@ class MainBusiness {
         }
     }
     
-    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationSub?, _ error:Error?) -> Void)) -> Void {
         MainData.postSubscribeNotification(service: service, registration_id: registration_id, host: host, newsgroup: newsgroup) { (response, error) in
             completed(response, error)
         }
     }
     
-    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationUnsub?, _ error:Error?) -> Void)) -> Void {
         MainData.postUnsubscribeNotification(service: service, registration_id: registration_id, host: host, newsgroup: newsgroup) { (response, error) in
             completed(response, error)
         }

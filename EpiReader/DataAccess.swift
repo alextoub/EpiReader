@@ -105,18 +105,18 @@ class MainData {
         }
     }
     
-    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationSub?, _ error:Error?) -> Void)) -> Void {
         Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
             .validate()
-            .responseObject { (alamoResponse: DataResponse<Topic>) in
+            .responseObject { (alamoResponse: DataResponse<NotificationSub>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
     
-    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:Topic?, _ error:Error?) -> Void)) -> Void {
+    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationUnsub?, _ error:Error?) -> Void)) -> Void {
         Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
             .validate()
-            .responseObject { (alamoResponse: DataResponse<Topic>) in
+            .responseObject { (alamoResponse: DataResponse<NotificationUnsub>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
