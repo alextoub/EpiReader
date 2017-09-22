@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Group: Mappable {
+public class Group: Mappable {
     
     // MARK: - Attributes
     

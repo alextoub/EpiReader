@@ -33,6 +33,7 @@
 		DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F581E7FFDDA00BA7FB1 /* News.swift */; };
 		DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */; };
 		DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */; };
+		DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FD1F74E39C00CB4F93 /* StaticData.swift */; };
 		DAD2F9301F72BA61009BE02B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD2F92F1F72BA61009BE02B /* Notification.swift */; };
 		DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808B1E8035D100A8F423 /* TopicCell.swift */; };
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
@@ -84,6 +85,7 @@
 		DA8D2F581E7FFDDA00BA7FB1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = ../EpiReader/News.swift; sourceTree = "<group>"; };
 		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = ../EpiReader/Topic.swift; sourceTree = "<group>"; };
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccess.swift; path = ../EpiReader/DataAccess.swift; sourceTree = "<group>"; };
+		DABE50FD1F74E39C00CB4F93 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		DAD2F92F1F72BA61009BE02B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DADA808B1E8035D100A8F423 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicCell.swift; path = ../EpiReader/TopicCell.swift; sourceTree = "<group>"; };
 		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicTVC.swift; path = ../EpiReader/TopicTVC.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */,
 				DAFA04CB1E83E7CD008AC100 /* Tag.swift */,
 				DAD2F92F1F72BA61009BE02B /* Notification.swift */,
+				DABE50FD1F74E39C00CB4F93 /* StaticData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
 				DAD2F9301F72BA61009BE02B /* Notification.swift in Sources */,
+				DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */,
 				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,
 				DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */,

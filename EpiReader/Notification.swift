@@ -39,3 +39,20 @@ class NotificationUnsub: Mappable {
         self.removed            <- map["removed"]
     }
 }
+
+
+public class NotificationGroups: Mappable {
+    
+    // MARK: - Attributes
+    
+    var subscribed_groups: [String]?
+    
+    // MARK: - ObjectMapper functions
+    
+    required init?(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        self.subscribed_groups            <- map["subscribed_groups"]
+    }
+}
