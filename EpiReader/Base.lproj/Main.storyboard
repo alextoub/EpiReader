@@ -417,7 +417,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l96-FN-TMe">
                                                     <rect key="frame" x="8" y="59" width="339" height="118"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -457,13 +456,12 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="zUy-5X-ujF"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="FLH-AS-RYc" firstAttribute="leading" secondItem="b5U-VV-kef" secondAttribute="leading" constant="8" id="0Xq-iA-3BP"/>
                                                 <constraint firstItem="l96-FN-TMe" firstAttribute="trailing" secondItem="FLH-AS-RYc" secondAttribute="trailing" id="A1u-Fp-Dc3"/>

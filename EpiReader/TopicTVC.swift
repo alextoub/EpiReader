@@ -118,7 +118,7 @@ class TopicTVC: UITableViewController {
         }
         let index = topics[indexPath.row]
         print(cell.bounds.height)
-        
+        cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.authorLabel.text = parseAuthor((index.author)!)[0]
         cell.contentText.text = index.content
         cell.subjectLabel.text = index.subject
