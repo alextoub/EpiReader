@@ -28,25 +28,6 @@ class AddGroupTVC: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Call functions
-    
-    func getGroups(){
-        MainBusiness.getGroups { (response, error) in
-            DispatchQueue.main.async {
-                if error == nil {
-                    self.groups = response!
-                    self.tableView.reloadData()
-                    self.fillGroupNames()
-                    SVProgressHUD.dismiss()
-                }
-                else
-                {
-                    SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
-                }
-            }
-        }
-    }
-    
     // MARK: - NSCoding functions
     
     private func saveFavorites() {
@@ -67,9 +48,9 @@ class AddGroupTVC: UITableViewController {
     }
     
     func setupGroup() {
-        getGroups()
-        SVProgressHUD.setDefaultMaskType(.black)
-        SVProgressHUD.show(withStatus: "Chargement en cours")
+        self.groups = StaticData.allGroups!
+        self.tableView.reloadData()
+        self.fillGroupNames()
     }
     
     // MARK: - Table view data source

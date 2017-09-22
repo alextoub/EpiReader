@@ -37,12 +37,12 @@ public class Tag: NSObject, NSCoding {
     
     //MARK: NSCoding
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(tagName, forKey: PropertyKey.tagName)
         aCoder.encode(attributedColor, forKey: PropertyKey.attributedColor)
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
+    required convenience public init?(coder aDecoder: NSCoder) {
         let tagName = aDecoder.decodeObject(forKey: PropertyKey.tagName) as? String
         let attributedColor = aDecoder.decodeObject(forKey: PropertyKey.attributedColor) as? UIColor
         self.init(tagName: tagName!, attributedColor: attributedColor!)

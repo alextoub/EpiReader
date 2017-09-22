@@ -20,10 +20,10 @@ public class Group: Mappable {
     
     // MARK: - ObjectMapper functions
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         self.id         <- map["id"]
         self.group_name <- map["group_name"]
         self.topic_nb   <- map["topic_nb"]

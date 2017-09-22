@@ -9,14 +9,29 @@
 import UIKit
 import Fabric
 import Crashlytics
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    func initializeApp() {
+        getGroups()
+    }
+    
+    func getGroups(){
+        MainBusiness.getGroups { (response, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    StaticData.allGroups = response!
+                }
+            }
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        initializeApp()
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         return true

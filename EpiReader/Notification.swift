@@ -49,10 +49,10 @@ public class NotificationGroups: Mappable {
     
     // MARK: - ObjectMapper functions
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         self.subscribed_groups            <- map["subscribed_groups"]
     }
 }
