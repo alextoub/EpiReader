@@ -19,4 +19,15 @@ class RequestService {
             }
         }
     }
+    
+    public func getSubscribedNotification(){
+        MainBusiness.getSubscribedGroups(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr") { (response, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    StaticData.notificationsGroups = response!
+                }
+                print(error)
+            }
+        }
+    }
 }

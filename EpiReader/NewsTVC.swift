@@ -14,6 +14,8 @@ class NewsTVC: UITableViewController {
     
     // MARK: - Global variables
     
+    @IBOutlet weak var notificationButton: UIBarButtonItem!
+    
     var news = [News]()
     var currentGroup = ""
     var readNews = [ReadNews]()
@@ -169,6 +171,11 @@ class NewsTVC: UITableViewController {
                             blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
         return color
     }
+    
+    @IBAction func notificationButtonAction(_ sender: Any) {
+    }
+    
+    
     
     // MARK: - Table view data source
     

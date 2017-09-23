@@ -18,4 +18,11 @@ struct Constants {
         static let NOTIF_UNSUB   = "unsubscribe_notifications"                    //POST
         static let NOTIF_GROUPS  = "subscribed_groups"                            //GET
     }
+    
+    struct Headers {
+        static let Api_Key =                      ""
+        static let headers: HTTPHeaders = [
+            "KEY": Headers.Api_Key
+        ]
+    }
 }

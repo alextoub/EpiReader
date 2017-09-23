@@ -63,6 +63,10 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
         }
     }
+    
+    fileprivate var headers: HTTPHeaders {
+        return Constants.Headers.headers
+    }
 }
 
 // MARK: - Router request
@@ -71,6 +75,7 @@ extension Router: URLRequestConvertible {
     public func asURLRequest () throws -> URLRequest {
         var urlRequest = URLRequest(url: URL(string: self.path)!)
         urlRequest.httpMethod = self.method.rawValue
+        urlRequest.allHTTPHeaderFields = self.headers
         return urlRequest
     }
 }

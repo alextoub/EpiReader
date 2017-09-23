@@ -476,8 +476,15 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="UU9-4m-aHx">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="notification_not_filled" id="bGD-fG-P2h"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="notification_not_filled" id="bGD-fG-P2h">
+                            <connections>
+                                <action selector="notificationButtonAction:" destination="Aja-OK-gqX" id="hfD-4X-9F1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notificationButton" destination="bGD-fG-P2h" id="xL1-8v-BWa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5q-dc-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
