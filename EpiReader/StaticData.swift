@@ -11,7 +11,7 @@ import Foundation
 public struct StaticData {
     public static var allGroups: [Group]?
     
-    public static var notificationsGroups = [NotificationGroups]()
+    public static var notificationsGroups = [String]()
     
     public static var myGroups: [Group]?
     

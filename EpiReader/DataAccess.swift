@@ -20,7 +20,7 @@ private enum Router {
     case getNewsWithDate(String, Int, String)
     case postSubscribeNotification(String, String, String, String)
     case postUnsubscribeNotification(String, String, String, String)
-    case getSubscribedGroups(String, String, String)
+    case postSubscribedGroups(String, String, String)
 }
 
 extension Router : RouterProtocol {
@@ -40,8 +40,8 @@ extension Router : RouterProtocol {
             return .post
         case .postUnsubscribeNotification:
             return .post
-        case .getSubscribedGroups:
-            return .get
+        case .postSubscribedGroups:
+            return .post
         }
     }
     // MARK: - API Path
@@ -59,7 +59,7 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB
         case .postUnsubscribeNotification:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB
-        case .getSubscribedGroups:
+        case .postSubscribedGroups:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
         }
     }
@@ -75,7 +75,6 @@ extension Router: URLRequestConvertible {
     public func asURLRequest () throws -> URLRequest {
         var urlRequest = URLRequest(url: URL(string: self.path)!)
         urlRequest.httpMethod = self.method.rawValue
-        urlRequest.allHTTPHeaderFields = self.headers
         return urlRequest
     }
 }
@@ -116,7 +115,15 @@ class MainData {
     }
     
     static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationSub?, _ error:Error?) -> Void)) -> Void {
-        Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB, method: .post, parameters: parameters, headers: Constants.Headers.headers)
             .validate()
             .responseObject { (alamoResponse: DataResponse<NotificationSub>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)
@@ -124,18 +131,31 @@ class MainData {
     }
     
     static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationUnsub?, _ error:Error?) -> Void)) -> Void {
-        Alamofire.request(Router.postSubscribeNotification(service, registration_id, host, newsgroup) )
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB, method: .post, parameters: parameters, headers: Constants.Headers.headers)
             .validate()
             .responseObject { (alamoResponse: DataResponse<NotificationUnsub>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
 
-    static func getSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response:[NotificationGroups]?, _ error:Error?) -> Void)) -> Void {
-        Alamofire.request(Router.getSubscribedGroups(service, registration_id, host))
-            .validate()
-            .responseArray { (alamoResponse: DataResponse<[NotificationGroups]>) in
-                completed(alamoResponse.result.value, alamoResponse.result.error)
+    static func postSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response: NotificationGroups?, _ error:Error?) -> Void)) -> Void {
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host
+        ]
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS, method: .post, parameters: parameters, headers: Constants.Headers.headers)
+        .validate()
+        .responseObject { (alamoResponse: DataResponse<NotificationGroups>) in
+            completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
 }

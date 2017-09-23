@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initializeApp() {
         RequestService().getGroups()
-        RequestService().getSubscribedNotification()
+        RequestService().postSubscribedGroups()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

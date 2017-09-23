@@ -20,13 +20,13 @@ class RequestService {
         }
     }
     
-    public func getSubscribedNotification(){
-        MainBusiness.getSubscribedGroups(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr") { (response, error) in
+    public func postSubscribedGroups(){
+        MainBusiness.postSubscribedGroups(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr") { (response, error) in
             DispatchQueue.main.async {
                 if error == nil {
-                    StaticData.notificationsGroups = response!
+                    let resp = response!
+                    StaticData.notificationsGroups = resp.subscribed_groups!
                 }
-                print(error)
             }
         }
     }

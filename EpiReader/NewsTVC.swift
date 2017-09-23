@@ -21,6 +21,7 @@ class NewsTVC: UITableViewController {
     var readNews = [ReadNews]()
     var tags = [Tag]()
     var favorites = [Favorite]()
+    var inNotif = false
     
     // MARK: - View LifeCycle
     
@@ -31,6 +32,8 @@ class NewsTVC: UITableViewController {
         SVProgressHUD.show(withStatus: "Chargement en cours")
         
         setupNews()
+        inNotif = checkInNotifs(name: currentGroup)
+        updateNotifButton()
         self.title = currentGroup
         self.tableView.es_addPullToRefresh {
             self.setupNews()
@@ -79,6 +82,19 @@ class NewsTVC: UITableViewController {
                 }
             }
             
+        }
+    }
+    
+    func checkInNotifs(name: String) -> Bool {
+        return StaticData.notificationsGroups.contains(name)
+    }
+    
+    func updateNotifButton() {
+        if inNotif {
+            notificationButton.image = #imageLiteral(resourceName: "notification_filled")
+        }
+        else {
+            notificationButton.image = #imageLiteral(resourceName: "notification_not_filled")
         }
     }
     
@@ -173,6 +189,27 @@ class NewsTVC: UITableViewController {
     }
     
     @IBAction func notificationButtonAction(_ sender: Any) {
+        if !inNotif {
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+                DispatchQueue.main.async {
+                    if error == nil {
+                        StaticData.notificationsGroups.append(self.currentGroup)
+                    }
+                }
+            }
+        }
+        else {
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+                DispatchQueue.main.async {
+                    if error == nil {
+                        let index = StaticData.notificationsGroups.index(of: self.currentGroup)
+                        StaticData.notificationsGroups.remove(at: index!)
+                    }
+                }
+            }
+        }
+        inNotif = !inNotif
+        updateNotifButton()
     }
     
     

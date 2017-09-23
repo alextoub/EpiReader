@@ -42,6 +42,7 @@
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 		DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808F1E8097A700A8F423 /* StringUtils.swift */; };
 		DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA04CB1E83E7CD008AC100 /* Tag.swift */; };
+		E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655D71A1F77061C001B350F /* NotificationTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,6 +99,7 @@
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../EpiReader/StringUtils.swift; sourceTree = "<group>"; };
 		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../EpiReader/Tag.swift; sourceTree = "<group>"; };
 		E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpiReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E655D71A1F77061C001B350F /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */,
 				DABE51031F76EB4800CB4F93 /* AboutTVC.swift */,
 				DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */,
+				E655D71A1F77061C001B350F /* NotificationTVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */,
 				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
+				E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */,
 				DABE51041F76EB4800CB4F93 /* AboutTVC.swift in Sources */,
 				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
 				DA6723131E80107200899F3F /* AddGroupTVC.swift in Sources */,
