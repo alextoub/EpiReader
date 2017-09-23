@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */; };
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
-		DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */; };
+		DA5DFB4A1EE59D5700DFE65D /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */; };
 		DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230C1E80075F00899F3F /* RouterProtocol.swift */; };
 		DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67230E1E8008AD00899F3F /* Favorite.swift */; };
 		DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723101E800B0600899F3F /* DataBusiness.swift */; };
@@ -35,6 +35,8 @@
 		DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */; };
 		DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FD1F74E39C00CB4F93 /* StaticData.swift */; };
 		DABE51001F74E7C400CB4F93 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FF1F74E7C400CB4F93 /* RequestService.swift */; };
+		DABE51021F76E49500CB4F93 /* NSCodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE51011F76E49500CB4F93 /* NSCodingData.swift */; };
+		DABE51041F76EB4800CB4F93 /* AboutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE51031F76EB4800CB4F93 /* AboutTVC.swift */; };
 		DAD2F9301F72BA61009BE02B /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD2F92F1F72BA61009BE02B /* Notification.swift */; };
 		DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808B1E8035D100A8F423 /* TopicCell.swift */; };
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
@@ -59,7 +61,7 @@
 		4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.debug.xcconfig"; sourceTree = "<group>"; };
 		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCell.swift; path = ../EpiReader/LoadingCell.swift; sourceTree = "<group>"; };
-		DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTVC.swift; sourceTree = "<group>"; };
+		DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		DA67230C1E80075F00899F3F /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouterProtocol.swift; path = ../EpiReader/RouterProtocol.swift; sourceTree = "<group>"; };
 		DA67230E1E8008AD00899F3F /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Favorite.swift; path = ../EpiReader/Favorite.swift; sourceTree = "<group>"; };
 		DA6723101E800B0600899F3F /* DataBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBusiness.swift; path = ../EpiReader/DataBusiness.swift; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccess.swift; path = ../EpiReader/DataAccess.swift; sourceTree = "<group>"; };
 		DABE50FD1F74E39C00CB4F93 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		DABE50FF1F74E7C400CB4F93 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		DABE51011F76E49500CB4F93 /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
+		DABE51031F76EB4800CB4F93 /* AboutTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTVC.swift; sourceTree = "<group>"; };
 		DAD2F92F1F72BA61009BE02B /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		DADA808B1E8035D100A8F423 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicCell.swift; path = ../EpiReader/TopicCell.swift; sourceTree = "<group>"; };
 		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopicTVC.swift; path = ../EpiReader/TopicTVC.swift; sourceTree = "<group>"; };
@@ -186,7 +190,8 @@
 				DA6723161E80229800899F3F /* NewsTVC.swift */,
 				DA6723121E80107200899F3F /* AddGroupTVC.swift */,
 				DADA808D1E8035E500A8F423 /* TopicTVC.swift */,
-				DA5DFB491EE59D5700DFE65D /* SettingTVC.swift */,
+				DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */,
+				DABE51031F76EB4800CB4F93 /* AboutTVC.swift */,
 				DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */,
 			);
 			name = Controllers;
@@ -198,6 +203,7 @@
 				DA8D2F481E7FF06A00BA7FB1 /* Utilities */,
 				DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */,
 				DABE50FF1F74E7C400CB4F93 /* RequestService.swift */,
+				DABE51011F76E49500CB4F93 /* NSCodingData.swift */,
 			);
 			name = "Data Access";
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */,
 				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
+				DABE51041F76EB4800CB4F93 /* AboutTVC.swift in Sources */,
 				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
 				DA6723131E80107200899F3F /* AddGroupTVC.swift in Sources */,
 				DA7C34C71E829B2B00A1DA99 /* ReadNews.swift in Sources */,
@@ -449,11 +456,12 @@
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
 				DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */,
-				DA5DFB4A1EE59D5700DFE65D /* SettingTVC.swift in Sources */,
+				DA5DFB4A1EE59D5700DFE65D /* SettingsTVC.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
 				DAD2F9301F72BA61009BE02B /* Notification.swift in Sources */,
 				DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */,
+				DABE51021F76E49500CB4F93 /* NSCodingData.swift in Sources */,
 				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,
 				DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */,
