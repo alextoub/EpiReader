@@ -48,4 +48,10 @@ class MainBusiness {
             completed(response, error)
         }
     }
+    
+    static func getSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response:[NotificationGroups]?, _ error:Error?) -> Void)) -> Void {
+        MainData.getSubscribedGroups(service: service, registration_id: registration_id, host: host) { (response, error) in
+            completed(response, error)
+        }
+    }
 }

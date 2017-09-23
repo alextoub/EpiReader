@@ -20,6 +20,7 @@ private enum Router {
     case getNewsWithDate(String, Int, String)
     case postSubscribeNotification(String, String, String, String)
     case postUnsubscribeNotification(String, String, String, String)
+    case getSubscribedGroups(String, String, String)
 }
 
 extension Router : RouterProtocol {
@@ -39,6 +40,8 @@ extension Router : RouterProtocol {
             return .post
         case .postUnsubscribeNotification:
             return .post
+        case .getSubscribedGroups:
+            return .get
         }
     }
     // MARK: - API Path
@@ -56,6 +59,8 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB
         case .postUnsubscribeNotification:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB
+        case .getSubscribedGroups:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
         }
     }
 }
@@ -120,5 +125,12 @@ class MainData {
                 completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
-    
+
+    static func getSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response:[NotificationGroups]?, _ error:Error?) -> Void)) -> Void {
+        Alamofire.request(Router.getSubscribedGroups(service, registration_id, host))
+            .validate()
+            .responseArray { (alamoResponse: DataResponse<[NotificationGroups]>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
 }
