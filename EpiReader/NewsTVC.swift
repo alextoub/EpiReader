@@ -190,7 +190,7 @@ class NewsTVC: UITableViewController {
     
     @IBAction func notificationButtonAction(_ sender: Any) {
         if !inNotif {
-            MainBusiness.postSubscribeNotification(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
                     if error == nil {
                         StaticData.notificationsGroups.append(self.currentGroup)
@@ -199,7 +199,7 @@ class NewsTVC: UITableViewController {
             }
         }
         else {
-            MainBusiness.postSubscribeNotification(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
                     if error == nil {
                         let index = StaticData.notificationsGroups.index(of: self.currentGroup)

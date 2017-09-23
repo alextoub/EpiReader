@@ -16,4 +16,6 @@ public struct StaticData {
     public static var myGroups: [Group]?
     
     public static var tags: [Tag]?
+    
+    public static var deviceToken = ""
 }

@@ -21,7 +21,8 @@ class RequestService {
     }
     
     public func postSubscribedGroups(){
-        MainBusiness.postSubscribedGroups(service: "ios", registration_id: (UIDevice.current.identifierForVendor?.uuidString)!, host: "news.epita.fr") { (response, error) in
+        print((UIDevice.current.identifierForVendor?.uuidString)!)
+        MainBusiness.postSubscribedGroups(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr") { (response, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     let resp = response!
