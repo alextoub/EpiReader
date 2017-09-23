@@ -28,17 +28,6 @@ class AddGroupTVC: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - NSCoding functions
-    
-    private func saveFavorites() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Favorites successfully saved.")
-        } else {
-            print("Failed to save favorites...")
-        }
-    }
-    
     // MARK: - Custom functions
     
     func fillGroupNames() {
@@ -108,6 +97,6 @@ class AddGroupTVC: UITableViewController {
             sender.isSelected = true
             sender.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
         }
-        saveFavorites()
+        NSCodingData().saveFavorites(favorites: favorites)
     }
 }

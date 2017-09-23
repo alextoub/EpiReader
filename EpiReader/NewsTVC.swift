@@ -80,49 +80,6 @@ class NewsTVC: UITableViewController {
         }
     }
     
-    
-    // MARK: - NSCoding functions
-    
-    private func saveReadNews() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(readNews, toFile: ReadNews.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("ReadNews successfully saved.")
-        } else {
-            print("Failed to save readNews...")
-        }
-    }
-    
-    private func loadReadNews() -> [ReadNews]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: ReadNews.ArchiveURL.path) as? [ReadNews]
-    }
-    
-    private func saveTag() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Tag successfully saved.")
-        } else {
-            print("Failed to save tag...")
-        }
-    }
-    
-    private func loadTag() -> [Tag]?  {
-        print(Tag.ArchiveURL.path)
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Tag.ArchiveURL.path) as? [Tag]
-    }
-    
-    private func saveFavorites() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Favorites successfully saved.")
-        } else {
-            print("Failed to save favorites...")
-        }
-    }
-    
-    private func loadFavorites() -> [Favorite]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
-    }
-    
     // MARK: - Custom functions
     
     func setupNews() {
@@ -148,14 +105,14 @@ class NewsTVC: UITableViewController {
     
     func getReadNews() {
         readNews.removeAll()
-        if let readNew = loadReadNews() {
+        if let readNew = NSCodingData().loadReadNews() {
             readNews += readNew
         }
     }
     
     func getTags() {
         tags.removeAll()
-        if let tag = loadTag() {
+        if let tag = NSCodingData().loadTag() {
             tags += tag
         }
     }
@@ -173,7 +130,7 @@ class NewsTVC: UITableViewController {
             let color = getRandomColor()
             let new = Tag(tagName: tag, attributedColor: color)
             tags.append(new)
-            saveTag()
+            NSCodingData().saveTag(tags: tags)
             tagged = new
         }
         return tagged!
@@ -236,7 +193,7 @@ class NewsTVC: UITableViewController {
         readNews.append(ReadNews(id : index.id!))
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
         cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        saveReadNews()
+        NSCodingData().saveReadNews(readNews: readNews)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

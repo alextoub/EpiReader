@@ -38,25 +38,10 @@ class MainTVC: UITableViewController {
     
     func getFav() {
         favorites.removeAll()
-        if let fav = loadFavorites() {
+        if let fav = NSCodingData().loadFavorites() {
             favorites += fav
             tableView.reloadData()
         }
-    }
-    
-    // MARK: - NSCoding functions
-    
-    private func saveFavorites() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Favorites successfully saved.")
-        } else {
-            print("Failed to save favorites...")
-        }
-    }
-    
-    private func loadFavorites() -> [Favorite]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
     }
     
     // MARK: - Table view data source
@@ -85,7 +70,7 @@ class MainTVC: UITableViewController {
             else {
                 tableView.reloadData()
             }
-            saveFavorites()
+            NSCodingData().saveFavorites(favorites: favorites)
         }
     }
     

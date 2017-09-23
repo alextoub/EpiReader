@@ -9,3 +9,14 @@
 import Foundation
 import Alamofire
 
+class RequestService {
+    public func getGroups(){
+        MainBusiness.getGroups { (response, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    StaticData.allGroups = response!
+                }
+            }
+        }
+    }
+}

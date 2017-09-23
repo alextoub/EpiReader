@@ -17,17 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func initializeApp() {
-        getGroups()
-    }
-    
-    func getGroups(){
-        MainBusiness.getGroups { (response, error) in
-            DispatchQueue.main.async {
-                if error == nil {
-                    StaticData.allGroups = response!
-                }
-            }
-        }
+        RequestService().getGroups()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
