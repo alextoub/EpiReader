@@ -599,6 +599,54 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <outlet property="subjectLabel" destination="JwN-h9-n0P" id="5ea-Zv-wHj"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NetiquetteCell" rowHeight="195" id="hNt-xY-DUS" customClass="NetiquetteCell" customModule="EpiReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="223" width="375" height="195"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hNt-xY-DUS" id="RG0-cK-BsE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="195"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNJ-Ch-lFL" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="5" width="355" height="185"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-ZQ-xhy">
+                                                    <rect key="frame" x="8" y="8" width="339" height="169"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="leading" secondItem="MNJ-Ch-lFL" secondAttribute="leadingMargin" id="2eR-9a-VtG"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="bottom" secondItem="MNJ-Ch-lFL" secondAttribute="bottomMargin" id="4QX-G0-wzD"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailingMargin" id="5Ec-Ev-2aQ"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="top" secondItem="MNJ-Ch-lFL" secondAttribute="topMargin" id="amd-Gg-Eck"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="centerY" secondItem="RG0-cK-BsE" secondAttribute="centerY" id="EsN-1u-Pyy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="2" id="G3Q-uf-dZn"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="centerX" secondItem="RG0-cK-BsE" secondAttribute="centerX" id="JLh-PA-YxN"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="topMargin" constant="-3" id="LzN-vL-VrA"/>
+                                        <constraint firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="10" id="MDz-xP-zgq"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="top" constant="5" id="TRd-fb-Pke"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="top" constant="5" id="Wxu-uH-V0D"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="leading" secondItem="RG0-cK-BsE" secondAttribute="leading" constant="10" id="bfu-LE-4Fd"/>
+                                        <constraint firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="10" id="vDA-r8-HpK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="contentTextView" destination="Cmm-ZQ-xhy" id="dRu-HC-d4x"/>
+                                    <outlet property="newsView" destination="MNJ-Ch-lFL" id="68K-5H-dll"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ZSz-cW-tiH" id="eKa-tj-Lt7"/>
@@ -615,7 +663,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXL-yI-f4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="179"/>
+            <point key="canvasLocation" x="2156" y="178.56071964017991"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="hSY-QS-BY7">
