@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (4.5.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - AlamofireObjectMapper (4.1.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
   - ESPullToRefresh (2.6)
-  - Fabric (1.6.12)
-  - Google-Mobile-Ads-SDK (7.23.0)
-  - ObjectMapper (2.2.8)
+  - Fabric (1.6.13)
+  - Google-Mobile-Ads-SDK (7.24.0)
+  - ObjectMapper (2.2.9)
   - SVProgressHUD (2.2.1)
 
 DEPENDENCIES:
@@ -34,14 +34,14 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
   ESPullToRefresh: 85f4990acf87f78c6a1466bbbee7a75d7de24db9
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  Google-Mobile-Ads-SDK: a43dc8efdb566c74d00ac6934c781de969348d80
-  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  Google-Mobile-Ads-SDK: f405b7acb098fe89e6fcd05fdbf400c1a5bcb935
+  ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
 PODFILE CHECKSUM: 47ffd3845be214c695960c23513d35ab44bc6bbd

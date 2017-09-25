@@ -1,15 +1,15 @@
 //
-//  SettingTVC.swift
+//  AboutTVC.swift
 //  EpiReader
 //
-//  Created by Alexandre Toubiana on 05/06/2017.
+//  Created by Alexandre Toubiana on 23/09/2017.
 //  Copyright © 2017 Alexandre Toubiana. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class SettingTVC: UITableViewController {
+class AboutTVC: UITableViewController {
     
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var mapKitView: MKMapView!

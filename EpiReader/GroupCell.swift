@@ -26,4 +26,15 @@ class GroupCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func setupCell(favorite: Favorite) {
+        
+        groupNameLabel.text = favorite.group_name
+        
+        groupNameLabel.text = favorite.group_name
+        nbNewsLabel.text = String(describing: favorite.topic_nb!)
+        
+        groupView.layer.masksToBounds = true
+        groupView.layer.cornerRadius = groupView.bounds.height / 2
+    }
+    
 }

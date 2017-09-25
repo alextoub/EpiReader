@@ -12,38 +12,43 @@ import ESPullToRefresh
 import GoogleMobileAds
 
 class NewsTVC: UITableViewController {
-    
+
     // MARK: - Global variables
-    
+
+    @IBOutlet weak var notificationButton: UIBarButtonItem!
+
     var news = [News]()
     var currentGroup = ""
     var readNews = [ReadNews]()
     var tags = [Tag]()
     var favorites = [Favorite]()
     var bannerView: GADBannerView!
-    
+    var inNotif = false
+
     // MARK: - View LifeCycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show(withStatus: "Chargement en cours")
-        
+
         setupNews()
+        inNotif = checkInNotifs(name: currentGroup)
+        updateNotifButton()
         self.title = currentGroup
         self.tableView.es_addPullToRefresh {
             self.setupNews()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
-        
+
         bannerView = GADBannerView()
         bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 60))
         bannerView.adUnitID = Constants.AdMob.unitID
-        
+
         let offset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
-        
-        
+
+
         bannerView.rootViewController = self
         bannerView.frame = CGRect(x:0.0,
                                   y:UIScreen.main.bounds.height - offset,
@@ -52,16 +57,16 @@ class NewsTVC: UITableViewController {
         let request = GADRequest()
         bannerView.load(request)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     // MARK: - Call functions
-    
+
     func getNews(){
         MainBusiness.getNews(group: currentGroup, nb: 25) { (response, error) in
             DispatchQueue.main.async {
@@ -78,7 +83,7 @@ class NewsTVC: UITableViewController {
             }
         }
     }
-    
+
     func getNewsWithDate(date: String){
         MainBusiness.getNewsWithDate(group: currentGroup, nb: 25, date: date) { (response, error) in
             DispatchQueue.main.async {
@@ -93,65 +98,33 @@ class NewsTVC: UITableViewController {
                     SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
                 }
             }
-            
+
         }
     }
-    
-    
-    // MARK: - NSCoding functions
-    
-    private func saveReadNews() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(readNews, toFile: ReadNews.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("ReadNews successfully saved.")
-        } else {
-            print("Failed to save readNews...")
+
+    func checkInNotifs(name: String) -> Bool {
+        return StaticData.notificationsGroups.contains(name)
+    }
+
+    func updateNotifButton() {
+        if inNotif {
+            notificationButton.image = #imageLiteral(resourceName: "notification_filled")
+        }
+        else {
+            notificationButton.image = #imageLiteral(resourceName: "notification_not_filled")
         }
     }
-    
-    private func loadReadNews() -> [ReadNews]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: ReadNews.ArchiveURL.path) as? [ReadNews]
-    }
-    
-    private func saveTag() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Tag successfully saved.")
-        } else {
-            print("Failed to save tag...")
-        }
-    }
-    
-    private func loadTag() -> [Tag]?  {
-        print(Tag.ArchiveURL.path)
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Tag.ArchiveURL.path) as? [Tag]
-    }
-    
-    private func saveFavorites() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Favorites successfully saved.")
-        } else {
-            print("Failed to save favorites...")
-        }
-    }
-    
-    private func loadFavorites() -> [Favorite]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Favorite.ArchiveURL.path) as? [Favorite]
-    }
-    
+
     // MARK: - Custom functions
-    
+
     func setupNews() {
         getNews()
         getReadNews()
         getTags()
         tableView.reloadData()
-        //SVProgressHUD.setDefaultMaskType(.black)
-        //SVProgressHUD.show(withStatus: "Chargement en cours")
     }
-    
-    
+
+
     func checkIfRead() {
         for new in news {
             new.isRead = false
@@ -162,21 +135,21 @@ class NewsTVC: UITableViewController {
             }
         }
     }
-    
+
     func getReadNews() {
         readNews.removeAll()
-        if let readNew = loadReadNews() {
+        if let readNew = NSCodingData().loadReadNews() {
             readNews += readNew
         }
     }
-    
+
     func getTags() {
         tags.removeAll()
-        if let tag = loadTag() {
+        if let tag = NSCodingData().loadTag() {
             tags += tag
         }
     }
-    
+
     func checkTag(_ tag: String) -> Tag {
         var b = false
         var tagged: Tag?
@@ -190,12 +163,12 @@ class NewsTVC: UITableViewController {
             let color = getRandomColor()
             let new = Tag(tagName: tag, attributedColor: color)
             tags.append(new)
-            saveTag()
+            NSCodingData().saveTag(tags: tags)
             tagged = new
         }
         return tagged!
     }
-    
+
     func parseSub(_ subject: String) -> NSMutableAttributedString {
         let str = NSMutableAttributedString()
         let parsedSubject = parseSubject(subject)
@@ -219,23 +192,49 @@ class NewsTVC: UITableViewController {
         }
         return str
     }
-    
-    func getRandomColor() -> UIColor {
-        let randomRed = Int(arc4random_uniform(UInt32(255)))
-        let randomGreen = Int(arc4random_uniform(UInt32(255)))
-        let randomBlue = Int(arc4random_uniform(UInt32(255)))
-        let color = UIColor(red: CGFloat(CGFloat(randomRed)/255.0),
-                            green: CGFloat(CGFloat(randomGreen)/255.0),
-                            blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
-        return color
+
+//    func getRandomColor() -> UIColor {
+//        let randomRed = Int(arc4random_uniform(UInt32(255)))
+//        let randomGreen = Int(arc4random_uniform(UInt32(255)))
+//        let randomBlue = Int(arc4random_uniform(UInt32(255)))
+//        let color = UIColor(red: CGFloat(CGFloat(randomRed)/255.0),
+//                            green: CGFloat(CGFloat(randomGreen)/255.0),
+//                            blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
+//        return color
+//    }
+
+    @IBAction func notificationButtonAction(_ sender: Any) {
+        if !inNotif {
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+                DispatchQueue.main.async {
+                    if error == nil {
+                        StaticData.notificationsGroups.append(self.currentGroup)
+                    }
+                }
+            }
+        }
+        else {
+            MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
+                DispatchQueue.main.async {
+                    if error == nil {
+                        let index = StaticData.notificationsGroups.index(of: self.currentGroup)
+                        StaticData.notificationsGroups.remove(at: index!)
+                    }
+                }
+            }
+        }
+        inNotif = !inNotif
+        updateNotifButton()
     }
-    
+
+
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if news.count == 0 || news.count % 25 != 0 {
             return news.count
@@ -244,15 +243,15 @@ class NewsTVC: UITableViewController {
             return news.count + 1
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return bannerView
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 60
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= self.news.count {
             return
@@ -261,9 +260,9 @@ class NewsTVC: UITableViewController {
         readNews.append(ReadNews(id : index.id!))
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
         cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        saveReadNews()
+        NSCodingData().saveReadNews(readNews: readNews)
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= self.news.count && !self.news.isEmpty && self.news.count % 25 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath) as! LoadingCell
@@ -272,7 +271,7 @@ class NewsTVC: UITableViewController {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        
+
         let index = news[indexPath.row]
         let authorArr = parseAuthor(index.author!)
         cell.authorLabel.text = authorArr[0]
@@ -296,12 +295,12 @@ class NewsTVC: UITableViewController {
         else {
             cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
         }
-        
+
         return cell
     }
-    
+
     // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTopic" {
             let cell = sender as! UITableViewCell

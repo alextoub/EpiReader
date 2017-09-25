@@ -18,6 +18,9 @@ private enum Router {
     case getTopics(Int)
     case getNews(String, Int)
     case getNewsWithDate(String, Int, String)
+    case postSubscribeNotification(String, String, String, String)
+    case postUnsubscribeNotification(String, String, String, String)
+    case postSubscribedGroups(String, String, String)
 }
 
 extension Router : RouterProtocol {
@@ -33,6 +36,12 @@ extension Router : RouterProtocol {
             return .get
         case .getNewsWithDate:
             return .get
+        case .postSubscribeNotification:
+            return .post
+        case .postUnsubscribeNotification:
+            return .post
+        case .postSubscribedGroups:
+            return .post
         }
     }
     // MARK: - API Path
@@ -46,7 +55,17 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb)
         case .getNewsWithDate(let group, let nb, let date):
             return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb) + "&start_date=" + date + "%2B0000"
+        case .postSubscribeNotification:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB
+        case .postUnsubscribeNotification:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB
+        case .postSubscribedGroups:
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
         }
+    }
+    
+    fileprivate var headers: HTTPHeaders {
+        return Constants.Headers.headers
     }
 }
 
@@ -95,4 +114,48 @@ class MainData {
         }
     }
     
+    static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationSub?, _ error:Error?) -> Void)) -> Void {
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB, method: .post, parameters: parameters, headers: Constants.Headers.headers)
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<NotificationSub>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
+    static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationUnsub?, _ error:Error?) -> Void)) -> Void {
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB, method: .post, parameters: parameters, headers: Constants.Headers.headers)
+            .validate()
+            .responseObject { (alamoResponse: DataResponse<NotificationUnsub>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+
+    static func postSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response: NotificationGroups?, _ error:Error?) -> Void)) -> Void {
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host
+        ]
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS, method: .post, parameters: parameters, headers: Constants.Headers.headers)
+        .validate()
+        .responseObject { (alamoResponse: DataResponse<NotificationGroups>) in
+            completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
 }

@@ -28,36 +28,6 @@ class AddGroupTVC: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Call functions
-    
-    func getGroups(){
-        MainBusiness.getGroups { (response, error) in
-            DispatchQueue.main.async {
-                if error == nil {
-                    self.groups = response!
-                    self.tableView.reloadData()
-                    self.fillGroupNames()
-                    SVProgressHUD.dismiss()
-                }
-                else
-                {
-                    SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
-                }
-            }
-        }
-    }
-    
-    // MARK: - NSCoding functions
-    
-    private func saveFavorites() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(favorites, toFile: Favorite.ArchiveURL.path)
-        if isSuccessfulSave {
-            print("Favorites successfully saved.")
-        } else {
-            print("Failed to save favorites...")
-        }
-    }
-    
     // MARK: - Custom functions
     
     func fillGroupNames() {
@@ -67,9 +37,9 @@ class AddGroupTVC: UITableViewController {
     }
     
     func setupGroup() {
-        getGroups()
-        SVProgressHUD.setDefaultMaskType(.black)
-        SVProgressHUD.show(withStatus: "Chargement en cours")
+        self.groups = StaticData.allGroups!
+        self.tableView.reloadData()
+        self.fillGroupNames()
     }
     
     // MARK: - Table view data source
@@ -127,6 +97,6 @@ class AddGroupTVC: UITableViewController {
             sender.isSelected = true
             sender.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
         }
-        saveFavorites()
+        NSCodingData().saveFavorites(favorites: favorites)
     }
 }
