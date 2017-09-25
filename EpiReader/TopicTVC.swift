@@ -102,21 +102,21 @@ class TopicTVC: UITableViewController {
             if !error.errors.isEmpty {
                 var count = 0
                 for i in error.errors {
-                    text.append("🚫 \(i)\n")
+                    text.append("🚫 \(i)")
                     count += 1
                     if count < error.errors.count {
-                        text.append("\n")
+                        text.append("\n\n")
                     }
                 }
             }
             if !error.warnings.isEmpty {
-                text.append("\n")
+                text.append("\n\n")
                 var count = 0
                 for i in error.warnings {
-                    text.append("⚠️ \(i)\n")
+                    text.append("⚠️ \(i)")
                     count += 1
                     if count < error.warnings.count {
-                        text.append("\n")
+                        text.append("\n\n")
                     }
                 }
             }
@@ -198,13 +198,14 @@ class TopicTVC: UITableViewController {
             cell.contentTextView.text = setupTextNetiquette(error: index)
             
             if sizeCells[indexPath.row] == 195.0 {
+                print(cell.contentTextView.frame)
                 var newContentText = cell.contentTextView.frame
                 newContentText.size.width = cell.contentTextView.contentSize.width
-                newContentText.size.height = cell.contentTextView.contentSize.height - 43
+                newContentText.size.height = cell.contentTextView.contentSize.height
                 cell.contentTextView.frame = newContentText
-                sizeCells[indexPath.row] = cell.contentTextView.contentSize.height - 43
+                sizeCells[indexPath.row] = cell.contentTextView.contentSize.height
             }
-            cell.contentTextView.sizeThatFits(CGSize(width: cell.contentTextView.contentSize.width, height: cell.contentTextView.contentSize.height - 43))
+            cell.contentTextView.sizeThatFits(CGSize(width: cell.contentTextView.contentSize.width, height: cell.contentTextView.contentSize.height))
             cell.contentTextView.isScrollEnabled = false
             
             return cell
@@ -216,8 +217,13 @@ class TopicTVC: UITableViewController {
         guard (sizeCells.count > 0) else {
             return 195
         }
-        print(195 - 128 + sizeCells[indexPath.row])
-        return 195 - 128 + sizeCells[indexPath.row]
+        if indexPath.row % 2 == 0 {
+        //print(195 - 128 + sizeCells[indexPath.row])
+            return 195 - 128 + sizeCells[indexPath.row]
+        }
+        else {
+            return 30 + sizeCells[indexPath.row]
+        }
         //return 3000
     }
     

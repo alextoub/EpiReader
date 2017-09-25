@@ -83,12 +83,12 @@ class NetiquetteChecker {
             if !line.matchingStrings(regex: quoteRegex).isEmpty {
                 if !currentlyInQuote {
                     var noHeader = false
-                    if !findQuote && lines[prevLine].count != 0 {
+                    if !findQuote && prevLine > 0 && lines[prevLine].count != 0 {
                         warning.append("Quote should be preceded by a header.")
                         noHeader = true
                     }
                     let emptyLine = prevLine - (findQuote ? 0 : 1)
-                    if emptyLine == -1 {
+                    if emptyLine < 0 {
                         error.append("The news must not begin by a quote.")
                     }
                     else if (!noHeader && lines[emptyLine].count != 0) {

@@ -617,10 +617,12 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                             </subviews>
                                             <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="leading" secondItem="MNJ-Ch-lFL" secondAttribute="leadingMargin" id="2eR-9a-VtG"/>
-                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="bottom" secondItem="MNJ-Ch-lFL" secondAttribute="bottomMargin" id="4QX-G0-wzD"/>
-                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailingMargin" id="5Ec-Ev-2aQ"/>
-                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="top" secondItem="MNJ-Ch-lFL" secondAttribute="topMargin" id="amd-Gg-Eck"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="centerY" secondItem="MNJ-Ch-lFL" secondAttribute="centerY" id="Cko-4k-7o2"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="top" secondItem="MNJ-Ch-lFL" secondAttribute="top" constant="8" id="EL4-eN-1Wa"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="centerX" secondItem="MNJ-Ch-lFL" secondAttribute="centerX" id="TcE-Qf-x7v"/>
+                                                <constraint firstItem="Cmm-ZQ-xhy" firstAttribute="leading" secondItem="MNJ-Ch-lFL" secondAttribute="leading" constant="8" id="Uqw-AV-1fv"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cmm-ZQ-xhy" secondAttribute="bottom" constant="8" id="rer-Xu-caf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cmm-ZQ-xhy" secondAttribute="trailing" constant="8" id="ue9-cx-LNB"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -630,15 +632,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="centerY" secondItem="RG0-cK-BsE" secondAttribute="centerY" id="EsN-1u-Pyy"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="2" id="G3Q-uf-dZn"/>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="centerX" secondItem="RG0-cK-BsE" secondAttribute="centerX" id="JLh-PA-YxN"/>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="topMargin" constant="-3" id="LzN-vL-VrA"/>
-                                        <constraint firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="10" id="MDz-xP-zgq"/>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="top" constant="5" id="TRd-fb-Pke"/>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="top" constant="5" id="Wxu-uH-V0D"/>
-                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="leading" secondItem="RG0-cK-BsE" secondAttribute="leading" constant="10" id="bfu-LE-4Fd"/>
-                                        <constraint firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="10" id="vDA-r8-HpK"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="top" secondItem="RG0-cK-BsE" secondAttribute="top" constant="5" id="7zJ-m5-Hbl"/>
+                                        <constraint firstAttribute="bottom" secondItem="MNJ-Ch-lFL" secondAttribute="bottom" constant="5" id="Ev8-qo-e5h"/>
+                                        <constraint firstItem="MNJ-Ch-lFL" firstAttribute="leading" secondItem="RG0-cK-BsE" secondAttribute="leading" constant="10" id="ZPE-dU-rZN"/>
+                                        <constraint firstAttribute="trailing" secondItem="MNJ-Ch-lFL" secondAttribute="trailing" constant="10" id="cRi-tF-9PR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
