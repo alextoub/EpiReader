@@ -64,7 +64,7 @@ class SettingsTVC: UITableViewController {
      - returns: the number of rows in the section
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfOptions: Int = 3
+        let numberOfOptions: Int = 4
         return numberOfOptions
     }
     
@@ -83,10 +83,11 @@ class SettingsTVC: UITableViewController {
         case 1 :
             return setupOptionCell(identifier: "notificationCell", indexPath: indexPath, text: "Notifications")
         case 2 :
-            return setupDefaultCell(identifier: "cell", indexPath: indexPath)
+            return setupOptionCell(identifier: "tagCell", indexPath: indexPath, text: "Balises")
+            //return setupDefaultCell(identifier: "cell", indexPath: indexPath)
             //return setupOptionCell(identifier: "themeCell", indexPath: indexPath, text: "Thème")
         case 3 :
-            return setupOptionCell(identifier: "tagCell", indexPath: indexPath, text: "Balises")
+            return setupDefaultCell(identifier: "cell", indexPath: indexPath)
         case 4 :
             return setupOptionCell(identifier: "cacheCell", indexPath: indexPath, text: "Cache")
         default:
