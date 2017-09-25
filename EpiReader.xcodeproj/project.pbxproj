@@ -42,6 +42,8 @@
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 		DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808F1E8097A700A8F423 /* StringUtils.swift */; };
 		DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA04CB1E83E7CD008AC100 /* Tag.swift */; };
+		E606B9621F78C02E00F69CBB /* NewsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9611F78C02E00F69CBB /* NewsUtils.swift */; };
+		E606B9641F78C08100F69CBB /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9631F78C08100F69CBB /* ColorUtils.swift */; };
 		E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E655D71A1F77061C001B350F /* NotificationTVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,8 @@
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../EpiReader/StringUtils.swift; sourceTree = "<group>"; };
 		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../EpiReader/Tag.swift; sourceTree = "<group>"; };
 		E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpiReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E606B9611F78C02E00F69CBB /* NewsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUtils.swift; sourceTree = "<group>"; };
+		E606B9631F78C08100F69CBB /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		E655D71A1F77061C001B350F /* NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +245,8 @@
 				DA8D2F4C1E7FFAEE00BA7FB1 /* CustomView.swift */,
 				DA8D2F4D1E7FFAEE00BA7FB1 /* DateUtils.swift */,
 				DADA808F1E8097A700A8F423 /* StringUtils.swift */,
+				E606B9611F78C02E00F69CBB /* NewsUtils.swift */,
+				E606B9631F78C08100F69CBB /* ColorUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -298,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Alexandre Toubiana";
 				TargetAttributes = {
 					DA8D2F2A1E7FDFDC00BA7FB1 = {
@@ -445,6 +451,7 @@
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
 				DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */,
+				E606B9641F78C08100F69CBB /* ColorUtils.swift in Sources */,
 				DA5DFB4A1EE59D5700DFE65D /* SettingsTVC.swift in Sources */,
 				DA67230D1E80075F00899F3F /* RouterProtocol.swift in Sources */,
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
@@ -458,6 +465,7 @@
 				DA8D2F4A1E7FF07700BA7FB1 /* Constants.swift in Sources */,
 				DA8D2F531E7FFBB200BA7FB1 /* MainTVC.swift in Sources */,
 				DA8D2F4E1E7FFAEE00BA7FB1 /* CustomButton.swift in Sources */,
+				E606B9621F78C02E00F69CBB /* NewsUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +502,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -502,7 +512,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -544,7 +558,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -552,7 +568,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -585,10 +605,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EpiReader/EpiReader.entitlements;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EpiReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -606,10 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EpiReader/EpiReader.entitlements;
 				DEVELOPMENT_TEAM = E5L7NC8M9T;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EpiReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -56,7 +56,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksd-aM-JoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.8" y="-483.50824587706148"/>
+            <point key="canvasLocation" x="1297" y="-558"/>
         </scene>
         <!--EpiReader-->
         <scene sceneID="Ibc-aP-Kjj">
@@ -159,7 +159,7 @@ le bouton '+' en haut à droite</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frd-sp-hoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="181.25937031484258"/>
+            <point key="canvasLocation" x="711" y="179"/>
         </scene>
         <!--À propos-->
         <scene sceneID="w4k-rA-mkL">
@@ -265,7 +265,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyl-La-W9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="1709"/>
+            <point key="canvasLocation" x="1095" y="1895"/>
         </scene>
         <!--NotificationTVC-->
         <scene sceneID="1Si-CI-bzE">
@@ -274,7 +274,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="npP-fj-jPj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" id="YCl-TZ-d8W">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -283,6 +283,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -293,7 +294,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhU-SO-Fss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892" y="1709"/>
+            <point key="canvasLocation" x="1756" y="1895"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ac4-36-CUb">
@@ -302,11 +303,11 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhH-2q-3Ux">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.9215705394744873" green="0.92157328128814697" blue="0.92157948017120361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="pus-Fc-e2E">
                             <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" id="6ID-ot-kq3">
@@ -316,6 +317,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="6ft-WB-Aae" kind="show" id="guG-Sl-Oy1"/>
                                 </connections>
@@ -327,6 +329,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="2T6-dG-Ktc" kind="show" id="LOi-T8-6zq"/>
                                 </connections>
@@ -338,6 +341,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -352,7 +356,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG8-WZ-Ovh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1482" y="924"/>
+            <point key="canvasLocation" x="1297" y="987"/>
         </scene>
         <!--NewsTVC-->
         <scene sceneID="bCR-lB-EW0">
@@ -488,7 +492,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5q-dc-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544.8" y="180.35982008995504"/>
+            <point key="canvasLocation" x="1466" y="180"/>
         </scene>
         <!--TopicTVC-->
         <scene sceneID="c4i-yW-8vy">
@@ -611,7 +615,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXL-yI-f4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="179.46026986506749"/>
+            <point key="canvasLocation" x="2156" y="179"/>
         </scene>
         <!--ImageVC-->
         <scene sceneID="hSY-QS-BY7">
@@ -645,7 +649,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwg-24-GxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3194.4000000000001" y="181.25937031484258"/>
+            <point key="canvasLocation" x="2913" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C5m-TS-vDn">
@@ -661,7 +665,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEm-Vy-0G8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-164" y="181"/>
+            <point key="canvasLocation" x="-74" y="180"/>
         </scene>
     </scenes>
     <resources>

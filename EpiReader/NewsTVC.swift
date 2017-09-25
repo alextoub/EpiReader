@@ -105,8 +105,6 @@ class NewsTVC: UITableViewController {
         getReadNews()
         getTags()
         tableView.reloadData()
-        //SVProgressHUD.setDefaultMaskType(.black)
-        //SVProgressHUD.show(withStatus: "Chargement en cours")
     }
     
     
@@ -153,7 +151,7 @@ class NewsTVC: UITableViewController {
         }
         return tagged!
     }
-    
+
     func parseSub(_ subject: String) -> NSMutableAttributedString {
         let str = NSMutableAttributedString()
         let parsedSubject = parseSubject(subject)
@@ -178,15 +176,15 @@ class NewsTVC: UITableViewController {
         return str
     }
     
-    func getRandomColor() -> UIColor {
-        let randomRed = Int(arc4random_uniform(UInt32(255)))
-        let randomGreen = Int(arc4random_uniform(UInt32(255)))
-        let randomBlue = Int(arc4random_uniform(UInt32(255)))
-        let color = UIColor(red: CGFloat(CGFloat(randomRed)/255.0),
-                            green: CGFloat(CGFloat(randomGreen)/255.0),
-                            blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
-        return color
-    }
+//    func getRandomColor() -> UIColor {
+//        let randomRed = Int(arc4random_uniform(UInt32(255)))
+//        let randomGreen = Int(arc4random_uniform(UInt32(255)))
+//        let randomBlue = Int(arc4random_uniform(UInt32(255)))
+//        let color = UIColor(red: CGFloat(CGFloat(randomRed)/255.0),
+//                            green: CGFloat(CGFloat(randomGreen)/255.0),
+//                            blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
+//        return color
+//    }
     
     @IBAction func notificationButtonAction(_ sender: Any) {
         if !inNotif {
