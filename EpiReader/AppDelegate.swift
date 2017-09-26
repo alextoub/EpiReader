@@ -60,36 +60,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let aps = userInfo["aps"] as! [String: AnyObject]
             let alert = aps["alert"] as! [String: AnyObject]
-            let title = alert["title"] as? String
+            let title = alert["subtitle"] as? String
             
             let news_id = aps["news_id"] as? Int
             
-            print("\(title) & \(news_id)")
+            if title != nil && news_id != nil {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let nav = storyBoard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
+                
+                let firstView: MainTVC = storyBoard.instantiateViewController(withIdentifier: "MainTVC") as! MainTVC
+                
+                let secondView: NewsTVC = storyBoard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
+                secondView.currentGroup = title!
             
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let thirdView : TopicTVC = storyBoard.instantiateViewController(withIdentifier: "TopicTVC") as! TopicTVC
+                thirdView.idNews = news_id
+                thirdView.nb_msg = 1
             
-            let nav = storyBoard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
+                nav.pushViewController(firstView, animated: false)
+                nav.pushViewController(secondView, animated: false)
+                nav.pushViewController(thirdView, animated: false)
             
-            let firstView: MainTVC = storyBoard.instantiateViewController(withIdentifier: "MainTVC") as! MainTVC
+                var readNews = NSCodingData().loadReadNews()
+                readNews?.append(ReadNews(id: news_id!))
+                NSCodingData().saveReadNews(readNews: readNews!)
             
-            let secondView: NewsTVC = storyBoard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
-            secondView.currentGroup = title!
-            
-            let thirdView : TopicTVC = storyBoard.instantiateViewController(withIdentifier: "TopicTVC") as! TopicTVC
-            thirdView.idNews = news_id
-            thirdView.nb_msg = 1
-            
-            nav.pushViewController(firstView, animated: false)
-            nav.pushViewController(secondView, animated: false)
-            nav.pushViewController(thirdView, animated: false)
-            
-            var readNews = NSCodingData().loadReadNews()
-            readNews?.append(ReadNews(id: news_id!))
-            NSCodingData().saveReadNews(readNews: readNews!)
-            
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = nav
-            self.window?.makeKeyAndVisible()
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                self.window?.rootViewController = nav
+                self.window?.makeKeyAndVisible()
+            }
             
         }
     }
