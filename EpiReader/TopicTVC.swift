@@ -36,20 +36,23 @@ class TopicTVC: UITableViewController {
     }
 
     // MARK: - Call functions
+    
+    func parse_topic(topic: Topic) {
+        
+        let topicTmp = Topic(id: topic.id, uid: topic.uid, author: topic.author, subject: topic.subject, content: topic.content, creation_date: topic.creation_date, groups: topic.groups)
+        topics.append(topicTmp)
+        
+        for i in topic.children! {
+            parse_topic(topic: i)
+        }
+    }
+    
+    
 
     func createArrayOfTopics()
     {
-        var curr = topic
-        if nb_msg == 0 {
-            nb_msg = 1
-        }
-        for _ in 0..<nb_msg {
-            let topicTmp = Topic(id: curr?.id, uid: curr?.uid, author: curr?.author, subject: curr?.subject, content: curr?.content, creation_date: curr?.creation_date, groups: curr?.groups)
-            topics.append(topicTmp)
-            if (curr?.children?.count)! > 0 {
-                curr = curr?.children?[0]
-            }
-        }
+        parse_topic(topic: topic!)
+        nb_msg = topics.count
     }
 
     func getTopic(){
