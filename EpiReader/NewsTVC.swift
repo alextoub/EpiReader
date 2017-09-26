@@ -260,6 +260,7 @@ class NewsTVC: UITableViewController {
         readNews.append(ReadNews(id : index.id!))
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
         cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
         NSCodingData().saveReadNews(readNews: readNews)
     }
 
