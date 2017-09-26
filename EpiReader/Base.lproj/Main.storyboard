@@ -61,7 +61,7 @@
         <!--EpiReader-->
         <scene sceneID="Ibc-aP-Kjj">
             <objects>
-                <tableViewController id="KCt-an-Yvc" customClass="MainTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTVC" id="KCt-an-Yvc" customClass="MainTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="JXX-Fd-KXw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,7 @@ le bouton '+' en haut à droite</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ywA-fd-l5N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="v6A-Ih-A9Y">
                                 <cells>
@@ -205,7 +205,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="250" id="Xg9-Ks-xLr">
                                         <rect key="frame" x="0.0" y="180" width="375" height="250"/>
@@ -232,7 +231,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="weW-Vl-X17">
                                         <rect key="frame" x="0.0" y="430" width="375" height="70"/>
@@ -247,7 +245,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -275,16 +272,15 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="npP-fj-jPj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" id="YCl-TZ-d8W">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notificationCell" id="YCl-TZ-d8W">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YCl-TZ-d8W" id="n31-Ht-wNL">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -307,7 +303,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WBR-Ei-gex" id="6Lc-3Z-MTy">
@@ -366,11 +362,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhH-2q-3Ux">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.9215705394744873" green="0.92157328128814697" blue="0.92157948017120361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="pus-Fc-e2E">
                             <rect key="frame" x="0.0" y="204" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" id="6ID-ot-kq3">
@@ -380,7 +375,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="6ft-WB-Aae" kind="show" id="guG-Sl-Oy1"/>
                                 </connections>
@@ -392,7 +386,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="2T6-dG-Ktc" kind="show" id="LOi-T8-6zq"/>
                                 </connections>
@@ -404,7 +397,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="9Ko-iz-m1f" kind="show" id="C56-j2-QFV"/>
                                 </connections>
@@ -416,7 +408,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92157053950000001" green="0.92157328130000005" blue="0.92157948020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -436,7 +427,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <!--NewsTVC-->
         <scene sceneID="bCR-lB-EW0">
             <objects>
-                <tableViewController id="Aja-OK-gqX" customClass="NewsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NewsTVC" id="Aja-OK-gqX" customClass="NewsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="SFU-WT-vM5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,7 +563,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <!--TopicTVC-->
         <scene sceneID="c4i-yW-8vy">
             <objects>
-                <tableViewController id="ZSz-cW-tiH" customClass="TopicTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TopicTVC" id="ZSz-cW-tiH" customClass="TopicTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="195" sectionHeaderHeight="28" sectionFooterHeight="28" id="mTK-IX-zvT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -774,7 +765,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <!--Navigation Controller-->
         <scene sceneID="C5m-TS-vDn">
             <objects>
-                <navigationController id="bKl-Ts-pQZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationVC" id="bKl-Ts-pQZ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wKu-Ca-fTw">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
