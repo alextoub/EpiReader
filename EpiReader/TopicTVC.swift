@@ -96,7 +96,7 @@ class TopicTVC: UITableViewController {
     func setupTextNetiquette(error: ErrorNetiquette) -> String {
         var text = ""
         if error.errors.isEmpty && error.errors.isEmpty {
-            text = "✅ La news est conforme à la netiquette"
+            text = "✅ La news semble conforme à la netiquette"
         }
         else {
             if !error.errors.isEmpty {
