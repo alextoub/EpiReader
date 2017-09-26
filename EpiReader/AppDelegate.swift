@@ -55,6 +55,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if application.applicationState == .background || application.applicationState == .inactive {
+            
+            let aps = userInfo["aps"] as! [String: AnyObject]
+            let alert = aps["alert"] as! [String: AnyObject]
+            let title = alert["title"] as? String
+            
+            let news_id = aps["news_id"] as? Int
+            
+            print("\(title) & \(news_id)")
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let nav = storyBoard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
+            
+            let firstView: MainTVC = storyBoard.instantiateViewController(withIdentifier: "MainTVC") as! MainTVC
+            
+            let secondView: NewsTVC = storyBoard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
+            secondView.currentGroup = title!
+            
+            let thirdView : TopicTVC = storyBoard.instantiateViewController(withIdentifier: "TopicTVC") as! TopicTVC
+            thirdView.idNews = news_id
+            thirdView.nb_msg = 1
+            
+            nav.pushViewController(firstView, animated: false)
+            nav.pushViewController(secondView, animated: false)
+            nav.pushViewController(thirdView, animated: false)
+            
+            var readNews = NSCodingData().loadReadNews()
+            readNews?.append(ReadNews(id: news_id!))
+            NSCodingData().saveReadNews(readNews: readNews!)
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = nav
+            self.window?.makeKeyAndVisible()
+            
+        }
+    }
+    
+    
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data -> String in
