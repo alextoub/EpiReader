@@ -27,16 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForPushNotifications()
         initializeApp()
         
-        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-            // 2
-            let aps = notification["aps"] as! [String: AnyObject]
-            let str = aps["alert"] as? String
-            print(str)
-            // 3
-            //(window?.rootViewController as? UINavigationController)?.pushViewController(, animated: <#T##Bool#>)
-        }
-        
-        
+        UIApplication.shared.applicationIconBadgeNumber = 0
         return true
     }
     
@@ -52,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
