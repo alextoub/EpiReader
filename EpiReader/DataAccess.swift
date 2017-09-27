@@ -21,6 +21,7 @@ private enum Router {
     case postSubscribeNotification(String, String, String, String)
     case postUnsubscribeNotification(String, String, String, String)
     case postSubscribedGroups(String, String, String)
+    case getSearch(String)
 }
 
 extension Router : RouterProtocol {
@@ -42,6 +43,8 @@ extension Router : RouterProtocol {
             return .post
         case .postSubscribedGroups:
             return .post
+        case .getSearch:
+            return .get
         }
     }
     // MARK: - API Path
@@ -61,6 +64,8 @@ extension Router : RouterProtocol {
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB
         case .postSubscribedGroups:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
+        case .getSearch(let term):
+            return Constants.Url.ENTRY_API_URL + Constants.Url.SEARCH + term
         }
     }
     
@@ -158,4 +163,13 @@ class MainData {
             completed(alamoResponse.result.value, alamoResponse.result.error)
         }
     }
+    
+    static func getSearch(term: String, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+        Alamofire.request(Router.getSearch(term))
+            .validate()
+            .responseArray { (alamoResponse: DataResponse<[News]>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
 }

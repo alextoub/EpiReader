@@ -7,10 +7,40 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Recherche-->
+        <scene sceneID="cfQ-n8-3kg">
+            <objects>
+                <tableViewController id="3dm-ZR-Jyf" customClass="SearchTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufa-gH-JuS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="mrK-9j-wcv">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrK-9j-wcv" id="Umg-N8-WIt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3dm-ZR-Jyf" id="u7q-Z4-fQC"/>
+                            <outlet property="delegate" destination="3dm-ZR-Jyf" id="e84-W5-WY1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recherche" id="jNX-TN-GD0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvm-RV-7Vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418.39999999999998" y="-545.57721139430294"/>
+        </scene>
         <!--Ajouter des groupes-->
         <scene sceneID="12B-bE-kcm">
             <objects>
@@ -150,11 +180,18 @@ le bouton '+' en haut à droite</string>
                                 <segue destination="FBu-ms-Zbp" kind="show" id="MPo-fn-QO7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Aol-H9-98h">
-                            <connections>
-                                <segue destination="EWO-k0-sk8" kind="show" identifier="toAdd" id="aQv-1D-qAI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Aol-H9-98h">
+                                <connections>
+                                    <segue destination="EWO-k0-sk8" kind="show" identifier="toAdd" id="aQv-1D-qAI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="search" id="GPk-J1-pcg">
+                                <connections>
+                                    <segue destination="3dm-ZR-Jyf" kind="show" id="Ik8-NF-SzV"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frd-sp-hoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,7 +340,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WBR-Ei-gex" id="6Lc-3Z-MTy">
@@ -341,6 +378,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 <connections>
                                     <outlet property="colorView" destination="60I-tQ-SBP" id="OAn-xb-Jg6"/>
                                     <outlet property="nameLabel" destination="2SA-99-B9R" id="Gjy-fl-zT2"/>
+                                    <segue destination="jlW-Da-ebh" kind="presentation" identifier="showTag" modalTransitionStyle="crossDissolve" id="lEg-Pm-wVu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -355,7 +393,81 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             </objects>
             <point key="canvasLocation" x="2674.4000000000001" y="1529.6851574212894"/>
         </scene>
-        <!--Settings-->
+        <!--Tag AlertVC-->
+        <scene sceneID="Mqe-Hh-0Su">
+            <objects>
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overFullScreen" id="jlW-Da-ebh" customClass="TagAlertVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iW7-o9-BlJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPi-ho-ep6"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="K87-Rt-n25">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaL-De-7sr">
+                                <rect key="frame" x="67" y="264" width="241" height="139"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTk-lK-Kh5" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="241" height="109"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wi-9m-X5A">
+                                                <rect key="frame" x="8" y="34" width="225" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="241" id="QvB-ZL-9Wt"/>
+                                            <constraint firstAttribute="height" constant="109" id="ZIo-Pf-qxr"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XsL-MY-U2X">
+                                        <rect key="frame" x="91" y="1" width="60" height="60"/>
+                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="ici-Mb-CRb"/>
+                                            <constraint firstAttribute="height" constant="60" id="uKg-fe-y7m"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XsL-MY-U2X" firstAttribute="leading" secondItem="qaL-De-7sr" secondAttribute="leading" constant="91" id="13S-cw-4zD"/>
+                                    <constraint firstAttribute="height" constant="139" id="90S-l6-hJx"/>
+                                    <constraint firstItem="XsL-MY-U2X" firstAttribute="top" secondItem="qaL-De-7sr" secondAttribute="top" constant="1" id="CB3-E8-dZU"/>
+                                    <constraint firstItem="wTk-lK-Kh5" firstAttribute="top" secondItem="qaL-De-7sr" secondAttribute="top" constant="30" id="G8Q-ST-hNX"/>
+                                    <constraint firstAttribute="trailing" secondItem="wTk-lK-Kh5" secondAttribute="trailing" id="HVv-mp-Qyh"/>
+                                    <constraint firstAttribute="width" constant="241" id="I3B-rv-kU5"/>
+                                    <constraint firstAttribute="trailing" secondItem="XsL-MY-U2X" secondAttribute="trailing" constant="90" id="Us6-AE-gE7"/>
+                                    <constraint firstAttribute="bottom" secondItem="wTk-lK-Kh5" secondAttribute="bottom" id="mFq-Ll-lJT"/>
+                                    <constraint firstItem="wTk-lK-Kh5" firstAttribute="leading" secondItem="qaL-De-7sr" secondAttribute="leading" id="xQ3-yF-hyC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qaL-De-7sr" firstAttribute="centerX" secondItem="K87-Rt-n25" secondAttribute="centerX" id="85B-LL-uFU"/>
+                            <constraint firstItem="qaL-De-7sr" firstAttribute="centerY" secondItem="K87-Rt-n25" secondAttribute="centerY" id="R30-SY-KgL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorView" destination="XsL-MY-U2X" id="8Ve-Ic-foZ"/>
+                        <outlet property="tagLabel" destination="3wi-9m-X5A" id="vJq-e0-Uoy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWe-mQ-lBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3472.8000000000002" y="1943.4782608695655"/>
+        </scene>
+        <!--Paramètres-->
         <scene sceneID="ac4-36-CUb">
             <objects>
                 <tableViewController id="FBu-ms-Zbp" customClass="SettingsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -415,7 +527,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="FBu-ms-Zbp" id="F4V-S8-zDn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="Syd-Gu-CH9"/>
+                    <navigationItem key="navigationItem" title="Paramètres" id="Syd-Gu-CH9"/>
                     <connections>
                         <outlet property="separatorView" destination="pus-Fc-e2E" id="rRY-fQ-6fx"/>
                     </connections>
@@ -748,7 +860,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.4372859589041096" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.4372859589041096" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eHH-kc-43I" firstAttribute="centerX" secondItem="Kou-BX-PLi" secondAttribute="centerX" id="VTU-SR-DUM"/>
                             <constraint firstItem="eHH-kc-43I" firstAttribute="centerY" secondItem="Kou-BX-PLi" secondAttribute="centerY" id="ff1-yN-Mp8"/>

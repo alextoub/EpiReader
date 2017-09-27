@@ -84,15 +84,18 @@ class TagsTVC: UITableViewController {
      }
      */
     
-    /*
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showTag" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)!
+            let destination = segue.destination as! TagAlertVC
+            destination.tagName = self.tags[indexPath.row].tagName!
+            destination.tagColor = self.tags[indexPath.row].attributedColor!
+        }
      }
-     */
     
 }
 

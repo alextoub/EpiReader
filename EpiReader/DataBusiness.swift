@@ -54,4 +54,11 @@ class MainBusiness {
             completed(response, error)
         }
     }
+    
+    static func getSearch(term: String, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+        MainData.getSearch(term: term) { (response, error) in
+            completed(response, error)
+        }
+    }
+    
 }

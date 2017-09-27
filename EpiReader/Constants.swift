@@ -17,6 +17,7 @@ struct Constants {
         static let NOTIF_SUB     = "subscribe_notifications"                      //POST
         static let NOTIF_UNSUB   = "unsubscribe_notifications"                    //POST
         static let NOTIF_GROUPS  = "subscribed_groups"                            //GET
+        static let SEARCH        = "search?term="                                 //GET
     }
     
     struct Headers {
