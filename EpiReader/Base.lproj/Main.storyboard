@@ -583,6 +583,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <rect key="frame" x="8" y="59" width="339" height="118"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" calendarEvent="YES" shipmentTrackingNumber="YES"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLH-AS-RYc">
                                                     <rect key="frame" x="8" y="8" width="339" height="43"/>
