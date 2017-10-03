@@ -24,24 +24,24 @@ class NetiquetteChecker {
                 checkTag(tag: firstTag)
                 checkTag(tag: secondTag)
                 if subject.characters.count > 80 {
-                    error.append("Subject should not exceed 80 columns.")
+                    error.append("Le sujet ne doit pas depasser 80 colonnes.")
                 }
             }
             else {
-                error.append("Subject must contain two tags and a summary.")
+                error.append("Le sujet doit contenir 2 balises et le sujet de la news.")
             }
         }
         else {
-            error.append("Subject must contain two tags and a summary.")
+            error.append("Le sujet doit contenir 2 balises et le sujet de la news.")
         }
     }
     
     func checkTag(tag: String) {
         if tag.uppercased() != tag {
-            error.append("Tag \(tag) must be uppercase.")
+            error.append("La balise \(tag) doit être en majuscule.")
         }
         if tag.characters.count > 10 {
-            warning.append("Tag \(tag) should not exceed 10 letters.")
+            warning.append("La balise \(tag) ne doit pas dépasser 10 lettres.")
         }
     }
     
@@ -58,10 +58,10 @@ class NetiquetteChecker {
             var line = lines[index]
             var length = line.characters.count
             if !currentlyInQuote && length > 72 && length < 80 {
-                warning.append("L \(index) - Non quoted line should not exceed 72 columns: Line length is \(length).")
+                warning.append("L \(index) - Les lignes qui ne sont pas des citations ne doivent pas dépasser 72 colonnes: La ligne fait \(length) colonnes.")
             }
             else if length > 80 {
-                error.append("L \(index) - Line must not exceed 80 columns. : Line length is \(length).")
+                error.append("L \(index) - La ligne ne doit pas dépasser 80 colonnes. : La ligne fait \(length) colonnes.")
             }
             
             if line == "-- " {
@@ -69,30 +69,30 @@ class NetiquetteChecker {
                 currentlyInSignature = true
                 
                 if index < lines.count - 5 {
-                    error.append("L\(index) - Signature must not be longer than 4 lines: current is \(lines.count - index)")
+                    error.append("L\(index) - La signature ne doit pas depasser 4 lignes: \(lines.count - index) lignes actuellement.")
                 }
                 if lines[prevLine].count > 0 {
-                    error.append("L\(index) - Signature must be seperated by an empty line")
+                    error.append("L\(index) - La signature doit être sparé par une ligne vide.")
                 }
             }
             else {
                 if length != 0 && Array(line)[length - 1] == " " { //line.characters[length - 1] == " " {
-                    error.append("L\(index) - Line must not have trailing whitespaces.")
+                    error.append("L\(index) - La ligne ne doit pas avoir des espaces vides.")
                 }
             }
             if !line.matchingStrings(regex: quoteRegex).isEmpty {
                 if !currentlyInQuote {
                     var noHeader = false
                     if !findQuote && prevLine > 0 && lines[prevLine].count != 0 {
-                        warning.append("L\(index) - Quote should be preceded by a header.")
+                        warning.append("L\(index) - La citation doit être précédée d'un en-tête.")
                         noHeader = true
                     }
                     let emptyLine = prevLine - (findQuote ? 0 : 1)
                     if emptyLine < 0 {
-                        error.append("L\(index) - The news must not begin by a quote.")
+                        error.append("L\(index) - Les news ne doivent pas commencer par une citation.")
                     }
                     else if (!noHeader && lines[emptyLine].count != 0) {
-                        error.append("L\(index) - Quote must be seperated by an empty line")
+                        error.append("L\(index) - La citation doit être séparée par une ligne vide.")
                     }
                 }
                 findQuote = true
@@ -100,18 +100,18 @@ class NetiquetteChecker {
             }
             else {
                 if Array(line).first == ">" {
-                    warning.append("L\(index) - Quote may be malformed")
+                    warning.append("L\(index) - La citation doit être mal formée.")
                 }
                 else if currentlyInQuote {
                     if length != 0  {
-                        error.append("L\(index) - Quote must be seperated by an empty line")
+                        error.append("L\(index) - La citation doit être séparée par une ligne vide.")
                     }
                     currentlyInQuote = false
                 }
             }
         }
         if (!findSignature) {
-            error.append("Content must contain a signature.")
+            error.append("La news doit contenir une signature.")
         }
     }
     
