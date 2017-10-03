@@ -310,6 +310,9 @@ class NewsTVC: UITableViewController {
             let destination = segue.destination as! TopicTVC
             destination.idNews = news[(indexPath.row)].id!
             destination.nb_msg = news[(indexPath.row)].msg_nb!
+            if title == "assistants.news" {
+                destination.isNetiquetteCheckerActivated = false
+            }
         }
     }
 }

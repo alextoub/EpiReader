@@ -22,6 +22,7 @@ class TopicTVC: UITableViewController {
     var sizeCells = [CGFloat]()
     var topics = [Topic]()
     var errors = [ErrorNetiquette]()
+    var isNetiquetteCheckerActivated = true
 
     // MARK: - View LifeCycle
 
@@ -66,7 +67,9 @@ class TopicTVC: UITableViewController {
                     self.setupSizeCells()
                     self.tableView.reloadData()
                     SVProgressHUD.dismiss()
-                    self.setupNetiquetteErrors(topics: self.topics)
+                    if self.isNetiquetteCheckerActivated {
+                        self.setupNetiquetteErrors(topics: self.topics)
+                    }
                 }
                 else
                 {
@@ -144,8 +147,11 @@ class TopicTVC: UITableViewController {
         if nb_msg == 0 {
             return 0
         }
-        else {
+        if isNetiquetteCheckerActivated {
             return nb_msg * 2
+        }
+        else {
+            return nb_msg
         }
     }
 
@@ -155,12 +161,77 @@ class TopicTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 2 == 0 {
+        if isNetiquetteCheckerActivated {
+            if indexPath.row % 2 == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TopicCell
+                guard (topics.count > 0) else {
+                    return cell
+                }
+                let index = topics[indexPath.row / 2]
+                print(cell.bounds.height)
+                cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.authorLabel.text = parseAuthor((index.author)!)[0]
+                cell.contentText.text = index.content
+                cell.subjectLabel.text = index.subject
+                cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
+                let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((index.author)!)[1]) + "-thumb")
+                cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+                
+                if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
+                    cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
+                }
+                if (parseAuthor((index.author)!)[1] == "chef@tickets.acu.epita.fr") {
+                    cell.photoImageView.image = #imageLiteral(resourceName: "acu")
+                }
+                
+                if cell.photoImageView.image == nil {
+                    print("oui c nil")
+                }
+                
+                
+                cell.displayCell()
+                if sizeCells[indexPath.row] == 195.0 {
+                    var newContentText = cell.contentText.frame
+                    newContentText.size.width = cell.contentText.contentSize.width
+                    newContentText.size.height = cell.contentText.contentSize.height
+                    cell.contentText.frame = newContentText
+                    sizeCells[indexPath.row] = cell.contentText.contentSize.height
+                }
+                cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
+                cell.contentText.isScrollEnabled = false
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NetiquetteCell", for: indexPath) as! NetiquetteCell
+                guard (topics.count > 0) else {
+                    return cell
+                }
+                let index = errors[indexPath.row / 2]
+                cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                
+                cell.contentTextView.text = setupTextNetiquette(error: index)
+                
+                if sizeCells[indexPath.row] == 195.0 {
+                    print(cell.contentTextView.frame)
+                    var newContentText = cell.contentTextView.frame
+                    newContentText.size.width = cell.contentTextView.contentSize.width
+                    newContentText.size.height = cell.contentTextView.contentSize.height
+                    cell.contentTextView.frame = newContentText
+                    sizeCells[indexPath.row] = cell.contentTextView.contentSize.height
+                }
+                cell.contentTextView.sizeThatFits(CGSize(width: cell.contentTextView.contentSize.width, height: cell.contentTextView.contentSize.height))
+                cell.contentTextView.isScrollEnabled = false
+                
+                return cell
+                
+            }
+        }
+        else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TopicCell
             guard (topics.count > 0) else {
                 return cell
             }
-            let index = topics[indexPath.row / 2]
+            let index = topics[indexPath.row]
             print(cell.bounds.height)
             cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             cell.authorLabel.text = parseAuthor((index.author)!)[0]
@@ -169,19 +240,19 @@ class TopicTVC: UITableViewController {
             cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
             let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((index.author)!)[1]) + "-thumb")
             cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
-
+            
             if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
                 cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
             }
             if (parseAuthor((index.author)!)[1] == "chef@tickets.acu.epita.fr") {
                 cell.photoImageView.image = #imageLiteral(resourceName: "acu")
             }
-
+            
             if cell.photoImageView.image == nil {
                 print("oui c nil")
             }
-
-
+            
+            
             cell.displayCell()
             if sizeCells[indexPath.row] == 195.0 {
                 var newContentText = cell.contentText.frame
@@ -194,42 +265,22 @@ class TopicTVC: UITableViewController {
             cell.contentText.isScrollEnabled = false
             return cell
         }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NetiquetteCell", for: indexPath) as! NetiquetteCell
-            guard (topics.count > 0) else {
-                return cell
-            }
-            let index = errors[indexPath.row / 2]
-            cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-
-            cell.contentTextView.text = setupTextNetiquette(error: index)
-
-            if sizeCells[indexPath.row] == 195.0 {
-                print(cell.contentTextView.frame)
-                var newContentText = cell.contentTextView.frame
-                newContentText.size.width = cell.contentTextView.contentSize.width
-                newContentText.size.height = cell.contentTextView.contentSize.height
-                cell.contentTextView.frame = newContentText
-                sizeCells[indexPath.row] = cell.contentTextView.contentSize.height
-            }
-            cell.contentTextView.sizeThatFits(CGSize(width: cell.contentTextView.contentSize.width, height: cell.contentTextView.contentSize.height))
-            cell.contentTextView.isScrollEnabled = false
-
-            return cell
-
-        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard (sizeCells.count > 0) else {
             return 195
         }
-        if indexPath.row % 2 == 0 {
-        //print(195 - 128 + sizeCells[indexPath.row])
-            return 195 - 128 + sizeCells[indexPath.row]
+        if isNetiquetteCheckerActivated {
+            if indexPath.row % 2 == 0 {
+                return 195 - 128 + sizeCells[indexPath.row]
+            }
+            else {
+                return 30 + sizeCells[indexPath.row]
+            }
         }
         else {
-            return 30 + sizeCells[indexPath.row]
+            return 195 - 128 + sizeCells[indexPath.row]
         }
         //return 3000
     }
