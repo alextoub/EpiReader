@@ -355,7 +355,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             </objects>
             <point key="canvasLocation" x="2674.4000000000001" y="1529.6851574212894"/>
         </scene>
-        <!--Settings-->
+        <!--Paramètres-->
         <scene sceneID="ac4-36-CUb">
             <objects>
                 <tableViewController id="FBu-ms-Zbp" customClass="SettingsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -415,7 +415,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="FBu-ms-Zbp" id="F4V-S8-zDn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="Syd-Gu-CH9"/>
+                    <navigationItem key="navigationItem" title="Paramètres" id="Syd-Gu-CH9"/>
                     <connections>
                         <outlet property="separatorView" destination="pus-Fc-e2E" id="rRY-fQ-6fx"/>
                     </connections>
