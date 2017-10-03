@@ -217,8 +217,9 @@ class NewsTVC: UITableViewController {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
                     if error == nil {
-                        let index = StaticData.notificationsGroups.index(of: self.currentGroup)
-                        StaticData.notificationsGroups.remove(at: index!)
+                        if let index = StaticData.notificationsGroups.index(of: self.currentGroup) {
+                            StaticData.notificationsGroups.remove(at: index)
+                        }
                     }
                 }
             }
