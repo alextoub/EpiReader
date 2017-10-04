@@ -29,6 +29,8 @@ class MainTVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getFav()
+        navigationController?.isToolbarHidden = true
+
     }
     
     override func didReceiveMemoryWarning() {

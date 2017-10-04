@@ -42,18 +42,20 @@ class NewsTVC: UITableViewController {
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
 
+        navigationController?.isToolbarHidden = false
         bannerView = GADBannerView()
         bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 60))
         bannerView.adUnitID = Constants.AdMob.unitID
-
+        
         let offset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
-
-
+        
+        
         bannerView.rootViewController = self
-        bannerView.frame = CGRect(x:0.0,
-                                  y:UIScreen.main.bounds.height - offset,
-                                  width:bannerView.frame.size.width,
-                                  height:bannerView.frame.size.height)
+        bannerView.frame = CGRect(x: (UIScreen.main.bounds.width - bannerView.frame.width) / 2,
+                                  y: 0.0,
+                                  width: bannerView.frame.size.width,
+                                  height: bannerView.frame.size.height)
+        navigationController?.toolbar.addSubview(bannerView)
         let request = GADRequest()
         bannerView.load(request)
     }
@@ -245,13 +247,13 @@ class NewsTVC: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return bannerView
-    }
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        return bannerView
+//    }
 
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 60
+//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= self.news.count {

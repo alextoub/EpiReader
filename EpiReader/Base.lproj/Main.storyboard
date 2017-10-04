@@ -549,6 +549,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="notificationButton" destination="bGD-fG-P2h" id="xL1-8v-BWa"/>
                     </connections>
