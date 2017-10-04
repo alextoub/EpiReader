@@ -23,7 +23,7 @@ class NetiquetteChecker {
                 let secondTag = regex.first![2]
                 checkTag(tag: firstTag)
                 checkTag(tag: secondTag)
-                if subject.characters.count > 80 {
+                if subject.count > 80 {
                     error.append("Le sujet ne doit pas depasser 80 colonnes.")
                 }
             }
@@ -40,7 +40,7 @@ class NetiquetteChecker {
         if tag.uppercased() != tag {
             error.append("La balise \(tag) doit être en majuscule.")
         }
-        if tag.characters.count > 10 {
+        if tag.count > 10 {
             warning.append("La balise \(tag) ne doit pas dépasser 10 lettres.")
         }
     }
@@ -50,13 +50,12 @@ class NetiquetteChecker {
         var findQuote = false
         let quoteRegex = "> (.*)"
         var currentlyInQuote = false
-        var currentlyInSignature = false
         
         let lines = content.components(separatedBy: "\n")
         for index in 0..<lines.count {
-            var prevLine = index - 1
-            var line = lines[index]
-            var length = line.characters.count
+            let prevLine = index - 1
+            let line = lines[index]
+            let length = line.count
             if !currentlyInQuote && length > 72 && length < 80 {
                 warning.append("L \(index) - Les lignes qui ne sont pas des citations ne doivent pas dépasser 72 colonnes: La ligne fait \(length) colonnes.")
             }
@@ -66,7 +65,6 @@ class NetiquetteChecker {
             
             if line == "-- " {
                 findSignature = true
-                currentlyInSignature = true
                 
                 if index < lines.count - 5 {
                     error.append("L\(index) - La signature ne doit pas depasser 4 lignes: \(lines.count - index) lignes actuellement.")

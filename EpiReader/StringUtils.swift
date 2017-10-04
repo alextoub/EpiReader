@@ -12,7 +12,7 @@ public func parseAuthor(_ authorStr: String) -> [String] {
     var author = ""
     var mail = ""
     var inMail = false
-    for i in authorStr.characters {
+    for i in authorStr {
         if inMail == false {
             if i == "<" {
                 inMail = true
@@ -35,7 +35,7 @@ public func parseAuthor(_ authorStr: String) -> [String] {
 
 public func parseLogin(_ mailStr: String) -> String {
     var login = ""
-    for i in mailStr.characters {
+    for i in mailStr {
         if i == "@" {
             return login
         }
@@ -50,7 +50,7 @@ public func parseSubject(_ subjectStr: String) -> [String] {
     var subs = [String]()
     var tmp = ""
     var isInCroch = false
-    for i in subjectStr.characters {
+    for i in subjectStr {
         if isInCroch == false {
             if i == "[" {
                 isInCroch = true
@@ -76,8 +76,8 @@ public func parseSubject(_ subjectStr: String) -> [String] {
 
 extension String {
     func capitalizingFirstLetter() -> String {
-        let first = String(characters.prefix(1)).capitalized
-        let other = String(characters.dropFirst())
+        let first = String(prefix(1)).capitalized
+        let other = String(dropFirst())
         return first + other
     }
     

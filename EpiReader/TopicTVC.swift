@@ -156,7 +156,7 @@ class TopicTVC: UITableViewController {
     }
 
     @IBAction func shareButtonAction(_ sender: Any) {
-        let vc = UIActivityViewController(activityItems: [current?.subject, current?.author, current?.content], applicationActivities: nil)
+        let vc = UIActivityViewController(activityItems: [current?.subject ?? "", current?.author ?? "", current?.content ?? ""], applicationActivities: nil)
         self.present(vc, animated: true, completion: nil)
     }
 
