@@ -175,7 +175,7 @@ class NewsTVC: UITableViewController {
         var i = 0
         let cnt = parsedSubject.count
         for sub in parsedSubject {
-            if i != cnt - 1 {
+            if i != cnt - 1 && sub != "Re: " && sub != "Re:" {
                 let tag = checkTag(sub)
                 var new = NSMutableAttributedString(string: sub,
                                                     attributes: [NSBackgroundColorAttributeName: tag.attributedColor!,

@@ -174,7 +174,7 @@ class TopicTVC: UITableViewController {
                 cell.contentText.text = index.content
                 cell.subjectLabel.text = index.subject
                 cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
-                let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((index.author)!)[1]) + "-thumb")
+                let url = getProfilePic(mail: parseAuthor((index.author)!)[1], subject: index.subject!)
                 cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
                 
                 if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
@@ -238,7 +238,7 @@ class TopicTVC: UITableViewController {
             cell.contentText.text = index.content
             cell.subjectLabel.text = index.subject
             cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
-            let url = URL(string: "https://photos.cri.epita.net/" + parseLogin(parseAuthor((index.author)!)[1]) + "-thumb")
+            let url = getProfilePic(mail: parseAuthor((index.author)!)[1], subject: index.subject!)
             cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
             
             if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
