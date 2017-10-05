@@ -37,7 +37,9 @@ class AddGroupTVC: UITableViewController {
     }
     
     func setupGroup() {
-        self.groups = StaticData.allGroups!
+        if let data = StaticData.allGroups {
+            self.groups = data
+        }
         self.tableView.reloadData()
         self.fillGroupNames()
     }

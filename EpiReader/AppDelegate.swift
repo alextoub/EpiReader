@@ -77,6 +77,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let thirdView : TopicTVC = storyBoard.instantiateViewController(withIdentifier: "TopicTVC") as! TopicTVC
                 thirdView.idNews = news_id
                 thirdView.nb_msg = 1
+                
+                if title == "assistants.news" {
+                    thirdView.isNetiquetteCheckerActivated = false
+                }
             
                 nav.pushViewController(firstView, animated: false)
                 nav.pushViewController(secondView, animated: false)

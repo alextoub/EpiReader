@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bKl-Ts-pQZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
@@ -348,33 +349,31 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60I-tQ-SBP">
-                                            <rect key="frame" x="8" y="8" width="28" height="28"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="16" y="7" width="28" height="28"/>
+                                            <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="28" id="Fea-BH-fa2"/>
-                                                <constraint firstAttribute="height" constant="28" id="M6C-hh-KwS"/>
+                                                <constraint firstAttribute="width" secondItem="60I-tQ-SBP" secondAttribute="height" multiplier="1:1" id="RMo-Go-DP5"/>
+                                                <constraint firstAttribute="height" constant="28" id="Rod-Ge-I0l"/>
+                                                <constraint firstAttribute="width" constant="28" id="zQT-fI-3a6"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SA-99-B9R">
-                                            <rect key="frame" x="44" y="8" width="323" height="28"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="323" id="csS-Ze-eax"/>
-                                            </constraints>
+                                            <rect key="frame" x="52" y="7" width="307" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="top" secondItem="6Lc-3Z-MTy" secondAttribute="topMargin" id="BWN-oN-FSx"/>
-                                        <constraint firstItem="2SA-99-B9R" firstAttribute="leading" secondItem="60I-tQ-SBP" secondAttribute="trailing" constant="8" symbolic="YES" id="VG6-oI-vZg"/>
-                                        <constraint firstItem="2SA-99-B9R" firstAttribute="trailing" secondItem="6Lc-3Z-MTy" secondAttribute="trailingMargin" id="Y3w-qL-K01"/>
-                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="leading" secondItem="6Lc-3Z-MTy" secondAttribute="leadingMargin" id="b5b-cn-O8n"/>
-                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="top" secondItem="2SA-99-B9R" secondAttribute="top" id="hs7-WN-2Dn"/>
-                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="bottom" secondItem="2SA-99-B9R" secondAttribute="bottom" id="ojM-Ad-twq"/>
-                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="centerY" secondItem="6Lc-3Z-MTy" secondAttribute="centerY" id="s8B-an-dYc"/>
+                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="leading" secondItem="6Lc-3Z-MTy" secondAttribute="leadingMargin" id="9O1-Jk-c8w"/>
+                                        <constraint firstItem="2SA-99-B9R" firstAttribute="trailing" secondItem="6Lc-3Z-MTy" secondAttribute="trailingMargin" id="SvV-sx-IYe"/>
+                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="bottom" secondItem="2SA-99-B9R" secondAttribute="bottom" id="nPN-y9-8kk"/>
+                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="top" secondItem="2SA-99-B9R" secondAttribute="top" id="qtH-xh-y93"/>
+                                        <constraint firstItem="2SA-99-B9R" firstAttribute="leading" secondItem="60I-tQ-SBP" secondAttribute="trailing" constant="8" symbolic="YES" id="t9G-pv-Ccv"/>
+                                        <constraint firstItem="60I-tQ-SBP" firstAttribute="top" secondItem="6Lc-3Z-MTy" secondAttribute="topMargin" constant="-4" id="u0F-3c-2Dd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="52" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="colorView" destination="60I-tQ-SBP" id="OAn-xb-Jg6"/>
                                     <outlet property="nameLabel" destination="2SA-99-B9R" id="Gjy-fl-zT2"/>
@@ -391,7 +390,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b52-j7-VLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2674.4000000000001" y="1529.6851574212894"/>
+            <point key="canvasLocation" x="2673.5" y="1529.5"/>
         </scene>
         <!--Tag AlertVC-->
         <scene sceneID="Mqe-Hh-0Su">
@@ -465,7 +464,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWe-mQ-lBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472.8000000000002" y="1943.4782608695655"/>
+            <point key="canvasLocation" x="3628" y="1529"/>
         </scene>
         <!--Paramètres-->
         <scene sceneID="ac4-36-CUb">
@@ -553,7 +552,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhT-Wc-jlq" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="5" width="355" height="80"/>
+                                            <rect key="frame" x="10" y="5" width="355" height="77"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFY-lV-YSO">
                                                     <rect key="frame" x="8" y="11" width="10" height="10"/>
@@ -611,10 +610,8 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="bhT-Wc-jlq" secondAttribute="bottom" constant="-3" id="7d0-H3-OHk"/>
-                                        <constraint firstItem="bhT-Wc-jlq" firstAttribute="leading" secondItem="sJB-F4-Msd" secondAttribute="leadingMargin" constant="2" id="abQ-vf-NRD"/>
                                         <constraint firstAttribute="trailing" secondItem="bhT-Wc-jlq" secondAttribute="trailing" constant="10" id="abu-A7-iAX"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="top" secondItem="sJB-F4-Msd" secondAttribute="top" constant="5" id="dsY-hg-tO8"/>
-                                        <constraint firstItem="bhT-Wc-jlq" firstAttribute="top" secondItem="sJB-F4-Msd" secondAttribute="topMargin" constant="-3" id="k62-0F-rHS"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="leading" secondItem="sJB-F4-Msd" secondAttribute="leading" constant="10" id="pww-5V-fQ5"/>
                                         <constraint firstItem="bhT-Wc-jlq" firstAttribute="centerX" secondItem="sJB-F4-Msd" secondAttribute="centerX" id="ucm-cn-g8g"/>
                                     </constraints>
@@ -664,6 +661,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="notificationButton" destination="bGD-fG-P2h" id="xL1-8v-BWa"/>
                     </connections>
@@ -695,6 +693,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <rect key="frame" x="8" y="59" width="339" height="118"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES" calendarEvent="YES"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLH-AS-RYc">
                                                     <rect key="frame" x="8" y="8" width="339" height="43"/>
@@ -758,10 +757,8 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <constraints>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="centerX" secondItem="mb1-aV-iRN" secondAttribute="centerX" id="6Zq-i4-RQa"/>
                                         <constraint firstAttribute="trailing" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="10" id="BPK-go-oQX"/>
-                                        <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="topMargin" constant="-3" id="aua-Fu-6Ju"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="top" constant="5" id="dAp-Mi-Oj5"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="top" secondItem="mb1-aV-iRN" secondAttribute="top" constant="5" id="hfW-23-ASm"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="2" id="ni7-J1-LZd"/>
                                         <constraint firstAttribute="trailing" secondItem="b5U-VV-kef" secondAttribute="trailing" constant="10" id="s7Y-4A-Y8d"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="centerY" secondItem="mb1-aV-iRN" secondAttribute="centerY" id="see-Ic-IFQ"/>
                                         <constraint firstItem="b5U-VV-kef" firstAttribute="leading" secondItem="mb1-aV-iRN" secondAttribute="leading" constant="10" id="yuT-Cu-EOV"/>
@@ -787,7 +784,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNJ-Ch-lFL" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
                                             <rect key="frame" x="10" y="5" width="355" height="185"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-ZQ-xhy">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmm-ZQ-xhy">
                                                     <rect key="frame" x="8" y="8" width="339" height="169"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

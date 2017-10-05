@@ -42,18 +42,20 @@ class NewsTVC: UITableViewController {
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
 
+        navigationController?.isToolbarHidden = false
         bannerView = GADBannerView()
         bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 60))
         bannerView.adUnitID = Constants.AdMob.unitID
-
+        
         let offset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
-
-
+        
+        
         bannerView.rootViewController = self
-        bannerView.frame = CGRect(x:0.0,
-                                  y:UIScreen.main.bounds.height - offset,
-                                  width:bannerView.frame.size.width,
-                                  height:bannerView.frame.size.height)
+        bannerView.frame = CGRect(x: (UIScreen.main.bounds.width - bannerView.frame.width) / 2,
+                                  y: 0.0,
+                                  width: bannerView.frame.size.width,
+                                  height: bannerView.frame.size.height)
+        navigationController?.toolbar.addSubview(bannerView)
         let request = GADRequest()
         bannerView.load(request)
     }
@@ -175,7 +177,7 @@ class NewsTVC: UITableViewController {
         var i = 0
         let cnt = parsedSubject.count
         for sub in parsedSubject {
-            if i != cnt - 1 {
+            if i != cnt - 1 && sub != "Re: " && sub != "Re:" {
                 let tag = checkTag(sub)
                 var new = NSMutableAttributedString(string: sub,
                                                     attributes: [NSBackgroundColorAttributeName: tag.attributedColor!,
@@ -217,8 +219,9 @@ class NewsTVC: UITableViewController {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
                     if error == nil {
-                        let index = StaticData.notificationsGroups.index(of: self.currentGroup)
-                        StaticData.notificationsGroups.remove(at: index!)
+                        if let index = StaticData.notificationsGroups.index(of: self.currentGroup) {
+                            StaticData.notificationsGroups.remove(at: index)
+                        }
                     }
                 }
             }
@@ -244,13 +247,13 @@ class NewsTVC: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return bannerView
-    }
+//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        return bannerView
+//    }
 
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
+//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 60
+//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= self.news.count {
@@ -260,7 +263,12 @@ class NewsTVC: UITableViewController {
         readNews.append(ReadNews(id : index.id!))
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
         cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
+        if cell.msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green") {
+            cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
+        }
+        else {
+            cell.msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
+        }
         NSCodingData().saveReadNews(readNews: readNews)
     }
 
@@ -309,6 +317,9 @@ class NewsTVC: UITableViewController {
             let destination = segue.destination as! TopicTVC
             destination.idNews = news[(indexPath.row)].id!
             destination.nb_msg = news[(indexPath.row)].msg_nb!
+            if title == "assistants.news" {
+                destination.isNetiquetteCheckerActivated = false
+            }
         }
     }
 }

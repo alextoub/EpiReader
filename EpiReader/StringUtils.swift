@@ -12,7 +12,7 @@ public func parseAuthor(_ authorStr: String) -> [String] {
     var author = ""
     var mail = ""
     var inMail = false
-    for i in authorStr.characters {
+    for i in authorStr {
         if inMail == false {
             if i == "<" {
                 inMail = true
@@ -35,7 +35,7 @@ public func parseAuthor(_ authorStr: String) -> [String] {
 
 public func parseLogin(_ mailStr: String) -> String {
     var login = ""
-    for i in mailStr.characters {
+    for i in mailStr {
         if i == "@" {
             return login
         }
@@ -46,13 +46,51 @@ public func parseLogin(_ mailStr: String) -> String {
     return login
 }
 
+public func parseLoginFromSubject(_ subjectStr: String) -> String {
+    let parsedSubject = parseSubject(subjectStr)
+    if parsedSubject.first == "Re: " || parsedSubject.first == "Re:" {
+        return ""
+    }
+    let sub = parsedSubject.last
+    let splitted = sub?.components(separatedBy: " ")
+    for i in splitted! {
+        if i != "" {
+            return i
+        }
+    }
+    return ""
+}
+
+public func getProfilePic(mail: String, subject: String) -> URL? {
+    let login1 = parseLogin(mail)
+    let login2 = parseLoginFromSubject(subject)
+    
+    var url = "https://photos.cri.epita.net/"
+    
+    if login1 == login2 {
+        url += login1
+    }
+    else if login2.contains("_") {
+        url += login2
+    }
+    else {
+        url += login1
+    }
+    url += "-thumb"
+    return URL(string: url)
+}
+
 public func parseSubject(_ subjectStr: String) -> [String] {
     var subs = [String]()
     var tmp = ""
     var isInCroch = false
-    for i in subjectStr.characters {
+    for i in subjectStr {
         if isInCroch == false {
             if i == "[" {
+                if tmp != "" {
+                    subs.append(tmp)
+                    tmp = ""
+                }
                 isInCroch = true
             }
             else {
@@ -76,8 +114,8 @@ public func parseSubject(_ subjectStr: String) -> [String] {
 
 extension String {
     func capitalizingFirstLetter() -> String {
-        let first = String(characters.prefix(1)).capitalized
-        let other = String(characters.dropFirst())
+        let first = String(prefix(1)).capitalized
+        let other = String(dropFirst())
         return first + other
     }
     
