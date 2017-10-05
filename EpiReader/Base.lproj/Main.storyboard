@@ -187,7 +187,8 @@ le bouton '+' en haut à droite</string>
                                     <segue destination="EWO-k0-sk8" kind="show" identifier="toAdd" id="aQv-1D-qAI"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="search" id="GPk-J1-pcg">
+                            <barButtonItem enabled="NO" systemItem="search" id="GPk-J1-pcg">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="3dm-ZR-Jyf" kind="show" id="Ik8-NF-SzV"/>
                                 </connections>
@@ -336,12 +337,12 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <scene sceneID="oT2-BV-JZr">
             <objects>
                 <tableViewController id="9Ko-iz-m1f" customClass="TagsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bit-l7-0vz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bit-l7-0vz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tagCell" id="WBR-Ei-gex" customClass="TagCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WBR-Ei-gex" id="6Lc-3Z-MTy">
