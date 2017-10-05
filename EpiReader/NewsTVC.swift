@@ -44,11 +44,8 @@ class NewsTVC: UITableViewController {
 
         navigationController?.isToolbarHidden = false
         bannerView = GADBannerView()
-        bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 60))
+        bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 44))
         bannerView.adUnitID = Constants.AdMob.unitID
-        
-        let offset  = UIApplication.shared.statusBarFrame.height + (self.navigationController?.navigationBar.bounds.height)! + bannerView.frame.height
-        
         
         bannerView.rootViewController = self
         bannerView.frame = CGRect(x: (UIScreen.main.bounds.width - bannerView.frame.width) / 2,
