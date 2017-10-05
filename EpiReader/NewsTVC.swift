@@ -192,16 +192,6 @@ class NewsTVC: UITableViewController {
         return str
     }
 
-//    func getRandomColor() -> UIColor {
-//        let randomRed = Int(arc4random_uniform(UInt32(255)))
-//        let randomGreen = Int(arc4random_uniform(UInt32(255)))
-//        let randomBlue = Int(arc4random_uniform(UInt32(255)))
-//        let color = UIColor(red: CGFloat(CGFloat(randomRed)/255.0),
-//                            green: CGFloat(CGFloat(randomGreen)/255.0),
-//                            blue: CGFloat(CGFloat(randomBlue)/255.0), alpha: 1.0)
-//        return color
-//    }
-
     @IBAction func notificationButtonAction(_ sender: Any) {
         if !inNotif {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
@@ -243,14 +233,6 @@ class NewsTVC: UITableViewController {
             return news.count + 1
         }
     }
-
-//    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        return bannerView
-//    }
-
-//    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 60
-//    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row >= self.news.count {
