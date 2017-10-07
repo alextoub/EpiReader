@@ -25,11 +25,6 @@ class TagAlertVC: UIViewController, UIGestureRecognizerDelegate  {
         tagLabel.text = tagName
         colorView.backgroundColor = tagColor
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     fileprivate func setUpDismissTouch() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlert))
@@ -41,15 +36,4 @@ class TagAlertVC: UIViewController, UIGestureRecognizerDelegate  {
     func dismissAlert() {
         self.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

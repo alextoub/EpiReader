@@ -24,10 +24,6 @@ class AddGroupTVC: UITableViewController {
         setupGroup()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Custom functions
     
     func fillGroupNames() {
