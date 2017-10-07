@@ -22,7 +22,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-
 import Foundation
 import UIKit
 
@@ -57,7 +56,7 @@ open class ESRefreshComponent: UIView {
     /// @param tag observing
     fileprivate var isObservingScrollView = false
     fileprivate var isIgnoreObserving = false
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         autoresizingMask = [.flexibleLeftMargin, .flexibleWidth, .flexibleRightMargin]
@@ -87,10 +86,9 @@ open class ESRefreshComponent: UIView {
         super.willMove(toSuperview: newSuperview)
         /// Remove observer from superview immediately
         self.removeObserver()
-        DispatchQueue.main.async { [weak self, newSuperview] in
-            guard let weakSelf = self else { return }
+        DispatchQueue.main.async { [unowned self, newSuperview] in
             /// Add observer to new superview in next runloop
-            weakSelf.addObserver(newSuperview)
+            self.addObserver(newSuperview)
         }
     }
     
@@ -116,6 +114,24 @@ open class ESRefreshComponent: UIView {
         }
     }
     
+    public func start() {
+        
+    }
+    
+    public func stop() {
+        _isRefreshing = false
+        _isAutoRefreshing = false
+    }
+    
+    //  ScrollView contentSize change action
+    public func sizeChangeAction(object: AnyObject?, change: [NSKeyValueChangeKey : Any]?) {
+        
+    }
+    
+    //  ScrollView offset change action
+    public func offsetChangeAction(object: AnyObject?, change: [NSKeyValueChangeKey : Any]?) {
+        
+    }
 }
 
 extension ESRefreshComponent /* KVO methods */ {
@@ -162,14 +178,14 @@ extension ESRefreshComponent /* KVO methods */ {
                 }
             }
         } else {
-
+            
         }
     }
     
 }
 
 public extension ESRefreshComponent /* Action */ {
-
+    
     public final func startRefreshing(isAuto: Bool = false) -> Void {
         guard isRefreshing == false && isAutoRefreshing == false else {
             return
@@ -188,25 +204,4 @@ public extension ESRefreshComponent /* Action */ {
         
         self.stop()
     }
-
-    public func start() {
-        
-    }
-    
-    public func stop() {
-        _isRefreshing = false
-        _isAutoRefreshing = false
-    }
-    
-    //  ScrollView contentSize change action
-    public func sizeChangeAction(object: AnyObject?, change: [NSKeyValueChangeKey : Any]?) {
-        
-    }
-    
-    //  ScrollView offset change action
-    public func offsetChangeAction(object: AnyObject?, change: [NSKeyValueChangeKey : Any]?) {
-        
-    }
-    
 }
-

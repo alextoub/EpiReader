@@ -40,7 +40,7 @@ class AddGroupTVC: UITableViewController {
         self.fillGroupNames()
     }
     
-    func addToFav(sender: UIButton) {
+    @objc func addToFav(sender: UIButton) {
         var i = 0
         let obj = groups[sender.tag]
         if sender.isSelected {

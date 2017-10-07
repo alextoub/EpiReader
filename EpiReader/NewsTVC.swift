@@ -162,8 +162,8 @@ class NewsTVC: UITableViewController {
                 }
 
                 var new = NSMutableAttributedString(string: sub,
-                                                    attributes: [NSBackgroundColorAttributeName: tag.0.attributedColor!,
-                                                                 NSForegroundColorAttributeName: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
+                                                    attributes: [NSAttributedStringKey.backgroundColor: tag.0.attributedColor!,
+                                                                 NSAttributedStringKey.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
                 str.append(new)
                 new = NSMutableAttributedString(string: " ")
                 str.append(new)

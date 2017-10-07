@@ -3,10 +3,10 @@
 
 target 'EpiReader' do
   use_frameworks!
-  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'ObjectMapper', '~> 2.2'
-  pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'ObjectMapper'
+  pod 'AlamofireObjectMapper'
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   pod "ESPullToRefresh"
 

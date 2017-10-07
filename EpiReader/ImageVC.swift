@@ -36,7 +36,7 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tap)
     }
     
-    func dismissAlert() {
+    @objc func dismissAlert() {
         self.dismiss(animated: true, completion: nil)
     }
 }
