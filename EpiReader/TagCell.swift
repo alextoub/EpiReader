@@ -15,13 +15,18 @@ class TagCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    func configure(_ tag: Tag) {
+        colorView.layer.masksToBounds = true
+        colorView.layer.cornerRadius = colorView.bounds.height / 2
+        
+        colorView.backgroundColor = tag.attributedColor
+        nameLabel.text = tag.tagName
+
+    }
 }

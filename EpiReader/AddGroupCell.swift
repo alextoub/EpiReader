@@ -24,4 +24,16 @@ class AddGroupCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func configure(_ group: Group, favGroup: [String], row: Int) {
+        groupNameLabel.text = group.group_name
+        if favGroup.contains(group.group_name!) {
+            isFavoriteButton.isSelected = true
+            isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
+        }
+        else {
+            isFavoriteButton.isSelected = false
+            isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_off"), for: .normal)
+        }
+    }
 }

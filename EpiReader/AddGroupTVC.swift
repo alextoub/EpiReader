@@ -40,40 +40,6 @@ class AddGroupTVC: UITableViewController {
         self.fillGroupNames()
     }
     
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroupCell", for: indexPath) as! AddGroupCell
-        let index = groups[indexPath.row]
-        cell.groupNameLabel.text = index.group_name
-        if favGroupName.contains(index.group_name!) {
-            cell.isFavoriteButton.isSelected = true
-            cell.isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
-        }
-        else {
-            cell.isFavoriteButton.isSelected = false
-            cell.isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_off"), for: .normal)
-        }
-        cell.isFavoriteButton.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
-        cell.isFavoriteButton.tag = indexPath.row
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = self.tableView.cellForRow(at: indexPath) as! AddGroupCell
-        addToFav(sender: cell.isFavoriteButton)
-        
-    }
-    
     func addToFav(sender: UIButton) {
         var i = 0
         let obj = groups[sender.tag]
@@ -96,5 +62,31 @@ class AddGroupTVC: UITableViewController {
             sender.setImage(#imageLiteral(resourceName: "switch_on"), for: .selected)
         }
         NSCodingData().saveFavorites(favorites: favorites)
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groups.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddGroupCell", for: indexPath) as! AddGroupCell
+        let index = groups[indexPath.row]
+        cell.configure(index, favGroup: favGroupName, row: indexPath.row)
+        
+        cell.isFavoriteButton.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
+        cell.isFavoriteButton.tag = indexPath.row
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath) as! AddGroupCell
+        addToFav(sender: cell.isFavoriteButton)
     }
 }

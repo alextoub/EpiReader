@@ -10,11 +10,15 @@ import UIKit
 
 class TagAlertVC: UIViewController, UIGestureRecognizerDelegate  {
     
+    // MARK: - Variables & IBOutlets
+
     var tagName = ""
     var tagColor = UIColor()
-    
+
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,8 @@ class TagAlertVC: UIViewController, UIGestureRecognizerDelegate  {
         colorView.backgroundColor = tagColor
     }
     
+    // MARK: - Custom functions
+
     fileprivate func setUpDismissTouch() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlert))
         tap.numberOfTapsRequired = 1

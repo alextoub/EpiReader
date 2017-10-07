@@ -10,8 +10,12 @@ import UIKit
 
 class ImageVC: UIViewController, UIGestureRecognizerDelegate {
     
+    // MARK: - Variables
+
     @IBOutlet weak var imageView: UIImageView!
     var image = UIImage()
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,8 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
         imageView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         imageView.layer.borderWidth = 2
     }
+    
+    // MARK: - Custom functions
     
     fileprivate func setUpDismissTouch() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissAlert))

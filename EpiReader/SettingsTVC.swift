@@ -10,19 +10,18 @@ import UIKit
 
 class SettingsTVC: UITableViewController {
     
+    // MARK: - Variables
+    
     @IBOutlet weak var separatorView: UIView!
     
     // MARK: - View LifeCycle
     
-    /**
-     Set graphical element parameters
-     */
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
-    // MARK: - Setup
+    // MARK: - Custom functions
     
     func setupTableView() {
         let cellHeight: CGFloat = 44
@@ -42,40 +41,17 @@ class SettingsTVC: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegates
-    
-    /**
-     Get the number of section in tableview
-     
-     - parameter tableView: the tableview
-     
-     - returns: the number of section in tableview
-     */
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    /**
-     Get the number of rows in a particular section
-     
-     - parameter tableView: the tableview
-     - parameter section: the particular section
-     
-     - returns: the number of rows in the section
-     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numberOfOptions: Int = 4
         return numberOfOptions
     }
     
-    /**
-     Get the cell content a indexPath
-     
-     - parameter tableView: the tableview
-     - parameter cellForRowAt: the indexPath of the cell
-     
-     - returns: the cell defined with its content and color
-     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch (indexPath as IndexPath).row {
         case 0 :
@@ -95,12 +71,6 @@ class SettingsTVC: UITableViewController {
         }
     }
     
-    /**
-     Called when a cell is selected
-     
-     - parameter tableView: the tableview
-     - parameter didSelectRowAt: the indexPath of the selected cell
-     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

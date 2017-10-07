@@ -10,18 +10,28 @@ import UIKit
 
 class TagsTVC: UITableViewController {
     
+    // MARK: - Variables
+    
     var tags = [Tag]()
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let tag = NSCodingData().loadTag() {
-            tags = tag
-            tags.sort(by: { $0.tagName! < $1.tagName! })
-        }
+        loadTag()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Custom functions
+    
+    func loadTag() {
+        if let tag = NSCodingData().loadTag() {
+            tags = tag
+            tags.sort(by: { $0.tagName! < $1.tagName! })
+        }
     }
     
     // MARK: - Table view data source
@@ -39,13 +49,8 @@ class TagsTVC: UITableViewController {
         
         let index = tags[indexPath.row]
         
-        cell.colorView.layer.masksToBounds = true
-        cell.colorView.layer.cornerRadius = cell.colorView.bounds.height / 2
-        
-        cell.colorView.backgroundColor = index.attributedColor
-        cell.nameLabel.text = index.tagName
-        
-        
+        cell.configure(index)
+
         return cell
     }
     

@@ -45,7 +45,6 @@
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 		DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808F1E8097A700A8F423 /* StringUtils.swift */; };
 		DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA04CB1E83E7CD008AC100 /* Tag.swift */; };
-		E606B9621F78C02E00F69CBB /* NewsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9611F78C02E00F69CBB /* NewsUtils.swift */; };
 		E606B9641F78C08100F69CBB /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9631F78C08100F69CBB /* ColorUtils.swift */; };
 		E606B9661F78C41A00F69CBB /* NetiquetteChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9651F78C41A00F69CBB /* NetiquetteChecker.swift */; };
 		E606B9681F78C59900F69CBB /* NetiquetteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9671F78C59900F69CBB /* NetiquetteCell.swift */; };
@@ -112,7 +111,6 @@
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../EpiReader/StringUtils.swift; sourceTree = "<group>"; };
 		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tag.swift; path = ../EpiReader/Tag.swift; sourceTree = "<group>"; };
 		E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpiReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E606B9611F78C02E00F69CBB /* NewsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUtils.swift; sourceTree = "<group>"; };
 		E606B9631F78C08100F69CBB /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		E606B9651F78C41A00F69CBB /* NetiquetteChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetiquetteChecker.swift; sourceTree = "<group>"; };
 		E606B9671F78C59900F69CBB /* NetiquetteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetiquetteCell.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				DA8D2F4C1E7FFAEE00BA7FB1 /* CustomView.swift */,
 				DA8D2F4D1E7FFAEE00BA7FB1 /* DateUtils.swift */,
 				DADA808F1E8097A700A8F423 /* StringUtils.swift */,
-				E606B9611F78C02E00F69CBB /* NewsUtils.swift */,
 				E606B9631F78C08100F69CBB /* ColorUtils.swift */,
 				E606B9651F78C41A00F69CBB /* NetiquetteChecker.swift */,
 				DAA9A5041F886A1600B32C30 /* TagUtils.swift */,
@@ -497,7 +494,6 @@
 				DA8D2F531E7FFBB200BA7FB1 /* MainTVC.swift in Sources */,
 				DA8D2F4E1E7FFAEE00BA7FB1 /* CustomButton.swift in Sources */,
 				E6508DC31F78E09D004898E2 /* TagsTVC.swift in Sources */,
-				E606B9621F78C02E00F69CBB /* NewsUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

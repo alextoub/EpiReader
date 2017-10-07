@@ -10,12 +10,21 @@ import UIKit
 
 class SearchTVC: UITableViewController {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    // MARK: - Variables
     
+    let searchController = UISearchController(searchResultsController: nil)
     var items = [News]()
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchController()
+    }
+    
+    // MARK: - Custom functions
+    
+    func configureSearchController() {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
@@ -24,6 +33,7 @@ class SearchTVC: UITableViewController {
         searchController.searchBar.placeholder = "Search item"
         searchController.searchBar.delegate = self
     }
+    
 
     // MARK: - Table view data source
 
