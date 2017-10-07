@@ -35,6 +35,7 @@
 		DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F581E7FFDDA00BA7FB1 /* News.swift */; };
 		DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */; };
 		DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */; };
+		DAA9A5051F886A1600B32C30 /* TagUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9A5041F886A1600B32C30 /* TagUtils.swift */; };
 		DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FD1F74E39C00CB4F93 /* StaticData.swift */; };
 		DABE51001F74E7C400CB4F93 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FF1F74E7C400CB4F93 /* RequestService.swift */; };
 		DABE51021F76E49500CB4F93 /* NSCodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE51011F76E49500CB4F93 /* NSCodingData.swift */; };
@@ -100,6 +101,7 @@
 		DA8D2F581E7FFDDA00BA7FB1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = News.swift; path = ../EpiReader/News.swift; sourceTree = "<group>"; };
 		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Topic.swift; path = ../EpiReader/Topic.swift; sourceTree = "<group>"; };
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccess.swift; path = ../EpiReader/DataAccess.swift; sourceTree = "<group>"; };
+		DAA9A5041F886A1600B32C30 /* TagUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUtils.swift; sourceTree = "<group>"; };
 		DABE50FD1F74E39C00CB4F93 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		DABE50FF1F74E7C400CB4F93 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		DABE51011F76E49500CB4F93 /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				E606B9611F78C02E00F69CBB /* NewsUtils.swift */,
 				E606B9631F78C08100F69CBB /* ColorUtils.swift */,
 				E606B9651F78C41A00F69CBB /* NetiquetteChecker.swift */,
+				DAA9A5041F886A1600B32C30 /* TagUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				E606B96A1F78CBB500F69CBB /* ErrorNetiquette.swift in Sources */,
 				DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */,
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
+				DAA9A5051F886A1600B32C30 /* TagUtils.swift in Sources */,
 				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,

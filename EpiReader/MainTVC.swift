@@ -32,10 +32,6 @@ class MainTVC: UITableViewController {
 
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Custom functions
     
     func getFav() {
