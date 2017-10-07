@@ -30,4 +30,30 @@ class NewsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configure(_ news: News) {
+        let authorArr = parseAuthor(news.author!)
+        authorLabel.text = authorArr[0]
+        mailLabel.text = authorArr[1]
+        readIndicator.layer.masksToBounds = true
+        readIndicator.layer.cornerRadius = readIndicator.bounds.height / 2
+        dateLabel.text = StrToAbrev(dateStr: news.creation_date!)
+        
+        if news.msg_nb! > 1 {
+            msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
+        }
+        else {
+            msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
+        }
+        
+        if news.isRead != nil && news.isRead! {
+            readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            if msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green"){
+                msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
+            }
+        }
+        else {
+            readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
+        }        
+    }
+    
 }

@@ -147,6 +147,7 @@ class NewsTVC: UITableViewController {
         }
     }
     
+    //TODO: Delete this function, replace by collectionView
     func parseSub(_ subject: String) -> NSMutableAttributedString {
         let str = NSMutableAttributedString()
         let parsedSubject = parseSubject(subject)
@@ -155,11 +156,11 @@ class NewsTVC: UITableViewController {
         for sub in parsedSubject {
             if i != cnt - 1 && sub != "Re: " && sub != "Re:" {
                 let tag = check(tag: sub, in: tags)
-                
+
                 if !tag.1 {
                     addToTags(tag: tag.0)
                 }
-                
+
                 var new = NSMutableAttributedString(string: sub,
                                                     attributes: [NSBackgroundColorAttributeName: tag.0.attributedColor!,
                                                                  NSForegroundColorAttributeName: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
@@ -224,8 +225,6 @@ class NewsTVC: UITableViewController {
         updateNotifButton()
     }
 
-
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -268,29 +267,8 @@ class NewsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
 
         let index = news[indexPath.row]
-        let authorArr = parseAuthor(index.author!)
-        cell.authorLabel.text = authorArr[0]
-        cell.mailLabel.text = authorArr[1]
-        cell.readIndicator.layer.masksToBounds = true
-        cell.readIndicator.layer.cornerRadius = cell.readIndicator.bounds.height / 2
-        cell.dateLabel.text = StrToAbrev(dateStr: index.creation_date!)
+        cell.configure(index)
         cell.subjectLabel.attributedText = parseSub(index.subject!)
-        if index.msg_nb! > 1 {
-            cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
-        }
-        else {
-            cell.msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
-        }
-        if index.isRead != nil && index.isRead! {
-            cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            if cell.msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green"){
-                cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
-            }
-        }
-        else {
-            cell.readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
-        }
-
         return cell
     }
 

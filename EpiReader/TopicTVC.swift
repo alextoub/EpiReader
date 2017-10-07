@@ -32,14 +32,9 @@ class TopicTVC: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     // MARK: - Call functions
     
     func parse_topic(topic: Topic) {
-        
         let topicTmp = Topic(id: topic.id, uid: topic.uid, author: topic.author, subject: topic.subject, content: topic.content, creation_date: topic.creation_date, groups: topic.groups)
         topics.append(topicTmp)
         
@@ -48,10 +43,7 @@ class TopicTVC: UITableViewController {
         }
     }
     
-    
-
-    func createArrayOfTopics()
-    {
+    func createArrayOfTopics() {
         parse_topic(topic: topic!)
         nb_msg = topics.count
     }
@@ -168,28 +160,9 @@ class TopicTVC: UITableViewController {
                     return cell
                 }
                 let index = topics[indexPath.row / 2]
-                print(cell.bounds.height)
-                cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                cell.authorLabel.text = parseAuthor((index.author)!)[0]
-                cell.contentText.text = index.content
-                cell.subjectLabel.text = index.subject
-                cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
-                let url = getProfilePic(mail: parseAuthor((index.author)!)[1], subject: index.subject!)
-                cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
                 
-                if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
-                    cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
-                }
-                if (parseAuthor((index.author)!)[1] == "chef@tickets.acu.epita.fr") {
-                    cell.photoImageView.image = #imageLiteral(resourceName: "acu")
-                }
+                cell.configure(index)
                 
-                if cell.photoImageView.image == nil {
-                    print("oui c nil")
-                }
-                
-                
-                cell.displayCell()
                 if sizeCells[indexPath.row] == 195.0 {
                     var newContentText = cell.contentText.frame
                     newContentText.size.width = cell.contentText.contentSize.width
@@ -199,6 +172,7 @@ class TopicTVC: UITableViewController {
                 }
                 cell.contentText.sizeThatFits(CGSize(width: cell.contentText.contentSize.width, height: cell.contentText.contentSize.height))
                 cell.contentText.isScrollEnabled = false
+                
                 return cell
             }
             else {
@@ -232,28 +206,7 @@ class TopicTVC: UITableViewController {
                 return cell
             }
             let index = topics[indexPath.row]
-            print(cell.bounds.height)
-            cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.authorLabel.text = parseAuthor((index.author)!)[0]
-            cell.contentText.text = index.content
-            cell.subjectLabel.text = index.subject
-            cell.dateLabel.text = StrToAbrevWithHour(dateStr: (index.creation_date)!)
-            let url = getProfilePic(mail: parseAuthor((index.author)!)[1], subject: index.subject!)
-            cell.photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
-            
-            if (parseAuthor((index.author)!)[1] == "chefs@yaka.epita.fr") {
-                cell.photoImageView.image = #imageLiteral(resourceName: "chefs")
-            }
-            if (parseAuthor((index.author)!)[1] == "chef@tickets.acu.epita.fr") {
-                cell.photoImageView.image = #imageLiteral(resourceName: "acu")
-            }
-            
-            if cell.photoImageView.image == nil {
-                print("oui c nil")
-            }
-            
-            
-            cell.displayCell()
+            cell.configure(index)
             if sizeCells[indexPath.row] == 195.0 {
                 var newContentText = cell.contentText.frame
                 newContentText.size.width = cell.contentText.contentSize.width

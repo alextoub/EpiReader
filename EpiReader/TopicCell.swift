@@ -25,7 +25,26 @@ class TopicCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func displayCell() {
+    func configure(_ topic: Topic) {
+        newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        authorLabel.text = parseAuthor((topic.author)!)[0]
+        contentText.text = topic.content
+        subjectLabel.text = topic.subject
+        dateLabel.text = StrToAbrevWithHour(dateStr: (topic.creation_date)!)
+        let url = getProfilePic(mail: parseAuthor((topic.author)!)[1], subject: topic.subject!)
+        photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+        
+        if (parseAuthor((topic.author)!)[1] == "chefs@yaka.epita.fr") {
+            photoImageView.image = #imageLiteral(resourceName: "chefs")
+        }
+        if (parseAuthor((topic.author)!)[1] == "chef@tickets.acu.epita.fr") {
+            photoImageView.image = #imageLiteral(resourceName: "acu")
+        }
+        
+        if photoImageView.image == nil {
+            print("oui c nil")
+        }
+        
         photoImageView.layer.masksToBounds = true
         photoImageView.layer.cornerRadius = photoImageView.bounds.height / 2
         photoImageView.layer.borderWidth = 1
