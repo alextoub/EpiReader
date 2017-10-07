@@ -7,20 +7,21 @@ EpiReader is an iOS App that allows you to read EPITA news
 ## Requirements
 
 - iOS 10.0+
-- Xcode 8.3+
-- Swift 3.1
+- Xcode 9.0+
+- Swift 3.2
 
 ## Installation
 
-1. Install the package manager [Carthage](https://github.com/Carthage/Carthage)
-2. Install the packages used in the app using Carthage
+1. Install the package manager [CocoaPods](https://github.com/CocoaPods/CocoaPods)
+2. Install the packages used in the app using CocoaPods
 
 ```bash
-$ carthage bootstrap --platform iOS
+$ pod install
 ```
 
-3. Click on EpiReader.xcodeproj file
-4. Sign using your developper account and build the project using XCode
+3. It will create a new projet name EpiReader.xcworkspace
+4. Click on it!
+5. Sign using your developper account and build the project using XCode
 
 ![EpiReader](https://github.com/alextoub/EpiReader/blob/master/Assets/EpiReader.png)
 
