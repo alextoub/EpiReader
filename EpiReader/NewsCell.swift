@@ -34,8 +34,8 @@ class NewsCell: UITableViewCell {
         let authorArr = parseAuthor(news.author!)
         authorLabel.text = authorArr[0]
         mailLabel.text = authorArr[1]
-        readIndicator.layer.masksToBounds = true
-        readIndicator.layer.cornerRadius = readIndicator.bounds.height / 2
+//        readIndicator.layer.masksToBounds = true
+//        readIndicator.layer.cornerRadius = readIndicator.bounds.height / 2
         dateLabel.text = StrToAbrev(dateStr: news.creation_date!)
         
         if news.msg_nb! > 1 {
