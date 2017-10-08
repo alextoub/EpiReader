@@ -8,7 +8,7 @@ EpiReader is an iOS App that allows you to read EPITA news
 
 - iOS 10.0+
 - Xcode 9.0+
-- Swift 3.2
+- Swift 4.0
 
 ## Installation
 
@@ -19,9 +19,9 @@ EpiReader is an iOS App that allows you to read EPITA news
 $ pod install
 ```
 
-3. It will create a new projet name EpiReader.xcworkspace
+3. It will create a new project named EpiReader.xcworkspace.
 4. Click on it!
-5. Sign using your developper account and build the project using XCode
+5. Sign using your Apple developer account and build the project using XCode.
 
 ![EpiReader](https://github.com/alextoub/EpiReader/blob/master/Assets/EpiReader.png)
 
@@ -37,6 +37,25 @@ $ pod install
 - [x] Indicate if a news is read (persistancy)
 - [x] Redesign switchs
 - [x] Infinite scrolling
+- [x] Use pods
+- [x] Notifications
+- [x] Use static data
+- [x] Netiquette checker
+- [x] Warning supprimer
+- [x] Clean code
+- [x] Use Swift 4
 - [ ] Add search
 - [ ] Add mark all as read
 - [ ] Change number of news read in view group
+- [ ] Redesign app
+- [ ] Redesign tag Collection View [[TAG1],[TAG2],[title]]
+- [ ] Design loader
+- [ ] Highlight signature
+- [ ] Change display news hours
+- [ ] Fix netiquette errors
+- [ ] Compatibility with iPhone X
+- [ ] Post news
+- [ ] Themes
+- [ ] Apple Watch
+- [ ] Favorite news
+- [ ] Add number of line for netiquette
