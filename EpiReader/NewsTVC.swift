@@ -147,36 +147,24 @@ class NewsTVC: UITableViewController {
         }
     }
     
-    //TODO: Delete this function, replace by collectionView
-    func parseSub(_ subject: String) -> NSMutableAttributedString {
-        let str = NSMutableAttributedString()
-        let parsedSubject = parseSubject(subject)
-        var i = 0
-        let cnt = parsedSubject.count
-        for sub in parsedSubject {
-            if i != cnt - 1 && sub != "Re: " && sub != "Re:" {
-                let tag = check(tag: sub, in: tags)
-
-                if !tag.1 {
-                    addToTags(tag: tag.0)
-                }
-
-                var new = NSMutableAttributedString(string: sub,
-                                                    attributes: [NSAttributedStringKey.backgroundColor: tag.0.attributedColor!,
-                                                                 NSAttributedStringKey.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
-                str.append(new)
-                new = NSMutableAttributedString(string: " ")
-                str.append(new)
+    func setupSubject(_ subject: String) -> ([Tag], String) {
+        let parsedSubject = parse(subjectStr: subject)
+        
+        var tagsTmp = [Tag]()
+        
+        for i in parsedSubject.0 {
+            let tag = check(tag: i, in: tags)
+            
+            if !tag.1 {
+                addToTags(tag: tag.0)
             }
-            else {
-                let new = NSMutableAttributedString(string: sub)
-                str.append(new)
-            }
-            i += 1
+            
+            tagsTmp.append(tag.0)
         }
-        return str
+        
+        return (tagsTmp, parsedSubject.1.trimmingCharacters(in: .whitespacesAndNewlines))
     }
-    
+
     // MARK: - NSCoding Data
 
     func getReadNews() {
@@ -267,10 +255,13 @@ class NewsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
 
         let index = news[indexPath.row]
+        
+        var t = setupSubject(index.subject!)
+        
+        cell.tags = t.0
         cell.configure(index)
-        cell.subjectLabel.attributedText = parseSub(index.subject!)
+        cell.subjectLabel.text = t.1
 
-        //cell.tagCollectionView.register(TagCVCell.self, forCellWithReuseIdentifier: "TagCVCell")
         return cell
     }
 

@@ -112,6 +112,39 @@ public func parseSubject(_ subjectStr: String) -> [String] {
     return subs
 }
 
+func parse(subjectStr: String) -> ([String], String) {
+    
+    var sub = ""
+    var tags = [String]()
+    var tmp = ""
+    var isInCroch = false
+    for i in subjectStr {
+        if isInCroch == false {
+            if i == "[" {
+                if tmp != "" {
+                    sub += tmp
+                    tmp = ""
+                }
+                isInCroch = true
+            }
+            else {
+                sub.append(i)
+            }
+        }
+        else {
+            if i == "]" {
+                tags.append(tmp)
+                tmp = ""
+                isInCroch = false
+            }
+            else {
+                tmp.append(i)
+            }
+        }
+    }
+    return (tags, sub)
+}
+
 extension String {
     func capitalizingFirstLetter() -> String {
         let first = String(prefix(1)).capitalized
