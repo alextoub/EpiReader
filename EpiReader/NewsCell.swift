@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsCell: UITableViewCell {
+class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Outlets
     
@@ -20,10 +20,22 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contentCellView: CustomView!
     
+    @IBOutlet weak var tagCollectionView: UICollectionView!
+    
+    var tags = [Tag]()
+    
     // MARK: - Cell delegates
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//
+        tags.append(Tag(tagName: "LETEST123456789", attributedColor: #colorLiteral(red: 1, green: 0.2842617035, blue: 0.4058894515, alpha: 1)))
+        tags.append(Tag(tagName: "Test2", attributedColor: #colorLiteral(red: 0.4119389951, green: 0.8247622848, blue: 0.9853010774, alpha: 1)))
+//
+        tagCollectionView.dataSource = self
+        tagCollectionView.delegate = self
+        
+        //tagCollectionView.register(TagCVCell.self, forCellWithReuseIdentifier: "TagCVCell")
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,6 +66,55 @@ class NewsCell: UITableViewCell {
         else {
             readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
         }        
+    }
+    
+    // MARK: - Tag Collection View Data Source
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if tags.isEmpty {
+            return 0
+        }
+        return tags.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let cell = collectionView.cellForItem(at: indexPath) as! TagCVCell //collectionView.dequeueReusableCell(withReuseIdentifier: "TagCVCell", for: indexPath) as! TagCVCell
+//
+//        return CGSize(width: cell.tagLabel.intrinsicContentSize.width + 4, height: cell.tagLabel.intrinsicContentSize.height)
+//
+//    }
+    
+    func getSizeOfText(string: String?) -> CGSize {
+        let font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        let fontAttributes = [NSAttributedStringKey.font: font]
+        let size = (string as! NSString).size(withAttributes: fontAttributes)
+        return CGSize(width: size.width + 8, height: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return getSizeOfText(string: tags[indexPath.row].tagName)
+    }
+//
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCVCell", for: indexPath) as! TagCVCell
+        
+        let index = tags[indexPath.row]
+        cell.tagColorView.backgroundColor = index.attributedColor
+        //cell.tagColorView.backgroundColor = #colorLiteral(red: 1, green: 0.2842617035, blue: 0.4058894515, alpha: 1)//index.attributedColor
+        cell.tagLabel.text = index.tagName
+        
+        //cell.sizeToFit()
+        //cell.frame = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.tagLabel.intrinsicContentSize.width + 4, height: 15) //CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, heights[indexPath.row])
+        //cell.bounds.size = CGSize(width: cell.tagLabel.intrinsicContentSize.width + 4, height: cell.tagLabel.intrinsicContentSize.height)
+        
+        return cell
+        
+        
     }
     
 }

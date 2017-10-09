@@ -19,6 +19,7 @@
 		DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723141E80108200899F3F /* AddGroupCell.swift */; };
 		DA6723171E80229800899F3F /* NewsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723161E80229800899F3F /* NewsTVC.swift */; };
 		DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6723181E8022AE00899F3F /* NewsCell.swift */; };
+		DA7BEC911F8AB99E002C67D7 /* TagCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7BEC901F8AB99E002C67D7 /* TagCVCell.swift */; };
 		DA7C34C71E829B2B00A1DA99 /* ReadNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */; };
 		DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */; };
 		DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F2E1E7FDFDC00BA7FB1 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		DA6723141E80108200899F3F /* AddGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupCell.swift; path = ../EpiReader/AddGroupCell.swift; sourceTree = "<group>"; };
 		DA6723161E80229800899F3F /* NewsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTVC.swift; path = ../EpiReader/NewsTVC.swift; sourceTree = "<group>"; };
 		DA6723181E8022AE00899F3F /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsCell.swift; path = ../EpiReader/NewsCell.swift; sourceTree = "<group>"; };
+		DA7BEC901F8AB99E002C67D7 /* TagCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCVCell.swift; sourceTree = "<group>"; };
 		DA7C34C61E829B2B00A1DA99 /* ReadNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadNews.swift; path = ../EpiReader/ReadNews.swift; sourceTree = "<group>"; };
 		DA7D4F8E1EE8AF4B002C40E6 /* ImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		DA8284FD1F70C954007A646C /* EpiReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EpiReader.entitlements; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				DA51D9211EE57CD2003E795B /* LoadingCell.swift */,
 				E606B9671F78C59900F69CBB /* NetiquetteCell.swift */,
 				E6508DC41F78E345004898E2 /* TagCell.swift */,
+				DA7BEC901F8AB99E002C67D7 /* TagCVCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
 				DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */,
 				E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */,
+				DA7BEC911F8AB99E002C67D7 /* TagCVCell.swift in Sources */,
 				DABE51041F76EB4800CB4F93 /* AboutTVC.swift in Sources */,
 				DA6723151E80108200899F3F /* AddGroupCell.swift in Sources */,
 				E6508DC51F78E345004898E2 /* TagCell.swift in Sources */,

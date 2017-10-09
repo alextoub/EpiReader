@@ -269,6 +269,8 @@ class NewsTVC: UITableViewController {
         let index = news[indexPath.row]
         cell.configure(index)
         cell.subjectLabel.attributedText = parseSub(index.subject!)
+
+        //cell.tagCollectionView.register(TagCVCell.self, forCellWithReuseIdentifier: "TagCVCell")
         return cell
     }
 
