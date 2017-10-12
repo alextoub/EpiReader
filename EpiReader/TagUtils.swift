@@ -14,7 +14,7 @@ func check(tag: String, in tags: [Tag]) -> (Tag, Bool) {
             return (t, true)
         }
     }
-    let color = getRandomColor()
+    let color = UIColor(string: tag) //getRandomColor()
     let newTag = Tag(tagName: tag, attributedColor: color)
     return (newTag, false)
 }
