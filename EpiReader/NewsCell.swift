@@ -20,6 +20,11 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contentCellView: CustomView!
     
+    @IBOutlet weak var msgNbView: UIView!
+    @IBOutlet weak var msgNbLabel: UILabel!
+    
+    @IBOutlet weak var overlayView: UIView!
+    
     @IBOutlet weak var tagCollectionView: UICollectionView!
     
     var tags = [Tag]()
@@ -28,10 +33,6 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//
-        tags.append(Tag(tagName: "LETEST123456789", attributedColor: #colorLiteral(red: 1, green: 0.2842617035, blue: 0.4058894515, alpha: 1)))
-        tags.append(Tag(tagName: "Test2", attributedColor: #colorLiteral(red: 0.4119389951, green: 0.8247622848, blue: 0.9853010774, alpha: 1)))
-//
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
@@ -50,22 +51,35 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
 //        readIndicator.layer.cornerRadius = readIndicator.bounds.height / 2
         dateLabel.text = StrToAbrev(dateStr: news.creation_date!)
         
-        if news.msg_nb! > 1 {
-            msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
+//        if news.msg_nb! > 1 {
+////            msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")
+//        }
+//        else {
+//            msgNbView.backgroundColor = #colorLiteral(red: 0.4119389951, green: 0.8247622848, blue: 0.9853010774, alpha: 1)
+//            msgNbLabel.text = news.msg_nb!
+//            msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
+//        }
+        
+        msgNbView.backgroundColor = #colorLiteral(red: 0.4119389951, green: 0.8247622848, blue: 0.9853010774, alpha: 1)
+        if let nb = news.msg_nb {
+            msgNbLabel.text = "\(nb)"
         }
         else {
-            msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
+            msgNbLabel.text = "1"
         }
-        
+
         if news.isRead != nil && news.isRead! {
             readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            if msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green"){
-                msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
-            }
+            overlayView.isHidden = false
+//            if msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green"){
+//                msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
+//            }
         }
         else {
             readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
-        }        
+            overlayView.isHidden = true
+        }
+        tagCollectionView.reloadData()
     }
     
     // MARK: - Tag Collection View Data Source
