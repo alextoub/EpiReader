@@ -167,4 +167,19 @@ extension String {
             }
         }
     }
+    
+    func sha256() -> String {
+        if self != "" {
+            if let data = self.data(using: .utf8) {
+                var digest = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
+                let _ = digest.withUnsafeMutableBytes { bytes in
+                    data.withUnsafeBytes { messageBytes in
+                        CC_SHA256(messageBytes, CC_LONG(data.count), bytes)
+                    }
+                }
+                return digest.map { String(format: "%02hhx", $0) }.joined()
+            }
+        }
+        return ""
+    }
 }
