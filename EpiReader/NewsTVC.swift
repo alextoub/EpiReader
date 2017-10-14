@@ -257,11 +257,11 @@ class NewsTVC: UITableViewController {
 
         let index = news[indexPath.row]
         
-        var t = setupSubject(index.subject!)
+        let subjectSetup = setupSubject(index.subject!)
         
-        cell.tags = t.0
+        cell.tags = subjectSetup.0
         cell.configure(index)
-        cell.subjectLabel.text = t.1
+        cell.subjectLabel.text = subjectSetup.1
 
         return cell
     }

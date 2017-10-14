@@ -49,7 +49,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
         mailLabel.text = authorArr[1]
 //        readIndicator.layer.masksToBounds = true
 //        readIndicator.layer.cornerRadius = readIndicator.bounds.height / 2
-        dateLabel.text = StrToAbrev(dateStr: news.creation_date!)
+        dateLabel.text = StrToInfo(dateStr: news.creation_date!)
         
 //        if news.msg_nb! > 1 {
 ////            msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_green")

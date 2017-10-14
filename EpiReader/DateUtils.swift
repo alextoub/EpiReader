@@ -77,3 +77,35 @@ public func StrToAbrevWithHour(dateStr: String) -> String {
     let dateStr = "\(dateFormatter.string(from: date)) à \(hourFormatter.string(from: date))"
     return dateStr
 }
+
+public func StrToInfo(dateStr: String) -> String {
+
+    let nowDate = Date()
+    let date = StrToDate(dateStr: dateStr)
+    let interval = nowDate.timeIntervalSince(date)
+    let curr = Calendar.current
+
+    var minutes: Int = Int(interval / 60)
+    var hours: Int = Int(minutes / 24)
+
+    if minutes >= 0 && minutes < 5 {
+        return "À l'instant"
+    }
+    if minutes >= 5 && minutes < 60 {
+        return "Il y'a \(minutes) mns"
+    }
+
+    let date1 = curr.startOfDay(for: nowDate)
+    let date2 = curr.startOfDay(for: date)
+
+    let components = curr.dateComponents([.day], from: date1, to: date2)
+    if components.day == 0 {
+        return "\(curr.component(.hour, from: date)):\(curr.component(.minute, from: date))"
+    }
+    if components.day == -1 {
+        return "Hier, \(curr.component(.hour, from: date)):\(curr.component(.minute, from: date))"
+    }
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd MMM"
+    return "\(dateFormatter.string(from: date))."
+}
