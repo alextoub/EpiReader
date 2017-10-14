@@ -44,6 +44,16 @@ class NSCodingData {
         }
     }
     
+    public func deleteTagFile() {
+        if FileManager.default.fileExists(atPath: Tag.ArchiveURL.path) {
+            do {
+                try FileManager.default.removeItem(at: Tag.ArchiveURL)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     public func loadTag() -> [Tag]?  {
         print(Tag.ArchiveURL.path)
         return NSKeyedUnarchiver.unarchiveObject(withFile: Tag.ArchiveURL.path) as? [Tag]

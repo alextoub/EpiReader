@@ -24,6 +24,16 @@ class MainTVC: UITableViewController {
             self.getFav()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
+        
+        // Code executed for update 1.2
+        
+        let deleteTags = UserDefaults.standard.bool(forKey: "deleteTags")
+        if !deleteTags {
+            NSCodingData().deleteTagFile()
+            UserDefaults.standard.set(true, forKey: "deleteTags")
+        }
+        
+        // End of code executed for update 1.2
     }
     
     override func viewWillAppear(_ animated: Bool) {
