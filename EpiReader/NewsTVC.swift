@@ -234,6 +234,7 @@ class NewsTVC: UITableViewController {
         }
         let index = news[indexPath.row]
         readNews.append(ReadNews(id : index.id!))
+        index.isRead = true
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
         cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.overlayView.isHidden = false
