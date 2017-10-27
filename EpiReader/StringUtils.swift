@@ -168,6 +168,18 @@ extension String {
         }
     }
     
+    func addZero() -> String {
+        if self.count == 0 {
+            return "00"
+        }
+        else if self.count == 1 {
+            return "0\(self)"
+        }
+        else {
+            return self
+        }
+    }
+    
     func sha256() -> String {
         if self != "" {
             if let data = self.data(using: .utf8) {

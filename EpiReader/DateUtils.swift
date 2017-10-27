@@ -99,11 +99,16 @@ public func StrToInfo(dateStr: String) -> String {
     let date2 = curr.startOfDay(for: date)
 
     let components = curr.dateComponents([.day], from: date1, to: date2)
+    
+    let hour = "\(curr.component(.hour, from: date))".addZero()
+    let minute = "\(curr.component(.minute, from: date))".addZero()
+    
     if components.day == 0 {
-        return "\(curr.component(.hour, from: date)):\(curr.component(.minute, from: date))"
+        
+        return "\(hour):\(minute)"
     }
     if components.day == -1 {
-        return "Hier, \(curr.component(.hour, from: date)):\(curr.component(.minute, from: date))"
+        return "Hier, \(hour):\(minute)"
     }
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "dd MMM"
