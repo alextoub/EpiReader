@@ -61,6 +61,14 @@ public func parseLoginFromSubject(_ subjectStr: String) -> String {
     return ""
 }
 
+public func appVersionValue() -> String {
+    guard let version: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+        return ""
+    }
+    let vers = "Version \(version)"
+    return vers
+}
+
 public func getProfilePic(mail: String, subject: String) -> URL? {
     let login1 = parseLogin(mail)
     let login2 = parseLoginFromSubject(subject)

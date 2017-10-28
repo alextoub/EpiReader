@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */; };
+		DA080A341FA460A5001FC9B3 /* IdentityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A331FA460A5001FC9B3 /* IdentityCell.swift */; };
+		DA080A361FA46861001FC9B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A351FA46861001FC9B3 /* SettingCell.swift */; };
 		DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CF91F7B724D00E58757 /* SearchTVC.swift */; };
 		DA488CFC1F7B7EC600E58757 /* TagAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */; };
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.debug.xcconfig"; sourceTree = "<group>"; };
 		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
+		DA080A331FA460A5001FC9B3 /* IdentityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCell.swift; sourceTree = "<group>"; };
+		DA080A351FA46861001FC9B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		DA488CF91F7B724D00E58757 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagAlertVC.swift; sourceTree = "<group>"; };
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCell.swift; path = ../EpiReader/LoadingCell.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 				E606B9671F78C59900F69CBB /* NetiquetteCell.swift */,
 				E6508DC41F78E345004898E2 /* TagCell.swift */,
 				DA7BEC901F8AB99E002C67D7 /* TagCVCell.swift */,
+				DA080A331FA460A5001FC9B3 /* IdentityCell.swift */,
+				DA080A351FA46861001FC9B3 /* SettingCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
+				DA080A361FA46861001FC9B3 /* SettingCell.swift in Sources */,
 				DA7D4F8F1EE8AF4B002C40E6 /* ImageVC.swift in Sources */,
 				E606B9641F78C08100F69CBB /* ColorUtils.swift in Sources */,
 				DA5DFB4A1EE59D5700DFE65D /* SettingsTVC.swift in Sources */,
@@ -492,6 +499,7 @@
 				DA6723171E80229800899F3F /* NewsTVC.swift in Sources */,
 				DAD2F9301F72BA61009BE02B /* Notification.swift in Sources */,
 				DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */,
+				DA080A341FA460A5001FC9B3 /* IdentityCell.swift in Sources */,
 				DABE51021F76E49500CB4F93 /* NSCodingData.swift in Sources */,
 				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,

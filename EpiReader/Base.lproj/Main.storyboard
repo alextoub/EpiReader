@@ -309,7 +309,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             <objects>
                 <tableViewController id="2T6-dG-Ktc" customClass="NotificationTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="npP-fj-jPj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -338,7 +338,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             <objects>
                 <tableViewController id="9Ko-iz-m1f" customClass="TagsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bit-l7-0vz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -467,58 +467,93 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             </objects>
             <point key="canvasLocation" x="3628" y="1529"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Réglages-->
         <scene sceneID="pv3-WW-YIl">
             <objects>
-                <tableViewController id="8IM-6o-jCx" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bIP-Gz-n90">
+                <tableViewController id="8IM-6o-jCx" customClass="SettingsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bIP-Gz-n90">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentityCell" rowHeight="191" id="D7C-7t-3rQ" customClass="GroupCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="IdentityCell" rowHeight="191" id="D7C-7t-3rQ" customClass="IdentityCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="191"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7C-7t-3rQ" id="BLB-jk-gQB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-G1-7L6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-G1-7L6">
                                             <rect key="frame" x="135" y="12" width="105" height="105"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="7sm-G1-7L6" secondAttribute="height" multiplier="1:1" id="aXi-M3-rEP"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EpiReader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-jS-7oW">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpiReader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-jS-7oW">
                                             <rect key="frame" x="16" y="125" width="343" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Ot-PVt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Ot-PVt">
                                             <rect key="frame" x="16" y="149" width="343" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Application réalisée par Alexandre Toubiana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-rL-3vr">
-                                            <rect key="frame" x="68" y="171" width="224" height="10"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application réalisée par Alexandre Toubiana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-rL-3vr">
+                                            <rect key="frame" x="68" y="171" width="211" height="10"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj4-EV-tFk">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj4-EV-tFk">
                                             <rect key="frame" x="293" y="172" width="13" height="9"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="9" id="m4u-xI-bdB"/>
+                                                <constraint firstAttribute="width" constant="13" id="pOW-jG-KeZ"/>
+                                            </constraints>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ7-Rc-PNC">
+                                            <rect key="frame" x="326" y="12" width="38" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="XdC-60-DsE"/>
+                                                <constraint firstAttribute="width" constant="38" id="rhb-Hh-6VU"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="logo_epimac"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="centerY" secondItem="oj4-EV-tFk" secondAttribute="centerY" id="0iZ-1T-IZr"/>
+                                        <constraint firstAttribute="trailing" secondItem="JJ7-Rc-PNC" secondAttribute="trailing" constant="11" id="1X2-Lf-x3M"/>
+                                        <constraint firstItem="oj4-EV-tFk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QVq-rL-3vr" secondAttribute="trailing" constant="8" symbolic="YES" id="3NW-7z-ZTz"/>
+                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="bottom" secondItem="oj4-EV-tFk" secondAttribute="bottom" id="3n5-6x-HhQ"/>
+                                        <constraint firstItem="JJ7-Rc-PNC" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="5Cq-uI-zsw"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ilt-jS-7oW" secondAttribute="trailing" constant="16" id="5kJ-1I-B5E"/>
+                                        <constraint firstItem="ueR-Ot-PVt" firstAttribute="top" secondItem="Ilt-jS-7oW" secondAttribute="bottom" constant="4" id="A8k-Uh-Tau"/>
+                                        <constraint firstItem="JJ7-Rc-PNC" firstAttribute="leading" secondItem="7sm-G1-7L6" secondAttribute="trailing" constant="86" id="BXB-VP-4uz"/>
+                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leadingMargin" constant="52" id="CeT-uO-6Xj"/>
+                                        <constraint firstAttribute="trailing" secondItem="ueR-Ot-PVt" secondAttribute="trailing" constant="16" id="GQR-r3-hAv"/>
+                                        <constraint firstItem="7sm-G1-7L6" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="QQK-me-JKq"/>
+                                        <constraint firstItem="Ilt-jS-7oW" firstAttribute="top" secondItem="7sm-G1-7L6" secondAttribute="bottom" constant="8" id="Qac-kg-C4v"/>
+                                        <constraint firstItem="Ilt-jS-7oW" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="eUe-hN-DYv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="oj4-EV-tFk" secondAttribute="trailing" constant="53" id="gxP-Pz-tuF"/>
+                                        <constraint firstItem="oj4-EV-tFk" firstAttribute="top" secondItem="ueR-Ot-PVt" secondAttribute="bottom" constant="8" symbolic="YES" id="jYV-F8-8b3"/>
+                                        <constraint firstItem="ueR-Ot-PVt" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="nnd-VM-w97"/>
+                                        <constraint firstItem="7sm-G1-7L6" firstAttribute="centerX" secondItem="BLB-jk-gQB" secondAttribute="centerX" id="wJc-ID-yW9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="logoAppImageView" destination="7sm-G1-7L6" id="3wk-oC-zxD"/>
+                                    <outlet property="logoButton" destination="JJ7-Rc-PNC" id="MX1-2s-HmQ"/>
+                                    <outlet property="mailButton" destination="oj4-EV-tFk" id="MbW-uZ-XGN"/>
+                                    <outlet property="versionLabel" destination="ueR-Ot-PVt" id="isN-Nl-sbt"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="10" id="s4r-ti-HlG" customClass="GroupCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="10" id="s4r-ti-HlG">
                                 <rect key="frame" x="0.0" y="219" width="375" height="10"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4r-ti-HlG" id="NYU-Co-AC5">
@@ -527,7 +562,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="70" id="Sgu-oo-4Wt" userLabel="SettingCell" customClass="GroupCell" customModule="EpiReader" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingCell" rowHeight="70" id="Sgu-oo-4Wt" userLabel="SettingCell" customClass="SettingCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="229" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sgu-oo-4Wt" id="etz-9N-dcV">
@@ -566,10 +601,59 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="groupNameLabel" destination="pEg-sy-n9g" id="ngq-0a-clN"/>
-                                    <outlet property="groupView" destination="miQ-hn-QgQ" id="Ebl-fw-UDp"/>
+                                    <outlet property="iconImageView" destination="QBc-ZI-3xy" id="5bB-BB-jgz"/>
+                                    <outlet property="iconView" destination="miQ-hn-QgQ" id="7bG-C2-oWI"/>
+                                    <outlet property="titleLabel" destination="pEg-sy-n9g" id="cb3-sZ-yBa"/>
+                                    <segue destination="2T6-dG-Ktc" kind="show" id="ExO-yV-JwU"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TagCell" rowHeight="70" id="uyD-X9-PPQ" userLabel="TagCell" customClass="SettingCell" customModule="EpiReader" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="299" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uyD-X9-PPQ" id="9ta-QB-hbi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kq1-mn-lzR" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="4" width="355" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="assistants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvt-GK-809">
+                                                    <rect key="frame" x="60" y="8" width="265" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-jL-66H">
+                                                    <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2V-Un-oM1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="iconImageView" destination="v2V-Un-oM1" id="bVD-vO-NhV"/>
+                                    <outlet property="iconView" destination="Do7-jL-66H" id="jSF-gU-ZOT"/>
+                                    <outlet property="titleLabel" destination="Rvt-GK-809" id="rSW-uh-G61"/>
+                                    <segue destination="9Ko-iz-m1f" kind="show" id="c2u-Nf-sTb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -578,6 +662,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                             <outlet property="delegate" destination="8IM-6o-jCx" id="Vfc-WB-09x"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Réglages" id="hXq-sk-5lO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFo-NZ-8b1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -586,7 +671,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <!--Paramètres-->
         <scene sceneID="ac4-36-CUb">
             <objects>
-                <tableViewController id="FBu-ms-Zbp" customClass="SettingsTVC" customModule="EpiReader" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FBu-ms-Zbp" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhH-2q-3Ux">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,9 +688,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="6ft-WB-Aae" kind="show" id="guG-Sl-Oy1"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" id="KmY-BG-xFF">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
@@ -614,9 +696,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="2T6-dG-Ktc" kind="show" id="LOi-T8-6zq"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="KBB-2s-YZN">
                                 <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -625,9 +704,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9Ko-iz-m1f" kind="show" id="C56-j2-QFV"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="sBz-Zj-IZH">
                                 <rect key="frame" x="0.0" y="160" width="375" height="44"/>
