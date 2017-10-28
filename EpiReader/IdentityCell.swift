@@ -13,11 +13,9 @@ class IdentityCell: UITableViewCell {
     @IBOutlet weak var logoButton: UIButton!
     @IBOutlet weak var logoAppImageView: UIImageView!
     @IBOutlet weak var versionLabel: UILabel!
-    @IBOutlet weak var mailButton: UIButton!
+    //@IBOutlet weak var mailButton: UIButton!
     
     func configure() {
-        logoAppImageView.layer.masksToBounds = true
-        logoAppImageView.layer.cornerRadius = logoAppImageView.bounds.height / 2
         logoAppImageView.image = #imageLiteral(resourceName: "logo_app")
         
         versionLabel.text = appVersionValue()

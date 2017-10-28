@@ -106,7 +106,7 @@ class SettingsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 191.0
+            return 220
         }
         else if indexPath.row == 1 {
             return 10.0

@@ -483,38 +483,36 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-G1-7L6">
-                                            <rect key="frame" x="135" y="12" width="105" height="105"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="7sm-G1-7L6" secondAttribute="height" multiplier="1:1" id="aXi-M3-rEP"/>
-                                            </constraints>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7sm-G1-7L6">
+                                            <rect key="frame" x="0.0" y="12" width="375" height="105"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpiReader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-jS-7oW">
-                                            <rect key="frame" x="16" y="125" width="343" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <rect key="frame" x="16" y="121" width="343" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21.5" id="q0d-ta-LJ4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Ot-PVt">
-                                            <rect key="frame" x="16" y="149" width="343" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <rect key="frame" x="16" y="144" width="343" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="zM1-X9-36U"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application réalisée par Alexandre Toubiana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-rL-3vr">
-                                            <rect key="frame" x="68" y="171" width="211" height="10"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <rect key="frame" x="16" y="166.5" width="343" height="14.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14.5" id="r8V-rL-uks"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oj4-EV-tFk">
-                                            <rect key="frame" x="293" y="172" width="13" height="9"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="9" id="m4u-xI-bdB"/>
-                                                <constraint firstAttribute="width" constant="13" id="pOW-jG-KeZ"/>
-                                            </constraints>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ7-Rc-PNC">
                                             <rect key="frame" x="326" y="12" width="38" height="28"/>
                                             <constraints>
@@ -526,21 +524,21 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="centerY" secondItem="oj4-EV-tFk" secondAttribute="centerY" id="0iZ-1T-IZr"/>
                                         <constraint firstAttribute="trailing" secondItem="JJ7-Rc-PNC" secondAttribute="trailing" constant="11" id="1X2-Lf-x3M"/>
-                                        <constraint firstItem="oj4-EV-tFk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QVq-rL-3vr" secondAttribute="trailing" constant="8" symbolic="YES" id="3NW-7z-ZTz"/>
-                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="bottom" secondItem="oj4-EV-tFk" secondAttribute="bottom" id="3n5-6x-HhQ"/>
                                         <constraint firstItem="JJ7-Rc-PNC" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="5Cq-uI-zsw"/>
                                         <constraint firstAttribute="trailing" secondItem="Ilt-jS-7oW" secondAttribute="trailing" constant="16" id="5kJ-1I-B5E"/>
-                                        <constraint firstItem="ueR-Ot-PVt" firstAttribute="top" secondItem="Ilt-jS-7oW" secondAttribute="bottom" constant="4" id="A8k-Uh-Tau"/>
-                                        <constraint firstItem="JJ7-Rc-PNC" firstAttribute="leading" secondItem="7sm-G1-7L6" secondAttribute="trailing" constant="86" id="BXB-VP-4uz"/>
-                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leadingMargin" constant="52" id="CeT-uO-6Xj"/>
+                                        <constraint firstAttribute="bottom" secondItem="QVq-rL-3vr" secondAttribute="bottom" constant="10" id="7II-Ag-C8L"/>
+                                        <constraint firstItem="ueR-Ot-PVt" firstAttribute="top" secondItem="Ilt-jS-7oW" secondAttribute="bottom" constant="1.5" id="99y-tf-jmE"/>
+                                        <constraint firstAttribute="trailing" secondItem="7sm-G1-7L6" secondAttribute="trailing" id="C6R-OS-Ded"/>
                                         <constraint firstAttribute="trailing" secondItem="ueR-Ot-PVt" secondAttribute="trailing" constant="16" id="GQR-r3-hAv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QVq-rL-3vr" secondAttribute="bottom" constant="-1" id="IjP-0Q-vTf"/>
+                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="J1H-YC-Ry2"/>
                                         <constraint firstItem="7sm-G1-7L6" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="QQK-me-JKq"/>
-                                        <constraint firstItem="Ilt-jS-7oW" firstAttribute="top" secondItem="7sm-G1-7L6" secondAttribute="bottom" constant="8" id="Qac-kg-C4v"/>
+                                        <constraint firstAttribute="trailing" secondItem="QVq-rL-3vr" secondAttribute="trailing" constant="16" id="WJN-gw-Nrc"/>
+                                        <constraint firstItem="Ilt-jS-7oW" firstAttribute="top" secondItem="7sm-G1-7L6" secondAttribute="bottom" constant="4" id="ZPW-28-gS8"/>
                                         <constraint firstItem="Ilt-jS-7oW" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="eUe-hN-DYv"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="oj4-EV-tFk" secondAttribute="trailing" constant="53" id="gxP-Pz-tuF"/>
-                                        <constraint firstItem="oj4-EV-tFk" firstAttribute="top" secondItem="ueR-Ot-PVt" secondAttribute="bottom" constant="8" symbolic="YES" id="jYV-F8-8b3"/>
+                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="top" secondItem="ueR-Ot-PVt" secondAttribute="bottom" constant="5.5" id="iM4-XM-8rx"/>
+                                        <constraint firstItem="7sm-G1-7L6" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" id="k0c-Lc-Ufs"/>
                                         <constraint firstItem="ueR-Ot-PVt" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="nnd-VM-w97"/>
                                         <constraint firstItem="7sm-G1-7L6" firstAttribute="centerX" secondItem="BLB-jk-gQB" secondAttribute="centerX" id="wJc-ID-yW9"/>
                                     </constraints>
@@ -549,7 +547,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 <connections>
                                     <outlet property="logoAppImageView" destination="7sm-G1-7L6" id="3wk-oC-zxD"/>
                                     <outlet property="logoButton" destination="JJ7-Rc-PNC" id="MX1-2s-HmQ"/>
-                                    <outlet property="mailButton" destination="oj4-EV-tFk" id="MbW-uZ-XGN"/>
                                     <outlet property="versionLabel" destination="ueR-Ot-PVt" id="isN-Nl-sbt"/>
                                 </connections>
                             </tableViewCell>
