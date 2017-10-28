@@ -504,15 +504,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application réalisée par Alexandre Toubiana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-rL-3vr">
-                                            <rect key="frame" x="16" y="166.5" width="343" height="14.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="14.5" id="r8V-rL-uks"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ7-Rc-PNC">
                                             <rect key="frame" x="326" y="12" width="38" height="28"/>
                                             <constraints>
@@ -520,27 +511,63 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <constraint firstAttribute="width" constant="38" id="rhb-Hh-6VU"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="logo_epimac"/>
+                                            <connections>
+                                                <action selector="logoButtonAction:" destination="D7C-7t-3rQ" eventType="touchUpInside" id="1xP-ae-fvo"/>
+                                            </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idf-p6-JGk">
+                                            <rect key="frame" x="0.0" y="166" width="375" height="18"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application réalisée par Alexandre Toubiana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-rL-3vr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgS-ix-HLO">
+                                                    <rect key="frame" x="343" y="2" width="19.5" height="13.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13.5" id="8eZ-5a-jqZ"/>
+                                                        <constraint firstAttribute="width" secondItem="MgS-ix-HLO" secondAttribute="height" multiplier="19:13" id="FJI-I2-UdR"/>
+                                                        <constraint firstAttribute="width" constant="19.5" id="yFE-B9-Oqm"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="Envelope"/>
+                                                    <connections>
+                                                        <action selector="envelopeButtonAction:" destination="D7C-7t-3rQ" eventType="touchUpInside" id="XyT-Ck-qWt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MgS-ix-HLO" secondAttribute="trailing" constant="16" id="8sy-Nr-s5j"/>
+                                                <constraint firstAttribute="height" constant="18" id="Nuy-BS-g2f"/>
+                                                <constraint firstAttribute="bottom" secondItem="MgS-ix-HLO" secondAttribute="bottom" constant="2.5" id="PaE-BV-0xz"/>
+                                                <constraint firstItem="MgS-ix-HLO" firstAttribute="top" secondItem="Idf-p6-JGk" secondAttribute="top" constant="2" id="R9t-bu-vGU"/>
+                                                <constraint firstAttribute="trailing" secondItem="QVq-rL-3vr" secondAttribute="trailing" constant="16" id="Vsb-hZ-h1j"/>
+                                                <constraint firstItem="QVq-rL-3vr" firstAttribute="leading" secondItem="Idf-p6-JGk" secondAttribute="leading" id="fdt-B6-3db"/>
+                                                <constraint firstItem="QVq-rL-3vr" firstAttribute="top" secondItem="Idf-p6-JGk" secondAttribute="top" id="jRW-c7-rVx"/>
+                                                <constraint firstAttribute="bottom" secondItem="QVq-rL-3vr" secondAttribute="bottom" id="pOi-fh-Dib"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="JJ7-Rc-PNC" secondAttribute="trailing" constant="11" id="1X2-Lf-x3M"/>
                                         <constraint firstItem="JJ7-Rc-PNC" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="5Cq-uI-zsw"/>
                                         <constraint firstAttribute="trailing" secondItem="Ilt-jS-7oW" secondAttribute="trailing" constant="16" id="5kJ-1I-B5E"/>
-                                        <constraint firstAttribute="bottom" secondItem="QVq-rL-3vr" secondAttribute="bottom" constant="10" id="7II-Ag-C8L"/>
                                         <constraint firstItem="ueR-Ot-PVt" firstAttribute="top" secondItem="Ilt-jS-7oW" secondAttribute="bottom" constant="1.5" id="99y-tf-jmE"/>
                                         <constraint firstAttribute="trailing" secondItem="7sm-G1-7L6" secondAttribute="trailing" id="C6R-OS-Ded"/>
+                                        <constraint firstItem="Idf-p6-JGk" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" id="EO8-GV-GKA"/>
                                         <constraint firstAttribute="trailing" secondItem="ueR-Ot-PVt" secondAttribute="trailing" constant="16" id="GQR-r3-hAv"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QVq-rL-3vr" secondAttribute="bottom" constant="-1" id="IjP-0Q-vTf"/>
-                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="J1H-YC-Ry2"/>
+                                        <constraint firstAttribute="trailing" secondItem="Idf-p6-JGk" secondAttribute="trailing" id="L1j-xK-84e"/>
                                         <constraint firstItem="7sm-G1-7L6" firstAttribute="top" secondItem="BLB-jk-gQB" secondAttribute="top" constant="12" id="QQK-me-JKq"/>
-                                        <constraint firstAttribute="trailing" secondItem="QVq-rL-3vr" secondAttribute="trailing" constant="16" id="WJN-gw-Nrc"/>
                                         <constraint firstItem="Ilt-jS-7oW" firstAttribute="top" secondItem="7sm-G1-7L6" secondAttribute="bottom" constant="4" id="ZPW-28-gS8"/>
                                         <constraint firstItem="Ilt-jS-7oW" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="eUe-hN-DYv"/>
-                                        <constraint firstItem="QVq-rL-3vr" firstAttribute="top" secondItem="ueR-Ot-PVt" secondAttribute="bottom" constant="5.5" id="iM4-XM-8rx"/>
                                         <constraint firstItem="7sm-G1-7L6" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" id="k0c-Lc-Ufs"/>
+                                        <constraint firstAttribute="bottom" secondItem="Idf-p6-JGk" secondAttribute="bottom" constant="7" id="krp-ue-g07"/>
                                         <constraint firstItem="ueR-Ot-PVt" firstAttribute="leading" secondItem="BLB-jk-gQB" secondAttribute="leading" constant="16" id="nnd-VM-w97"/>
                                         <constraint firstItem="7sm-G1-7L6" firstAttribute="centerX" secondItem="BLB-jk-gQB" secondAttribute="centerX" id="wJc-ID-yW9"/>
+                                        <constraint firstItem="Idf-p6-JGk" firstAttribute="top" secondItem="ueR-Ot-PVt" secondAttribute="bottom" constant="5" id="wYP-Zo-1Hr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1210,6 +1237,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Envelope" width="130" height="90"/>
         <image name="double_arrow_green" width="200" height="200"/>
         <image name="logo_epimac" width="2558" height="1904"/>
         <image name="notification_not_filled" width="25" height="25"/>
