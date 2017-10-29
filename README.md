@@ -44,16 +44,16 @@ $ pod install
 - [x] Warning supprimer
 - [x] Clean code
 - [x] Use Swift 4
+- [x] Redesign tag Collection View [[TAG1],[TAG2],[title]]
+- [x] Change display news hours
+- [x] Compatibility with iPhone X
 - [ ] Add search
 - [ ] Add mark all as read
 - [ ] Change number of news read in view group
 - [ ] Redesign app
-- [ ] Redesign tag Collection View [[TAG1],[TAG2],[title]]
 - [ ] Design loader
 - [ ] Highlight signature
-- [ ] Change display news hours
 - [ ] Fix netiquette errors
-- [ ] Compatibility with iPhone X
 - [ ] Post news
 - [ ] Themes
 - [ ] Apple Watch
