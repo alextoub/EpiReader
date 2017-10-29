@@ -236,14 +236,7 @@ class NewsTVC: UITableViewController {
         readNews.append(ReadNews(id : index.id!))
         index.isRead = true
         let cell = tableView.cellForRow(at: indexPath) as! NewsCell
-        cell.readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.overlayView.isHidden = false
-//        if cell.msgNbIndicator.image == #imageLiteral(resourceName: "double_arrow_green") {
-//            cell.msgNbIndicator.image = #imageLiteral(resourceName: "double_arrow_grey")
-//        }
-//        else {
-//            cell.msgNbIndicator.image = #imageLiteral(resourceName: "single_arrow")
-//        }
+        cell.configureIsRead()
         NSCodingData().saveReadNews(readNews: readNews)
     }
 

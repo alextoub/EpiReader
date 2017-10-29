@@ -302,7 +302,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyl-La-W9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="1895"/>
+            <point key="canvasLocation" x="1465" y="1184"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="1Si-CI-bzE">
@@ -331,7 +331,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhU-SO-Fss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="1895"/>
+            <point key="canvasLocation" x="290" y="1054"/>
         </scene>
         <!--Balises-->
         <scene sceneID="oT2-BV-JZr">
@@ -391,7 +391,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b52-j7-VLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2673.5" y="1529.5"/>
+            <point key="canvasLocation" x="290" y="1895"/>
         </scene>
         <!--Tag AlertVC-->
         <scene sceneID="Mqe-Hh-0Su">
@@ -465,7 +465,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWe-mQ-lBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3628" y="1529"/>
+            <point key="canvasLocation" x="830" y="1895"/>
         </scene>
         <!--Réglages-->
         <scene sceneID="pv3-WW-YIl">
@@ -692,66 +692,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
             </objects>
             <point key="canvasLocation" x="-232.80000000000001" y="1053.8230884557722"/>
         </scene>
-        <!--Paramètres-->
-        <scene sceneID="ac4-36-CUb">
-            <objects>
-                <tableViewController id="FBu-ms-Zbp" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhH-2q-3Ux">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="pus-Fc-e2E">
-                            <rect key="frame" x="0.0" y="204" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="aboutCell" id="6ID-ot-kq3">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6ID-ot-kq3" id="GJP-gW-X8i">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationCell" id="KmY-BG-xFF">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KmY-BG-xFF" id="8cd-xM-IPC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tagCell" id="KBB-2s-YZN">
-                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBB-2s-YZN" id="MzW-f1-ciq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="sBz-Zj-IZH">
-                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sBz-Zj-IZH" id="3iO-Ra-qZN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FBu-ms-Zbp" id="QAg-eD-mRd"/>
-                            <outlet property="delegate" destination="FBu-ms-Zbp" id="F4V-S8-zDn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Paramètres" id="Syd-Gu-CH9"/>
-                    <connections>
-                        <outlet property="separatorView" destination="pus-Fc-e2E" id="rRY-fQ-6fx"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eG8-WZ-Ovh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1297" y="987"/>
-        </scene>
         <!--NewsTVC-->
         <scene sceneID="bCR-lB-EW0">
             <objects>
@@ -903,10 +843,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qut-Dd-LwH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="77"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -916,24 +852,18 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <constraint firstItem="O1i-HG-KS0" firstAttribute="top" secondItem="S18-bY-U3C" secondAttribute="bottom" constant="6" id="4wd-9C-ciB"/>
                                                 <constraint firstItem="S18-bY-U3C" firstAttribute="leading" secondItem="kFY-lV-YSO" secondAttribute="trailing" constant="10" id="8EL-5V-57F"/>
                                                 <constraint firstAttribute="bottom" secondItem="O1i-HG-KS0" secondAttribute="bottom" constant="8" id="94d-X5-NDM"/>
-                                                <constraint firstItem="qut-Dd-LwH" firstAttribute="leading" secondItem="bhT-Wc-jlq" secondAttribute="leading" id="ALm-LA-sjt"/>
                                                 <constraint firstItem="S18-bY-U3C" firstAttribute="top" secondItem="RpZ-6D-an2" secondAttribute="bottom" constant="6" id="DNz-Em-uTL"/>
-                                                <constraint firstAttribute="trailing" secondItem="qut-Dd-LwH" secondAttribute="trailing" id="JiH-T4-TBg"/>
                                                 <constraint firstItem="xoG-Dm-0I2" firstAttribute="leading" secondItem="O1i-HG-KS0" secondAttribute="trailing" constant="16" id="LhR-yR-MPv"/>
                                                 <constraint firstItem="6IV-2t-tUt" firstAttribute="leading" secondItem="bhT-Wc-jlq" secondAttribute="leading" constant="278" id="NSA-OC-bbq"/>
                                                 <constraint firstItem="S18-bY-U3C" firstAttribute="trailing" secondItem="6IV-2t-tUt" secondAttribute="trailing" constant="-8" id="OGB-3H-fNp"/>
                                                 <constraint firstItem="RpZ-6D-an2" firstAttribute="leading" secondItem="tPa-ef-Bya" secondAttribute="trailing" constant="16" id="QnO-Wi-y7b"/>
-                                                <constraint firstItem="qut-Dd-LwH" firstAttribute="centerY" secondItem="bhT-Wc-jlq" secondAttribute="centerY" id="R5V-7i-6Bz"/>
                                                 <constraint firstAttribute="bottom" secondItem="kFY-lV-YSO" secondAttribute="bottom" id="Vjz-33-rxB"/>
                                                 <constraint firstAttribute="bottom" secondItem="xoG-Dm-0I2" secondAttribute="bottom" constant="8" id="Vlq-78-Sga"/>
                                                 <constraint firstItem="kFY-lV-YSO" firstAttribute="top" secondItem="bhT-Wc-jlq" secondAttribute="top" id="ZCg-uv-2hW"/>
                                                 <constraint firstItem="6IV-2t-tUt" firstAttribute="trailing" secondItem="xoG-Dm-0I2" secondAttribute="trailing" id="dNd-Sr-ALC"/>
                                                 <constraint firstItem="O1i-HG-KS0" firstAttribute="leading" secondItem="kFY-lV-YSO" secondAttribute="trailing" constant="10" id="ey2-ar-2cx"/>
                                                 <constraint firstAttribute="trailing" secondItem="RpZ-6D-an2" secondAttribute="trailing" constant="8" id="kDK-ZT-e1q"/>
-                                                <constraint firstItem="qut-Dd-LwH" firstAttribute="centerX" secondItem="bhT-Wc-jlq" secondAttribute="centerX" id="n1v-ed-XZH"/>
-                                                <constraint firstAttribute="bottom" secondItem="qut-Dd-LwH" secondAttribute="bottom" id="oaM-wR-mgc"/>
                                                 <constraint firstItem="tPa-ef-Bya" firstAttribute="leading" secondItem="kFY-lV-YSO" secondAttribute="trailing" constant="10" id="rSw-lG-1hf"/>
-                                                <constraint firstItem="qut-Dd-LwH" firstAttribute="top" secondItem="bhT-Wc-jlq" secondAttribute="top" id="teO-KH-Sl4"/>
                                                 <constraint firstItem="tPa-ef-Bya" firstAttribute="top" secondItem="bhT-Wc-jlq" secondAttribute="top" constant="8" id="vXI-gG-qVj"/>
                                                 <constraint firstItem="kFY-lV-YSO" firstAttribute="leading" secondItem="bhT-Wc-jlq" secondAttribute="leading" id="wSi-w0-dpo"/>
                                                 <constraint firstItem="xoG-Dm-0I2" firstAttribute="top" secondItem="6IV-2t-tUt" secondAttribute="bottom" constant="8" symbolic="YES" id="y40-jX-etx"/>
@@ -968,7 +898,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <outlet property="msgNbIndicator" destination="4nq-42-vLL" id="jym-EM-1AT"/>
                                     <outlet property="msgNbLabel" destination="ggq-Se-dG3" id="Xb8-Yw-KPs"/>
                                     <outlet property="msgNbView" destination="xoG-Dm-0I2" id="T8Y-jg-WJr"/>
-                                    <outlet property="overlayView" destination="qut-Dd-LwH" id="20n-tn-tOb"/>
                                     <outlet property="readIndicator" destination="kFY-lV-YSO" id="8VR-VR-6b9"/>
                                     <outlet property="subjectLabel" destination="S18-bY-U3C" id="Ucw-sE-usa"/>
                                     <outlet property="tagCollectionView" destination="tPa-ef-Bya" id="rET-Cf-EeO"/>
