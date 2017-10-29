@@ -75,6 +75,7 @@
 		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
 		DA080A331FA460A5001FC9B3 /* IdentityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCell.swift; sourceTree = "<group>"; };
 		DA080A351FA46861001FC9B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		DA291D761FA67721003D9545 /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
 		DA488CF91F7B724D00E58757 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagAlertVC.swift; sourceTree = "<group>"; };
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		DAA9A5041F886A1600B32C30 /* TagUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUtils.swift; sourceTree = "<group>"; };
-		DAB103131F8F343800833851 /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
 		DABE50FD1F74E39C00CB4F93 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		DABE50FF1F74E7C400CB4F93 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		DABE51011F76E49500CB4F93 /* NSCodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodingData.swift; sourceTree = "<group>"; };
@@ -179,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				DA8284FD1F70C954007A646C /* EpiReader.entitlements */,
+				DA291D761FA67721003D9545 /* HeaderFile.h */,
 				DA8D2F3A1E7FDFDC00BA7FB1 /* Info.plist */,
 			);
 			path = EpiReader;
@@ -269,7 +270,6 @@
 				DA8D2F4B1E7FFAEE00BA7FB1 /* CustomButton.swift */,
 				DA8D2F4C1E7FFAEE00BA7FB1 /* CustomView.swift */,
 				DA8D2F4D1E7FFAEE00BA7FB1 /* DateUtils.swift */,
-				DAB103131F8F343800833851 /* HeaderFile.h */,
 				E606B9651F78C41A00F69CBB /* NetiquetteChecker.swift */,
 				DADA808F1E8097A700A8F423 /* StringUtils.swift */,
 				DAA9A5041F886A1600B32C30 /* TagUtils.swift */,
