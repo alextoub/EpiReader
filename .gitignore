@@ -64,3 +64,6 @@ Carthage
 # Custom
 */xcuserdata/*
 */Contents.json
+
+fastlane/metadata/
+fastlane/screenshots/
