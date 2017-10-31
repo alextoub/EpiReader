@@ -1,5 +1,5 @@
 //
-//  MainTVC.swift
+//  MainVC.swift
 //  EpiReader
 //
 //  Created by Alexandre Toubiana on 20/03/2017.
@@ -9,9 +9,33 @@
 import UIKit
 import ESPullToRefresh
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return stories.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = storyCollectionView.dequeueReusableCell(withReuseIdentifier: "StoryCVCell", for: indexPath) as! StoryCVCell
+        let index = stories[indexPath.row]
+        cell.newsgroupLabel.text = index.newsgroup
+        cell.userLabel.text = index.userName
+        cell.userImageView.layer.masksToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.height / 2
+        
+        cell.userImageView.af_setImage(withURL: index.userImageUrl!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+        
+        return cell
+        
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleStory: UILabel!
+    @IBOutlet weak var storyCollectionView: UICollectionView!
     
     // MARK: - Global variables
     
@@ -62,6 +86,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if error == nil {
                     for resp in response! {
                         self.stories.append(resp.toStory())
+                        self.storyCollectionView.reloadData()
                     }
                 }
             }

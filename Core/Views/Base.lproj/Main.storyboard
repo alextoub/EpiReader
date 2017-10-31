@@ -315,14 +315,14 @@ le bouton '+' en haut à droite</string>
                                     <constraint firstAttribute="height" constant="96" id="5v1-UM-M8D"/>
                                     <constraint firstAttribute="width" constant="375" id="GV2-nU-Gjt"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n1F-pX-fVS">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="n1F-pX-fVS">
                                     <size key="itemSize" width="78" height="96"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EXJ-kb-7E0">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCVCell" id="EXJ-kb-7E0" customClass="StoryCVCell" customModule="EpiReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -338,7 +338,7 @@ le bouton '+' en haut à droite</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yp2-ty-0tg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yp2-ty-0tg">
                                                     <rect key="frame" x="14" y="23" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="yp2-ty-0tg" secondAttribute="height" multiplier="1:1" id="Wa8-ac-SOH"/>
@@ -367,8 +367,17 @@ le bouton '+' en haut à droite</string>
                                             <constraint firstItem="yp2-ty-0tg" firstAttribute="centerY" secondItem="EXJ-kb-7E0" secondAttribute="centerY" id="tGn-Xa-xaM"/>
                                             <constraint firstAttribute="bottom" secondItem="I2y-Y8-h39" secondAttribute="bottom" id="wCq-dQ-iFl"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="newsgroupLabel" destination="8of-It-tH4" id="h8m-O0-Ocy"/>
+                                            <outlet property="userImageView" destination="yp2-ty-0tg" id="Dgd-os-rve"/>
+                                            <outlet property="userLabel" destination="I2y-Y8-h39" id="bAa-qb-Tzj"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yz9-LF-AI4" id="NV7-j1-QEn"/>
+                                    <outlet property="delegate" destination="yz9-LF-AI4" id="0F3-2p-QbE"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -405,7 +414,9 @@ le bouton '+' en haut à droite</string>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="storyCollectionView" destination="0d4-cd-11Z" id="w9V-Hz-LD0"/>
                         <outlet property="tableView" destination="RfM-Zu-vDg" id="6pA-ev-8GU"/>
+                        <outlet property="titleStory" destination="luJ-DY-xpd" id="zLl-kM-U7f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Zj-7h-0b7" userLabel="First Responder" sceneMemberID="firstResponder"/>
