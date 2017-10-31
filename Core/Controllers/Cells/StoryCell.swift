@@ -8,14 +8,34 @@
 
 import UIKit
 
-class StoryCell: UITableViewCell {
+class StoryCell: UITableViewCell {//, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var storyCollectionView: UICollectionView!
+    var stories = [Story]()
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 25 //stories.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCollectionCell", for: indexPath) as! StoryCVCell
+//
+//        cell.userImageView.image = #imageLiteral(resourceName: "default_picture")
+//        cell.newsgroupLabel.text = "newsgroup"
+//        cell.userLabel.text = "user"
+//
+//
+//        return cell
+//
+//    }
+    
+    
+    //@IBOutlet weak var storyCollectionView: UICollectionView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.storyCollectionView!.register(StoryCVCell.self, forCellWithReuseIdentifier: "StoryCollectionCell")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

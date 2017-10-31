@@ -76,7 +76,7 @@ class MainTVC: UITableViewController {
         if favorites.count == 0 {
             return 1
         }
-        return favorites.count
+        return favorites.count + 1
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -100,11 +100,19 @@ class MainTVC: UITableViewController {
         if favorites.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: "NoGroupCell")!
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
-        let index = favorites[indexPath.row]
-        cell.setupCell(favorite: index)
-        
-        return cell
+        else {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryCell
+                return cell
+
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: IndexPath(row: indexPath.row - 1, section: 0)) as! GroupCell
+                let index = favorites[indexPath.row - 1]
+                cell.setupCell(favorite: index)
+                return cell
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
