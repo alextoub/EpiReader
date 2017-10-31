@@ -36,4 +36,11 @@ class News: Mappable {
         self.msg_nb        <- map["msg_nb"]
         self.groups        <- map["groups"]
     }
+    
+    func toStory() -> Story {
+        let imageView = UIImageView()
+        let url = getProfilePic(mail: parseAuthor((self.author)!)[1], subject: self.subject!)
+        let story = Story(userImageUrl: url!, userName: author ?? "", newsgroup: "test")
+        return story
+    }
 }

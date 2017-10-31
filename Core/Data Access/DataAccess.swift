@@ -22,6 +22,7 @@ private enum Router {
     case postUnsubscribeNotification(String, String, String, String)
     case postSubscribedGroups(String, String, String)
     case getSearch(String)
+    case getLastNews(Int)
 }
 
 extension Router : RouterProtocol {
@@ -45,6 +46,8 @@ extension Router : RouterProtocol {
             return .post
         case .getSearch:
             return .get
+        case .getLastNews:
+            return .get
         }
     }
     // MARK: - API Path
@@ -55,9 +58,9 @@ extension Router : RouterProtocol {
         case .getTopics(let id):
             return Constants.Url.ENTRY_API_URL + Constants.Url.TOPICS + "/" + String(id)
         case .getNews(let group, let nb):
-            return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb)
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + Constants.Url.LIMIT + String(nb)
         case .getNewsWithDate(let group, let nb, let date):
-            return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + "?limit=" + String(nb) + "&start_date=" + date + "%2B0000"
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + group + Constants.Url.LIMIT + String(nb) + "&start_date=" + date + "%2B0000"
         case .postSubscribeNotification:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB
         case .postUnsubscribeNotification:
@@ -65,7 +68,9 @@ extension Router : RouterProtocol {
         case .postSubscribedGroups:
             return Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS
         case .getSearch(let term):
-            return Constants.Url.ENTRY_API_URL + Constants.Url.SEARCH + term
+            return Constants.Url.ENTRY_API_URL + Constants.Url.SEARCH + Constants.Url.TERM + term
+        case .getLastNews(let nb):
+            return Constants.Url.ENTRY_API_URL + Constants.Url.NEWS + Constants.Url.LAST + Constants.Url.LIMIT + String(nb)
         }
     }
     
@@ -166,6 +171,14 @@ class MainData {
     
     static func getSearch(term: String, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
         Alamofire.request(Router.getSearch(term))
+            .validate()
+            .responseArray { (alamoResponse: DataResponse<[News]>) in
+                completed(alamoResponse.result.value, alamoResponse.result.error)
+        }
+    }
+    
+    static func getLastNews(nb: Int, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+        Alamofire.request(Router.getLastNews(nb))
             .validate()
             .responseArray { (alamoResponse: DataResponse<[News]>) in
                 completed(alamoResponse.result.value, alamoResponse.result.error)

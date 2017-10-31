@@ -61,4 +61,10 @@ class MainBusiness {
         }
     }
     
+    static func getLastNews(nb: Int, completed: @escaping ((_ response:[News]?, _ error:Error?) -> Void)) -> Void {
+        MainData.getLastNews(nb: nb) { (response, error) in
+            completed(response, error)
+        }
+    }
+    
 }

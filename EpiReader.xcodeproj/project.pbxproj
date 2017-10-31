@@ -10,6 +10,9 @@
 		2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */; };
 		DA080A341FA460A5001FC9B3 /* IdentityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A331FA460A5001FC9B3 /* IdentityCell.swift */; };
 		DA080A361FA46861001FC9B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A351FA46861001FC9B3 /* SettingCell.swift */; };
+		DA101D2E1FA836C40096BC59 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA101D2D1FA836C40096BC59 /* Story.swift */; };
+		DA101D301FA841120096BC59 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA101D2F1FA841120096BC59 /* StoryCell.swift */; };
+		DA101D341FA842E70096BC59 /* StoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA101D331FA842E70096BC59 /* StoryCVCell.swift */; };
 		DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CF91F7B724D00E58757 /* SearchTVC.swift */; };
 		DA488CFC1F7B7EC600E58757 /* TagAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */; };
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
@@ -75,6 +78,9 @@
 		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
 		DA080A331FA460A5001FC9B3 /* IdentityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCell.swift; sourceTree = "<group>"; };
 		DA080A351FA46861001FC9B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		DA101D2D1FA836C40096BC59 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		DA101D2F1FA841120096BC59 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		DA101D331FA842E70096BC59 /* StoryCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCVCell.swift; sourceTree = "<group>"; };
 		DA291D761FA67721003D9545 /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
 		DA488CF91F7B724D00E58757 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
 		DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagAlertVC.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 				DABE50FD1F74E39C00CB4F93 /* StaticData.swift */,
 				DAFA04CB1E83E7CD008AC100 /* Tag.swift */,
 				DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */,
+				DA101D2D1FA836C40096BC59 /* Story.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +306,8 @@
 				DA7BEC901F8AB99E002C67D7 /* TagCVCell.swift */,
 				E6508DC41F78E345004898E2 /* TagCell.swift */,
 				DADA808B1E8035D100A8F423 /* TopicCell.swift */,
+				DA101D2F1FA841120096BC59 /* StoryCell.swift */,
+				DA101D331FA842E70096BC59 /* StoryCVCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -487,6 +496,7 @@
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
 				DAA9A5051F886A1600B32C30 /* TagUtils.swift in Sources */,
 				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,
+				DA101D301FA841120096BC59 /* StoryCell.swift in Sources */,
 				DA6723191E8022AE00899F3F /* NewsCell.swift in Sources */,
 				DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */,
 				DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */,
@@ -503,11 +513,13 @@
 				DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */,
 				DA8D2F571E7FFD2C00BA7FB1 /* Group.swift in Sources */,
 				DA8D2F501E7FFAEE00BA7FB1 /* DateUtils.swift in Sources */,
+				DA101D341FA842E70096BC59 /* StoryCVCell.swift in Sources */,
 				DABE51001F74E7C400CB4F93 /* RequestService.swift in Sources */,
 				DA8D2F4A1E7FF07700BA7FB1 /* Constants.swift in Sources */,
 				DA8D2F531E7FFBB200BA7FB1 /* MainTVC.swift in Sources */,
 				DA8D2F4E1E7FFAEE00BA7FB1 /* CustomButton.swift in Sources */,
 				E6508DC31F78E09D004898E2 /* TagsTVC.swift in Sources */,
+				DA101D2E1FA836C40096BC59 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

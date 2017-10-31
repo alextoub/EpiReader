@@ -13,6 +13,7 @@ class MainTVC: UITableViewController {
     
     // MARK: - Global variables
     
+    var stories = [Story]()
     var favorites = [Favorite]()
     var selected = ""
     
@@ -24,6 +25,7 @@ class MainTVC: UITableViewController {
             self.getFav()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
+        self.getLastNews()
         
         // Code executed for update 1.2
         
@@ -49,6 +51,18 @@ class MainTVC: UITableViewController {
         if let fav = NSCodingData().loadFavorites() {
             favorites += fav
             tableView.reloadData()
+        }
+    }
+    
+    func getLastNews() {
+        MainBusiness.getLastNews(nb: 25) { (response, error) in
+            DispatchQueue.main.async {
+                if error == nil {
+                    for resp in response! {
+                        self.stories.append(resp.toStory())
+                    }
+                }
+            }
         }
     }
     

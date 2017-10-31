@@ -14,10 +14,14 @@ struct Constants {
         static let ENTRY_API_URL = "https://ng-notifier.42portal.com/api/"        //GET
         static let TOPICS        = "topic/"                                       //GET
         static let NEWS          = "news.epita.fr/"                               //GET
+        static let NOTIF_GROUPS  = "subscribed_groups"                            //GET
+        static let SEARCH        = "search"                                       //GET
+        static let LAST          = "last"                                         //GET
         static let NOTIF_SUB     = "subscribe_notifications"                      //POST
         static let NOTIF_UNSUB   = "unsubscribe_notifications"                    //POST
-        static let NOTIF_GROUPS  = "subscribed_groups"                            //GET
-        static let SEARCH        = "search?term="                                 //GET
+        static let LIMIT         = "?limit="                                      //HELPER
+        static let TERM          = "?term="                                       //HELPER
+
     }
     
     struct Headers {

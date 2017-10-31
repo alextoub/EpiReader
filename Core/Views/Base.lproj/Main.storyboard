@@ -98,8 +98,87 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="134" id="3Ru-wi-PVY" customClass="StoryCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Ru-wi-PVY" id="DBF-bG-lLd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="V5O-vS-gXR">
+                                            <rect key="frame" x="0.0" y="37" width="375" height="97"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="cyE-PW-LwB">
+                                                <size key="itemSize" width="74" height="97"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCollectionCell" id="7xm-w1-WB5" customClass="StoryCVCell" customModule="EpiReader" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="74" height="97"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="74" height="97"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A91-rX-a1A">
+                                                                <rect key="frame" x="12" y="23" width="51" height="51"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="da7-bE-Fpg">
+                                                                <rect key="frame" x="0.0" y="0.0" width="74" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2r-VH-S0Y">
+                                                                <rect key="frame" x="0.0" y="77" width="74" height="20"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <connections>
+                                                        <outlet property="newsgroupLabel" destination="da7-bE-Fpg" id="g8t-7A-pDr"/>
+                                                        <outlet property="userImageView" destination="A91-rX-a1A" id="2Wm-AT-fa2"/>
+                                                        <outlet property="userLabel" destination="c2r-VH-S0Y" id="nMY-hi-DiJ"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="JXX-Fd-KXw" id="Ww6-f9-Ktc"/>
+                                                <outlet property="delegate" destination="JXX-Fd-KXw" id="tzo-qZ-4YR"/>
+                                            </connections>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xR-4j-d5U">
+                                            <rect key="frame" x="14" y="11" width="347" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="V5O-vS-gXR" secondAttribute="bottom" id="3uc-9d-ugq"/>
+                                        <constraint firstItem="V5O-vS-gXR" firstAttribute="leading" secondItem="DBF-bG-lLd" secondAttribute="leading" id="4yV-JU-nKH"/>
+                                        <constraint firstItem="9xR-4j-d5U" firstAttribute="top" secondItem="DBF-bG-lLd" secondAttribute="top" constant="11" id="CmI-h3-aXn"/>
+                                        <constraint firstItem="V5O-vS-gXR" firstAttribute="top" secondItem="9xR-4j-d5U" secondAttribute="bottom" constant="10" id="D1z-lH-eSP"/>
+                                        <constraint firstItem="9xR-4j-d5U" firstAttribute="leading" secondItem="DBF-bG-lLd" secondAttribute="leading" constant="14" id="FPN-q8-9nh"/>
+                                        <constraint firstAttribute="trailing" secondItem="V5O-vS-gXR" secondAttribute="trailing" id="GSX-2P-eDz"/>
+                                        <constraint firstAttribute="trailing" secondItem="9xR-4j-d5U" secondAttribute="trailing" constant="14" id="edb-Z3-ggh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="storyCollectionView" destination="V5O-vS-gXR" id="DRx-gK-aqC"/>
+                                    <outlet property="titleLabel" destination="9xR-4j-d5U" id="gVY-5Q-58F"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="70" id="kaW-3k-AIL" customClass="GroupCell" customModule="EpiReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="162" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kaW-3k-AIL" id="qbT-Sp-Syd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -149,7 +228,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoGroupCell" rowHeight="140" id="mVa-TE-pY5">
-                                <rect key="frame" x="0.0" y="98" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="232" width="375" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mVa-TE-pY5" id="3Xz-xm-j7c">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
@@ -198,7 +277,7 @@ le bouton '+' en haut à droite</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="frd-sp-hoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="179"/>
+            <point key="canvasLocation" x="709.60000000000002" y="178.56071964017991"/>
         </scene>
         <!--À propos-->
         <scene sceneID="w4k-rA-mkL">

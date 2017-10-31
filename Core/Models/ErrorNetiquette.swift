@@ -17,6 +17,4 @@ class ErrorNetiquette {
         self.errors = errors
         self.warnings = warnings
     }
-
-
 }
