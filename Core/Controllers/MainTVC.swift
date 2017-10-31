@@ -9,7 +9,9 @@
 import UIKit
 import ESPullToRefresh
 
-class MainTVC: UITableViewController {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Global variables
     
@@ -68,22 +70,22 @@ class MainTVC: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if favorites.count == 0 {
             return 1
         }
-        return favorites.count + 1
+        return favorites.count
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             favorites.remove(at: indexPath.row)
             if favorites.count != 0 {
@@ -96,26 +98,17 @@ class MainTVC: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if favorites.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: "NoGroupCell")!
         }
-        else {
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryCell
-                return cell
-
-            }
-            else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: IndexPath(row: indexPath.row - 1, section: 0)) as! GroupCell
-                let index = favorites[indexPath.row - 1]
-                cell.setupCell(favorite: index)
-                return cell
-            }
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
+        let index = favorites[indexPath.row]
+        cell.setupCell(favorite: index)
+        return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if favorites.count == 0 {
             return 140.0
         }

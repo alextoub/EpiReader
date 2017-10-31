@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 let nav = storyBoard.instantiateViewController(withIdentifier: "NavigationVC") as! UINavigationController
                 
-                let firstView: MainTVC = storyBoard.instantiateViewController(withIdentifier: "MainTVC") as! MainTVC
+                let firstView: MainVC = storyBoard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
                 
                 let secondView: NewsTVC = storyBoard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
                 secondView.currentGroup = title!
