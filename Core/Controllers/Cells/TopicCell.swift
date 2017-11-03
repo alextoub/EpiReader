@@ -28,7 +28,13 @@ class TopicCell: UITableViewCell {
     func configure(_ topic: Topic) {
         newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         authorLabel.text = parseAuthor((topic.author)!)[0]
-        contentText.text = topic.content
+        var parsedContent = topic.content
+        if let content = topic.content {
+            if PGPParser().isPgp(content: content) {
+                parsedContent = PGPParser().parsePGP(content: content)
+            }
+        }
+        contentText.text = parsedContent
         subjectLabel.text = topic.subject
         dateLabel.text = StrToAbrevWithHour(dateStr: (topic.creation_date)!)
         let url = getProfilePic(mail: parseAuthor((topic.author)!)[1], subject: topic.subject!)
