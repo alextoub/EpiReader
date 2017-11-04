@@ -52,6 +52,20 @@ class PGPParser {
         return tmp
     }
     
+    func removeEndTrailing(content: String) -> String {
+        var tmp = content
+        for i in 0..<tmp.count {
+            if Array(tmp)[tmp.count - 1] == "\n"
+            {
+                tmp.removeLast()
+            }
+            else {
+                return tmp
+            }
+        }
+        return tmp
+    }
+    
     func parsePGP(content: String) -> String {
         let body = content
         if isPgp(content: content) {
@@ -60,7 +74,9 @@ class PGPParser {
                 while real.hasPrefix("\n") {
                     real.remove(at: real.startIndex)
                 }
-                return real
+                var goodText = removeEndTrailing(content: real)
+                goodText += "\n"
+                return goodText
             }
         }
         return body
