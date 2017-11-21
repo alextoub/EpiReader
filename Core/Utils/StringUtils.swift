@@ -162,7 +162,9 @@ public func get_student_by(login: String) -> Student? {
 }
 
 public func get_student_by(mail: String) -> Student? {
-    if let index = StaticData.students?.index(where: { $0.mail == mail }) {
+    
+    let mailLow = mail.lowercased()
+    if let index = StaticData.students?.index(where: { $0.mail == mailLow }) {
         return StaticData.students?[index]
     }
     return nil
@@ -177,13 +179,13 @@ public func get_student_by(firstname: String, lastname: String) -> Student? {
 
 public func get_student_by(name: String) -> Student? {
     
-    let splittedName = name.split(separator: " ")
+    let splittedName = name.lowercased().components(separatedBy: " ")
     
-    if splittedName.count == 2 {
-        if let index = StaticData.students?.index(where: { $0.lastName! == splittedName[1] && $0.firstName! == splittedName[0] }) {
+    if splittedName.count >= 2 {
+        if let index = StaticData.students?.index(where: { $0.lastName!.lowercased() == splittedName[1] && $0.firstName!.lowercased() == splittedName[0] }) {
             return StaticData.students?[index]
         }
-        else if let index = StaticData.students?.index(where: { $0.lastName! == splittedName[0] && $0.firstName! == splittedName[1] }) {
+        else if let index = StaticData.students?.index(where: { $0.lastName!.lowercased() == splittedName[0] && $0.firstName!.lowercased() == splittedName[1] }) {
             return StaticData.students?[index]
         }
     }
