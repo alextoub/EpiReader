@@ -153,6 +153,43 @@ func parse(subjectStr: String) -> ([String], String) {
     return (tags, sub)
 }
 
+
+public func get_student_by(login: String) -> Student? {
+    if let index = StaticData.students?.index(where: { $0.login == login }) {
+        return StaticData.students?[index]
+    }
+    return nil
+}
+
+public func get_student_by(mail: String) -> Student? {
+    if let index = StaticData.students?.index(where: { $0.mail == mail }) {
+        return StaticData.students?[index]
+    }
+    return nil
+}
+
+public func get_student_by(firstname: String, lastname: String) -> Student? {
+    if let index = StaticData.students?.index(where: { $0.firstName == firstname && $0.lastName == lastname }) {
+        return StaticData.students?[index]
+    }
+    return nil
+}
+
+public func get_student_by(name: String) -> Student? {
+    
+    let splittedName = name.split(separator: " ")
+    
+    if splittedName.count == 2 {
+        if let index = StaticData.students?.index(where: { $0.lastName! == splittedName[1] && $0.firstName! == splittedName[0] }) {
+            return StaticData.students?[index]
+        }
+        else if let index = StaticData.students?.index(where: { $0.lastName! == splittedName[0] && $0.firstName! == splittedName[1] }) {
+            return StaticData.students?[index]
+        }
+    }
+    return nil
+}
+
 extension String {
     func capitalizingFirstLetter() -> String {
         let first = String(prefix(1)).capitalized

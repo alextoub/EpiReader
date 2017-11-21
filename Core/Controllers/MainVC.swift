@@ -8,6 +8,7 @@
 
 import UIKit
 import ESPullToRefresh
+import ObjectMapper
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,6 +63,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         }
         
         // End of code executed for update 1.2
+        
+        get_students()
+        
+        //var students = Mapper<Student>().mapArray(
+    }
+    
+    func get_students() {
+        if let path = Bundle.main.path(forResource: "promo", ofType: "json") {
+            do {
+                let text = try String(contentsOfFile: path, encoding: .utf8)
+                let students = Mapper<Student>().mapArray(JSONString: text)
+                StaticData.students = students
+            }catch {
+                print("File read error")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
