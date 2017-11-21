@@ -245,6 +245,7 @@ class TopicTVC: UITableViewController {
             let vc = segue.destination as! ImageVC
             let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
             vc.image = cell.photoImageView.image!
+            vc.student = cell.student
         }
     }
 

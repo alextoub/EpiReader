@@ -19,6 +19,8 @@ class TopicCell: UITableViewCell {
     @IBOutlet weak var newsView: CustomView!
     @IBOutlet weak var photoImageView: UIImageView!
     
+    var student = Student()
+    
     // MARK: - Cell delegates
     
     override func awakeFromNib() {
@@ -40,8 +42,6 @@ class TopicCell: UITableViewCell {
         var author = parseAuthor((topic.author)!)
         
         var is_student = false
-        
-        var student = Student()
         
         if let tmp = get_student_by(mail: author[1]) {
             student = tmp
