@@ -21,14 +21,18 @@ struct Constants {
         static let NOTIF_UNSUB   = "unsubscribe_notifications"                    //POST
         static let LIMIT         = "?limit="                                      //HELPER
         static let TERM          = "?term="                                       //HELPER
-
+        
     }
     
     struct Headers {
-        static let Api_Key =                      ""
         static let headers: HTTPHeaders = [
-            "KEY": Headers.Api_Key
+            "KEY": Hidden.API_KEY
         ]
+    }
+    
+    struct Hidden {
+        static let API_KEY        = ""
+        static let STUDENTS_URL   = ""
     }
     
     struct AdMob {

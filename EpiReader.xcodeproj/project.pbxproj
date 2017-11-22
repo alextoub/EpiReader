@@ -49,7 +49,6 @@
 		DADA808C1E8035D100A8F423 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808B1E8035D100A8F423 /* TopicCell.swift */; };
 		DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808D1E8035E500A8F423 /* TopicTVC.swift */; };
 		DADA80901E8097A700A8F423 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADA808F1E8097A700A8F423 /* StringUtils.swift */; };
-		DADFCCB01FC1918B00025237 /* promo.json in Resources */ = {isa = PBXBuildFile; fileRef = DADFCCAF1FC1918B00025237 /* promo.json */; };
 		DADFCCB21FC191EE00025237 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADFCCB11FC191EE00025237 /* Student.swift */; };
 		DAFA04CC1E83E7CD008AC100 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFA04CB1E83E7CD008AC100 /* Tag.swift */; };
 		E606B9641F78C08100F69CBB /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606B9631F78C08100F69CBB /* ColorUtils.swift */; };
@@ -122,7 +121,6 @@
 		DADA808B1E8035D100A8F423 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		DADA808D1E8035E500A8F423 /* TopicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicTVC.swift; sourceTree = "<group>"; };
 		DADA808F1E8097A700A8F423 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
-		DADFCCAF1FC1918B00025237 /* promo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = promo.json; sourceTree = "<group>"; };
 		DADFCCB11FC191EE00025237 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		DAFA04CB1E83E7CD008AC100 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EpiReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,7 +184,6 @@
 		DA8D2F2D1E7FDFDC00BA7FB1 /* EpiReader */ = {
 			isa = PBXGroup;
 			children = (
-				DADFCCAF1FC1918B00025237 /* promo.json */,
 				DA8284FD1F70C954007A646C /* EpiReader.entitlements */,
 				DA291D761FA67721003D9545 /* HeaderFile.h */,
 				DA8D2F3A1E7FDFDC00BA7FB1 /* Info.plist */,
@@ -387,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8D2F391E7FDFDC00BA7FB1 /* LaunchScreen.storyboard in Resources */,
-				DADFCCB01FC1918B00025237 /* promo.json in Resources */,
 				DA8D2F361E7FDFDC00BA7FB1 /* Assets.xcassets in Resources */,
 				DA8D2F341E7FDFDC00BA7FB1 /* Main.storyboard in Resources */,
 			);
