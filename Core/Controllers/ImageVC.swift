@@ -45,6 +45,16 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3225064212)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+    }
+    
     // MARK: - Custom functions
     
     fileprivate func setUpDismissTouch() {

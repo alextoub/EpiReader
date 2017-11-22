@@ -237,16 +237,35 @@ class TopicTVC: UITableViewController {
         }
         //return 3000
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showImage" {
-            let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
-            let indexPath = self.tableView.indexPathForRow(at: viewPos)
-            let vc = segue.destination as! ImageVC
-            let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
+    
+    @IBAction func openStudentView(_ sender: Any) {
+        
+        
+        let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
+        let indexPath = self.tableView.indexPathForRow(at: viewPos)
+        let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
+        if cell.student != nil {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC") as! ImageVC
             vc.image = cell.photoImageView.image!
-            vc.student = cell.student
+            vc.student = cell.student!
+        
+            present(vc, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    
+
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showImage" {
+//            let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
+//            let indexPath = self.tableView.indexPathForRow(at: viewPos)
+//            let vc = segue.destination as! ImageVC
+//            let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
+//            vc.image = cell.photoImageView.image!
+//            vc.student = cell.student
+//        }
+//    }
 
 }

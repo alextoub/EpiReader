@@ -19,7 +19,7 @@ class TopicCell: UITableViewCell {
     @IBOutlet weak var newsView: CustomView!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    var student = Student()
+    var student: Student?
     
     // MARK: - Cell delegates
     
@@ -56,8 +56,8 @@ class TopicCell: UITableViewCell {
         }
         
         if is_student {
-            authorLabel.text = student.firstName! + " " + student.lastName!
-            photoImageView.af_setImage(withURL: URL(string: student.photo!)!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+            authorLabel.text = (student?.firstName!)! + " " + (student?.lastName)!
+            photoImageView.af_setImage(withURL: URL(string: (student?.photo!)!)!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
         }
         else {
             authorLabel.text = author[0]
