@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class SettingsTVC: UITableViewController {
 
@@ -14,6 +15,8 @@ class SettingsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Answers.logContentView(withName: "Open settings view", contentType: "", contentId: "settings")
     }
 
     // MARK: - Table view data source

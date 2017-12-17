@@ -8,6 +8,7 @@
 
 import UIKit
 import ESPullToRefresh
+import Crashlytics
 
 class MainTVC: UITableViewController {
     
@@ -34,6 +35,8 @@ class MainTVC: UITableViewController {
         }
         
         // End of code executed for update 1.2
+        
+         Answers.logContentView(withName: "Show newsgroup list", contentType: "List", contentId: "newsgroup_list")
     }
     
     override func viewWillAppear(_ animated: Bool) {

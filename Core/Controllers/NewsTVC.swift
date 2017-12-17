@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import ESPullToRefresh
 import GoogleMobileAds
+import Crashlytics
 
 class NewsTVC: UITableViewController {
 
@@ -45,6 +46,9 @@ class NewsTVC: UITableViewController {
         }
 
         initBannerView()
+        
+        Answers.logContentView(withName: "Show news list", contentType: "List", contentId: "news_\(currentGroup)")
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -189,6 +193,7 @@ class NewsTVC: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func notificationButtonAction(_ sender: Any) {
+        
         if !inNotif {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
@@ -196,6 +201,8 @@ class NewsTVC: UITableViewController {
                         StaticData.notificationsGroups.append(self.currentGroup)
                     }
                 }
+                Answers.logCustomEvent(withName: "Add to notifications",
+                                       customAttributes: ["name_group":"\(self.currentGroup)"])
             }
         }
         else {
@@ -207,6 +214,8 @@ class NewsTVC: UITableViewController {
                         }
                     }
                 }
+                Answers.logCustomEvent(withName: "Remove of notifications",
+                                       customAttributes: ["name_group":"\(self.currentGroup)"])
             }
         }
         inNotif = !inNotif
