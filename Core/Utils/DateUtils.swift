@@ -92,7 +92,7 @@ public func StrToInfo(dateStr: String) -> String {
         return "À l'instant"
     }
     if minutes >= 5 && minutes < 60 {
-        return "Il y'a \(minutes) mns"
+        return "Il y a \(minutes) mns"
     }
 
     let date1 = curr.startOfDay(for: nowDate)
