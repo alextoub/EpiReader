@@ -246,6 +246,9 @@ class TopicTVC: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
         if cell.student != nil {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC") as! ImageVC
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .overCurrentContext
+
             vc.image = cell.photoImageView.image!
             vc.student = cell.student!
         

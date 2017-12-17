@@ -1395,6 +1395,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klo-Pk-7qn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uum-f7-yJx">
                                 <rect key="frame" x="61" y="245" width="253" height="177"/>
                                 <subviews>
@@ -1507,10 +1511,15 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                         </subviews>
                         <constraints>
                             <constraint firstItem="uum-f7-yJx" firstAttribute="centerY" secondItem="Kou-BX-PLi" secondAttribute="centerY" id="H9f-SI-suY"/>
+                            <constraint firstItem="klo-Pk-7qn" firstAttribute="top" secondItem="Kou-BX-PLi" secondAttribute="top" id="NVJ-HB-Eeb"/>
+                            <constraint firstItem="klo-Pk-7qn" firstAttribute="centerY" secondItem="Kou-BX-PLi" secondAttribute="centerY" id="RgY-f4-6Nd"/>
                             <constraint firstItem="uum-f7-yJx" firstAttribute="centerX" secondItem="Kou-BX-PLi" secondAttribute="centerX" id="aWC-mN-mMZ"/>
+                            <constraint firstItem="klo-Pk-7qn" firstAttribute="centerX" secondItem="Kou-BX-PLi" secondAttribute="centerX" id="bui-AS-2mp"/>
+                            <constraint firstItem="klo-Pk-7qn" firstAttribute="leading" secondItem="Kou-BX-PLi" secondAttribute="leading" id="ma4-i3-sak"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="klo-Pk-7qn" id="9MU-2f-MTg"/>
                         <outlet property="imageView" destination="eHH-kc-43I" id="Bzj-rj-65A"/>
                         <outlet property="loginLabel" destination="cr3-IA-hip" id="1Ab-Gt-1Lq"/>
                         <outlet property="mailLabel" destination="fnF-6F-uL6" id="sWb-x3-neR"/>
@@ -1521,7 +1530,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwg-24-GxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2911.594202898551" y="178.53260869565219"/>
+            <point key="canvasLocation" x="2911.5" y="178.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C5m-TS-vDn">

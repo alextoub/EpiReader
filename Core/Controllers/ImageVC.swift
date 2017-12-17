@@ -22,12 +22,15 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var promoLabel: UILabel!
     
+    @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var promoView: UIView!
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDismissTouch()
+        backgroundView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        backgroundView.alpha = 0
         imageView.image = image
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.bounds.size.height / 2
@@ -45,11 +48,17 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.3) {
-            self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3225064212)
+            self.backgroundView.alpha = 0.3
         }
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        UIView.animate(withDuration: 0.3) {
+//            self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3225064212)
+//        }
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
