@@ -40,15 +40,20 @@ class TopicCell: UITableViewCell {
         let url = getProfilePic(mail: parseAuthor((topic.author)!)[1], subject: topic.subject!)
         photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
         
-        if (parseAuthor((topic.author)!)[1] == "chefs@yaka.epita.fr") {
-            photoImageView.image = #imageLiteral(resourceName: "chefs")
-        }
-        if (parseAuthor((topic.author)!)[1] == "chef@tickets.acu.epita.fr") {
-            photoImageView.image = #imageLiteral(resourceName: "acu")
-        }
-        
-        if photoImageView.image == nil {
-            print("oui c nil")
+        let year = getYear(dateStr: (topic.creation_date)!)
+        if year != nil {
+            if let isAcu = isACU(mail: (parseAuthor((topic.author)!)[1])) {
+                if isAcu {
+                    if (Assistant.ACU[year!] != nil) {
+                        photoImageView.image = Assistant.ACU[year!]
+                    }
+                }
+                else {
+                    if (Assistant.YAKA[year!] != nil) {
+                        photoImageView.image = Assistant.YAKA[year!]
+                    }
+                }
+            }
         }
         
         photoImageView.layer.masksToBounds = true
@@ -61,4 +66,15 @@ class TopicCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func isACU(mail: String) -> Bool? {
+        if mail == "chef@tickets.acu.epita.fr" {
+            return true
+        }
+        else if mail == "chefs@yaka.epita.fr" {
+            return false
+        }
+        else {
+            return nil
+        }
+    }
 }

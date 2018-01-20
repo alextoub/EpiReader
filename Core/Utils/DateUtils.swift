@@ -78,6 +78,14 @@ public func StrToAbrevWithHour(dateStr: String) -> String {
     return dateStr
 }
 
+public func getYear(dateStr: String) -> Int?
+{
+    let date = StrToDate(dateStr: dateStr)
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.year, .month, .day], from: date)
+    return components.year
+}
+
 public func StrToInfo(dateStr: String) -> String {
 
     let nowDate = Date()

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 struct Constants {
     struct Url {
@@ -30,4 +31,9 @@ struct Constants {
     struct AdMob {
         static let unitID = "ca-app-pub-8988229405805930/1930088334"
     }
+}
+
+struct Assistant {
+    static let ACU = [2017 : #imageLiteral(resourceName: "acu_2018")]
+    static let YAKA = [2017 : #imageLiteral(resourceName: "yaka_2018"), 2018 : #imageLiteral(resourceName: "yaka_2019")]
 }
