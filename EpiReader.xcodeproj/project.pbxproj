@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D59C4448004D9D78387656B /* Pods_EpiReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36F5835DD03BAC440E05212 /* Pods_EpiReader.framework */; };
+		DA01F66B2014B04A003C9963 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01F66A2014B04A003C9963 /* Setting.swift */; };
 		DA080A341FA460A5001FC9B3 /* IdentityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A331FA460A5001FC9B3 /* IdentityCell.swift */; };
 		DA080A361FA46861001FC9B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A351FA46861001FC9B3 /* SettingCell.swift */; };
 		DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CF91F7B724D00E58757 /* SearchTVC.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		4198D801134556C059173926 /* Pods-EpiReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.debug.xcconfig"; sourceTree = "<group>"; };
 		54C6238AB4B76C4F02F6DE18 /* Pods-EpiReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EpiReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader.release.xcconfig"; sourceTree = "<group>"; };
+		DA01F66A2014B04A003C9963 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		DA080A331FA460A5001FC9B3 /* IdentityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCell.swift; sourceTree = "<group>"; };
 		DA080A351FA46861001FC9B3 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		DA291D761FA67721003D9545 /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				DABE50FD1F74E39C00CB4F93 /* StaticData.swift */,
 				DAFA04CB1E83E7CD008AC100 /* Tag.swift */,
 				DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */,
+				DA01F66A2014B04A003C9963 /* Setting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */,
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
 				DA6934941FAC4B3C00260652 /* PGPParser.swift in Sources */,
+				DA01F66B2014B04A003C9963 /* Setting.swift in Sources */,
 				DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */,
 				E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */,
 				DA7BEC911F8AB99E002C67D7 /* TagCVCell.swift in Sources */,

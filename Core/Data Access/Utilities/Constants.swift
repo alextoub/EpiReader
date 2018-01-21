@@ -31,6 +31,11 @@ struct Constants {
     struct AdMob {
         static let unitID = "ca-app-pub-8988229405805930/1930088334"
     }
+    
+    static let settings: [Setting] = [
+        Setting(title: "Notifications", color: #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1), image: #imageLiteral(resourceName: "notification_logo"), viewPush: "NotificationTVC"),
+        Setting(title: "Balises", color: #colorLiteral(red: 0, green: 0.1333333333, blue: 0.2784313725, alpha: 1), image: #imageLiteral(resourceName: "tags_logo"), viewPush: "TagsTVC"),
+        Setting(title: "Vérifier nétiquette [BETA]", color: #colorLiteral(red: 0.3529411765, green: 0.7843137255, blue: 0.9803921569, alpha: 1), image: #imageLiteral(resourceName: "netiquette_logo"), isSwitchable: true, key: "CNEnabled")]
 }
 
 struct Assistant {
