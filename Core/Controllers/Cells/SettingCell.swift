@@ -12,6 +12,7 @@ class SettingCell: UITableViewCell {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var infoSwitch: UISwitch!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -25,6 +26,20 @@ class SettingCell: UITableViewCell {
         iconImageView.image = image
         iconView.backgroundColor = color
         titleLabel.text = title
+        
+        if (infoSwitch != nil) {
+        infoSwitch.isOn = UserDefaults.standard.bool(forKey: "CNEnabled") //StaticData.isCNEnabled
+        }
+        
+    }
+    
+    @IBAction func infoSwitchAction(_ sender: Any) {
+        if (sender as! UISwitch).isOn {
+            UserDefaults.standard.set(true, forKey: "CNEnabled")
+        }
+        else {
+            UserDefaults.standard.set(false, forKey: "CNEnabled")
+        }
     }
     
     override func awakeFromNib() {

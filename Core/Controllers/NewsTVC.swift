@@ -270,6 +270,8 @@ class NewsTVC: UITableViewController {
     }
 
     // MARK: - Navigation
+    
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTopic" {
@@ -278,7 +280,7 @@ class NewsTVC: UITableViewController {
             let destination = segue.destination as! TopicTVC
             destination.idNews = news[(indexPath.row)].id!
             destination.nb_msg = news[(indexPath.row)].msg_nb!
-            if title == "assistants.news" {
+            if title == "assistants.news" || !(UserDefaults.standard.bool(forKey: "CNEnabled")) {
                 destination.isNetiquetteCheckerActivated = false
             }
         }

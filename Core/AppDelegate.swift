@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 thirdView.idNews = news_id
                 thirdView.nb_msg = 1
                 
-                if title == "assistants.news" {
+                if title == "assistants.news" || !(UserDefaults.standard.bool(forKey: "CNEnabled")) {
                     thirdView.isNetiquetteCheckerActivated = false
                 }
             

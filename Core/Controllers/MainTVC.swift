@@ -37,6 +37,11 @@ class MainTVC: UITableViewController {
         // End of code executed for update 1.2
         
          Answers.logContentView(withName: "Show newsgroup list", contentType: "List", contentId: "newsgroup_list")
+        
+        let CNEnabled = UserDefaults.standard.bool(forKey: "CNEnabled")
+        if !CNEnabled {
+            UserDefaults.standard.set(false, forKey: "CNEnabled")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
