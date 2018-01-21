@@ -70,7 +70,7 @@ class TopicCell: UITableViewCell {
         if mail == "chef@tickets.acu.epita.fr" {
             return true
         }
-        else if mail == "chefs@yaka.epita.fr" {
+        else if mail == "chefs@yaka.epita.fr" || mail == "chefs@tickets.yaka.epita.fr"{
             return false
         }
         else {
