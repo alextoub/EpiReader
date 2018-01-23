@@ -16,7 +16,6 @@ import Foundation
 public func StrToDate(dateStr: String) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-    dateFormatter.timeZone = TimeZone(abbreviation: "BST")
     return dateFormatter.date(from: dateStr)!
 }
 
@@ -93,8 +92,7 @@ public func StrToInfo(dateStr: String) -> String {
     let interval = nowDate.timeIntervalSince(date)
     let curr = Calendar.current
 
-    var minutes: Int = Int(interval / 60)
-    var hours: Int = Int(minutes / 24)
+    let minutes: Int = Int(interval / 60)
 
     if minutes >= 0 && minutes < 5 {
         return "À l'instant"
