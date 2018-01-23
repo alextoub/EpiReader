@@ -48,8 +48,13 @@ class TopicCell: UITableViewCell {
         var author = parseAuthor((topic.author)!)
         
         var is_student = false
+        let login = parseLogin(author[1])
         
         if let tmp = get_student_by(mail: author[1]) {
+            student = tmp
+            is_student = true
+        }
+        else if let tmp = get_student_by(login: login) {
             student = tmp
             is_student = true
         }
@@ -66,24 +71,24 @@ class TopicCell: UITableViewCell {
             photoImageView.af_setImage(withURL: URL(string: (student?.photo!)!)!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
         }
         else {
+            photoImageView.image = #imageLiteral(resourceName: "default_picture")
             
-        let year = getYear(dateStr: (topic.creation_date)!)
-        if year != nil {
-            if let isAcu = isACU(mail: (parseAuthor((topic.author)!)[1])) {
-                if isAcu {
-                    if (Assistant.ACU[year!] != nil) {
-                        photoImageView.image = Assistant.ACU[year!]
+            let year = getYear(dateStr: (topic.creation_date)!)
+            if year != nil {
+                if let isAcu = isACU(mail: (parseAuthor((topic.author)!)[1])) {
+                    if isAcu {
+                        if (Assistant.ACU[year!] != nil) {
+                            photoImageView.image = Assistant.ACU[year!]
+                        }
                     }
-                }
-                else {
-                    if (Assistant.YAKA[year!] != nil) {
-                        photoImageView.image = Assistant.YAKA[year!]
+                    else {
+                        if (Assistant.YAKA[year!] != nil) {
+                            photoImageView.image = Assistant.YAKA[year!]
+                        }
                     }
                 }
             }
         }
-        }
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
