@@ -141,7 +141,12 @@ func parse(subjectStr: String) -> ([String], String) {
         }
         else {
             if i == "]" {
-                tags.append(tmp)
+                if tmp != "" {
+                    tags.append(tmp)
+                }
+                else {
+                    sub += "[]"
+                }
                 tmp = ""
                 isInCroch = false
             }
