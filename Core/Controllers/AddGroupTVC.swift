@@ -82,6 +82,8 @@ class AddGroupTVC: UITableViewController {
         cell.isFavoriteButton.addTarget(self, action: #selector(addToFav), for: .touchUpInside)
         cell.isFavoriteButton.tag = indexPath.row
         
+        cell.selectionStyle = .none
+        
         return cell
     }
     
