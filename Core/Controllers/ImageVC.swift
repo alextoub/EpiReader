@@ -29,7 +29,6 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDismissTouch()
-        backgroundView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         backgroundView.alpha = 0
         imageView.image = image
         imageView.layer.masksToBounds = true
@@ -38,27 +37,26 @@ class ImageVC: UIViewController, UIGestureRecognizerDelegate {
         imageView.layer.borderWidth = 4
         
         if student.lastName != nil {
-            nameLabel.text = student.firstName! + " " + student.lastName!
-            loginLabel.text = student.login!
-            mailLabel.text = student.mail!
-            promoLabel.text = student.promo!
-            promoLabel.textColor = UIColor(string: student.promo!)
-            promoView.layer.borderColor = UIColor(string: student.promo!).cgColor
+            nameLabel.text  = (student.firstName ?? "") + " " + (student.lastName ?? "")
+            loginLabel.text = student.login ?? ""
+            mailLabel.text  = student.mail ?? ""
             
+            if let promo = student.promo {
+                promoLabel.text = promo
+                promoLabel.textColor = UIColor(string: promo)
+                promoView.layer.borderColor = UIColor(string: promo).cgColor
+            } else {
+                promoLabel.text = ""
+                promoView.layer.borderColor = UIColor.white.cgColor
+            }
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.3) {
-            self.backgroundView.alpha = 0.3
+            self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        UIView.animate(withDuration: 0.3) {
-//            self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3225064212)
-//        }
-//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
