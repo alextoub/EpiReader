@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import AlamofireImage
+import Crashlytics
 
 class TopicTVC: UITableViewController {
 
@@ -30,6 +31,8 @@ class TopicTVC: UITableViewController {
         super.viewDidLoad()
         setupTopic()
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        Answers.logContentView(withName: "Show news", contentType: "News", contentId: "news_id_\(idNews ?? 0)")
     }
 
     // MARK: - Call functions

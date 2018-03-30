@@ -16,7 +16,6 @@ import Foundation
 public func StrToDate(dateStr: String) -> Date {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-    dateFormatter.timeZone = TimeZone(abbreviation: "BST")
     return dateFormatter.date(from: dateStr)!
 }
 
@@ -78,6 +77,14 @@ public func StrToAbrevWithHour(dateStr: String) -> String {
     return dateStr
 }
 
+public func getYear(dateStr: String) -> Int?
+{
+    let date = StrToDate(dateStr: dateStr)
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.year, .month, .day], from: date)
+    return components.year
+}
+
 public func StrToInfo(dateStr: String) -> String {
 
     let nowDate = Date()
@@ -85,14 +92,13 @@ public func StrToInfo(dateStr: String) -> String {
     let interval = nowDate.timeIntervalSince(date)
     let curr = Calendar.current
 
-    var minutes: Int = Int(interval / 60)
-    var hours: Int = Int(minutes / 24)
+    let minutes: Int = Int(interval / 60)
 
     if minutes >= 0 && minutes < 5 {
         return "À l'instant"
     }
     if minutes >= 5 && minutes < 60 {
-        return "Il y'a \(minutes) mns"
+        return "Il y a \(minutes) mns"
     }
 
     let date1 = curr.startOfDay(for: nowDate)

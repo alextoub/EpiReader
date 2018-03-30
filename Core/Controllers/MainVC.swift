@@ -10,8 +10,10 @@ import UIKit
 import ESPullToRefresh
 import ObjectMapper
 import Alamofire
+import Crashlytics
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stories.count
     }
@@ -66,6 +68,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         // End of code executed for update 1.2
         
         get_students()
+        
+        Answers.logContentView(withName: "Show newsgroup list", contentType: "List", contentId: "newsgroup_list")
+        
+        let CNEnabled = UserDefaults.standard.bool(forKey: "CNEnabled")
+        if !CNEnabled {
+            UserDefaults.standard.set(false, forKey: "CNEnabled")
+        }
         
         //var students = Mapper<Student>().mapArray(
     }

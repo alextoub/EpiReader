@@ -12,19 +12,45 @@ class SettingCell: UITableViewCell {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var infoSwitch: UISwitch!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     
-    func configure(title: String, color: UIColor, image: UIImage) {
+    var setting: Setting?
+    
+    func configure(setting: Setting) {
+        configure()
+        
+        iconImageView.image = setting.image
+        iconView.backgroundColor = setting.color
+        titleLabel.text = setting.title
+        
+        infoSwitch.isHidden = !setting.isSwitchable
+        
+        if (setting.isSwitchable) {
+            infoSwitch.isOn = UserDefaults.standard.bool(forKey: setting.key)
+        }
+        self.setting = setting
+    }
+    
+    func configure() {
         iconView.layer.masksToBounds = true
         iconView.layer.cornerRadius = iconView.bounds.height / 2
         iconImageView.layer.masksToBounds = true
         iconImageView.layer.cornerRadius = iconImageView.bounds.height / 2
+    }
+    
+    @IBAction func infoSwitchAction(_ sender: Any) {
         
-        iconImageView.image = image
-        iconView.backgroundColor = color
-        titleLabel.text = title
+        UserDefaults.standard.set((sender as! UISwitch).isOn, forKey: (setting?.key)!)
+//        
+//        if (sender as! UISwitch).isOn {
+//            UserDefaults.standard.set(true, forKey: (setting?.key)!)
+//        }
+//        else {
+//            UserDefaults.standard.set(false, forKey: (setting?.key)!)
+//        }
     }
     
     override func awakeFromNib() {

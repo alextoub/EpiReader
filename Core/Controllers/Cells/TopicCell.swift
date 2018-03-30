@@ -29,8 +29,14 @@ class TopicCell: UITableViewCell {
     
     func configure(_ topic: Topic) {
         newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        contentText.text = topic.content
+        authorLabel.text = parseAuthor((topic.author)!)[0]
+        var parsedContent = topic.content
+        if let content = topic.content {
+            if PGPParser().isPgp(content: content) {
+                parsedContent = PGPParser().parsePGP(content: content)
+            }
+        }
+        contentText.text = parsedContent
         subjectLabel.text = topic.subject
         dateLabel.text = StrToAbrevWithHour(dateStr: (topic.creation_date)!)
         
@@ -42,8 +48,13 @@ class TopicCell: UITableViewCell {
         var author = parseAuthor((topic.author)!)
         
         var is_student = false
+        let login = parseLogin(author[1])
         
         if let tmp = get_student_by(mail: author[1]) {
+            student = tmp
+            is_student = true
+        }
+        else if let tmp = get_student_by(login: login) {
             student = tmp
             is_student = true
         }
@@ -60,26 +71,39 @@ class TopicCell: UITableViewCell {
             photoImageView.af_setImage(withURL: URL(string: (student?.photo!)!)!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
         }
         else {
-            authorLabel.text = author[0]
-            let url = getProfilePic(mail: author[1], subject: topic.subject!)
-            photoImageView.af_setImage(withURL: url!, placeholderImage: #imageLiteral(resourceName: "default_picture"))
+            photoImageView.image = #imageLiteral(resourceName: "default_picture")
             
-            if (author[1] == "chefs@yaka.epita.fr") {
-                photoImageView.image = #imageLiteral(resourceName: "chefs")
-            }
-            if (author[1] == "chef@tickets.acu.epita.fr") {
-                photoImageView.image = #imageLiteral(resourceName: "acu")
-            }
-            
-            if photoImageView.image == nil {
-                print("oui c nil")
+            let year = getYear(dateStr: (topic.creation_date)!)
+            if year != nil {
+                if let isAcu = isACU(mail: (parseAuthor((topic.author)!)[1])) {
+                    if isAcu {
+                        if (Assistant.ACU[year!] != nil) {
+                            photoImageView.image = Assistant.ACU[year!]
+                        }
+                    }
+                    else {
+                        if (Assistant.YAKA[year!] != nil) {
+                            photoImageView.image = Assistant.YAKA[year!]
+                        }
+                    }
+                }
             }
         }
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    func isACU(mail: String) -> Bool? {
+        if mail == "chef@tickets.acu.epita.fr" {
+            return true
+        }
+        else if mail == "chefs@yaka.epita.fr" || mail == "chefs@tickets.yaka.epita.fr"{
+            return false
+        }
+        else {
+            return nil
+        }
+    }
 }
