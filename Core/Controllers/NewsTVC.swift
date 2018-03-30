@@ -17,6 +17,7 @@ class NewsTVC: UITableViewController {
     // MARK: - Global variables
 
     @IBOutlet weak var notificationButton: UIBarButtonItem!
+    @IBOutlet weak var markAllAsReadButton: UIBarButtonItem!
 
     var news = [News]()
     var currentGroup = ""
@@ -48,7 +49,6 @@ class NewsTVC: UITableViewController {
         initBannerView()
         
         Answers.logContentView(withName: "Show news list", contentType: "List", contentId: "news_\(currentGroup)")
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -193,7 +193,6 @@ class NewsTVC: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func notificationButtonAction(_ sender: Any) {
-        
         if !inNotif {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
@@ -221,7 +220,16 @@ class NewsTVC: UITableViewController {
         inNotif = !inNotif
         updateNotifButton()
     }
-
+    
+    @IBAction func markAllAsReadButtonAction(_ sender: Any) {
+        for new in news {
+            new.isRead = true
+            readNews.append(ReadNews(id : new.id!))
+        }
+        NSCodingData().saveReadNews(readNews: readNews)
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -271,8 +279,6 @@ class NewsTVC: UITableViewController {
 
     // MARK: - Navigation
     
-    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTopic" {
             let cell = sender as! UITableViewCell
