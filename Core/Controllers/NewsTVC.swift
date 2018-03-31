@@ -26,6 +26,7 @@ class NewsTVC: UITableViewController {
     var favorites = [Favorite]()
     var bannerView: GADBannerView!
     var inNotif = false
+    var allRead = false
 
     // MARK: - View LifeCycle
 
@@ -40,6 +41,8 @@ class NewsTVC: UITableViewController {
         setupNews()
         inNotif = checkInNotifs(name: currentGroup)
         updateNotifButton()
+        
+        allRead = news.count == readNews.count
         
         self.tableView.es_addPullToRefresh {
             self.setupNews()
@@ -222,12 +225,17 @@ class NewsTVC: UITableViewController {
     }
     
     @IBAction func markAllAsReadButtonAction(_ sender: Any) {
-        for new in news {
-            new.isRead = true
-            readNews.append(ReadNews(id : new.id!))
+        if news.count != readNews.count {
+            for new in news {
+                if let isRead = new.isRead, !isRead {
+                    new.isRead = true
+                    readNews.append(ReadNews(id : new.id!))
+                }
+            }
+            NSCodingData().saveReadNews(readNews: readNews)
+            tableView.reloadData()
+            allRead = true
         }
-        NSCodingData().saveReadNews(readNews: readNews)
-        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -269,6 +277,11 @@ class NewsTVC: UITableViewController {
         let index = news[indexPath.row]
         
         let subjectSetup = setupSubject(index.subject!)
+        
+        if allRead {
+            readNews.append(ReadNews(id : index.id!))
+            index.isRead = true
+        }
         
         cell.tags = subjectSetup.0
         cell.configure(index)
