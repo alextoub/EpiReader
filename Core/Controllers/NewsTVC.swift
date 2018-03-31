@@ -43,6 +43,7 @@ class NewsTVC: UITableViewController {
         updateNotifButton()
         
         allRead = news.count == readNews.count
+        updateMarkAllAsReadButton()
         
         self.tableView.es_addPullToRefresh {
             self.setupNews()
@@ -112,6 +113,10 @@ class NewsTVC: UITableViewController {
         else {
             notificationButton.image = #imageLiteral(resourceName: "notification_not_filled")
         }
+    }
+    
+    func updateMarkAllAsReadButton() {
+        markAllAsReadButton.image = allRead ? #imageLiteral(resourceName: "notification_filled") :#imageLiteral(resourceName: "notification_not_filled")
     }
 
     // MARK: - Custom methods
@@ -236,6 +241,8 @@ class NewsTVC: UITableViewController {
             tableView.reloadData()
             allRead = true
         }
+        
+        updateMarkAllAsReadButton()
     }
     
     // MARK: - Table view data source
