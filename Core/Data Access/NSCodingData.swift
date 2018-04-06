@@ -35,6 +35,19 @@ class NSCodingData {
         return NSKeyedUnarchiver.unarchiveObject(withFile: ReadNews.ArchiveURL.path) as? [ReadNews]
     }
     
+    public func saveLastAllReadDate(date: Date, group: String) {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(date, toFile: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("lastAllReadDate\(group)").path)
+        if isSuccessfulSave {
+            print("LastAllReadDate successfully saved.")
+        } else {
+            print("Failed to save LastAllReadDate...")
+        }
+    }
+    
+    public func loadLastAllReadDate(group: String) -> Date? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("lastAllReadDate\(group)").path) as? Date
+    }
+    
     public func saveTag(tags: [Tag]) {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tags, toFile: Tag.ArchiveURL.path)
         if isSuccessfulSave {

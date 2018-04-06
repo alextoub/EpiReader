@@ -26,7 +26,6 @@ class NewsTVC: UITableViewController {
     var favorites = [Favorite]()
     var bannerView: GADBannerView!
     var inNotif = false
-    var allRead = false
 
     // MARK: - View LifeCycle
 
@@ -42,7 +41,6 @@ class NewsTVC: UITableViewController {
         inNotif = checkInNotifs(name: currentGroup)
         updateNotifButton()
         
-        allRead = news.count == readNews.count
         updateMarkAllAsReadButton()
         
         self.tableView.es_addPullToRefresh {
@@ -116,7 +114,11 @@ class NewsTVC: UITableViewController {
     }
     
     func updateMarkAllAsReadButton() {
-        markAllAsReadButton.image = allRead ? #imageLiteral(resourceName: "notification_filled") :#imageLiteral(resourceName: "notification_not_filled")
+        if let allReadDate = getLastAllReadDate(), let lastNewsDate = news.first?.creation_date {
+            markAllAsReadButton.image = allReadDate > StrToDate(dateStr: lastNewsDate) ? #imageLiteral(resourceName: "notification_filled") :#imageLiteral(resourceName: "notification_not_filled")
+        } else {
+            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_not_filled")
+        }
     }
 
     // MARK: - Custom methods
@@ -185,6 +187,10 @@ class NewsTVC: UITableViewController {
             readNews += readNew
         }
     }
+    
+    func getLastAllReadDate() -> Date? {
+        return NSCodingData().loadLastAllReadDate(group: currentGroup)
+    }
 
     func getTags() {
         tags.removeAll()
@@ -239,7 +245,7 @@ class NewsTVC: UITableViewController {
             }
             NSCodingData().saveReadNews(readNews: readNews)
             tableView.reloadData()
-            allRead = true
+            NSCodingData().saveLastAllReadDate(date: Date(), group: currentGroup)
         }
         
         updateMarkAllAsReadButton()
@@ -285,7 +291,7 @@ class NewsTVC: UITableViewController {
         
         let subjectSetup = setupSubject(index.subject!)
         
-        if allRead {
+        if let allReadDate = getLastAllReadDate(), let newsDate = index.creation_date, allReadDate > StrToDate(dateStr: newsDate) {
             readNews.append(ReadNews(id : index.id!))
             index.isRead = true
         }
