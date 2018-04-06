@@ -20,6 +20,7 @@ class SearchTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
+        tableView.tableFooterView = UIView()
     }
     
     // MARK: - Custom functions
@@ -30,7 +31,7 @@ class SearchTVC: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchBar.barTintColor = UIColor(red: 39.0/255.0, green: 203.0/255.0, blue: 192.0/255.0, alpha: 1.0)
         searchController.searchBar.tintColor = UIColor.white
-        searchController.searchBar.placeholder = "Search item"
+        searchController.searchBar.placeholder = NSLocale.preferredLanguages[0].range(of:"fr") != nil ? "Rechercher une news" : "Search a news"
         searchController.searchBar.delegate = self
     }
     
@@ -53,10 +54,24 @@ class SearchTVC: UITableViewController {
 
         return cell
     }
+    
+    // MARK : - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTopic" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: cell)!
+            let destination = segue.destination as! TopicTVC
+            destination.idNews = items[(indexPath.row)].id!
+            destination.nb_msg = items[(indexPath.row)].msg_nb!
+            if title == "assistants.news" || !(UserDefaults.standard.bool(forKey: "CNEnabled")) {
+                destination.isNetiquetteCheckerActivated = false
+            }
+        }
+    }
 }
 
 extension SearchTVC: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         MainBusiness.getSearch(term: (searchController.searchBar.text?.replacingOccurrences(of: " ", with: "+"))!) { (response, error) in
             DispatchQueue.main.async {
