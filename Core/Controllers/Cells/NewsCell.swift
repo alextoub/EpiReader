@@ -85,7 +85,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     func getSizeOfText(string: String?) -> CGSize {
         let font = UIFont.systemFont(ofSize: 13, weight: .bold)
         let fontAttributes = [NSAttributedStringKey.font: font]
-        let size = (string as! NSString).size(withAttributes: fontAttributes)
+        let size = (string! as NSString).size(withAttributes: fontAttributes)
         return CGSize(width: size.width + 8, height: 15)
     }
     

@@ -58,7 +58,7 @@ class SearchTVC: UITableViewController {
 extension SearchTVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        MainBusiness.getSearch(term: searchController.searchBar.text!) { (response, error) in
+        MainBusiness.getSearch(term: (searchController.searchBar.text?.replacingOccurrences(of: " ", with: "+"))!) { (response, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     self.items = response!
