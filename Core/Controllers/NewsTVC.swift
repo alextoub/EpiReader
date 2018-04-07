@@ -70,12 +70,11 @@ class NewsTVC: UITableViewController {
                     self.checkIfRead()
                     self.tableView.reloadData()
                     SVProgressHUD.dismiss()
-                }
-                else
-                {
+                } else {
                     SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 }
+                self.updateMarkAllAsReadButton()
             }
         }
     }
@@ -114,8 +113,8 @@ class NewsTVC: UITableViewController {
     }
     
     func updateMarkAllAsReadButton() {
-        if let allReadDate = getLastAllReadDate(), let lastNewsDate = news.first?.creation_date {
-            markAllAsReadButton.image = allReadDate > StrToDate(dateStr: lastNewsDate) ? #imageLiteral(resourceName: "notification_filled") :#imageLiteral(resourceName: "notification_not_filled")
+        if let allReadDate = getLastAllReadDate(), let lastNewsDate = news.first?.creation_date, allReadDate > StrToDate(dateStr: lastNewsDate) {
+            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_filled")
         } else {
             markAllAsReadButton.image = #imageLiteral(resourceName: "notification_not_filled")
         }
