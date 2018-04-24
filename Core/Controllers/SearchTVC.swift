@@ -14,6 +14,8 @@ class SearchTVC: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     var items = [News]()
+    var tags = [Tag]()
+    var readNews = [ReadNews]()
     
     // MARK: - View Lifecycle
     
@@ -35,6 +37,46 @@ class SearchTVC: UITableViewController {
         searchController.searchBar.delegate = self
     }
     
+    // MARK: - Custom method
+    
+    func setupSubject(_ subject: String) -> ([Tag], String) {
+        let parsedSubject = parse(subjectStr: subject)
+        
+        var tagsTmp = [Tag]()
+        
+        for i in parsedSubject.0 {
+            let tag = check(tag: i, in: tags)
+            
+            if !tag.1 {
+                addToTags(tag: tag.0)
+            }
+            
+            tagsTmp.append(tag.0)
+        }
+        
+        return (tagsTmp, parsedSubject.1.trimmingCharacters(in: .whitespacesAndNewlines))
+    }
+    
+    // MARK: - NSCoding Data
+    
+    func getReadNews() {
+        readNews.removeAll()
+        if let readNew = NSCodingData().loadReadNews() {
+            readNews += readNew
+        }
+    }
+    
+    func getTags() {
+        tags.removeAll()
+        if let tag = NSCodingData().loadTag() {
+            tags += tag
+        }
+    }
+    
+    func addToTags(tag: Tag) {
+        tags.append(tag)
+        NSCodingData().saveTag(tags: tags)
+    }
 
     // MARK: - Table view data source
 
@@ -45,13 +87,27 @@ class SearchTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < self.items.count else {
+            return
+        }
+        
+        let index = items[indexPath.row]
+        readNews.append(ReadNews(id : index.id!))
+        index.isRead = true
+        let cell = tableView.cellForRow(at: indexPath) as! NewsCell
+        cell.configureIsRead()
+        NSCodingData().saveReadNews(readNews: readNews)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-
-        cell.textLabel?.text = items[indexPath.row].subject
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        let index = items[indexPath.row]
+        let subjectSetup = setupSubject(index.subject!)
+        cell.tags = subjectSetup.0
+        cell.configure(index)
+        
         return cell
     }
     
@@ -77,6 +133,7 @@ extension SearchTVC: UISearchBarDelegate {
             DispatchQueue.main.async {
                 if error == nil {
                     self.items = response!
+                    self.getTags()
                     self.tableView.reloadData()
                 }
             }
