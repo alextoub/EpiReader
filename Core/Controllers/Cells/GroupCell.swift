@@ -27,14 +27,10 @@ class GroupCell: UITableViewCell {
     }
     
     func setupCell(favorite: Favorite) {
-        
         groupNameLabel.text = favorite.group_name
-        
-        groupNameLabel.text = favorite.group_name
-        nbNewsLabel.text = String(describing: favorite.topic_nb!)
+        nbNewsLabel.text = String(describing: favorite.topic_nb ?? 0)
         
         groupView.layer.masksToBounds = true
         groupView.layer.cornerRadius = groupView.bounds.height / 2
     }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SearchTVC: UITableViewController {
     
@@ -129,12 +130,19 @@ class SearchTVC: UITableViewController {
 
 extension SearchTVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.show(withStatus: "Chargement en cours")
+
         MainBusiness.getSearch(term: (searchController.searchBar.text?.replacingOccurrences(of: " ", with: "+"))!) { (response, error) in
             DispatchQueue.main.async {
                 if error == nil {
                     self.items = response!
                     self.getTags()
                     self.tableView.reloadData()
+                    SVProgressHUD.dismiss()
+                } else {
+                    SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
+                    SVProgressHUD.dismiss(withDelay: 0.5)
                 }
             }
         }
