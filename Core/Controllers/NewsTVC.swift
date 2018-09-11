@@ -17,6 +17,7 @@ class NewsTVC: UITableViewController {
     // MARK: - Global variables
 
     @IBOutlet weak var notificationButton: UIBarButtonItem!
+    @IBOutlet weak var markAllAsReadButton: UIBarButtonItem!
 
     var news = [News]()
     var currentGroup = ""
@@ -40,6 +41,8 @@ class NewsTVC: UITableViewController {
         inNotif = checkInNotifs(name: currentGroup)
         updateNotifButton()
         
+        updateMarkAllAsReadButton()
+        
         self.tableView.es_addPullToRefresh {
             self.setupNews()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -48,7 +51,6 @@ class NewsTVC: UITableViewController {
         initBannerView()
         
         Answers.logContentView(withName: "Show news list", contentType: "List", contentId: "news_\(currentGroup)")
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,12 +70,11 @@ class NewsTVC: UITableViewController {
                     self.checkIfRead()
                     self.tableView.reloadData()
                     SVProgressHUD.dismiss()
-                }
-                else
-                {
+                } else {
                     SVProgressHUD.showError(withStatus: "Une erreur s'est produite")
                     SVProgressHUD.dismiss(withDelay: 0.5)
                 }
+                self.updateMarkAllAsReadButton()
             }
         }
     }
@@ -108,6 +109,14 @@ class NewsTVC: UITableViewController {
         }
         else {
             notificationButton.image = #imageLiteral(resourceName: "notification_not_filled")
+        }
+    }
+    
+    func updateMarkAllAsReadButton() {
+        if let allReadDate = getLastAllReadDate(), let lastNewsDate = news.first?.creation_date, allReadDate > StrToDate(dateStr: lastNewsDate) {
+            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_filled")
+        } else {
+            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_not_filled")
         }
     }
 
@@ -177,6 +186,10 @@ class NewsTVC: UITableViewController {
             readNews += readNew
         }
     }
+    
+    func getLastAllReadDate() -> Date? {
+        return NSCodingData().loadLastAllReadDate(group: currentGroup)
+    }
 
     func getTags() {
         tags.removeAll()
@@ -193,7 +206,6 @@ class NewsTVC: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func notificationButtonAction(_ sender: Any) {
-        
         if !inNotif {
             MainBusiness.postSubscribeNotification(service: "ios", registration_id: StaticData.deviceToken, host: "news.epita.fr", newsgroup: currentGroup) { (response, error) in
                 DispatchQueue.main.async {
@@ -221,7 +233,23 @@ class NewsTVC: UITableViewController {
         inNotif = !inNotif
         updateNotifButton()
     }
-
+    
+    @IBAction func markAllAsReadButtonAction(_ sender: Any) {
+        if news.count != readNews.count {
+            for new in news {
+                if let isRead = new.isRead, !isRead {
+                    new.isRead = true
+                    readNews.append(ReadNews(id : new.id!))
+                }
+            }
+            NSCodingData().saveReadNews(readNews: readNews)
+            tableView.reloadData()
+            NSCodingData().saveLastAllReadDate(date: Date(), group: currentGroup)
+        }
+        
+        updateMarkAllAsReadButton()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -262,6 +290,11 @@ class NewsTVC: UITableViewController {
         
         let subjectSetup = setupSubject(index.subject!)
         
+        if let allReadDate = getLastAllReadDate(), let newsDate = index.creation_date, allReadDate > StrToDate(dateStr: newsDate) {
+            readNews.append(ReadNews(id : index.id!))
+            index.isRead = true
+        }
+        
         cell.tags = subjectSetup.0
         cell.configure(index)
         cell.subjectLabel.text = subjectSetup.1
@@ -271,8 +304,6 @@ class NewsTVC: UITableViewController {
 
     // MARK: - Navigation
     
-    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toTopic" {
             let cell = sender as! UITableViewCell

@@ -34,12 +34,10 @@ class SettingsTVC: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "IdentityCell") as! IdentityCell
             cell.configure()
             return cell
-        }
-        else if (indexPath as IndexPath).row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell") as! UITableViewCell
-            return cell
-        }
-        else {
+        } else if (indexPath as IndexPath).row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell")
+            return cell!
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell") as! SettingCell
             let setting = Constants.settings[(indexPath as IndexPath).row - 2]
             //cell.configure(title: setting.title, color: setting.color, image: setting.image)

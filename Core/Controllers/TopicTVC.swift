@@ -224,7 +224,7 @@ class TopicTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard (sizeCells.count > 0) else {
+        guard sizeCells.count > 0 else {
             return 195
         }
         if isNetiquetteCheckerActivated {
@@ -238,12 +238,9 @@ class TopicTVC: UITableViewController {
         else {
             return 195 - 128 + sizeCells[indexPath.row]
         }
-        //return 3000
     }
     
     @IBAction func openStudentView(_ sender: Any) {
-        
-        
         let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: viewPos)
         let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
@@ -259,19 +256,14 @@ class TopicTVC: UITableViewController {
         }
     }
     
-    
-    
-    
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showImage" {
-//            let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
-//            let indexPath = self.tableView.indexPathForRow(at: viewPos)
-//            let vc = segue.destination as! ImageVC
-//            let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
-//            vc.image = cell.photoImageView.image!
-//            vc.student = cell.student
-//        }
-//    }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showImage" {
+            let viewPos : CGPoint = (sender as AnyObject).convert(CGPoint.zero , to: self.tableView)
+            let indexPath = self.tableView.indexPathForRow(at: viewPos)
+            let vc = segue.destination as! ImageVC
+            let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
+            vc.image = cell.photoImageView.image!
+            vc.student = cell.student!
+        }
+    }
 }

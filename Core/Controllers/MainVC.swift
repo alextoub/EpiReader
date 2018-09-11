@@ -137,6 +137,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         return true
     }
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return NSLocale.preferredLanguages[0].range(of:"fr") != nil ? "Supprimer" : "Delete"
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             favorites.remove(at: indexPath.row)

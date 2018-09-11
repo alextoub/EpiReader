@@ -44,6 +44,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
         authorLabel.text = authorArr[0]
         mailLabel.text = authorArr[1]
         dateLabel.text = StrToInfo(dateStr: news.creation_date!)
+        subjectLabel.text = news.subject ?? "Pas de sujet"
         
         msgNbView.backgroundColor = #colorLiteral(red: 0.4119389951, green: 0.8247622848, blue: 0.9853010774, alpha: 1)
         if let nb = news.msg_nb {
@@ -85,7 +86,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     func getSizeOfText(string: String?) -> CGSize {
         let font = UIFont.systemFont(ofSize: 13, weight: .bold)
         let fontAttributes = [NSAttributedStringKey.font: font]
-        let size = (string as! NSString).size(withAttributes: fontAttributes)
+        let size = (string! as NSString).size(withAttributes: fontAttributes)
         return CGSize(width: size.width + 8, height: 15)
     }
     
