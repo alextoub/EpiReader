@@ -1643,7 +1643,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                     <action selector="notificationButtonAction:" destination="Aja-OK-gqX" id="hfD-4X-9F1"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" id="rzg-44-CEI">
+                            <barButtonItem enabled="NO" image="mark_all_as_read" id="rzg-44-CEI">
                                 <connections>
                                     <action selector="markAllAsReadButtonAction:" destination="Aja-OK-gqX" id="N9G-mq-6ct"/>
                                 </connections>
@@ -1989,11 +1989,12 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
         <image name="Envelope" width="130" height="90"/>
         <image name="double_arrow_green" width="200" height="200"/>
         <image name="logo_epimac" width="2558" height="1904"/>
+        <image name="mark_all_as_read" width="25" height="25"/>
         <image name="notification_not_filled" width="25" height="25"/>
         <image name="parameters" width="25" height="25"/>
         <image name="switch_off" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="woU-4j-evc"/>
+        <segue reference="7K7-Zu-iOM"/>
     </inferredMetricsTieBreakers>
 </document>

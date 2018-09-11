@@ -24,7 +24,6 @@ class NewsTVC: UITableViewController {
     var readNews = [ReadNews]()
     var tags = [Tag]()
     var favorites = [Favorite]()
-    var bannerView: GADBannerView!
     var inNotif = false
 
     // MARK: - View LifeCycle
@@ -36,12 +35,13 @@ class NewsTVC: UITableViewController {
 
         SVProgressHUD.setDefaultMaskType(.black)
         SVProgressHUD.show(withStatus: "Chargement en cours")
+        markAllAsReadButton.tintColor = .clear
 
         setupNews()
         inNotif = checkInNotifs(name: currentGroup)
         updateNotifButton()
         
-        updateMarkAllAsReadButton()
+//        updateMarkAllAsReadButton()
         
         self.tableView.es_addPullToRefresh {
             self.setupNews()
@@ -112,9 +112,10 @@ class NewsTVC: UITableViewController {
     
     func updateMarkAllAsReadButton() {
         if let allReadDate = getLastAllReadDate(), let lastNewsDate = news.first?.creation_date, allReadDate > StrToDate(dateStr: lastNewsDate) {
-            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_filled")
+            markAllAsReadButton.isEnabled = false
+            markAllAsReadButton.tintColor = UIColor.clear
         } else {
-            markAllAsReadButton.image = #imageLiteral(resourceName: "notification_not_filled")
+            markAllAsReadButton.image = #imageLiteral(resourceName: "mark_all_as_read")
         }
     }
 
@@ -225,7 +226,7 @@ class NewsTVC: UITableViewController {
             NSCodingData().saveLastAllReadDate(date: Date(), group: currentGroup)
         }
         
-        updateMarkAllAsReadButton()
+//        updateMarkAllAsReadButton()
     }
     
     // MARK: - Table view data source
