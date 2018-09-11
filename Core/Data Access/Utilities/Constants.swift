@@ -47,6 +47,6 @@ struct Constants {
 }
 
 struct Assistant {
-    static let ACU = [2017 : #imageLiteral(resourceName: "acu_2018")]
+    static let ACU = [2017 : #imageLiteral(resourceName: "acu_2018"), 2018 : #imageLiteral(resourceName: "acu_2019")]
     static let YAKA = [2017 : #imageLiteral(resourceName: "yaka_2018"), 2018 : #imageLiteral(resourceName: "yaka_2019")]
 }

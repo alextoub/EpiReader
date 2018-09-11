@@ -96,7 +96,7 @@ class TopicCell: UITableViewCell {
     }
     
     func isACU(mail: String) -> Bool? {
-        if mail == "chef@tickets.acu.epita.fr" {
+        if mail == "chef@tickets.acu.epita.fr" || mail == "chef@tickets.assistants.epita.fr" {
             return true
         }
         else if mail == "chefs@yaka.epita.fr" || mail == "chefs@tickets.yaka.epita.fr"{
