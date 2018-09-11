@@ -47,8 +47,6 @@ class NewsTVC: UITableViewController {
             self.setupNews()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
-
-        initBannerView()
         
         Answers.logContentView(withName: "Show news list", contentType: "List", contentId: "news_\(currentGroup)")
     }
@@ -127,26 +125,6 @@ class NewsTVC: UITableViewController {
         getReadNews()
         getTags()
         tableView.reloadData()
-    }
-    
-    func initBannerView() {
-        
-        //TODO: Add way to hide if no connection
-        //TODO: Add boolean isPremium -> No ads
-        
-        navigationController?.isToolbarHidden = false
-        bannerView = GADBannerView()
-        bannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 44))
-        bannerView.adUnitID = Constants.AdMob.unitID
-        
-        bannerView.rootViewController = self
-        bannerView.frame = CGRect(x: (UIScreen.main.bounds.width - bannerView.frame.width) / 2,
-                                  y: 0.0,
-                                  width: bannerView.frame.size.width,
-                                  height: bannerView.frame.size.height)
-        navigationController?.toolbar.addSubview(bannerView)
-        let request = GADRequest()
-        bannerView.load(request)
     }
 
     func checkIfRead() {
