@@ -13,7 +13,8 @@
 		DA080A361FA46861001FC9B3 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA080A351FA46861001FC9B3 /* SettingCell.swift */; };
 		DA101D2E1FA836C40096BC59 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA101D2D1FA836C40096BC59 /* Story.swift */; };
 		DA101D341FA842E70096BC59 /* StoryCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA101D331FA842E70096BC59 /* StoryCVCell.swift */; };
-		DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CF91F7B724D00E58757 /* SearchTVC.swift */; };
+		DA3149C92147F4AF005F3D38 /* UserAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3149C82147F4AF005F3D38 /* UserAlertVC.swift */; };
+		DA488CFA1F7B724D00E58757 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CF91F7B724D00E58757 /* SearchVC.swift */; };
 		DA488CFC1F7B7EC600E58757 /* TagAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */; };
 		DA51D9221EE57CD2003E795B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA51D9211EE57CD2003E795B /* LoadingCell.swift */; };
 		DA5DFB4A1EE59D5700DFE65D /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */; };
@@ -84,7 +85,8 @@
 		DA101D2D1FA836C40096BC59 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		DA101D331FA842E70096BC59 /* StoryCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCVCell.swift; sourceTree = "<group>"; };
 		DA291D761FA67721003D9545 /* HeaderFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderFile.h; sourceTree = "<group>"; };
-		DA488CF91F7B724D00E58757 /* SearchTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTVC.swift; sourceTree = "<group>"; };
+		DA3149C82147F4AF005F3D38 /* UserAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlertVC.swift; sourceTree = "<group>"; };
+		DA488CF91F7B724D00E58757 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagAlertVC.swift; sourceTree = "<group>"; };
 		DA51D9211EE57CD2003E795B /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
@@ -229,11 +231,12 @@
 				DA8D2F521E7FFBB200BA7FB1 /* MainVC.swift */,
 				DA6723161E80229800899F3F /* NewsTVC.swift */,
 				E655D71A1F77061C001B350F /* NotificationTVC.swift */,
-				DA488CF91F7B724D00E58757 /* SearchTVC.swift */,
+				DA488CF91F7B724D00E58757 /* SearchVC.swift */,
 				DA5DFB491EE59D5700DFE65D /* SettingsTVC.swift */,
 				DA488CFB1F7B7EC500E58757 /* TagAlertVC.swift */,
 				E6508DC21F78E09D004898E2 /* TagsTVC.swift */,
 				DADA808D1E8035E500A8F423 /* TopicTVC.swift */,
+				DA3149C82147F4AF005F3D38 /* UserAlertVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3149C92147F4AF005F3D38 /* UserAlertVC.swift in Sources */,
 				DA8D2F551E7FFBEF00BA7FB1 /* GroupCell.swift in Sources */,
 				E606B9661F78C41A00F69CBB /* NetiquetteChecker.swift in Sources */,
 				DADA808E1E8035E500A8F423 /* TopicTVC.swift in Sources */,
@@ -486,7 +490,7 @@
 				DA67230F1E8008AD00899F3F /* Favorite.swift in Sources */,
 				DA6934941FAC4B3C00260652 /* PGPParser.swift in Sources */,
 				DA01F66B2014B04A003C9963 /* Setting.swift in Sources */,
-				DA488CFA1F7B724D00E58757 /* SearchTVC.swift in Sources */,
+				DA488CFA1F7B724D00E58757 /* SearchVC.swift in Sources */,
 				E655D71B1F77061C001B350F /* NotificationTVC.swift in Sources */,
 				DA7BEC911F8AB99E002C67D7 /* TagCVCell.swift in Sources */,
 				DABE51041F76EB4800CB4F93 /* AboutTVC.swift in Sources */,

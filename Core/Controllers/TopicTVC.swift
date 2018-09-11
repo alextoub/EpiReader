@@ -245,14 +245,7 @@ class TopicTVC: UITableViewController {
         let indexPath = self.tableView.indexPathForRow(at: viewPos)
         let cell = tableView.cellForRow(at: indexPath!) as! TopicCell
         if cell.student != nil {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageVC") as! ImageVC
-            vc.modalTransitionStyle = .coverVertical
-            vc.modalPresentationStyle = .overCurrentContext
-
-            vc.image = cell.photoImageView.image!
-            vc.student = cell.student!
-        
-            present(vc, animated: true, completion: nil)
+            self.showUserAlert(student: cell.student, imageStudent: cell.photoImageView.image)
         }
     }
     
