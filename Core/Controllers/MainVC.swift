@@ -76,6 +76,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             UserDefaults.standard.set(false, forKey: "CNEnabled")
         }
         
+        let isDarkMode = UserDefaults.standard.bool(forKey: "isDarkMode")
+        if !isDarkMode {
+            UserDefaults.standard.set(false, forKey: "isDarkMode")
+        }
+
+        
         //var students = Mapper<Student>().mapArray(
     }
     

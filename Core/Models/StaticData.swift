@@ -20,4 +20,8 @@ public struct StaticData {
     public static var deviceToken = ""
     
     public static var students: [Student]?
+    
+    public static var theme = Theme()
+    
+    public static var themeModified = true
 }

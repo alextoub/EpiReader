@@ -16,8 +16,15 @@ class SettingCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var cellView: CustomView!
     
     var setting: Setting?
+    
+    func themeConfigure() {
+        titleLabel.textColor = StaticData.theme.titleColor
+        cellView.backgroundColor = StaticData.theme.backGroundCell
+        self.backgroundColor = StaticData.theme.backgroundColor
+    }
     
     func configure(setting: Setting) {
         configure()
@@ -44,6 +51,11 @@ class SettingCell: UITableViewCell {
     @IBAction func infoSwitchAction(_ sender: Any) {
         
         UserDefaults.standard.set((sender as! UISwitch).isOn, forKey: (setting?.key)!)
+        
+        if setting?.key == "isDarkMode" {
+            Theme.loadTheme()
+        }
+        
 //        
 //        if (sender as! UISwitch).isOn {
 //            UserDefaults.standard.set(true, forKey: (setting?.key)!)
@@ -55,6 +67,7 @@ class SettingCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        themeConfigure()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

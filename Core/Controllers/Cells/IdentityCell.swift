@@ -13,6 +13,16 @@ class IdentityCell: UITableViewCell {
     @IBOutlet weak var logoButton: UIButton!
     @IBOutlet weak var logoAppImageView: UIImageView!
     @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    
+    func configureTheme() {
+        containerView.backgroundColor = StaticData.theme.backGroundCell
+        authorLabel.textColor = StaticData.theme.titleColor
+        appNameLabel.textColor = StaticData.theme.titleColor
+        versionLabel.textColor = StaticData.theme.subtitleColor
+    }
     
     func configure() {
         logoAppImageView.image = #imageLiteral(resourceName: "logo_app")
@@ -33,6 +43,7 @@ class IdentityCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureTheme()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

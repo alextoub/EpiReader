@@ -1250,7 +1250,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="MgS-ix-HLO" secondAttribute="trailing" constant="12.5" id="8sy-Nr-s5j"/>
                                                 <constraint firstAttribute="height" constant="18" id="Nuy-BS-g2f"/>
@@ -1285,12 +1285,15 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="appNameLabel" destination="Ilt-jS-7oW" id="f5M-QA-oOY"/>
+                                    <outlet property="authorLabel" destination="QVq-rL-3vr" id="5nW-6G-ASE"/>
+                                    <outlet property="containerView" destination="BLB-jk-gQB" id="hJN-Gi-XS4"/>
                                     <outlet property="logoAppImageView" destination="7sm-G1-7L6" id="3wk-oC-zxD"/>
                                     <outlet property="logoButton" destination="JJ7-Rc-PNC" id="MX1-2s-HmQ"/>
                                     <outlet property="versionLabel" destination="ueR-Ot-PVt" id="isN-Nl-sbt"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="10" id="s4r-ti-HlG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="10" id="s4r-ti-HlG" customClass="EmptyCell" customModule="EpiReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="219" width="375" height="10"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4r-ti-HlG" id="NYU-Co-AC5">
@@ -1339,7 +1342,6 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                             </connections>
                                                         </switch>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="KWe-Rr-xxs" firstAttribute="leading" secondItem="Iuz-Vs-8hp" secondAttribute="leading" id="O0s-Nw-Vdq"/>
                                                         <constraint firstAttribute="height" constant="52" id="dOE-qV-zJ6"/>
@@ -1379,6 +1381,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="cellView" destination="Kq1-mn-lzR" id="uCZ-Qn-eCQ"/>
                                     <outlet property="iconImageView" destination="v2V-Un-oM1" id="bVD-vO-NhV"/>
                                     <outlet property="iconView" destination="Do7-jL-66H" id="jSF-gU-ZOT"/>
                                     <outlet property="infoSwitch" destination="KWe-Rr-xxs" id="8Qd-pN-sWt"/>
@@ -1426,7 +1429,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Responsable des assistants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-HG-KS0">
                                                     <rect key="frame" x="18" y="53" width="298" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="textColor" red="0.36078431372549019" green="0.36862745098039218" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IV-2t-tUt">

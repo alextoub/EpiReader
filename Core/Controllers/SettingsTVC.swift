@@ -15,6 +15,7 @@ class SettingsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = StaticData.theme.backgroundColor
         
         Answers.logContentView(withName: "Open settings view", contentType: "", contentId: "settings")
     }
@@ -36,6 +37,7 @@ class SettingsTVC: UITableViewController {
             return cell
         } else if (indexPath as IndexPath).row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell")
+            cell?.backgroundColor = StaticData.theme.backgroundColor
             return cell!
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell") as! SettingCell
