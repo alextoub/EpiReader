@@ -1452,10 +1452,10 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tPa-ef-Bya">
-                                                    <rect key="frame" x="18" y="8" width="266" height="15"/>
+                                                    <rect key="frame" x="18" y="8" width="250" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="266" id="Pcz-gm-Idx"/>
+                                                        <constraint firstAttribute="width" constant="250" id="Pcz-gm-Idx"/>
                                                         <constraint firstAttribute="height" constant="15" id="nKK-RL-0cR"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="4" id="wfJ-Pa-Wmx">
@@ -1518,7 +1518,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18 sept." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpZ-6D-an2">
-                                                    <rect key="frame" x="300" y="8" width="47" height="16"/>
+                                                    <rect key="frame" x="268" y="8" width="79" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1561,7 +1561,7 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <constraint firstItem="xoG-Dm-0I2" firstAttribute="leading" secondItem="O1i-HG-KS0" secondAttribute="trailing" constant="16" id="LhR-yR-MPv"/>
                                                 <constraint firstItem="6IV-2t-tUt" firstAttribute="leading" secondItem="bhT-Wc-jlq" secondAttribute="leading" constant="278" id="NSA-OC-bbq"/>
                                                 <constraint firstItem="S18-bY-U3C" firstAttribute="trailing" secondItem="6IV-2t-tUt" secondAttribute="trailing" constant="-8" id="OGB-3H-fNp"/>
-                                                <constraint firstItem="RpZ-6D-an2" firstAttribute="leading" secondItem="tPa-ef-Bya" secondAttribute="trailing" constant="16" id="QnO-Wi-y7b"/>
+                                                <constraint firstItem="RpZ-6D-an2" firstAttribute="leading" secondItem="tPa-ef-Bya" secondAttribute="trailing" id="QnO-Wi-y7b"/>
                                                 <constraint firstAttribute="bottom" secondItem="kFY-lV-YSO" secondAttribute="bottom" id="Vjz-33-rxB"/>
                                                 <constraint firstAttribute="bottom" secondItem="xoG-Dm-0I2" secondAttribute="bottom" constant="8" id="Vlq-78-Sga"/>
                                                 <constraint firstItem="kFY-lV-YSO" firstAttribute="top" secondItem="bhT-Wc-jlq" secondAttribute="top" id="ZCg-uv-2hW"/>
@@ -1861,9 +1861,9 @@ EPITA 2019/iOS Dev @3IE/Vice President @EpiMac</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnF-6F-uL6">
-                                                <rect key="frame" x="8" y="117" width="238" height="16"/>
+                                                <rect key="frame" x="8" y="117" width="238" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="2hJ-6j-GMz"/>
+                                                    <constraint firstAttribute="height" constant="20" id="2hJ-6j-GMz"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
