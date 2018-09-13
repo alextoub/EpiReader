@@ -7,37 +7,49 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class Topic: Mappable {
+class Topic: Codable {
     
     // MARK: - Attributes
     
-    var id: Int?
-    var uid: String?
-    var author: String?
-    var subject: String?
-    var content: String?
-    var creation_date: String?
-    var groups: [String]?
-    var children: [Topic]?
+    var id:             Int?
+    var uid:            String?
+    var author:         String?
+    var subject:        String?
+    var content:        String?
+    var creation_date:  String?
+    var groups:         [String]?
+    var children:       [Topic]?
     
-    // MARK: - ObjectMapper functions
+    // MARK: - Coding Keys
     
-    required init?(map: Map) {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case uid
+        case author
+        case subject
+        case content
+        case creation_date
+        case groups
+        case children
     }
     
-    func mapping(map: Map) {
-        self.id            <- map["id"]
-        self.uid           <- map["uid"]
-        self.author        <- map["author"]
-        self.subject       <- map["subject"]
-        self.content       <- map["content"]
-        self.creation_date <- map["creation_date"]
-        self.groups        <- map["groups"]
-        self.children      <- map["children"]
-    }
-    
+//    // MARK: - ObjectMapper functions
+//
+//    required init?(map: Map) {
+//    }
+//
+//    func mapping(map: Map) {
+//        self.id            <- map["id"]
+//        self.uid           <- map["uid"]
+//        self.author        <- map["author"]
+//        self.subject       <- map["subject"]
+//        self.content       <- map["content"]
+//        self.creation_date <- map["creation_date"]
+//        self.groups        <- map["groups"]
+//        self.children      <- map["children"]
+//    }
+//
     init(id: Int?, uid: String?, author: String?, subject: String?, content: String?, creation_date: String?, groups: [String]?) {
         self.id = id
         self.uid = uid
@@ -47,6 +59,6 @@ class Topic: Mappable {
         self.creation_date = creation_date
         self.groups = groups
         self.children = nil
-        
+
     }
 }

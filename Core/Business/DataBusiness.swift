@@ -67,4 +67,9 @@ class MainBusiness {
         }
     }
     
+    static func getStudent(completed: @escaping ((_ response:[Student]?, _ error:Error?) -> Void)) -> Void {
+        MainData.getStudent() { (response, error) in
+            completed(response, error)
+        }
+    }
 }

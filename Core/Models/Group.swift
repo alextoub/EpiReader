@@ -7,26 +7,22 @@
 //
 
 import Foundation
-import ObjectMapper
 
-public class Group: Mappable {
+public class Group: Codable {
     
     // MARK: - Attributes
     
-    var id: Int?
-    var group_name: String?
-    var topic_nb: Int?
-    var available: Bool?
+    var id:             Int?
+    var group_name:     String?
+    var topic_nb:       Int?
+    var available:      Bool?
     
-    // MARK: - ObjectMapper functions
-    
-    required public init?(map: Map) {
-    }
-    
-    public func mapping(map: Map) {
-        self.id         <- map["id"]
-        self.group_name <- map["group_name"]
-        self.topic_nb   <- map["topic_nb"]
-        self.available  <- map["available"]
+    // MARK: - Coding Keys
+
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case group_name
+        case topic_nb
+        case available
     }
 }
