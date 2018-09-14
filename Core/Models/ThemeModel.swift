@@ -24,6 +24,7 @@ public class Theme {
     public var subtitleColor          = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
     public var authorColor            = #colorLiteral(red: 0.3607843137, green: 0.368627451, blue: 0.4, alpha: 1)
     public var numberAnswersColor     = #colorLiteral(red: 0.3529411765, green: 0.7843137255, blue: 0.9803921569, alpha: 1)
+    public var isLight                = true
 
     public init(){
     }
@@ -48,6 +49,12 @@ public class Theme {
         else {
             StaticData.theme = Theme()
         }
+        if StaticData.theme.isLight {
+            UIApplication.shared.statusBarStyle = .default
+        }
+        else {
+            UIApplication.shared.statusBarStyle = .lightContent
+        }
     }
 }
 
@@ -65,5 +72,6 @@ public class DarkMode : Theme {
         subtitleColor          = #colorLiteral(red: 0.9019607843, green: 0.9019607843, blue: 0.9019607843, alpha: 1)
         authorColor            = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         numberAnswersColor     = #colorLiteral(red: 0.3529411765, green: 0.7843137255, blue: 0.9803921569, alpha: 1)
+        isLight                = false
     }
 }
