@@ -92,7 +92,7 @@ extension Router : RouterProtocol {
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = headers
         
-        var parameters: [String: String] = [:]
+        var parameters: Parameters?
         
         switch self {
         case .postSubscribedGroups(let service, let registration_id, let host):
@@ -118,9 +118,14 @@ extension Router : RouterProtocol {
         default:
             break
         }
-        if parameters != [:] {
-            try! request.httpBody = JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
-//            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let parameters = parameters {
+            let data = try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            if let json = json {
+                print(json)
+            }
+            request.httpBody = json!.data(using: String.Encoding.utf8.rawValue);
         }
         return request
     }
@@ -189,34 +194,76 @@ class MainData {
     }
     
     static func postSubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationSub?, _ error:Error?) -> Void)) -> Void {
-        Router.postSubscribeNotification(service, registration_id, host, newsgroup).makeAlamofireRequest { (response, error) in
-            if error == nil {
+//        Router.postSubscribeNotification(service, registration_id, host, newsgroup).makeAlamofireRequest { (response, error) in
+//            if error == nil {
+//                DecoderJSON<NotificationSub>().decode(response: response, completed: { (response, error) in
+//                    completed(response, error)
+//                })
+//            }
+//        }
+        
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+
+
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_SUB, method: .post, parameters: parameters, headers: Constants.Headers.headers).responseData { (response) in
                 DecoderJSON<NotificationSub>().decode(response: response, completed: { (response, error) in
                     completed(response, error)
                 })
             }
-        }
     }
     
     static func postUnsubscribeNotification(service: String, registration_id: String, host: String, newsgroup: String, completed: @escaping ((_ response:NotificationUnsub?, _ error:Error?) -> Void)) -> Void {
         
-        Router.postUnsubscribeNotification(service, registration_id, host, newsgroup).makeAlamofireRequest { (response, error) in
-            if error == nil {
-                DecoderJSON<NotificationUnsub>().decode(response: response, completed: { (response, error) in
-                    completed(response, error)
-                })
-            }
+//        Router.postUnsubscribeNotification(service, registration_id, host, newsgroup).makeAlamofireRequest { (response, error) in
+//            if error == nil {
+//                DecoderJSON<NotificationUnsub>().decode(response: response, completed: { (response, error) in
+//                    completed(response, error)
+//                })
+//            }
+//        }
+        
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host,
+            "newsgroup": newsgroup
+        ]
+        
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_UNSUB, method: .post, parameters: parameters, headers: Constants.Headers.headers).responseData { (response) in
+            DecoderJSON<NotificationUnsub>().decode(response: response, completed: { (response, error) in
+                completed(response, error)
+            })
         }
     }
 
     static func postSubscribedGroups(service: String, registration_id: String, host: String, completed: @escaping ((_ response: NotificationGroups?, _ error:Error?) -> Void)) -> Void {
         
-        Router.postSubscribedGroups(service, registration_id, host).makeAlamofireRequest { (response, error) in
-            if error == nil {
-                DecoderJSON<NotificationGroups>().decode(response: response, completed: { (response, error) in
-                    completed(response, error)
-                })
-            }
+//        Router.postSubscribedGroups(service, registration_id, host).makeAlamofireRequest { (response, error) in
+//            if error == nil {
+//                DecoderJSON<NotificationGroups>().decode(response: response, completed: { (response, error) in
+//                    completed(response, error)
+//                })
+//            }
+//        }
+        
+        let parameters: Parameters = [
+            "service": service,
+            "registration_id": registration_id,
+            "host": host
+        ]
+        
+        Alamofire.request(Constants.Url.ENTRY_API_URL + Constants.Url.NOTIF_GROUPS, method: .post, parameters: parameters, headers: Constants.Headers.headers).responseData { (response) in
+            DecoderJSON<NotificationGroups>().decode(response: response, completed: { (response, error) in
+                completed(response, error)
+            })
         }
     }
     
