@@ -54,6 +54,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             self.getFav()
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
+        registerForPreviewing(with: self, sourceView: tableView)
         self.getLastNews()
         
         // Code executed for update 1.2
@@ -164,6 +165,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if favorites.count == 0 {
+            return
+        }
+        let vc = newsViewController(for: indexPath)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if favorites.count == 0 {
             return 140.0
@@ -178,11 +187,30 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             let destination = segue.destination as! AddGroupTVC
             destination.favorites = favorites
         }
-        else if segue.identifier == "toNews" {
-            let destination = segue.destination as! NewsTVC
-            let indexPath = tableView.indexPathForSelectedRow
-            destination.currentGroup = favorites[(indexPath?.row)!].group_name!
-        }
     }
     
+    
+    func newsViewController(for indexPath: IndexPath) -> NewsTVC {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "NewsTVC") as! NewsTVC
+        vc.currentGroup = favorites[indexPath.row].group_name!
+        return vc
+    }
+    
+}
+
+
+extension MainVC: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            return newsViewController(for: indexPath)
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
 }

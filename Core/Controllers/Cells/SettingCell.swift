@@ -61,7 +61,6 @@ class SettingCell: UITableViewCell {
         if setting?.key == "isDarkMode" {
             Theme.loadTheme()
             delegate?.updateTableView()
-
         }
         
 //        
