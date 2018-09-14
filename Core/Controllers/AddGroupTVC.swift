@@ -33,7 +33,8 @@ class AddGroupTVC: UITableViewController {
     }
     
     func setupGroup() {
-        if let data = StaticData.allGroups {
+        if var data = StaticData.allGroups {
+            data.sort { $0.available! && !$1.available! }
             self.groups = data
         }
         self.tableView.reloadData()
