@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingCellDelegate {
+    func updateTableView()
+}
+
 class SettingCell: UITableViewCell {
 
     // MARK: - Outlets
@@ -19,8 +23,9 @@ class SettingCell: UITableViewCell {
     @IBOutlet weak var cellView: CustomView!
     
     var setting: Setting?
+    var delegate: SettingCellDelegate?
     
-    func themeConfigure() {
+    func configureTheme() {
         titleLabel.textColor = StaticData.theme.titleColor
         cellView.backgroundColor = StaticData.theme.backGroundCell
         self.backgroundColor = StaticData.theme.backgroundColor
@@ -39,6 +44,7 @@ class SettingCell: UITableViewCell {
             infoSwitch.isOn = UserDefaults.standard.bool(forKey: setting.key)
         }
         self.setting = setting
+        configureTheme()
     }
     
     func configure() {
@@ -54,6 +60,8 @@ class SettingCell: UITableViewCell {
         
         if setting?.key == "isDarkMode" {
             Theme.loadTheme()
+            delegate?.updateTableView()
+
         }
         
 //        
@@ -67,7 +75,6 @@ class SettingCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        themeConfigure()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

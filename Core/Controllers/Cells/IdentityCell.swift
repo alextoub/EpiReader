@@ -27,6 +27,7 @@ class IdentityCell: UITableViewCell {
     func configure() {
         logoAppImageView.image = #imageLiteral(resourceName: "logo_app")
         versionLabel.text = appVersionValue()
+        configureTheme()
     }
     
     @IBAction func logoButtonAction(_ sender: Any) {
@@ -43,7 +44,6 @@ class IdentityCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureTheme()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

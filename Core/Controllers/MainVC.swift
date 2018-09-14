@@ -73,6 +73,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             }
         }
         
+        self.navigationController?.navigationBar.barTintColor = StaticData.theme.navigationColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : StaticData.theme.navigationTextColor]
+        
         Answers.logContentView(withName: "Show newsgroup list", contentType: "List", contentId: "newsgroup_list")
         
         let CNEnabled = UserDefaults.standard.bool(forKey: "CNEnabled")

@@ -290,14 +290,15 @@ class MainData {
     
     
     static func getStudent(completed: @escaping ((_ response:[Student]?, _ error:Error?) -> Void)) -> Void {
-        Router.getStudent().makeAlamofireRequest { (response, error) in
-            if error == nil {
-                DecoderJSON<[Student]>().decode(response: response, completed: { (response, error) in
-                    completed(response, error)
-                })
+        if Constants.Hidden.STUDENTS_URL != "" {
+            Router.getStudent().makeAlamofireRequest { (response, error) in
+                if error == nil {
+                    DecoderJSON<[Student]>().decode(response: response, completed: { (response, error) in
+                        completed(response, error)
+                    })
+                }
             }
         }
-
     }
 }
 

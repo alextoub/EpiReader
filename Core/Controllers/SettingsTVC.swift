@@ -9,15 +9,21 @@
 import UIKit
 import Crashlytics
 
-class SettingsTVC: UITableViewController {
+class SettingsTVC: UITableViewController, SettingCellDelegate {
 
     // MARK: - View LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = StaticData.theme.backgroundColor
-        
         Answers.logContentView(withName: "Open settings view", contentType: "", contentId: "settings")
+    }
+    
+    func updateTableView() {
+        tableView.reloadData()
+        tableView.backgroundColor = StaticData.theme.backgroundColor
+        self.navigationController?.navigationBar.barTintColor = StaticData.theme.navigationColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : StaticData.theme.navigationTextColor]
     }
 
     // MARK: - Table view data source
@@ -44,6 +50,7 @@ class SettingsTVC: UITableViewController {
             let setting = Constants.settings[(indexPath as IndexPath).row - 2]
             //cell.configure(title: setting.title, color: setting.color, image: setting.image)
             cell.configure(setting: setting)
+            cell.delegate = self
             return cell
         }
 //
