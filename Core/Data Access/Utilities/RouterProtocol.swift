@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 protocol RouterProtocol {
-    var method: Alamofire.HTTPMethod { get }
-    var path: String { get }
+    var method:     Alamofire.HTTPMethod    { get }
+    var path:       String                  { get }
+    var headers:    HTTPHeaders             { get }
+    var urlRequest: URLRequest              { get }
 }

@@ -45,6 +45,7 @@
 		DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F581E7FFDDA00BA7FB1 /* News.swift */; };
 		DA8D2F5B1E7FFDE200BA7FB1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */; };
 		DA8D2F5D1E80003800BA7FB1 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */; };
+		DAA1BA03214A5FF200FA7E42 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA1BA02214A5FF200FA7E42 /* Reachability.swift */; };
 		DAA9A5051F886A1600B32C30 /* TagUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9A5041F886A1600B32C30 /* TagUtils.swift */; };
 		DABE50FE1F74E39C00CB4F93 /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FD1F74E39C00CB4F93 /* StaticData.swift */; };
 		DABE51001F74E7C400CB4F93 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABE50FF1F74E7C400CB4F93 /* RequestService.swift */; };
@@ -122,6 +123,7 @@
 		DA8D2F581E7FFDDA00BA7FB1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		DA8D2F5A1E7FFDE200BA7FB1 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		DA8D2F5C1E80003800BA7FB1 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		DAA1BA02214A5FF200FA7E42 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		DAA9A5041F886A1600B32C30 /* TagUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagUtils.swift; sourceTree = "<group>"; };
 		DABE50FD1F74E39C00CB4F93 /* StaticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticData.swift; sourceTree = "<group>"; };
 		DABE50FF1F74E7C400CB4F93 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				DADA808F1E8097A700A8F423 /* StringUtils.swift */,
 				DAA9A5041F886A1600B32C30 /* TagUtils.swift */,
 				DA6934931FAC4B3C00260652 /* PGPParser.swift */,
+				DAA1BA02214A5FF200FA7E42 /* Reachability.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -416,18 +419,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-EpiReader/Pods-EpiReader-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +511,7 @@
 				DA8D2F2F1E7FDFDC00BA7FB1 /* AppDelegate.swift in Sources */,
 				E606B96A1F78CBB500F69CBB /* ErrorNetiquette.swift in Sources */,
 				DA6723111E800B0600899F3F /* DataBusiness.swift in Sources */,
+				DAA1BA03214A5FF200FA7E42 /* Reachability.swift in Sources */,
 				DA8D2F4F1E7FFAEE00BA7FB1 /* CustomView.swift in Sources */,
 				DAA9A5051F886A1600B32C30 /* TagUtils.swift in Sources */,
 				DA8D2F591E7FFDDA00BA7FB1 /* News.swift in Sources */,

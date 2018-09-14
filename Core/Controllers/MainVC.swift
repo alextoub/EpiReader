@@ -8,7 +8,7 @@
 
 import UIKit
 import ESPullToRefresh
-import ObjectMapper
+//import ObjectMapper
 import Alamofire
 import Crashlytics
 
@@ -67,7 +67,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         
         // End of code executed for update 1.2
         
-        get_students()
+        MainBusiness.getStudent { (response, error) in
+            if error == nil {
+                StaticData.students = response
+            }
+        }
         
         Answers.logContentView(withName: "Show newsgroup list", contentType: "List", contentId: "newsgroup_list")
         
@@ -83,18 +87,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
 
         
         //var students = Mapper<Student>().mapArray(
-    }
-    
-    func get_students() {
-        
-        Alamofire.request(Constants.Hidden.STUDENTS_URL)
-            .validate()
-            .responseArray { (alamoResponse: DataResponse<[Student]>) in
-                
-                if alamoResponse.result.error == nil {
-                    StaticData.students = alamoResponse.result.value
-                }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
