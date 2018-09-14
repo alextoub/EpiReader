@@ -25,6 +25,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchController()
+        tableView.backgroundColor = StaticData.theme.backgroundColor
 //        tableView.tableFooterView = UIView()
     }
     
@@ -43,6 +44,8 @@ class SearchVC: UIViewController {
         }
         definesPresentationContext = true
         searchController.searchBar.delegate = self
+        let searchTextField = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        searchTextField?.textColor = StaticData.theme.titleColor
     }
     
     // MARK: - Custom method
@@ -129,6 +132,7 @@ extension SearchVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         let index = items[indexPath.row]
         let subjectSetup = setupSubject(index.subject!)

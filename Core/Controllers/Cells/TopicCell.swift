@@ -18,6 +18,7 @@ class TopicCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsView: CustomView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
     
     var student: Student?
     
@@ -28,7 +29,6 @@ class TopicCell: UITableViewCell {
     }
     
     func configure(_ topic: Topic) {
-        newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         authorLabel.text = parseAuthor((topic.author)!)[0]
         var parsedContent = topic.content
         if let content = topic.content {
@@ -89,6 +89,16 @@ class TopicCell: UITableViewCell {
                 }
             }
         }
+        configureTheme()
+    }
+    
+    func configureTheme() {
+        contentText.textColor = StaticData.theme.titleColor
+        authorLabel.textColor = StaticData.theme.titleColor
+        subjectLabel.textColor = StaticData.theme.subtitleColor
+        dateLabel.textColor = StaticData.theme.titleColor
+        newsView.backgroundColor = StaticData.theme.backGroundCell
+        containerView.backgroundColor = StaticData.theme.backgroundColor
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

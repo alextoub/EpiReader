@@ -48,6 +48,8 @@ class NewsTVC: UITableViewController {
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
         
+        tableView.backgroundColor = StaticData.theme.backgroundColor
+        registerForPreviewing(with: self, sourceView: tableView)
         Answers.logContentView(withName: "Show news list", contentType: "List", contentId: "news_\(currentGroup)")
     }
 
@@ -248,12 +250,8 @@ class NewsTVC: UITableViewController {
         if indexPath.row >= self.news.count {
             return
         }
-        let index = news[indexPath.row]
-        readNews.append(ReadNews(id : index.id!))
-        index.isRead = true
-        let cell = tableView.cellForRow(at: indexPath) as! NewsCell
-        cell.configureIsRead()
-        NSCodingData().saveReadNews(readNews: readNews)
+        let vc = topicViewController(for: news[indexPath.row], indexPath: indexPath)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -263,7 +261,8 @@ class NewsTVC: UITableViewController {
             getNewsWithDate(date: news[self.news.count - 1].creation_date!)
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell") as! NewsCell
 
         let index = news[indexPath.row]
         
@@ -280,19 +279,38 @@ class NewsTVC: UITableViewController {
 
         return cell
     }
-
-    // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toTopic" {
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)!
-            let destination = segue.destination as! TopicTVC
-            destination.idNews = news[(indexPath.row)].id!
-            destination.nb_msg = news[(indexPath.row)].msg_nb!
-            if title == "assistants.news" || !(UserDefaults.standard.bool(forKey: "CNEnabled")) {
-                destination.isNetiquetteCheckerActivated = false
-            }
+    func topicViewController(for index: News, indexPath: IndexPath) -> TopicTVC {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TopicTVC") as! TopicTVC
+        readNews.append(ReadNews(id : index.id!))
+        index.isRead = true
+        let cell = tableView.cellForRow(at: indexPath) as! NewsCell
+        cell.configureIsRead()
+        NSCodingData().saveReadNews(readNews: readNews)
+        vc.idNews = news[(indexPath.row)].id!
+        vc.nb_msg = news[(indexPath.row)].msg_nb!
+        if title == "assistants.news" || !(UserDefaults.standard.bool(forKey: "CNEnabled")) {
+            vc.isNetiquetteCheckerActivated = false
         }
+        return vc
     }
+
+}
+
+extension NewsTVC: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            return topicViewController(for: news[indexPath.row], indexPath: indexPath)
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
+    
 }

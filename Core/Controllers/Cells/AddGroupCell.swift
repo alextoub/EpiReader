@@ -14,6 +14,7 @@ class AddGroupCell: UITableViewCell {
     
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var isFavoriteButton: UIButton!
+    @IBOutlet weak var inactiveView: UIView!
     
     // MARK: - Cell delegates
     
@@ -35,5 +36,6 @@ class AddGroupCell: UITableViewCell {
             isFavoriteButton.isSelected = false
             isFavoriteButton.setImage(#imageLiteral(resourceName: "switch_off"), for: .normal)
         }
+        inactiveView.isHidden = group.available ?? false
     }
 }

@@ -16,9 +16,8 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var msgNbIndicator: UIImageView!
-    @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var contentCellView: CustomView!
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var msgNbView: UIView!
     @IBOutlet weak var msgNbLabel: UILabel!
@@ -35,6 +34,14 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
         tagCollectionView.delegate = self
     }
     
+    func configureTheme() {
+        authorLabel.textColor = StaticData.theme.authorColor
+        subjectLabel.textColor = StaticData.theme.titleColor
+        dateLabel.textColor = StaticData.theme.titleColor
+        contentCellView.backgroundColor = StaticData.theme.backGroundCell
+        containerView.backgroundColor = StaticData.theme.backgroundColor
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -42,7 +49,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     func configure(_ news: News) {
         let authorArr = parseAuthor(news.author!)
         authorLabel.text = authorArr[0]
-        mailLabel.text = authorArr[1]
+//        mailLabel.text = authorArr[1]
         dateLabel.text = StrToInfo(dateStr: news.creation_date!)
         subjectLabel.text = news.subject ?? "Pas de sujet"
         
@@ -58,14 +65,15 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
             configureIsRead()
         }
         else {
-            readIndicator.backgroundColor = #colorLiteral(red: 0.3430494666, green: 0.8636034131, blue: 0.467017293, alpha: 1)
+            readIndicator.backgroundColor = StaticData.theme.readIndicator
             subjectLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         }
         tagCollectionView.reloadData()
+        configureTheme()
     }
     
     func configureIsRead() {
-        readIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        readIndicator.backgroundColor = .clear
         subjectLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
     }
     
@@ -95,6 +103,7 @@ class NewsCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        collectionView.register(UINib(nibName: "TagCVCell", bundle: nil), forCellWithReuseIdentifier: "TagCVCell")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCVCell", for: indexPath) as! TagCVCell
         
         let index = tags[indexPath.row]

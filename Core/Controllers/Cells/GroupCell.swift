@@ -15,6 +15,7 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupView: UIView!
     @IBOutlet weak var nbNewsLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     // MARK: - Cell delegates
     
@@ -32,5 +33,12 @@ class GroupCell: UITableViewCell {
         
         groupView.layer.masksToBounds = true
         groupView.layer.cornerRadius = groupView.bounds.height / 2
+        
+        configureTheme()
+    }
+    
+    func configureTheme() {
+        containerView.backgroundColor = StaticData.theme.backGroundCell
+        groupNameLabel.textColor = StaticData.theme.titleColor
     }
 }

@@ -31,6 +31,7 @@ class TopicTVC: UITableViewController {
         super.viewDidLoad()
         setupTopic()
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.backgroundColor = StaticData.theme.backgroundColor
         
         Answers.logContentView(withName: "Show news", contentType: "News", contentId: "news_id_\(idNews ?? 0)")
     }
@@ -139,7 +140,7 @@ class TopicTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if nb_msg == 0 {
+        if nb_msg == 0 || topics.count == 0 {
             return 0
         }
         if isNetiquetteCheckerActivated {
@@ -184,10 +185,9 @@ class TopicTVC: UITableViewController {
                     return cell
                 }
                 let index = errors[indexPath.row / 2]
-                cell.newsView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 
                 cell.contentTextView.text = setupTextNetiquette(error: index)
-                
+                cell.configureTheme()
                 if sizeCells[indexPath.row] == 195.0 {
                     print(cell.contentTextView.frame)
                     var newContentText = cell.contentTextView.frame

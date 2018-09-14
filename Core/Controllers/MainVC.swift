@@ -36,7 +36,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         
     }
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleStory: UILabel!
     @IBOutlet weak var storyCollectionView: UICollectionView!
@@ -87,7 +86,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
         if !isDarkMode {
             UserDefaults.standard.set(false, forKey: "isDarkMode")
         }
-
         
         //var students = Mapper<Student>().mapArray(
     }
@@ -95,6 +93,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
     override func viewWillAppear(_ animated: Bool) {
         getFav()
         navigationController?.isToolbarHidden = true
+        tableView.backgroundColor = StaticData.theme.backgroundColor
 
     }
     

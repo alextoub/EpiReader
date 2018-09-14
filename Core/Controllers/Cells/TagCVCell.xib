@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCVCell" id="1qr-VZ-4Mp" customClass="TagCVCell" customModule="EpiReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOc-J1-XuD" customClass="CustomView" customModule="EpiReader" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfO-4p-4yh">
+                                <rect key="frame" x="7.5" y="1" width="35.5" height="13"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WfO-4p-4yh" firstAttribute="top" secondItem="jOc-J1-XuD" secondAttribute="top" constant="1" id="2e1-d2-ikV"/>
+                            <constraint firstItem="WfO-4p-4yh" firstAttribute="top" secondItem="jOc-J1-XuD" secondAttribute="top" constant="1" id="L0g-UO-BSF"/>
+                            <constraint firstItem="WfO-4p-4yh" firstAttribute="centerX" secondItem="jOc-J1-XuD" secondAttribute="centerX" id="ePP-F2-jBW"/>
+                            <constraint firstAttribute="bottom" secondItem="WfO-4p-4yh" secondAttribute="bottom" constant="1" id="l1t-DC-ANO"/>
+                            <constraint firstItem="WfO-4p-4yh" firstAttribute="centerY" secondItem="jOc-J1-XuD" secondAttribute="centerY" id="wkP-eW-a7n"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="jOc-J1-XuD" secondAttribute="bottom" id="AoW-su-41N"/>
+                <constraint firstItem="jOc-J1-XuD" firstAttribute="leading" secondItem="1qr-VZ-4Mp" secondAttribute="leading" id="GYq-yt-N1s"/>
+                <constraint firstItem="jOc-J1-XuD" firstAttribute="top" secondItem="1qr-VZ-4Mp" secondAttribute="top" id="HnF-K4-8Py"/>
+                <constraint firstAttribute="trailing" secondItem="jOc-J1-XuD" secondAttribute="trailing" id="qa3-Xo-EJ5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="PdQ-6H-mnb"/>
+            <connections>
+                <outlet property="tagColorView" destination="jOc-J1-XuD" id="NJ9-Gk-jdP"/>
+                <outlet property="tagLabel" destination="WfO-4p-4yh" id="9IJ-6f-Duy"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
