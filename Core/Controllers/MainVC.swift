@@ -55,7 +55,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICo
             self.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
         }
         registerForPreviewing(with: self, sourceView: tableView)
-        self.getLastNews()
+        //self.getLastNews()
         
         // Code executed for update 1.2
         

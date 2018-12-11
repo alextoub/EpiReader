@@ -71,19 +71,19 @@ public func appVersionValue() -> String {
 
 public func getProfilePic(mail: String, subject: String) -> URL? {
     let login1 = parseLogin(mail)
-    let login2 = parseLoginFromSubject(subject)
+    //let login2 = parseLoginFromSubject(subject)
     
     var url = "https://photos.cri.epita.net/"
     
-    if login1 == login2 {
+//    if login1 == login2 {
+//        url += login1
+//    }
+//    else if login2.contains("_") {
+//        url += login2
+//    }
+//    else {
         url += login1
-    }
-    else if login2.contains("_") {
-        url += login2
-    }
-    else {
-        url += login1
-    }
+//    }
     url += "-thumb"
     return URL(string: url)
 }
